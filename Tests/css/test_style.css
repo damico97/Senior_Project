@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/* 
+    Track Color: #999999 
+    Route Color: #75fa4c
+    Occupied Color: #eb3323
+*/
+    body {
+        background: black;
+    }
+
+    .m_ridgewood_screen_3 {
+        position: absolute;
+        top: 819px;
+        left: 10px;
+        height: 7px;
+        width: 61px;
+        background: #999999;
+    }
+
+    .m_ridgewood_screen_1 {
+        position: absolute;
+        top: 850px;
+        left: 10px;
+        height: 7px;
+        width: 61px;
+        background: #999999;
+    }
+
+    .m_ridgewood_screen_2 {
+        position: absolute;
+        top: 881px;
+        left: 10px;
+        height: 7px;
+        width: 61px;
+        background: #999999;
+    }
+
+    .m_ridgewood_suscon_1 {
+        position: absolute;
+        top: 850px;
+        left: 347px;
+        height: 7px;
+        width: 190px;
+        background: #999999;
+    }
+
+    .m_ridgewood_suscon_2 {
+        position: absolute;
+        top: 881px;
+        left: 347px;
+        height: 7px;
+        width: 190px;
+        background: #999999;
+    }
+
+    .m_suscon_mill_1 {
+        position: absolute;
+        top: 850px;
+        left: 623px;
+        height: 7px;
+        width: 266px;
+        background: #999999;
+    }
+
+    .m_suscon_mill_2 {
+        position: absolute;
+        top: 881px;
+        left: 623px;
+        height: 7px;
+        width: 266px;
+        background: #999999;
+    }
+
+    .m_westSecaucus_mill_1 { 
+        position: absolute;
+        top: 850px;
+        left: 975px;
+        height: 7px;
+        width: 239px;
+        background: #999999;
+    }
+
+    .m_westSecaucus_mill_2 { 
+        position: absolute;
+        top: 881px;
+        left: 975px;
+        height: 7px;
+        width: 239px;
+        background: #999999;
+    }
+
+    .m_laurel_westSecaucus_1 {
+        position: absolute;
+        top: 850px;
+        left: 1325px;
+        height: 7px;
+        width: 76px;
+        background: #999999;
+    }
+
+    .m_laurel_westSecaucus_2 {
+        position: absolute;
+        top: 881px;
+        left: 1325px;
+        height: 7px;
+        width: 76px;
+        background: #999999;
+    }
+
+    .m_westEnd_laurel_1 {
+        position: absolute;
+        top: 850px;
+        left: 1601px;
+        height: 7px;
+        width: 60px;
+        background: #999999;
+    }
+
+    .m_westEnd_laurel_2 {
+        position: absolute;
+        top: 881px;
+        left: 1601px;
+        height: 7px;
+        width: 60px;
+        background: #999999;
+    }
+
+    .m_westEnd_laurel_3 {
+        position: absolute;
+        top: 819px;
+        left: 1601px;
+        height: 7px;
+        width: 60px;
+        background: #999999;
+    }
+
+    .m_westEnd_laurel_4 {
+        position: absolute;
+        top: 788px;
+        left: 1601px;
+        height: 7px;
+        width: 60px;
+        background: #999999;
+    }

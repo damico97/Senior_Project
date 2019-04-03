@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/* 
+    Track Color: #999999 
+    Route Color: #75fa4c
+    Occupied Color: #eb3323
+*/
+	.b_ridgewood_1 {
+        position: absolute;
+        top: 788px;
+        left: 266px;
+        height: 7px;
+        width: 76px;
+        background: #999999;
+    }
+
+    .b_ridgewood_1_Diag {
+    	position: absolute;
+        z-index: 2;
+        top: 788px;
+        left: 228px;
+        height: 38px;
+        width: 38px;
+    }
+
+	.b_ridgewood_2 {
+        position: absolute;
+        top: 819px;
+        left: 304px;
+        height: 7px;
+        width: 38px;
+        background: #999999;
+    }
+
+    .m_ridgewood_3 {
+        position: absolute;
+        top: 819px;
+        left: 114px;
+        height: 7px;
+        width: 76px;
+        background: #999999;
+    }
+
+	.m_ridgewood_1__W {
+        position: absolute;
+        top: 850px;
+        left: 228px;
+        height: 7px;
+        width: 38px;
+        background: #999999;
+    }
+
+    .m_ridgewood_1__E {
+        position: absolute;
+        top: 850px;
+        left: 304px;
+        height: 7px;
+        width: 38px;
+        background: #999999;
+    }
+
+	.m_ridgewood_2__W {
+        position: absolute;
+        top: 881px;
+        left: 76px;
+        height: 7px;
+        width: 38px;
+        background: #999999;
+    }
+
+    .m_ridgewood_2__E {
+        position: absolute;
+        top: 881px;
+        left: 190px;
+        height: 7px;
+        width: 152px;
+        background: #999999;
+    }
+
+	.ridgewood_1 {
+        position: absolute;
+        z-index: 2;
+        top: 819px;
+        left: 76px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .ridgewood_3 {
+        position: absolute;
+        z-index: 2;
+        top: 850px;
+        left: 114px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .ridgewood_5 {
+        position: absolute;
+        z-index: 2;
+        top: 850px;
+        left: 152px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .ridgewood_7{
+        position: absolute;
+        z-index: 2;
+        top: 819px;
+        left: 190px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .ridgewood_9 {
+        position: absolute;
+        z-index: 2;
+        top: 819px;
+        left: 266px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }

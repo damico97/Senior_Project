@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* 
+    Track Color: #999999 
+    Route Color: #75fa4c
+    Occupied Color: #eb3323
+*/
+    .mill_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 850px;
+        left: 894px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .mill_SW_2 {
+        position: absolute;
+        z-index: 2;
+        top: 850px;
+        left: 932px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }

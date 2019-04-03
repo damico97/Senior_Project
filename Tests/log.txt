@@ -1,0 +1,6 @@
+March 21, 2019:
+    - Finished drawing out the layout of the pannel on paper
+    (1 Hour 30 Minutes)
+
+    - Worked on creating the pannel in HTML & CSS
+    (2 Hours)
