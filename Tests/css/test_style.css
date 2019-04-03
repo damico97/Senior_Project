@@ -40,7 +40,7 @@
         top: 850px;
         left: 347px;
         height: 7px;
-        width: 190px;
+        width: 165px;
         background: #999999;
     }
 
@@ -49,25 +49,25 @@
         top: 881px;
         left: 347px;
         height: 7px;
-        width: 190px;
+        width: 165px;
         background: #999999;
     }
 
     .m_suscon_mill_1 {
         position: absolute;
         top: 850px;
-        left: 623px;
+        left: 648px;
         height: 7px;
-        width: 266px;
+        width: 241px;
         background: #999999;
     }
 
     .m_suscon_mill_2 {
         position: absolute;
         top: 881px;
-        left: 623px;
+        left: 648px;
         height: 7px;
-        width: 266px;
+        width: 241px;
         background: #999999;
     }
 

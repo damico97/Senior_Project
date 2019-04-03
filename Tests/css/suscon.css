@@ -24,6 +24,42 @@
         cursor: pointer;
     }
 
+    .m_suscon_1_west {
+        position: absolute;
+        top: 850px;
+        left: 517px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .m_suscon_2_west {
+        position: absolute;
+        top: 881px;
+        left: 517px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .m_suscon_1_east {
+        position: absolute;
+        top: 850px;
+        left: 618px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .m_suscon_2_east {
+        position: absolute;
+        top: 881px;
+        left: 618px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
     .m_sig_suscon_1_west {
         position: absolute;
         top: 832px;
