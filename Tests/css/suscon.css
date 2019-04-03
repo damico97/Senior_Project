@@ -4,6 +4,26 @@
     Route Color: #75fa4c
     Occupied Color: #eb3323
 */
+    /* Texts */
+    .suscon_title {
+        position: absolute;
+        top: 805px;
+        left: 546px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .suscon_milepost {
+        position: absolute;
+        top: 825px;
+        left: 559px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+
+    /* Switches */
     .suscon_SW_1 {
         position: absolute;
         z-index: 2;
@@ -23,7 +43,9 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches */
 
+    /* Tail Tracks */
     .m_suscon_1_west {
         position: absolute;
         top: 850px;
@@ -59,47 +81,42 @@
         width: 25px;
         background: #999999;
     }
+    /* END Tail Tracks */
 
-    .m_sig_suscon_1_west {
+    /* Signals */
+    .suscon_sig_2w {
         position: absolute;
         top: 832px;
         left: 620px;
         height: 8px;
         width: 19px;
-        height: 38px;
-        width: 38px;
         cursor: pointer;
     }
 
-    .m_sig_suscon_1_east {
+    .suscon_sig_2e {
         position: absolute;
         top: 854px;
         left: 520px;
         height: 8px;
         width: 19px;
-        height: 38px;
-        width: 38px;
         cursor: pointer;
     }
 
-    .m_sig_suscon_2_west {
+    .suscon_sig_4w {
         position: absolute;
         top: 863px;
         left: 620px;
         height: 8px;
         width: 19px;
-        height: 38px;
-        width: 38px;
         cursor: pointer;
     }
 
-    .m_sig_suscon_2_east {
+    .suscon_sig_4e {
         position: absolute;
         top: 885px;
         left: 520px;
         height: 8px;
         width: 19px;
-        height: 38px;
-        width: 38px;
         cursor: pointer;
     }
+    /* END Signals */
