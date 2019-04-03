@@ -76,6 +76,7 @@
         background: #999999;
     }
 
+    /* Switches */
 	.ridgewood_1 {
         position: absolute;
         z-index: 2;
@@ -121,6 +122,40 @@
         z-index: 2;
         top: 819px;
         left: 266px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    /* Signals */
+    .b_sig_ridgewood_2_west {
+        position: absolute;
+        top: 801px;
+        left: 320px;
+        height:38px;
+        width: 19px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .m_sig_ridgewood_1_west {
+        position: absolute;
+        top: 832px;
+        left: 320px;
+        height:38px;
+        width: 19px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .m_sig_ridgewood_2_west {
+        position: absolute;
+        top: 863px;
+        left: 320px;
+        height:38px;
+        width: 19px;
         height: 38px;
         width: 38px;
         cursor: pointer;
