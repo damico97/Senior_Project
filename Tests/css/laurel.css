@@ -4,7 +4,123 @@
     Route Color: #75fa4c
     Occupied Color: #eb3323
 */
-    .m_sig_laurel_1 {
+    /* Texts */
+    .laurel_title {
+        position: absolute;
+        top: 745px;
+        left: 1466px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .laurel_milepost {
+        position: absolute;
+        top: 765px;
+        left: 1480px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+    .m_laurel_3 {
+        position: absolute;
+        top: 788px;
+        left: 1444px;
+        height: 7px;
+        width: 114px;
+        background: #999999;
+    }
+
+    .m_laurel_1 {
+        position: absolute;
+        top: 819px;
+        left: 1406px;
+        height: 7px;
+        width: 188px;
+        background: #999999;
+    }
+
+    .m_laurel_2 {
+        position: absolute;
+        top: 850px;
+        left: 1406px;
+        height: 7px;
+        width: 38px;
+        background: #999999;
+    }
+
+    .m_laurel_4 {
+        position: absolute;
+        top: 881px;
+        left: 1406px;
+        height: 7px;
+        width: 152px;
+        background: #999999;
+    }
+
+    .laurel_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 819px;
+        left: 1444px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .laurel_SW_3 {
+        position: absolute;
+        z-index: 2;
+        top: 788px;
+        left: 1406px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .laurel_SW_7 {
+        position: absolute;
+        z-index: 2;
+        top: 819px;
+        left: 1482px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .laurel_SW_9 {
+        position: absolute;
+        z-index: 2;
+        top: 819px;
+        left: 1520px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .laurel_SW_11 {
+        position: absolute;
+        z-index: 2;
+        top: 788px;
+        left: 1558px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .laurel_SW_13 {
+        position: absolute;
+        z-index: 2;
+        top: 850px;
+        left: 1558px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+
+
+    .laurel_sig_10w {
         position: absolute;
         top: 770px;
         left: 1605px;
@@ -15,7 +131,7 @@
         cursor: pointer;
     }
 
-    .m_sig_laurel_2 {
+    .laurel_sig_2w {
         position: absolute;
         top: 801px;
         left: 1605px;
@@ -26,7 +142,7 @@
         cursor: pointer;
     }
 
-    .m_sig_laurel_3 {
+    .laurel_sig_4w {
         position: absolute;
         top: 832px;
         left: 1605px;
@@ -37,7 +153,7 @@
         cursor: pointer;
     }
 
-    .m_sig_laurel_4 {
+    .laurel_sig_8w {
         position: absolute;
         top: 863px;
         left: 1605px;
@@ -48,98 +164,20 @@
         cursor: pointer;
     }
 
-    .m_laurel_1 {
+    .laurel_sig_4e {
         position: absolute;
-        top: 788px;
-        left: 1406px;
-        height: 7px;
-        width: 190px;
-        background: #999999;
-    }
-
-    .m_laurel_2 {
-        position: absolute;
-        top: 819px;
-        left: 1406px;
-        height: 7px;
-        width: 190px;
-        background: #999999;
-    }
-
-    .m_laurel_3 {
-        position: absolute;
-        top: 850px;
-        left: 1406px;
-        height: 7px;
-        width: 190px;
-        background: #999999;
-    }
-
-    .m_laurel_4 {
-        position: absolute;
-        top: 881px;
-        left: 1406px;
-        height: 7px;
-        width: 190px;
-        background: #999999;
-    }
-
-    .laurel_2_1 {
-        position: absolute;
-        z-index: 2;
-        top: 788px;
-        left: 1406px;
-        height: 38px;
-        width: 38px;
+        top: 854px;
+        left: 1410px;
+        height: 8px;
+        width: 19px;
         cursor: pointer;
     }
 
-    .laurel_3_2_W {
+    .laurel_sig_8e {
         position: absolute;
-        z-index: 2;
-        top: 819px;
-        left: 1444px;
-        height: 38px;
-        width: 38px;
-        cursor: pointer;
-    }
-
-    .laurel_2_3 {
-        position: absolute;
-        z-index: 2;
-        top: 819px;
-        left: 1482px;
-        height: 38px;
-        width: 38px;
-        cursor: pointer;
-    }
-
-    .laurel_3_2 {
-        position: absolute;
-        z-index: 2;
-        top: 819px;
-        left: 1520px;
-        height: 38px;
-        width: 38px;
-        cursor: pointer;
-    }
-
-    .laurel_4_3 {
-        position: absolute;
-        z-index: 2;
-        top: 850px;
-        left: 1558px;
-        height: 38px;
-        width: 38px;
-        cursor: pointer;
-    }
-
-    .laurel_1_2 {
-        position: absolute;
-        z-index: 2;
-        top: 788px;
-        left: 1558px;
-        height: 38px;
-        width: 38px;
+        top: 885px;
+        left: 1410px;
+        height: 8px;
+        width: 19px;
         cursor: pointer;
     }
