@@ -18,6 +18,18 @@ document.getElementById("suscon_SW_3").addEventListener('click', function() {
 document.getElementById("suscon_2w").addEventListener('click', function() {
 	Suscon_Int.Click_sig_2w();
 });
+
+document.getElementById("suscon_2e").addEventListener('click', function() {
+	Suscon_Int.Click_sig_2e();
+});
+
+document.getElementById("suscon_4w").addEventListener('click', function() {
+	Suscon_Int.Click_sig_4w();
+});
+
+document.getElementById("suscon_4e").addEventListener('click', function() {
+	Suscon_Int.Click_sig_4e();
+});
 /* END SUSCON Interlocking */
 
 /* MILL Interlocking */

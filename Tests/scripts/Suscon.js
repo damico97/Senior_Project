@@ -121,12 +121,81 @@ class Suscon extends Interlocking_2_Trk_2_CX {
 					if (this.sw_3 === false) {
 						super.line_1_Norm("West", "m_ridgewood_suscon_1", "m_suscon_mill_1");
 						this.Route_sig_2w = new Route();
-						this.Route_sig_2w.new_Route("West", "Mill", "Suscon", 1, 1, "m_ridgewood_suscon_1");
+						this.Route_sig_2w.new_Route("West", "Suscon", "Ridgewood", 1, 1, "m_ridgewood_suscon_1");
 					}
 					else {
 						super.line_SW_3_R("West", "m_ridgewood_suscon_2", "m_suscon_mill_1");
 						this.Route_sig_2w = new Route();
-						this.Route_sig_2w.new_Route("West", "Mill", "Suscon", 1, 2, "m_ridgewood_suscon_2");
+						this.Route_sig_2w.new_Route("West", "Suscon", "Ridgewood", 1, 2, "m_ridgewood_suscon_2");
+					}
+				}
+			}
+		}
+	}
+
+	Click_sig_2e() {
+		if (this.sig_2e) {
+			super.undo_Route(this.Route_sig_2e);
+			this.sig_2e = false;
+		}
+		else {
+			if (this.check_route("2e")) {
+				if (this.sw_3 === false) {
+					if (this.sw_1 === false) {
+						super.line_1_Norm("East", "m_ridgewood_suscon_1", "m_suscon_mill_1");
+						this.Route_sig_2e = new Route();
+						this.Route_sig_2e.new_Route("East", "Suscon", "Mill", 1, 1, "m_suscon_mill_1");
+					}
+					else {
+						super.line_SW_1_R("East", "m_suscon_mill_1", "m_suscon_mill_2");
+						this.Route_sig_2e = new Route();
+						this.Route_sig_2e.new_Route("East", "Suscon", "Mill", 2, 1, "m_suscon_mill_2");
+					}
+				}
+			}
+		}
+	}
+
+	Click_sig_4w() {
+		if (this.sig_4w) {
+			super.undo_Route(this.Route_sig_4w);
+			this.sig_4w = false;
+		}
+		else {
+			if (this.check_route("4w")) {
+				if (this.sw_3 === false) {
+					if (this.sw_1 === false) {
+						super.line_2_Norm("West", "m_ridgewood_suscon_2", "m_suscon_mill_2");
+						this.Route_sig_4w = new Route();
+						this.Route_sig_4w.new_Route("West", "Suscon", "Ridgewood", 2, 2, "m_ridgewood_suscon_2");
+					}
+					else {
+						super.line_SW_1_R("West", "m_ridgewood_suscon_1", "m_suscon_mill_2");
+						this.Route_sig_4w = new Route();
+						this.Route_sig_4w.new_Route("West", "Mill", "Suscon", 2, 1, "m_ridgewood_suscon_1");
+					}
+				}
+			}
+		}
+	}
+
+	Click_sig_4e() {
+		if (this.sig_4e) {
+			super.undo_Route(this.Route_sig_4e);
+			this.sig_4e = false;
+		}
+		else {
+			if (this.check_route("4e")) {
+				if (this.sw_1 === false) {
+					if (this.sw_3 === false) {
+						super.line_2_Norm("East", "m_ridgewood_suscon_2", "m_suscon_mill_2");
+						this.Route_sig_4e = new Route();
+						this.Route_sig_4e.new_Route("East", "Suscon", "Mill", 2, 2, "m_suscon_mill_2");
+					}
+					else {
+						super.line_SW_3_R("East", "m_ridgewood_suscon_2", "m_suscon_mill_1");
+						this.Route_sig_4e = new Route();
+						this.Route_sig_4e.new_Route("East", "Suscon", "Mill", 1, 2, "m_suscon_mill_1");
 					}
 				}
 			}
