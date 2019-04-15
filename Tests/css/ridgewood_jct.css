@@ -22,6 +22,33 @@
         width: 38px;
     }
 
+    .b_ridgewood_1_Diag_2 {
+        position: absolute;
+        z-index: 2;
+        top: 757px;
+        left: 304px;
+        height: 38px;
+        width: 38px;
+    }
+
+    .b_ridgewood_1_Diag_3 {
+        position: absolute;
+        z-index: 2;
+        top: 726px;
+        left: 342px;
+        height: 38px;
+        width: 38px;
+    }
+
+    .b_ridgewood_1_Diag_4 {
+        position: absolute;
+        z-index: 2;
+        top: 695px;
+        left: 380px;
+        height: 38px;
+        width: 38px;
+    }
+
 	.b_ridgewood_2 {
         position: absolute;
         top: 819px;
@@ -29,6 +56,33 @@
         height: 7px;
         width: 38px;
         background: #999999;
+    }
+
+    .b_ridgewood_2_Diag {
+        position: absolute;
+        z-index: 2;
+        top: 788px;
+        left: 342px;
+        height: 38px;
+        width: 38px;
+    }
+
+    .b_ridgewood_2_Diag_2 {
+        position: absolute;
+        z-index: 2;
+        top: 757px;
+        left: 380px;
+        height: 38px;
+        width: 38px;
+    }
+
+    .b_ridgewood_2_Diag_3 {
+        position: absolute;
+        z-index: 2;
+        top: 726px;
+        left: 418px;
+        height: 38px;
+        width: 38px;
     }
 
     .m_ridgewood_3 {

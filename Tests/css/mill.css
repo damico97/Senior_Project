@@ -23,7 +23,7 @@
     /* END Text */
 
     /* Switches */
-    .mill_SW_1 {
+    .mill_SW_3 {
         position: absolute;
         z-index: 2;
         top: 850px;
@@ -33,7 +33,7 @@
         cursor: pointer;
     }
 
-    .mill_SW_2 {
+    .mill_SW_1 {
         position: absolute;
         z-index: 2;
         top: 850px;

@@ -7,7 +7,7 @@
         <!--Responsive Viewport Meta tag-->
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         
-        
+         
         <title>Pannel</title>
         
         <!-- Stylesheets -->
@@ -17,6 +17,7 @@
         <link rel="stylesheet" type="text/css" href="css/mill.css">
         <link rel="stylesheet" type="text/css" href="css/suscon.css">
         <link rel="stylesheet" type="text/css" href="css/ridgewood_jct.css">
+        <link rel="stylesheet" type="text/css" href="css/bergen_county.css">
         
     </head>
 
@@ -25,8 +26,13 @@
         <div class="m_ridgewood_screen_1"></div>
         <div class="m_ridgewood_screen_2"></div>
 
+        <!-- BERGEN COUNTY LINE BETWEEN RIDGEWOOD JUNCTION AND HX -->
+        <div class="b_bt_ridgewood_1"></div>
+        <div class="b_bt_ridgewood_2"></div>
 
 
+
+        <!-- MAIN LINE BETWEEN RIDWOOD JUNCTION AND LAUREL -->
         <!-- Main Line: Ridgewood Junction-->
         <div class="ridgewood_1"><img src="images/CX_135.png"></div>
         <div class="ridgewood_3"><img src="images/CX_135.png"></div>
@@ -38,9 +44,15 @@
         <div class="m_sig_ridgewood_1_west"><img src="images/SIG_W.png"></div>
         <div class="m_sig_ridgewood_2_west"><img src="images/SIG_W.png"></div>
 
-        <div class="b_ridgewood_1"></div>
+        --<div class="b_ridgewood_1"></div>
         <div class="b_ridgewood_1_Diag"><img src="images/T_Diag_BL_TR.png"></div>
+        <div class="b_ridgewood_1_Diag_2"><img src="images/T_Diag_BL_TR.png"></div>
+        <div class="b_ridgewood_1_Diag_3"><img src="images/T_Diag_BL_TR.png"></div>
+        <div class="b_ridgewood_1_Diag_4"><img src="images/T_Diag_BL_TR.png"></div>
         <div class="b_ridgewood_2"></div>
+        <div class="b_ridgewood_2_Diag"><img src="images/T_Diag_BL_TR.png"></div>
+        <div class="b_ridgewood_2_Diag_2"><img src="images/T_Diag_BL_TR.png"></div>
+        <div class="b_ridgewood_2_Diag_3"><img src="images/T_Diag_BL_TR.png"></div>
         <div class="m_ridgewood_3"></div>
         <div class="m_ridgewood_1__W"></div>
         <div class="m_ridgewood_1__E"></div>
@@ -51,8 +63,8 @@
 
 
         <!-- Main Line: Suscon to Ridgewood Junction -->
-        <div class="m_ridgewood_suscon_1"></div>
-        <div class="m_ridgewood_suscon_2"></div>
+        <div class="m_ridgewood_suscon_1" id="m_ridgewood_suscon_1"></div>
+        <div class="m_ridgewood_suscon_2" id="m_ridgewood_suscon_2"></div>
         <!-- END -->
 
 
@@ -62,29 +74,29 @@
         <div class="suscon_milepost">MP 17.5</div>
 
         <!-- West Side Tracks-->
-        <div class="m_suscon_1_west"></div>
-        <div class="m_suscon_2_west"></div>
+        <div class="m_suscon_1_west" id="suscon_1_east"></div>
+        <div class="m_suscon_2_west" id="suscon_2_east"></div>
 
         <!-- Switches -->
-        <div class="suscon_SW_1"><img src="images/CX_135.png"></div>
-        <div class="suscon_SW_2"><img src="images/CX_225.png"></div>
+        <div class="suscon_SW_1" id="suscon_SW_1"><img id="suscon_SW_1_image" src="images/CX_135.png"></div>
+        <div class="suscon_SW_2" id="suscon_SW_3"><img id="suscon_SW_3_image"src="images/CX_225.png"></div>
 
         <!-- East Side Tracks -->
-        <div class="m_suscon_1_east"></div>
-        <div class="m_suscon_2_east"></div>
+        <div class="m_suscon_1_east" id="suscon_1_west"></div>
+        <div class="m_suscon_2_east" id="suscon_2_west"></div>
 
         <!-- Signals -->
-        <div class="suscon_sig_2w"><img src="images/SIG_W.png"></div>
-        <div class="suscon_sig_4w"><img src="images/SIG_W.png"></div>
-        <div class="suscon_sig_2e"><img src="images/SIG_E.png"></div>
-        <div class="suscon_sig_4e"><img src="images/SIG_E.png"></div>
+        <div class="suscon_sig_2w" id="suscon_2w"><img id="suscon_2w_image" src="images/SIG_W.png"></div>
+        <div class="suscon_sig_4w" id="suscon_4w"><img id="suscon_4w_image" src="images/SIG_W.png"></div>
+        <div class="suscon_sig_2e" id="suscon_2e"><img id="suscon_2e_image" src="images/SIG_E.png"></div>
+        <div class="suscon_sig_4e" id="suscon_4e"><img id="suscon_4e_image" src="images/SIG_E.png"></div>
         <!-- END Suscon -->
 
 
 
         <!-- -->
-        <div class="m_suscon_mill_1"></div>
-        <div class="m_suscon_mill_2"></div>
+        <div class="m_suscon_mill_1" id="m_suscon_mill_1"></div>
+        <div class="m_suscon_mill_2" id="m_suscon_mill_2"></div>
         <!-- END -->
 
 
@@ -93,26 +105,26 @@
         <div class="mill_title">MILL</div>
         <div class="mill_milepost">MP 11.1</div>
 
-        <div class="m_mill_1_east"></div>
-        <div class="m_mill_2_east"></div>
+        <div class="m_mill_1_east" id="mill_1_east"></div>
+        <div class="m_mill_2_east" id="mill_2_east"></div>
 
-        <div class="mill_SW_1"><img src="images/CX_135.png"></div>
-        <div class="mill_SW_2"><img src="images/CX_225.png"></div>
+        <div class="mill_SW_3" id="mill_SW_1"><img id="mill_SW_1_image" src="images/CX_135.png"></div>
+        <div class="mill_SW_1" id="mill_SW_3"><img id="mill_SW_3_image" src="images/CX_225.png"></div>
 
-        <div class="m_mill_1_west"></div>
-        <div class="m_mill_2_west"></div>
+        <div class="m_mill_1_west" id="mill_1_west"></div>
+        <div class="m_mill_2_west" id="mill_2_west"></div>
 
-        <div class="mill_sig_2e"><img src="images/SIG_E.png"></div>
-        <div class="mill_sig_4e"><img src="images/SIG_E.png"></div>
-        <div class="mill_sig_2w"><img src="images/SIG_W.png"></div>
-        <div class="mill_sig_4w"><img src="images/SIG_W.png"></div>
+        <div class="mill_sig_2e" id="mill_2e"><img id="mill_2e_image" src="images/SIG_E.png"></div>
+        <div class="mill_sig_4e" id="mill_4e"><img id="mill_4e_image" src="images/SIG_E.png"></div>
+        <div class="mill_sig_2w" id="mill_2w"><img id="mill_2w_image" src="images/SIG_W.png"></div>
+        <div class="mill_sig_4w" id="mill_4w"><img id="mill_4w_image" src="images/SIG_W.png"></div>
         <!-- END -->
 
 
 
         <!-- Main Line: West Secaucus to Mill-->
-        <div class="m_westSecaucus_mill_1"></div>
-        <div class="m_westSecaucus_mill_2"></div>
+        <div class="m_westSecaucus_mill_1" id="m_westSecaucus_mill_1"></div>
+        <div class="m_westSecaucus_mill_2" id="m_westSecaucus_mill_2"></div>
         <!-- END -->
 
 
@@ -143,10 +155,17 @@
         <div class="laurel_SW_11"><img src="images/CX_225.png"></div>
         <div class="laurel_SW_13"><img src="images/CX_135.png"></div>
 
+        <div class="m_laurel_3_west"></div>
+
         <div class="m_laurel_3"></div>
         <!-- <div class="m_laurel_1"></div> -->
         <div class="m_laurel_2"></div>
         <div class="m_laurel_4"></div>
+
+        <div class="m_laurel_1_east"></div>
+        <div class="m_laurel_2_east"></div>
+        <div class="m_laurel_3_east"></div>
+        <div class="m_laurel_4_east"></div>
 
         <div class="laurel_sig_10w"><img src="images/SIG_W.png"></div>
         <div class="laurel_sig_2w"><img src="images/SIG_W.png"></div>
@@ -163,4 +182,19 @@
         <div class="m_westEnd_laurel_3"></div>
         <div class="m_westEnd_laurel_4"></div>
     </body>
+
+
+    <!-- <script src="scripts/main_line.js"></script> -->
+    <script src="scripts/Route.js"></script>
+    <script src="scripts/Interlocking.js"></script>
+    <script src="scripts/Interlocking_2_Trk_2_CX.js"></script>
+    <script src="scripts/Mill.js"></script>
+    <script src="scripts/Suscon.js"></script>
+    <script src="scripts/main_line.js"></script>
 </html>
+
+
+
+
+
+
