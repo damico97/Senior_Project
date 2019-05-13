@@ -3,6 +3,7 @@
 
 let Mill_Int = new Mill();
 let Suscon_Int = new Suscon();
+let West_Secaucus_Int = new West_Secaucus();
 
 /* Main Line */
 
@@ -31,6 +32,8 @@ document.getElementById("suscon_4e").addEventListener('click', function() {
 	Suscon_Int.Click_sig_4e();
 });
 /* END SUSCON Interlocking */
+
+
 
 /* MILL Interlocking */
 // Mill Switch 1 Event Listener
@@ -63,3 +66,13 @@ document.getElementById("mill_4e").addEventListener('click', function() {
 	Mill_Int.Click_sig_4e();
 });
 /* END MILL Interlocking */
+
+
+/* WEST SECAUCUS Interlocking */
+document.getElementById("westSecaucus_SW_1").addEventListener('click', function() {
+	West_Secaucus_Int.Click_SW_1();
+});
+
+document.getElementById("westSecaucus_SW_3").addEventListener('click', function() {
+	West_Secaucus_Int.Click_SW_3();
+});

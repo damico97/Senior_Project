@@ -15,6 +15,12 @@ class Interlocking {
 		this.CX_225_Lined_Bottom = "images/CX_225_Lined_Bottom.png";
 		this.CX_225_Lined_Both = "images/CX_225_Lined_Both.png";
 
+		this.SW_2_S = "images/SW_2_S.png";
+		this.SW_2_S_R = "images/SW_2_S_R.png";
+
+		this.SW_S_2 = "images/SW_S_2.png";
+		this.SW_S_2_R = "images/SW_S_2_R.png";
+
 
 		this.Signal_E_Dark = "images/SIG_E.png";
 		this.Signal_E_Lined = "images/SIG_E_Clear.png";
@@ -86,6 +92,23 @@ class Interlocking {
 	CX_225_Lined_Both() {
 		return this.CX_225_Lined_Both;
 	}
+
+	SW_2_S() {
+		return this.SW_2_S;
+	}
+	
+	SW_2_S_R() {
+		return this.SW_2_S_R;
+	}
+
+	SW_S_2() {
+		return this.SW_S_2;
+	}
+
+	SW_S_2_R() {
+		return this.SW_S_2_R;
+	}
+
 
 
 	Signal_E_Dark() {
