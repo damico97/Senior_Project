@@ -1,6 +1,14 @@
 March 21, 2019:
     - Finished drawing out the layout of the pannel on paper
-    (1 Hour 30 Minutes)
+    (1.5 Hours)
 
     - Worked on creating the pannel in HTML & CSS
     (2 Hours)
+
+August 20, 2019:
+    - Started work to convert to a ReactJS app, started with tutorials and research.
+    (2 Hours)
+
+    - Tried to create first component, which would be a crossover button, which took
+    4 hours to get an image in appear in ReactJS
+    (4.5 Hours)

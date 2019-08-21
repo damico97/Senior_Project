@@ -32,6 +32,21 @@ class West_Secaucus extends Interlocking {
 		this.trk_2_e = document.getElementById("westSecaucus_2_east");
     }
 
+	check_route(Sig_Num) {
+		if (Sig_Num === "2w") {
+
+		}
+		if (Sig_Num === "4w") {
+
+		}
+		if (Sig_Num === "2e") {
+
+		}
+		if (Sig_Num === "4e") {
+
+		}
+	}
+
     Click_SW_1() {
 		if (!this.Route_Lined_Trk_1 && !this.Route_Lined_Trk_2) {
 			if (this.sw_1) {
@@ -61,6 +76,20 @@ class West_Secaucus extends Interlocking {
 		}
 		else {
 
+		}
+	}
+
+	Click_sig_2w() {
+		if (this.sig_2w) {
+			super.undo_Route(this.Route_sig_2w);
+			this.sig_2w = false;
+		}
+		else {
+			if (this.check_route("2w")) {
+				if (this.sw_1 === false) {
+
+				}
+			}
 		}
 	}
 }
