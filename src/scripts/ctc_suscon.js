@@ -1,9 +1,15 @@
 class CTC_Suscon {
+    /**
+     * 
+     */
     constructor() {
         this.sw_1 = false;
         this.sw_3 = false;
     }
 
+    /**
+     * 
+     */
     throw_sw_1() {
         if (this.sw_1 === false) {
             this.sw_1 = true;
@@ -11,10 +17,11 @@ class CTC_Suscon {
         else {
             this.sw_1 = false;
         }
-
-        //console.log(this.sw_1, this.sw_3);
     }
 
+    /**
+     * 
+     */
     get_status_sw_1() {
         if (this.sw_1 === true) {
             return true;
@@ -24,6 +31,9 @@ class CTC_Suscon {
         }
     }
 
+    /**
+     * 
+     */
     throw_sw_3() {
         if (this.sw_3 === false) {
             this.sw_3 = true;
@@ -31,10 +41,11 @@ class CTC_Suscon {
         else {
             this.sw_3 = false;
         }
-
-        //console.log(this.sw_1, this.sw_3);
     }
 
+    /**
+     * 
+     */
     get_status_sw_3() {
         if (this.sw_3 === true) {
             return true;
@@ -44,6 +55,9 @@ class CTC_Suscon {
         }
     }
 
+    /**
+     * 
+     */
     get_interlocking_status() {
         var status = {
             sw_1: this.get_status_sw_1(),

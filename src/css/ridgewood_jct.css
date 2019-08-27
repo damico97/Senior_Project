@@ -1,0 +1,184 @@
+@charset "UTF-8";
+/* 
+    Track Color: #999999 
+    Route Color: #75fa4c
+    Occupied Color: #eb3323
+*/
+    .m_ridgewood_3_west {
+        position: absolute;
+        top: 819px;
+        left: 51px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .m_ridgewood_1_west {
+        position: absolute;
+        top: 850px;
+        left: 51px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .m_ridgewood_2_west {
+        position: absolute;
+        top: 881px;
+        left: 51px;
+        height: 7px;
+        width: 63px;
+        background: #999999;
+    }
+
+	.b_ridgewood_1 {
+        position: absolute;
+        top: 788px;
+        left: 266px;
+        height: 7px;
+        width: 76px;
+        background: #999999;
+    }
+
+    .b_ridgewood_1_Diag {
+        position: absolute;
+        top: 789px;
+        left: 220px;
+        height: 7px;
+        width: 55px;
+        background: #999999;
+        -webkit-transform: 
+            translateY(15px)
+            translateX(0px)
+            rotate(-37deg);
+    }
+
+	.b_ridgewood_2 {
+        position: absolute;
+        top: 819px;
+        left: 304px;
+        height: 7px;
+        width: 38px;
+        background: #999999;
+    }
+
+    .m_ridgewood_3_center {
+        position: absolute;
+        top: 819px;
+        left: 114px;
+        height: 7px;
+        width: 76px;
+        background: #999999;
+    }
+
+	.m_ridgewood_1_center {
+        position: absolute;
+        top: 850px;
+        left: 228px;
+        height: 7px;
+        width: 38px;
+        background: #999999;
+    }
+
+    .m_ridgewood_1_east {
+        position: absolute;
+        top: 850px;
+        left: 304px;
+        height: 7px;
+        width: 38px;
+        background: #999999;
+    }
+
+    .m_ridgewood_2_east {
+        position: absolute;
+        top: 881px;
+        left: 190px;
+        height: 7px;
+        width: 152px;
+        background: #999999;
+    }
+
+    /* Switches */
+	.ridgewood_1 {
+        position: absolute;
+        z-index: 2;
+        top: 819px;
+        left: 76px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .ridgewood_3 {
+        position: absolute;
+        z-index: 2;
+        top: 850px;
+        left: 114px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .ridgewood_5 {
+        position: absolute;
+        z-index: 2;
+        top: 850px;
+        left: 152px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .ridgewood_7{
+        position: absolute;
+        z-index: 2;
+        top: 819px;
+        left: 190px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .ridgewood_9 {
+        position: absolute;
+        z-index: 2;
+        top: 819px;
+        left: 266px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    /* Signals */
+    .b_sig_ridgewood_2_west {
+        position: absolute;
+        top: 801px;
+        left: 320px;
+        height:38px;
+        width: 19px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .m_sig_ridgewood_1_west {
+        position: absolute;
+        top: 832px;
+        left: 320px;
+        height:38px;
+        width: 19px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .m_sig_ridgewood_2_west {
+        position: absolute;
+        top: 863px;
+        left: 320px;
+        height:38px;
+        width: 19px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }

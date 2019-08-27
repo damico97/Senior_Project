@@ -43,8 +43,8 @@ class Suscon extends Component {
                 <div className="suscon_2_west" id="suscon_2_east"></div>
 
                 {/* Switches */}
-                <div className="suscon_SW_3" onClick={this.click_SW_3} id="suscon_SW_3"><img id="suscon_SW_3_image" src={this.state.sw_3_src}/></div>
-                <div className="suscon_SW_1" onClick={this.click_SW_1} id="suscon_SW_1"><img id="suscon_SW_1_image"src={this.state.sw_1_src}/></div>
+                <div className="suscon_SW_3" onClick={this.props.throw_sw_3} id="suscon_SW_3"><img id="suscon_SW_3_image" src={this.state.sw_3_src}/></div>
+                <div className="suscon_SW_1" onClick={this.props.throw_sw_1} id="suscon_SW_1"><img id="suscon_SW_1_image"src={this.state.sw_1_src}/></div>
 
                 {/* East Side Tracks */}
                 <div className="suscon_1_east" id="suscon_1_west"></div>
@@ -77,34 +77,6 @@ class Suscon extends Component {
 
     click_SIG = (sig_number) => {
         console.log("Signal Clicked " + sig_number);
-    }
-
-    click_SW_1 = () => {
-        this.props.throw_sw_1();
-        //console.log(this.state.sw_1, this.state.sw_3);
-        this.forceUpdate();
-        /*
-        if (this.state.sw_1 === true) {
-            this.setState({sw_1: false, sw_1_src: CX_225});
-        }
-        else {
-            this.setState({sw_1: true, sw_1_src: CX_225_R});
-        }
-        */
-    }
-
-    click_SW_3 = () => {
-        this.props.throw_sw_3();
-        //console.log(this.state.sw_1, this.state.sw_3);
-        this.forceUpdate();
-        /*
-        if (this.state.sw_3) {
-            this.setState({sw_3: false, sw_3_src: CX_135});
-        }
-        else {
-            this.setState({sw_3: true, sw_3_src: CX_135_R});
-        }
-        */
     }
 }
  
