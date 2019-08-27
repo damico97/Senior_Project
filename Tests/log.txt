@@ -69,4 +69,11 @@ August 26, 2019:
     changes in the the script be reflecting in the Component, at this point the data is being sent both ways for 
     the curent status of the crossovers in the interlocking
     (1 Hour)
-    
+
+August 27, 2019:
+    - Started converting Ridgewood Junction from HTML and CSS to a new ReactJS component, also made some changes from
+    my original design, and learned you do draw a diagonal line in CSS
+    (0.75 Hours)
+
+    - Converted Laurel to a new ReactJS component and cleaned up some of my previous designs
+    (0.5 Hours)

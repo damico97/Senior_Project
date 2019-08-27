@@ -6,6 +6,7 @@ import MainLineTracks from '../components/MainLineTracks.jsx';
 import RidgewoodJunction from '../components/RidgewoodJunction.jsx';
 import Suscon from '../components/Suscon.jsx';
 import Mill from '../components/Mill.jsx';
+import Laurel from '../components/Laurel.jsx';
 
 
 
@@ -35,6 +36,7 @@ class MainLine extends Component {
                     throw_sw_3={this.suscon_throw_sw_3}
                 />
                 <Mill />
+                <Laurel />
             </div>
         );
     }
