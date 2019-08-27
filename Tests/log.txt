@@ -12,3 +12,61 @@ August 20, 2019:
     - Tried to create first component, which would be a crossover button, which took
     4 hours to get an image in appear in ReactJS
     (4.5 Hours)
+
+August 21, 2019:
+    - Changed the componet which was going to be just a crossover button to the entire
+    Suscon interlocking. Deciding that each interlocking will be it's own component.
+    (3 Hours)
+
+August 23, 2019:
+    - Tried to figure out how to change an image in ReactJS, which ended up being a
+    real big pain, having to import each image file similar to importing a scrip file.
+    This solution seems weird but it's the only way I've been getting this to work so far.
+    (4 Hours)
+
+August 24, 2019:
+    - Started to get all the crossover buttons working, and changing the image based on clicks,
+    did this for both Suscon and Mill
+    (1 Hour)
+
+    - Converted what I did for the crossover buttons to use the 'state' object which is part of 
+    a ReactJS Component to more closely follow the conventions of ReactJS
+    (2 Hours)
+
+    -
+
+August 25, 2019:
+    - Set up the click function for the signals in Suscon
+    (0.5 Hours)
+
+    - Changed the setup so all the components that make up the Main Line section are wrapped in one
+    component, this will make it eaiser for passing information from the components to the CTC controller
+    both ways. 
+    (0.5 Hours)
+
+    - Changed all the track block colors to be based off the state in their component class.
+    (0.25 Hours)
+
+    - Setup the beginnings of the CTC Controller class which will act as the backend to controll all the 
+    train movements, also created a ctc_block class which is be a instance for each track block on the railroad
+    (0.75 Hours)
+
+    - Tested out have the informmation in the CTC Controller class change the state of the MainLine component
+    by using the props property that is built into react to pass the status of 2 blocks into the component itself.
+    Luckily it works, and I now have the ability CTC Controller change the pannel.
+    (0.5 Hours)
+
+August 26, 2019:
+    - Changed how to pass an object as props in the ReactJS component, instead of a variable for each piece of
+    information that needs to be passed
+    (0.5 Hours)
+
+    - Created a script for the Suscon interlocking to controll the train movements, and started to make this class
+    change the state of the UI and have the changes reflected in either the ReactJS component or the JS script
+    (1.5 Hours)
+
+    - Got the ReactJS component to send it's changes up to the script class for the interlocking, and having the 
+    changes in the the script be reflecting in the Component, at this point the data is being sent both ways for 
+    the curent status of the crossovers in the interlocking
+    (1 Hour)
+    

@@ -1,33 +1,56 @@
 import React, { Component } from 'react';
-import '../css/mainLine.css';
+
+import MaineLine_CTC from '../scripts/mainLine_ctc.js';
+
+import MainLineTracks from '../components/MainLineTracks.jsx';
+import Suscon from '../components/Suscon.jsx';
+import Mill from '../components/Mill.jsx';
+
+const Empty = '#999999';
+const Route = '#75fa4c';
+const Occupied = '#eb3323';
+
+var ctc = new MaineLine_CTC();
 
 class MainLine extends Component {
+    
+    state = {  
+        status_suscon: ctc.get_suscon().get_interlocking_status()
+    };
+
+
     render() { 
+
+        var track_blocks = {
+            block_1: ctc.get_block_1_status(),
+            block_2: ctc.get_block_2_status()
+        };
+
+        //var status_suscon = this.ctc.get_suscon().get_interlocking_status();
+
+        //console.log(this.ctc.get_suscon().get_interlocking_status());
+
         return (  
             <div>
-                {/* West End to Laurel */}
-                <div className="m_westEnd_laurel_1"></div>
-                <div className="m_westEnd_laurel_2"></div>
-                <div className="m_westEnd_laurel_3"></div>
-                <div className="m_westEnd_laurel_4"></div>
-
-                {/* Laurel to West Secaucus */}
-                <div className="m_laurel_westSecaucus_1"></div>
-                <div className="m_laurel_westSecaucus_2"></div>
-
-                {/* West Secaucus To Mill */}
-                <div className="m_westSecaucus_mill_1" id="m_westSecaucus_mill_1"></div>
-                <div className="m_westSecaucus_mill_2" id="m_westSecaucus_mill_2"></div>
-
-                {/* Mill to Suscon */}
-                <div className="m_suscon_mill_1" id="m_suscon_mill_1"></div>
-                <div className="m_suscon_mill_2" id="m_suscon_mill_2"></div>
-
-                {/* Suscon to Ridgewood Junction */}
-                <div className="m_ridgewood_suscon_1" id="m_ridgewood_suscon_1"></div>
-                <div className="m_ridgewood_suscon_2" id="m_ridgewood_suscon_2"></div>
+                <MainLineTracks blocks={track_blocks}/>
+                <Suscon 
+                    status={this.state.status_suscon} 
+                    throw_sw_1={this.suscon_throw_sw_1} 
+                    throw_sw_3={this.suscon_throw_sw_3}
+                />
+                <Mill />
             </div>
         );
+    }
+
+    suscon_throw_sw_1 = () => {
+        ctc.get_suscon().throw_sw_1();
+        this.setState({status_suscon: ctc.get_suscon().get_interlocking_status()});
+    }
+
+    suscon_throw_sw_3 = () => {
+        ctc.get_suscon().throw_sw_3();
+        this.setState({status_suscon: ctc.get_suscon().get_interlocking_status()});
     }
 }
  

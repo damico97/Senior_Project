@@ -52,28 +52,21 @@ class Mill extends Component {
     }
 
     click_SW_1 = () => {
-
         if (this.state.sw_1 === true) {
-            this.state.sw_1_src = CX_225;
-            this.state.sw_1 = false;
+            this.setState({sw_1: false, sw_1_src: CX_225});
         }
         else {
-            this.state.sw_1_src = CX_225_R;
-            this.state.sw_1 = true;
+            this.setState({sw_1: true, sw_1_src: CX_225_R});
         }
-        this.forceUpdate();
     }
 
     click_SW_3 = () => {
         if (this.state.sw_3) {
-            this.state.sw_3_src = CX_135;
-            this.state.sw_3 = false;
+            this.setState({sw_3: false, sw_3_src: CX_135});
         }
         else {
-            this.state.sw_3_src = CX_135_R;
-            this.state.sw_3 = true;
+            this.setState({sw_3: true, sw_3_src: CX_135_R});
         }
-        this.forceUpdate();
     }
 }
  
