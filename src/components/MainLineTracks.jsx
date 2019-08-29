@@ -40,6 +40,11 @@ class MainLineTracks extends Component {
                 {/* Suscon to Ridgewood Junction */}
                 <div className="m_ridgewood_suscon_1" id="m_ridgewood_suscon_1" style={{background: this.state.block_ridgewood_suscon_1}}></div>
                 <div className="m_ridgewood_suscon_2" id="m_ridgewood_suscon_2" style={{background: this.state.block_ridgewood_suscon_2}}></div>
+
+                {/* Ridgewood Junction to Screen */}
+                <div className="m_screen_ridgewood_3"></div>
+                <div className="m_screen_ridgewood_1"></div>
+                <div className="m_screen_ridgewood_2"></div>
             </div>
         );
     }

@@ -77,3 +77,14 @@ August 27, 2019:
 
     - Converted Laurel to a new ReactJS component and cleaned up some of my previous designs
     (0.5 Hours)
+
+    - Did some work on my drawing for the switch buttons on the pannel
+    (0.25 Hours)
+
+    - Converted the West Secaucus from into a ReactJS component
+    (0.5 Hours)
+
+August 28, 2019:
+    - Drawing the Bergen County Line, finished about 95% of the line, creating all the components.
+    (4.5 Hours)
+

@@ -5,30 +5,30 @@
     Occupied Color: #eb3323
 */
 
-    .m_ridgewood_screen_3 {
+    .m_screen_ridgewood_3 {
         position: absolute;
         top: 819px;
-        left: 10px;
+        left: 5px;
         height: 7px;
-        width: 61px;
+        width: 41px;
         background: #999999;
     }
 
-    .m_ridgewood_screen_1 {
+    .m_screen_ridgewood_1 {
         position: absolute;
         top: 850px;
-        left: 10px;
+        left: 5px;
         height: 7px;
-        width: 61px;
+        width: 41px;
         background: #999999;
     }
 
-    .m_ridgewood_screen_2 {
+    .m_screen_ridgewood_2 {
         position: absolute;
         top: 881px;
-        left: 10px;
+        left: 5px;
         height: 7px;
-        width: 61px;
+        width: 41px;
         background: #999999;
     }
 

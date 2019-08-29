@@ -3,7 +3,7 @@ import '../css/ridgewood_jct.css';
 
 import CX_135 from '../../public/images/CX_135.png';
 import CX_225 from '../../public/images/CX_225.png';
-import SW_2_S from '../../public/images/SW_2_S_D_W.png';
+import SW_2_S from '../../public/images/SW_U_E.png';
 
 
 class RidgewoodJunction extends Component {

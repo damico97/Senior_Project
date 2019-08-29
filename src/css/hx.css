@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+    .hx_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 726px;
+        left: 1169px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .hx_SW_3 {
+        position: absolute;
+        z-index: 2;
+        top: 695px;
+        left: 1207px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .hx_SW_5 {
+        position: absolute;
+        z-index: 2;
+        top: 664px;
+        left: 1245px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .hx_1_west {
+        position: absolute;
+        top: 726px;
+        left: 1144px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hx_2_west {
+        position: absolute;
+        top: 757px;
+        left: 1144px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hx_1_east {
+        position: absolute;
+        top: 726px;
+        left: 1245px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hx_2_east {
+        position: absolute;
+        top: 757px;
+        left: 1207px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hx_croxton_1 {
+        position: absolute;
+        top: 664px;
+        left: 1283px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hx_croxton_2 {
+        position: absolute;
+        top: 695px;
+        left: 1283px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }

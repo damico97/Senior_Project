@@ -6,8 +6,13 @@ import MainLineTracks from '../components/MainLineTracks.jsx';
 import RidgewoodJunction from '../components/RidgewoodJunction.jsx';
 import Suscon from '../components/Suscon.jsx';
 import Mill from '../components/Mill.jsx';
+import WestSecaucus from '../components/WestSecaucus.jsx';
 import Laurel from '../components/Laurel.jsx';
 
+import BergenTracks from '../components/BergenTracks.jsx';
+import BT from '../components/BT.jsx';
+import PascackJunction from '../components/PascackJct.jsx';
+import HX from '../components/HX.jsx';
 
 
 var ctc = new MaineLine_CTC();
@@ -28,6 +33,11 @@ class MainLine extends Component {
 
         return (  
             <div>
+                <BergenTracks />
+                <BT />
+                <PascackJunction />
+                <HX />
+
                 <MainLineTracks blocks={track_blocks}/>
                 <RidgewoodJunction />
                 <Suscon 
@@ -36,6 +46,7 @@ class MainLine extends Component {
                     throw_sw_3={this.suscon_throw_sw_3}
                 />
                 <Mill />
+                <WestSecaucus />
                 <Laurel />
             </div>
         );

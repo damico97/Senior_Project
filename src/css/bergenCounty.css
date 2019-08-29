@@ -1,0 +1,165 @@
+@charset "UTF-8";
+/* 
+    Track Color: #999999 
+    Route Color: #75fa4c
+    Occupied Color: #eb3323
+*/
+    .b_laurel_hx_1_west {
+        position: absolute;
+        top: 726px;
+        left: 1275px;
+        height: 7px;
+        width: 20px;
+        background: #999999;
+    }
+
+    .b_laurel_hx_1_diag {
+        position: absolute;
+        top: 788px;
+        left: 1290px;
+        height: 7px;
+        width: 92px;
+        background: #999999;
+        -webkit-transform: 
+            translateY(-31px)
+            translateX(-11px)
+            rotate(43deg);
+    }
+
+    .b_laurel_hx_1_east {
+        position: absolute;
+        top: 788px;
+        left: 1356px;
+        height: 7px;
+        width: 20px;
+        background: #999999;
+    }
+
+    .b_laurel_hx_2_west {
+        position: absolute;
+        top: 757px;
+        left: 1237px;
+        height: 7px;
+        width: 30px;
+        background: #999999;
+    }
+
+    .b_laurel_hx_2_diag {
+        position: absolute;
+        top: 819px;
+        left: 1255px;
+        height: 7px;
+        width: 94px;
+        background: #999999;
+        -webkit-transform: 
+            translateY(-31px)
+            translateX(-3px)
+            rotate(43deg);
+    }
+
+    .b_laurel_hx_2_east {
+        position: absolute;
+        top: 819px;
+        left: 1331px;
+        height: 7px;
+        width: 20px;
+        background: #999999;
+    }
+
+    .b_hx_pascack_1 {
+        position: absolute;
+        top: 726px;
+        left: 1059px;
+        height: 7px;
+        width: 80px;
+        background: #999999;
+    }
+
+    .b_hx_pascack_2 {
+        position: absolute;
+        top: 757px;
+        left: 1059px;
+        height: 7px;
+        width: 80px;
+        background: #999999;
+    }
+
+    .b_pascack_bt_1 {
+        position: absolute;
+        top: 726px;
+        left: 709px;
+        height: 7px;
+        width: 100px;
+        background: #999999;
+    }
+
+    .b_pascack_bt_2 {
+        position: absolute;
+        top: 757px;
+        left: 709px;
+        height: 7px;
+        width: 100px;
+        background: #999999;
+    }
+
+    .b_bt_ridgewood_1_east {
+        position: absolute;
+        top: 726px;
+        left: 450px;
+        height: 7px;
+        width: 85px;
+        background: #999999;
+    }
+
+    .b_bt_ridgewood_1_diag {
+        position: absolute;
+        top: 788px;
+        left: 365px;
+        height: 7px;
+        width: 104px;
+        background: #999999;
+        -webkit-transform: 
+            translateY(-31px)
+            translateX(-6px)
+            rotate(-37.5deg);
+    }
+
+    .b_bt_ridgewood_1_west {
+        position: absolute;
+        top: 788px;
+        left: 347px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .b_bt_ridgewood_2_east {
+        position: absolute;
+        top: 757px;
+        left: 475px;
+        height: 7px;
+        width: 60px;
+        background: #999999;
+    }
+
+    .b_bt_ridgewood_2_diag {
+        position: absolute;
+        top: 819px;
+        left: 390px;
+        height: 7px;
+        width: 104px;
+        background: #999999;
+        -webkit-transform: 
+            translateY(-31px)
+            translateX(-6px)
+            rotate(-37.5deg);
+    }
+
+    .b_bt_ridgewood_2_west {
+        position: absolute;
+        top: 819px;
+        left: 347px;
+        height: 7px;
+        width: 50px;
+        background: #999999;
+    }

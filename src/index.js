@@ -2,9 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import MainLine from './components/MainLine.jsx';
-import MainLineTracks from './components/MainLineTracks.jsx';
-import Suscon from './components/Suscon.jsx';
-import Mill from './components/Mill.jsx';
 
 const hW1 = <h1>Hello World</h1>;
 ReactDOM.render(<div> <MainLine /> </div>, document.getElementById('app')); 

@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+    .pascack_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 726px;
+        left: 839px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .pascack_SW_3 {
+        position: absolute;
+        z-index: 2;
+        top: 726px;
+        left: 877px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .pascack_SW_5 {
+        position: absolute;
+        z-index: 2;
+        top: 695px;
+        left: 915px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .pascack_SW_7 {
+        position: absolute;
+        z-index: 2;
+        top: 726px;
+        left: 953px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .pascack_SW_9 {
+        position: absolute;
+        z-index: 2;
+        top: 695px;
+        left: 991px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .pascack_1_west {
+        position: absolute;
+        top: 726px;
+        left: 814px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .pascack_2_west {
+        position: absolute;
+        top: 757px;
+        left: 814px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .pascack_2_center {
+        position: absolute;
+        top: 757px;
+        left: 915px;
+        height: 7px;
+        width: 38px;
+        background: #999999;
+    }
+
+    .pascack_1_east {
+        position: absolute;
+        top: 726px;
+        left: 1029px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .pascack_2_east {
+        position: absolute;
+        top: 757px;
+        left: 991px;
+        height: 7px;
+        width: 63px;
+        background: #999999;
+    }
