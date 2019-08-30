@@ -4,6 +4,48 @@
     Route Color: #75fa4c
     Occupied Color: #eb3323
 */
+    .bt_nysw_tag {
+        position: absolute;
+        top: 689px;
+        left: 775px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .pascack_line_tag {
+        position: absolute;
+        top: 638px;
+        left: 1060px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .hx_line_tag {
+        position: absolute;
+        top: 674px;
+        left: 1380px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .b_croxton_1 {
+        position: absolute;
+        top: 664px;
+        left: 1313px;
+        height: 7px;
+        width: 60px;
+        background: #999999;
+    }
+
+    .b_croxton_2 {
+        position: absolute;
+        top: 695px;
+        left: 1313px;
+        height: 7px;
+        width: 60px;
+        background: #999999;
+    }
+
     .b_laurel_hx_1_west {
         position: absolute;
         top: 726px;
@@ -161,5 +203,32 @@
         left: 347px;
         height: 7px;
         width: 50px;
+        background: #999999;
+    }
+
+    .b_nysw {
+        position: absolute;
+        top: 695px;
+        left: 709px;
+        height: 7px;
+        width: 60px;
+        background: #999999;
+    }
+
+    .b_pascack_1 {
+        position: absolute;
+        top: 660px;
+        left: 995px;
+        height: 7px;
+        width: 60px;
+        background: #999999;
+    }
+
+    .b_pascack_2 {
+        position: absolute;
+        top: 629px;
+        left: 995px;
+        height: 7px;
+        width: 60px;
         background: #999999;
     }

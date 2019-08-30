@@ -30,6 +30,9 @@ class HX extends Component {
     render() { 
         return (  
             <div>
+                <div className="hx_title">HX</div>
+                <div className="hx_milepost">MP 5.4</div>
+
                 <div className="hx_1_west"></div>
                 <div className="hx_2_west"></div>
 
@@ -41,6 +44,14 @@ class HX extends Component {
                 <div className="hx_2_east"></div>
                 <div className="hx_croxton_1"></div>
                 <div className="hx_croxton_2"></div>
+                
+                <div className="hx_sig_2w-3"><img src={SIG_W}/></div>
+                <div className="hx_sig_2w-2"><img src={SIG_W}/></div>
+                <div className="hx_sig_2w-1"><img src={SIG_W}/></div>
+                <div className="hx_sig_4w"><img src={SIG_W}/></div>
+
+                <div className="hx_sig_2e"><img src={SIG_E}/></div>
+                <div className="hx_sig_4e"><img src={SIG_E}/></div>
             </div>
         );
     }

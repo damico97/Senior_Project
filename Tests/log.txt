@@ -86,5 +86,28 @@ August 27, 2019:
 
 August 28, 2019:
     - Drawing the Bergen County Line, finished about 95% of the line, creating all the components.
-    (4.5 Hours)
+    (5 Hours)
 
+August 29, 2019:
+    - Finished Drawing all the tracks on the Bergen County side of the pannel
+    (1 Hours)
+
+    - Finished drawing of Laurel
+    (0.25 Hours)
+
+    - Finished drawing of ridgewood Junction
+    (0.25 Hours)
+
+August 30, 2019:
+    - Reconfigured pascack Junction
+    (0.25 Hours)
+
+    - Finished the drawing in HX
+    (0.5 Hours)
+
+    - Finished drawings in Pascack Junction
+    (0.25 Hours)
+
+    - Finished drawings in BT and add tags for tracks that lead to other lines
+    (0.25 Hours)
+    

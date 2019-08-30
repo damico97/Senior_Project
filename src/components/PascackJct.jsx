@@ -29,8 +29,21 @@ class PascackJct extends Component {
     render() { 
         return (  
             <div>
+                <div className="pascack_title">PASCACK JUNCTION</div>
+                <div className="pascack_milepost">MP 7.6</div>
+
                 <div className="pascack_1_west"></div>
                 <div className="pascack_2_west"></div>
+                <div className="pascack_pascack_1_west"></div>
+                <div className="pascack_pascack_1_diag_bot"></div>
+                <div className="pascack_pascack_1_center"></div>
+                <div className="pascack_pascack_1_diag_top"></div>
+                <div className="pascack_pascack_1_east"></div>
+                <div className="pascack_pascack_2_west"></div>
+               
+                <div className="pascack_pascack_2_center"></div>
+                <div className="pascack_pascack_2_diag_top"></div>
+                
 
                 <div className="pascack_SW_1"><img src={CX_225}/></div>
                 <div className="pascack_SW_3"><img src={CX_135}/></div>
@@ -42,6 +55,14 @@ class PascackJct extends Component {
 
                 <div className="pascack_1_east"></div>
                 <div className="pascack_2_east"></div>
+
+                <div className="pascack_sig_2w"><img src={SIG_W}/></div>
+                <div className="pascack_sig_4w"><img src={SIG_W}/></div>
+
+                <div className="pascack_sig_2e-2"><img src={SIG_W}/></div>
+                <div className="pascack_sig_2e-1"><img src={SIG_W}/></div>
+                <div className="pascack_sig_6e"><img src={SIG_E}/></div>
+                <div className="pascack_sig_4e"><img src={SIG_E}/></div>
             </div>
         );
     }

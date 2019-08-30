@@ -1,5 +1,25 @@
 @charset "UTF-8";
 
+    /* Texts */
+    .hx_title {
+        position: absolute;
+        top: 620px;
+        left: 1207px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .hx_milepost {
+        position: absolute;
+        top: 640px;
+        left: 1200px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+
+    /* Switches */
     .hx_SW_1 {
         position: absolute;
         z-index: 2;
@@ -29,7 +49,10 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches */
 
+
+    /* Tail Tracks */
     .hx_1_west {
         position: absolute;
         top: 726px;
@@ -83,3 +106,61 @@
         width: 25px;
         background: #999999;
     }
+    /* END Tail Tracks */
+
+
+    /* Signals */
+    .hx_sig_2w-3 {
+        position: absolute;
+        top: 646px;
+        left: 1286px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hx_sig_2w-2 {
+        position: absolute;
+        top: 677px;
+        left: 1286px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hx_sig_2w-1 {
+        position: absolute;
+        top: 708px;
+        left: 1248px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hx_sig_4w {
+        position: absolute;
+        top: 739px;
+        left: 1210px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hx_sig_2e {
+        position: absolute;
+        top: 730px;
+        left: 1148px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hx_sig_4e {
+        position: absolute;
+        top: 761px;
+        left: 1148px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+    /* END Signals */

@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
+     /* Texts */
+     .bt_title {
+        position: absolute;
+        top: 650px;
+        left: 612px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .bt_milepost {
+        position: absolute;
+        top: 670px;
+        left: 600px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
     .bt_SW_1 {
         position: absolute;
         z-index: 2;
@@ -74,3 +92,50 @@
         width: 25px;
         background: #999999;
     }
+
+    /* Signals */
+    .bt_sig_2w-2 {
+        position: absolute;
+        top: 677px;
+        left: 682px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .bt_sig_2w-1 {
+        position: absolute;
+        top: 708px;
+        left: 682px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .bt_sig_4w {
+        position: absolute;
+        top: 739px;
+        left: 682px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .bt_sig_2e {
+        position: absolute;
+        top: 730px;
+        left: 544px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .bt_sig_4e {
+        position: absolute;
+        top: 761px;
+        left: 544px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+    /* END Signals */

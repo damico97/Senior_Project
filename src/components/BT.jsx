@@ -29,6 +29,9 @@ class BT extends Component {
     render() { 
         return ( 
             <div>
+                <div className="bt_title">BT</div>
+                <div className="bt_milepost">MP 14.2</div>
+
                 <div className="bt_1_west"></div>
                 <div className="bt_2_west"></div>
 
@@ -39,6 +42,13 @@ class BT extends Component {
                 <div className="bt_1_east"></div>
                 <div className="bt_2_east"></div>
                 <div className="bt_3_east"></div>
+
+                <div className="bt_sig_2w-2"><img src={SIG_W}/></div>
+                <div className="bt_sig_2w-1"><img src={SIG_W}/></div>
+                <div className="bt_sig_4w"><img src={SIG_W}/></div>
+
+                <div className="bt_sig_2e"><img src={SIG_E}/></div>
+                <div className="bt_sig_4e"><img src={SIG_E}/></div>
             </div>
         );
     }

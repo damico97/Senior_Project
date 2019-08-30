@@ -10,6 +10,13 @@ class BergenTracks extends Component {
     render() { 
         return (  
             <div>
+                <div className="bt_nysw_tag">NYS&W RR</div>
+                <div className="pascack_line_tag">Pascack Valley</div>
+                <div className="hx_line_tag">Norfolk Southern Croxton Yard</div>
+
+                <div className="b_croxton_1"></div>
+                <div className="b_croxton_2"></div>
+
                 <div className="b_laurel_hx_1_west"></div>
                 <div className="b_laurel_hx_1_diag"></div>
                 <div className="b_laurel_hx_1_east"></div>
@@ -22,6 +29,11 @@ class BergenTracks extends Component {
 
                 <div className="b_pascack_bt_1"></div>
                 <div className="b_pascack_bt_2"></div>
+
+                <div className="b_pascack_1"></div>
+                <div className="b_pascack_2"></div>
+
+                <div className="b_nysw"></div>
 
                 <div className="b_bt_ridgewood_1_east"></div>
                 <div className="b_bt_ridgewood_1_diag"></div>
