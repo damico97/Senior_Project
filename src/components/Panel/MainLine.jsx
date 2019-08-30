@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
-import MaineLine_CTC from '../scripts/mainLine_ctc.js';
+import MaineLine_CTC from '../../scripts/mainLine_ctc.js';
 
-import MainLineTracks from '../components/MainLineTracks.jsx';
-import RidgewoodJunction from '../components/RidgewoodJunction.jsx';
-import Suscon from '../components/Suscon.jsx';
-import Mill from '../components/Mill.jsx';
-import WestSecaucus from '../components/WestSecaucus.jsx';
-import Laurel from '../components/Laurel.jsx';
+import MainLineTracks from '../Panel/Main_Line/MainLineTracks.jsx';
+import RidgewoodJunction from '../Panel/Main_Line/RidgewoodJunction.jsx';
+import Suscon from '../Panel/Main_Line/Suscon.jsx';
+import Mill from '../Panel/Main_Line/Mill.jsx';
+import WestSecaucus from '../Panel/Main_Line/WestSecaucus.jsx';
+import Laurel from '../Panel/Main_Line/Laurel.jsx';
 
-import BergenTracks from '../components/BergenTracks.jsx';
-import BT from '../components/BT.jsx';
-import PascackJunction from '../components/PascackJct.jsx';
-import HX from '../components/HX.jsx';
+import BergenTracks from '../Panel/Bergen_County_Line/BergenTracks.jsx';
+import BT from '../Panel/Bergen_County_Line/BT.jsx';
+import PascackJunction from '../Panel/Bergen_County_Line/PascackJct.jsx';
+import HX from '../Panel/Bergen_County_Line/HX.jsx';
 
 
 var ctc = new MaineLine_CTC();

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import '../css/west_secaucus.css';
+import '../../../css/Main_Line/west_secaucus.css';
 
-import SW_D_E from '../../public/images/SW_D_E.png';
-import SW_D_W from '../../public/images/SW_D_W.png';
+import SW_D_E from '../../../../public/images/SW_D_E.png';
+import SW_D_W from '../../../../public/images/SW_D_W.png';
 
-import SIG_W from '../../public/images/SIG_W.png';
-import SIG_E from '../../public/images/SIG_E.png';
+import SIG_W from '../../../../public/images/SIG_W.png';
+import SIG_E from '../../../../public/images/SIG_E.png';
 
 class WestSecaucus extends Component {
     state = {  }

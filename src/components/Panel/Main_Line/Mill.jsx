@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import '../css/mill.css';
+import '../../../css/Main_Line/mill.css';
 
 // Import Images
 // Switch Images
-import CX_135 from '../../public/images/CX_135.png';
-import CX_135_R from '../../public/images/CX_135_R.png';
-import CX_225 from '../../public/images/CX_225.png';
-import CX_225_R from '../../public/images/CX_225_R.png';
+import CX_135 from '../../../../public/images/CX_135.png';
+import CX_135_R from '../../../../public/images/CX_135_R.png';
+import CX_225 from '../../../../public/images/CX_225.png';
+import CX_225_R from '../../../../public/images/CX_225_R.png';
 // Signal Images
-import SIG_W from '../../public/images/SIG_W.png';
-import SIG_E from '../../public/images/SIG_E.png';
+import SIG_W from '../../../../public/images/SIG_W.png';
+import SIG_E from '../../../../public/images/SIG_E.png';
 
 class Mill extends Component {
     state = {

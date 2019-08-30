@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/bergenCounty.css';
+import '../../../css/Bergen_County_Line/bergenCounty.css';
 
 const Empty = '#999999';
 const Route = '#75fa4c';

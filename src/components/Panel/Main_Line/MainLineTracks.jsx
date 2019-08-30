@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/mainLine.css';
+import '../../../css/Main_Line/mainLine.css';
 
 const Empty = '#999999';
 const Route = '#75fa4c';
