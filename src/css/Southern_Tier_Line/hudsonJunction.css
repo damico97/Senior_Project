@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+    /* Texts */
+    .hudson_title {
+        position: absolute;
+        top: 320px;
+        left: 835px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .hudson_milepost {
+        position: absolute;
+        top: 340px;
+        left: 900px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+    .hudson_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 369px;
+        left: 896px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .hudson_SW_3 {
+        position: absolute;
+        z-index: 2;
+        top: 400px;
+        left: 934px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .hudson_east {
+        position: absolute;
+        top: 400px;
+        left: 972px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hudson_nysw {
+        position: absolute;
+        top: 431px;
+        left: 972px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hudson_2_west {
+        position: absolute;
+        top: 369px;
+        left: 871px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hudson_1_west {
+        position: absolute;
+        top: 400px;
+        left: 871px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hudson_sig_2es {
+        position: absolute;
+        top: 374px;
+        left: 873px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hudson_sig_2e {
+        position: absolute;
+        top: 405px;
+        left: 873px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hudson_sig_2w {
+        position: absolute;
+        top: 382px;
+        left: 973px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hudson_sig_2ws {
+        position: absolute;
+        top: 413px;
+        left: 973px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }

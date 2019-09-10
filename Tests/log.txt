@@ -110,4 +110,119 @@ August 30, 2019:
 
     - Finished drawings in BT and add tags for tracks that lead to other lines
     (0.25 Hours)
-    
+
+    - Orgainized the files structure a bit, and dealt with all the changing of
+    import statments 
+    (0.25 Hours)
+
+    - Created a component for Harriman, starting the next line of tracks for the pannel
+    (0.5 Hours)
+
+    - Created a comonent for Sterling, and the tracks between the interlockings, also works on 
+    parts of hilburn, and sf for the leads to the yard between the hilburn and sf
+    (1 Hour)
+
+August 31, 2019:
+    - Finished drawing the the Main Line
+    (2 Hours)
+
+    - Continuted work on the Southern Tier line, finished about 85%
+    (4.5 Hours)
+
+September 1, 2019:
+    - Finished All drawings on the pannel
+    (2 Hours)
+
+September 2, 2019:
+    - Started connecting all the track blocks on the Main Line to the ctc scripts, now having
+    the ctc class controlling the front end of the pannel.
+    (2.5 Hours)
+
+September 3, 2019:
+    - Fixed the bugs I was having trying to connect the ctc class to show the correct informating
+    when the frontend refreshes the screen.
+    (0.75 Hours)
+
+    - Created a new class for a game clock, so start trying to get the trains to move accross the 
+    screen to
+    (0.5 Hours)
+
+    - Debugged a problem in the clock class, and now I have a hardcoded train moving accross some of
+    the blocks
+    (0.25 Hours)
+
+    - Configured the ctc_suscon class to create a route through the interlocking based on the status 
+    of the switches and what signal you click
+    (0.5 Hours)
+
+    - Got the Suscon component to draw the routing in the UI givien the route status of the ctc_suscon
+    class
+    (4 Hours)
+
+    - Now the route draw turns to occupied if you set the interlocking to that state and created a 
+    function to deal with that and will also clear the drawing when the hard coded train passes the
+    location
+    (2 Hours)
+
+September 4, 2019:
+    - Finally found a good way to store and display routes, using something that I 
+    already had in place.
+
+    - Created a class for the the trains, and now have a actual train moving around the pannel
+    (2.5 Hours)
+
+    - Figures out how to have the routes passes to the train, and now the train can move based off of
+    how the player has created routes on the pannel
+    (3 Hours)
+
+    - Spent a while trying to get the interlocking to become occupied when a train is present, have yet
+    to find a good way to do this and will have to revist it.
+    (1.5 Hours)
+
+September 5, 2019:
+    - Again tried to figure out how to occupie the interlocking in a good way, and still have yet to 
+    come up with a ellagent solution
+    (2 Hours)
+
+    - West Secaucus is now fully operational
+    (3 Hours)
+
+    - Routing for Ridgewood Junction is now complete, all thats left is getting the drawings up and
+    running, which might by interesting
+    (2 Hours)
+
+    - Testing 2 trains at once, and it seems to be working finished
+    (0.5 Hours)
+
+September 6, 2019:
+    - Reworked how routes are given to trains to make it much easier to have trains to be going in both
+    directions
+    (1.5 Hours)
+
+    - Fixed issue with the routings for all the current interlockings
+    (2 Hours)
+
+September 7, 2019:
+    - Finished all the drawing for routes in Ridgewood, and have decided to finish the routing first, and
+    then go back to the drawings, because the take the most time
+    (6 Hours)
+
+September 9, 2019:
+    - Finsihed the routings for Laurel
+    (2.5 Hours)
+
+    - Finished the routings at the WC interlocking, will still have to go back and add the drawins when
+    a route is lined
+    (1.5 Hours)
+
+    - Finished the routings in the SF interlocking
+    (1 Hours)
+
+    - Finished the routings in the Hilburn interlocking
+    (0.5 Hours)
+
+    - Did some debugging to fix an minor issue with train movements through hilburn interlocking, at this
+    point now a train can run from Laurel to Sterling
+    (0.25 Hours)
+
+

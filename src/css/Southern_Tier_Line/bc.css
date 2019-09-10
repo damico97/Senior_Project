@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+    /* Texts */
+    .bc_title {
+        position: absolute;
+        top: 180px;
+        left: 1008px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .bc_milepost {
+        position: absolute;
+        top: 200px;
+        left: 1000px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+    .bc_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 230px;
+        left: 1018px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .bc_1_west {
+        position: absolute;
+        top: 230px;
+        left: 993px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .bc_2_west {
+        position: absolute;
+        top: 261px;
+        left: 993px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .bc_east {
+        position: absolute;
+        top: 261px;
+        left: 1056px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .bc_sig_2e {
+        position: absolute;
+        top: 235px;
+        left: 995px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .bc_sig_4e {
+        position: absolute;
+        top: 266px;
+        left: 995px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .bc_sig_2w {
+        position: absolute;
+        top: 243px;
+        left: 1058px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }

@@ -6,7 +6,35 @@ const Route = '#75fa4c';
 const Occupied = '#eb3323';
 
 class BergenTracks extends Component {
-    state = {  }
+    state = {  
+        block_hx_laurel_1: this.props.blocks.block_hx_laurel_1,
+        block_hx_laurel_2: this.props.blocks.block_hx_laurel_2,
+
+        block_pascack_hx_1: this.props.blocks.block_pascack_hx_1,
+        block_pascack_hx_2: this.props.blocks.block_pascack_hx_2,
+
+        block_bt_pascack_1: this.props.blocks.block_bt_pascack_1,
+        block_bt_pascack_2: this.props.blocks.block_bt_pascack_2,
+
+        block_ridgewood_bt_1: this.props.blocks.block_ridgewood_bt_1,
+        block_ridgewood_bt_2: this.props.blocks.block_ridgewood_bt_2
+    };
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            block_hx_laurel_1: nextProps.blocks.block_hx_laurel_1,
+            block_hx_laurel_2: nextProps.blocks.block_hx_laurel_2,
+
+            block_pascack_hx_1: nextProps.blocks.block_pascack_hx_1,
+            block_pascack_hx_2: nextProps.blocks.block_pascack_hx_2,
+
+            block_bt_pascack_1: nextProps.blocks.block_bt_pascack_1,
+            block_bt_pascack_2: nextProps.blocks.block_bt_pascack_2,
+
+            block_ridgewood_bt_1: nextProps.blocks.block_ridgewood_bt_1,
+            block_ridgewood_bt_2: nextProps.blocks.block_ridgewood_bt_2
+        });
+    }
     render() { 
         return (  
             <div>
@@ -17,12 +45,12 @@ class BergenTracks extends Component {
                 <div className="b_croxton_1"></div>
                 <div className="b_croxton_2"></div>
 
-                <div className="b_laurel_hx_1_west"></div>
-                <div className="b_laurel_hx_1_diag"></div>
-                <div className="b_laurel_hx_1_east"></div>
-                <div className="b_laurel_hx_2_west"></div>
-                <div className="b_laurel_hx_2_diag"></div>
-                <div className="b_laurel_hx_2_east"></div>
+                <div className="b_laurel_hx_1_west" style={{background: this.state.block_hx_laurel_1}}></div>
+                <div className="b_laurel_hx_1_diag" style={{background: this.state.block_hx_laurel_1}}></div>
+                <div className="b_laurel_hx_1_east" style={{background: this.state.block_hx_laurel_1}}></div>
+                <div className="b_laurel_hx_2_west" style={{background: this.state.block_hx_laurel_2}}></div>
+                <div className="b_laurel_hx_2_diag" style={{background: this.state.block_hx_laurel_2}}></div>
+                <div className="b_laurel_hx_2_east" style={{background: this.state.block_hx_laurel_2}}></div>
 
                 <div className="b_hx_pascack_1"></div>
                 <div className="b_hx_pascack_2"></div>
@@ -35,12 +63,12 @@ class BergenTracks extends Component {
 
                 <div className="b_nysw"></div>
 
-                <div className="b_bt_ridgewood_1_east"></div>
-                <div className="b_bt_ridgewood_1_diag"></div>
-                <div className="b_bt_ridgewood_1_west"></div>
-                <div className="b_bt_ridgewood_2_east"></div>
-                <div className="b_bt_ridgewood_2_diag"></div>
-                <div className="b_bt_ridgewood_2_west"></div>
+                <div className="b_bt_ridgewood_1_east" style={{background: this.state.block_ridgewood_bt_1}}></div>
+                <div className="b_bt_ridgewood_1_diag" style={{background: this.state.block_ridgewood_bt_1}}></div>
+                <div className="b_bt_ridgewood_1_west" style={{background: this.state.block_ridgewood_bt_1}}></div>
+                <div className="b_bt_ridgewood_2_east" style={{background: this.state.block_ridgewood_bt_2}}></div>
+                <div className="b_bt_ridgewood_2_diag" style={{background: this.state.block_ridgewood_bt_2}}></div>
+                <div className="b_bt_ridgewood_2_west" style={{background: this.state.block_ridgewood_bt_2}}></div>
             </div>
         );
     }

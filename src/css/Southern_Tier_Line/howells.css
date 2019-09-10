@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+    /* Texts */
+    .howells_title {
+        position: absolute;
+        top: 320px;
+        left: 295px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .howells_milepost {
+        position: absolute;
+        top: 340px;
+        left: 322px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+    .howells_SW_3 {
+        position: absolute;
+        z-index: 2;
+        top: 369px;
+        left: 335px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .howells_2_west {
+        position: absolute;
+        top: 369px;
+        left: 310px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .howells_1_west {
+        position: absolute;
+        top: 400px;
+        left: 310px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .howells_east {
+        position: absolute;
+        top: 400px;
+        left: 373px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .howells_sig_2es {
+        position: absolute;
+        top: 374px;
+        left: 313px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .howells_sig_2e {
+        position: absolute;
+        top: 405px;
+        left: 313px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .howells_sig_2w {
+        position: absolute;
+        top: 382px;
+        left: 376px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }

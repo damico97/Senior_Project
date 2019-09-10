@@ -5,6 +5,121 @@
     Occupied Color: #eb3323
 */
 
+    .wc_yard_tag {
+        position: absolute;
+        top: 470px;
+        left: 1225px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .hilburn_yard_tag {
+        position: absolute;
+        top: 565px;
+        left: 828px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .m_sterling_hilburn_2 {
+        position: absolute;
+        top: 540px;
+        left: 599px;
+        height: 7px;
+        width: 90px;
+        background: #999999;
+    }
+
+    .m_sterling_sf_1 {
+        position: absolute;
+        top: 509px;
+        left: 599px;
+        height: 7px;
+        width: 353px;
+        background: #999999;
+    }
+
+    .m_hilburn_sf {
+        position: absolute;
+        top: 540px;
+        left: 787px;
+        height: 7px;
+        width: 165px;
+        background: #999999;
+    }
+
+    .m_hilburn_yard_east {
+        position: absolute;
+        top: 571px;
+        left: 918px;
+        height: 7px;
+        width: 35px;
+        background: #999999;
+    }
+
+    .m_hilburn_yard_west {
+        position: absolute;
+        top: 571px;
+        left: 787px;
+        height: 7px;
+        width: 35px;
+        background: #999999;
+    }
+
+    .m_sf_wc_1 {
+        position: absolute;
+        top: 509px;
+        left: 1089px;
+        height: 7px;
+        width: 246px;
+        background: #999999;
+    }
+
+    .m_sf_wc_2 {
+        position: absolute;
+        top: 540px;
+        left: 1089px;
+        height: 7px;
+        width: 246px;
+        background: #999999;
+    }
+
+    .m_wc_yard {
+        position: absolute;
+        top: 478px;
+        left: 1330px;
+        height: 7px;
+        width: 43px;
+        background: #999999;
+    }
+
+    .m_wc_screen_3 {
+        position: absolute;
+        top: 478px;
+        left: 1547px;
+        height: 7px;
+        width: 125px;
+        background: #999999;
+    }
+
+    .m_wc_screen_1 {
+        position: absolute;
+        top: 509px;
+        left: 1547px;
+        height: 7px;
+        width: 125px;
+        background: #999999;
+    }
+
+    .m_wc_screen_2 {
+        position: absolute;
+        top: 540px;
+        left: 1547px;
+        height: 7px;
+        width: 125px;
+        background: #999999;
+    }
+
     .m_screen_ridgewood_3 {
         position: absolute;
         top: 819px;

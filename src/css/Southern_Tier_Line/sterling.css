@@ -1,0 +1,92 @@
+@charset "UTF-8";
+    
+    /* Texts */
+    .sterling_title {
+        position: absolute;
+        top: 455px;
+        left: 490px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .sterling_milepost {
+        position: absolute;
+        top: 475px;
+        left: 520px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+
+    /* Switches */
+    .sterling_SW_21 {
+        position: absolute;
+        z-index: 2;
+        top: 509px;
+        left: 531px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+    /* END Switches*/
+
+
+    /* Tail Tracks */
+    .sterling_west {
+        position: absolute;
+        top: 540px;
+        left: 506px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .sterling_2_east {
+        position: absolute;
+        top: 540px;
+        left: 569px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .sterling_1_east {
+        position: absolute;
+        top: 509px;
+        left: 569px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+    /* END Tail Tracks */
+
+
+    /* Signals */
+    .sterling_sig_2ws {
+        position: absolute;
+        top: 491px;
+        left: 572px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .sterling_sig_2w {
+        position: absolute;
+        top: 522px;
+        left: 572px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .sterling_sig_1e {
+        position: absolute;
+        top: 545px;
+        left: 508px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+    /* END Signals */

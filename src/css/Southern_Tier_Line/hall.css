@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+    /* Texts */
+    .hall_title {
+        position: absolute;
+        top: 320px;
+        left: 618px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .hall_milepost {
+        position: absolute;
+        top: 340px;
+        left: 625px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+    .hall_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 369px;
+        left: 634px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .hall_yard {
+        position: absolute;
+        top: 369px;
+        left: 609px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hall_west {
+        position: absolute;
+        top: 400px;
+        left: 609px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hall_2_east {
+        position: absolute;
+        top: 369px;
+        left: 672px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hall_1_east {
+        position: absolute;
+        top: 400px;
+        left: 672px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hall_sig_4w {
+        position: absolute;
+        top: 351px;
+        left: 675px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hall_sig_2w {
+        position: absolute;
+        top: 382px;
+        left: 675px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hall_sig_4e {
+        position: absolute;
+        top: 374px;
+        left: 611px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hall_sig_2e {
+        position: absolute;
+        top: 405px;
+        left: 611px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    

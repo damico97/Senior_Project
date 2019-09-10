@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+    /* Texts */
+    .harriman_title {
+        position: absolute;
+        top: 460px;
+        left: 115px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .harriman_milepost {
+        position: absolute;
+        top: 480px;
+        left: 148px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+
+    /* Switches */
+    .harriman_SW_21 {
+        position: absolute;
+        z-index: 2;
+        top: 509px;
+        left: 135px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .harriman_SW_32 {
+        position: absolute;
+        z-index: 2;
+        top: 540px;
+        left: 173px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+    /* END Switches */
+
+
+    /* Tail Tracks */
+    .harriman_1_west {
+        position: absolute;
+        top: 540px;
+        left: 110px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .harriman_2_west {
+        position: absolute;
+        top: 509px;
+        left: 110px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .harriman_industrial {
+        position: absolute;
+        top: 571px;
+        left: 148px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .harriman_1_east {
+        position: absolute;
+        top: 540px;
+        left: 211px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+    /* END Tail Tracks */
+
+
+    /* Signals */
+    .harriman_sig_2e {
+        position: absolute;
+        top: 514px;
+        left: 112px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .harriman_sig_1e {
+        position: absolute;
+        top: 545px;
+        left: 112px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .harriman_sig_3e {
+        position: absolute;
+        top: 576px;
+        left: 152px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .harriman_sig_1w {
+        position: absolute;
+        top: 522px;
+        left: 214px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+    /* END Signals */

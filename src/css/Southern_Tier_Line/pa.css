@@ -1,0 +1,175 @@
+@charset "UTF-8";
+    
+    /* Texts */
+    .pa_title {
+        position: absolute;
+        top: 145px;
+        left: 505px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .pa_milepost {
+        position: absolute;
+        top: 165px;
+        left: 495px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+    .pa_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 199px;
+        left: 547px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .pa_SW_3 {
+        position: absolute;
+        z-index: 2;
+        top: 230px;
+        left: 509px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .pa_SW_5 {
+        position: absolute;
+        z-index: 2;
+        top: 261px;
+        left: 471px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .pa_1_west {
+        position: absolute;
+        top: 230px;
+        left: 446px;
+        height: 7px;
+        width: 63px;
+        background: #999999;
+    }
+
+    .pa_2_west {
+        position: absolute;
+        top: 261px;
+        left: 446px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .pa_buckleys_west {
+        position: absolute;
+        top: 292px;
+        left: 446px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .pa_yard {
+        position: absolute;
+        top: 199px;
+        left: 585px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .pa_1_east {
+        position: absolute;
+        top: 230px;
+        left: 585px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .pa_2_east {
+        position: absolute;
+        top: 261px;
+        left: 547px;
+        height: 7px;
+        width: 63px;
+        background: #999999;
+    }
+
+    .pa_buckleys_east {
+        position: absolute;
+        top: 292px;
+        left: 508px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .pa_sig_2w-2 {
+        position: absolute;
+        top: 181px;
+        left: 587px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .pa_sig_2w-1 {
+        position: absolute;
+        top: 212px;
+        left: 587px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .pa_sig_4w {
+        position: absolute;
+        top: 243px;
+        left: 587px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .pa_sig_6w {
+        position: absolute;
+        top: 274px;
+        left: 511px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .pa_sig_2e {
+        position: absolute;
+        top: 235px;
+        left: 450px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .pa_sig_4e {
+        position: absolute;
+        top: 266px;
+        left: 450px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .pa_sig_6e {
+        position: absolute;
+        top: 297px;
+        left: 450px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }

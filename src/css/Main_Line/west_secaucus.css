@@ -4,6 +4,24 @@
     Route Color: #75fa4c
     Occupied Color: #eb3323
 */
+    /* Texts */
+    .westSecaucus_title {
+        position: absolute;
+        top: 805px;
+        left: 1155px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .westSecaucus_milepost {
+        position: absolute;
+        top: 825px;
+        left: 1235px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */  
+
     .westSecaucus_SW_1 {
         position: absolute;
         z-index: 2;

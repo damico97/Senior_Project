@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+    /* Texts */
+    .hilburn_title {
+        position: absolute;
+        top: 455px;
+        left: 699px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .hilburn_milepost {
+        position: absolute;
+        top: 475px;
+        left: 715px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+
+    /* Switches */
+    .hilburn_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 540px;
+        left: 719px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+    /* END Switches */
+
+
+    /* Tail Tracks */
+    .hilburn_west {
+        position: absolute;
+        top: 540px;
+        left: 694px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hilburn_east {
+        position: absolute;
+        top: 540px;
+        left: 757px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .hilburn_yard {
+        position: absolute;
+        top: 571px;
+        left: 757px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+    /* END Tail Tracks */
+
+
+    /* Signals */
+    .hilburn_sig_2w-1 {
+        position: absolute;
+        top: 522px;
+        left: 759px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hilburn_sig_2w-2 {
+        position: absolute;
+        top: 553px;
+        left: 759px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .hilburn_sig_2e {
+        position: absolute;
+        top: 545px;
+        left: 696px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+    /* END Signals */

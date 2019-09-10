@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+    /* Texts */
+    .wc_title {
+        position: absolute;
+        top: 430px;
+        left: 1430px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .wc_milepost {
+        position: absolute;
+        top: 450px;
+        left: 1420px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+    .wc_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 509px;
+        left: 1365px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .wc_SW_3 {
+        position: absolute;
+        z-index: 2;
+        top: 478px;
+        left: 1403px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .wc_SW_5 {
+        position: absolute;
+        z-index: 2;
+        top: 509px;
+        left: 1441px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .wc_SW_7 {
+        position: absolute;
+        z-index: 2;
+        top: 478px;
+        left: 1479px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .wc_yard {
+        position: absolute;
+        top: 478px;
+        left: 1378px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .wc_1_west {
+        position: absolute;
+        top: 509px;
+        left: 1340px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .wc_2_west {
+        position: absolute;
+        top: 540px;
+        left: 1340px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .wc_2_center {
+        position: absolute;
+        top: 540px;
+        left: 1403px;
+        height: 7px;
+        width: 38px;
+        background: #999999;
+    }
+
+    .wc_3_east {
+        position: absolute;
+        top: 478px;
+        left: 1517px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .wc_1_east {
+        position: absolute;
+        top: 509px;
+        left: 1517px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .wc_2_east {
+        position: absolute;
+        top: 540px;
+        left: 1479px;
+        height: 7px;
+        width: 63px;
+        background: #999999;
+    }
+
+    .wc_sig_2e-2 {
+        position: absolute;
+        top: 483px;
+        left: 1381px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .wc_sig_2e-1 {
+        position: absolute;
+        top: 514px;
+        left: 1344px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .wc_sig_4e {
+        position: absolute;
+        top: 545px;
+        left: 1344px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .wc_sig_2w-2 {
+        position: absolute;
+        top: 460px;
+        left: 1520px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .wc_sig_2w-1 {
+        position: absolute;
+        top: 491px;
+        left: 1520px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .wc_sig_4w {
+        position: absolute;
+        top: 522px;
+        left: 1520px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }

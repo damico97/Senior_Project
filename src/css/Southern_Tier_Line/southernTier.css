@@ -1,0 +1,319 @@
+@charset "UTF-8";
+
+    /* Tags */
+    .port_jervis_tag_1 {
+        position: absolute;
+        top: 180px;
+        left: 642px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .port_jervis_tag_2 {
+        position: absolute;
+        top: 193px;
+        left: 662px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .crippple_tag {
+        position: absolute;
+        top: 193px;
+        left: 275px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .buckleys_tag {
+        position: absolute;
+        top: 300px;
+        left: 480px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .hall_yard_tag {
+        position: absolute;
+        top: 362px;
+        left: 420px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .hudson_nysw_tag {
+        position: absolute;
+        top: 425px;
+        left: 1090px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .harriman_int_tag {
+        position: absolute;
+        top: 555px;
+        left: 24px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+
+    .harriman_int_tag_2 {
+        position: absolute;
+        top: 572px;
+        left: 24px;
+        font-size: 16px;
+        color: #52fff6;
+    }
+    /* END Tags */
+
+    .s_ov_screen_2 {
+        position: absolute;
+        top: 230px;
+        left: 1500px;
+        height: 7px;
+        width: 170px;
+        background: #999999;
+    }
+
+    .s_ov_screen_1 {
+        position: absolute;
+        top: 261px;
+        left: 1500px;
+        height: 7px;
+        width: 170px;
+        background: #999999;
+    }
+
+    .s_ov_bc {
+        position: absolute;
+        top: 261px;
+        left: 1086px;
+        height: 7px;
+        width: 291px;
+        background: #999999;
+    }
+
+    .s_bc_port_1 {
+        position: absolute;
+        top: 230px;
+        left: 838px;
+        height: 7px;
+        width: 150px;
+        background: #999999;
+    }
+
+    .s_port_pa_1 {
+        position: absolute;
+        top: 230px;
+        left: 615px;
+        height: 7px;
+        width: 125px;
+        background: #999999;
+    }
+
+    .s_bc_pa_2 {
+        position: absolute;
+        top: 261px;
+        left: 615px;
+        height: 7px;
+        width: 373px;
+        background: #999999;
+    }
+
+    .s_port_yard_west {
+        position: absolute;
+        top: 199px;
+        left: 615px;
+        height: 7px;
+        width: 30px;
+        background: #999999;
+    }
+
+    .s_port_yard_east {
+        position: absolute;
+        top: 199px;
+        left: 710px;
+        height: 7px;
+        width: 30px;
+        background: #999999;
+    }
+
+    .s_sparrow_pa_1 {
+        position: absolute;
+        top: 230px;
+        left: 241px;
+        height: 7px;
+        width: 200px;
+        background: #999999;
+    }
+
+    .s_sparrow_pa_2 {
+        position: absolute;
+        top: 261px;
+        left: 203px;
+        height: 7px;
+        width: 238px;
+        background: #999999;
+    }
+
+    .s_sparrow_cripple {
+        position: absolute;
+        top: 199px;
+        left: 241px;
+        height: 7px;
+        width: 30px;
+        background: #999999;
+    }
+
+    .s_buckleys_west {
+        position: absolute;
+        top: 292px;
+        left: 411px;
+        height: 7px;
+        width: 30px;
+        background: #999999;
+    }
+
+    .s_buckleys_east {
+        position: absolute;
+        top: 292px;
+        left: 538px;
+        height: 7px;
+        width: 30px;
+        background: #999999;
+    }
+
+    .s_screen_sparrow {
+        position: absolute;
+        top: 230px;
+        left: 5px;
+        height: 7px;
+        width: 100px;
+        background: #999999;
+    }
+
+    .s_screen_harriman_1 {
+        position: absolute;
+        top: 540px;
+        left: 5px;
+        height: 7px;
+        width: 100px;
+        background: #999999;
+    }
+
+    .s_screen_harriman_2 {
+        position: absolute;
+        top: 509px;
+        left: 5px;
+        height: 7px;
+        width: 100px;
+        background: #999999;
+    }
+
+    .s_harriman_industrial {
+        position: absolute;
+        top: 571px;
+        left: 93px;
+        height: 7px;
+        width: 50px;
+        background: #999999;
+    }
+
+    .s_sterling_harriman {
+        position: absolute;
+        top: 540px;
+        left: 241px;
+        height: 7px;
+        width: 260px;
+        background: #999999;
+    }
+
+    .s_central_valley_screen_2 {
+        position: absolute;
+        top: 369px;
+        left: 1500px;
+        height: 7px;
+        width: 170px;
+        background: #999999;
+    }
+
+    .s_central_valley_screen_1 {
+        position: absolute;
+        top: 400px;
+        left: 1500px;
+        height: 7px;
+        width: 170px;
+        background: #999999;
+    }
+
+    .s_hudson_valley {
+        position: absolute;
+        top: 400px;
+        left: 1002px;
+        height: 7px;
+        width: 400px;
+        background: #999999;
+    }
+
+    .s_hudson_nysw {
+        position: absolute;
+        top: 431px;
+        left: 1002px;
+        height: 7px;
+        width: 80px;
+        background: #999999;
+    }
+
+    .s_hall_hudson_2 {
+        position: absolute;
+        top: 369px;
+        left: 702px;
+        height: 7px;
+        width: 164px;
+        background: #999999;
+    }
+ 
+    .s_hall_hudson_1 {
+        position: absolute;
+        top: 400px;
+        left: 702px;
+        height: 7px;
+        width: 164px;
+        background: #999999;
+    }
+
+    .s_howells_hall {
+        position: absolute;
+        top: 400px;
+        left: 404px;
+        height: 7px;
+        width: 200px;
+        background: #999999;
+    }
+
+    .s_hall_yard {
+        position: absolute;
+        top: 369px;
+        left: 553px;
+        height: 7px;
+        width: 50px;
+        background: #999999;
+    }
+
+    .s_screen_howells_2 {
+        position: absolute;
+        top: 369px;
+        left: 5px;
+        height: 7px;
+        width: 300px;
+        background: #999999;
+    }
+
+    .s_screen_howells_1 {
+        position: absolute;
+        top: 400px;
+        left: 5px;
+        height: 7px;
+        width: 300px;
+        background: #999999;
+    }

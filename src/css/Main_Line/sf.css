@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+    /* Texts */
+    .sf_title {
+        position: absolute;
+        top: 455px;
+        left: 1012px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .sf_milepost {
+        position: absolute;
+        top: 475px;
+        left: 1000px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+    .sf_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 540px;
+        left: 983px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .sf_SW_3 {
+        position: absolute;
+        z-index: 2;
+        top: 509px;
+        left: 1021px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .sf_SW_5 {
+        position: absolute;
+        z-index: 2;
+        top: 509px;
+        left: 1149px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .sf_SW_7 {
+        position: absolute;
+        z-index: 2;
+        top: 509px;
+        left: 1187px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .sf_1_west {
+        position: absolute;
+        top: 509px;
+        left: 958px;
+        height: 7px;
+        width: 63px;
+        background: #999999;
+    }
+
+    .sf_2_west {
+        position: absolute;
+        top: 540px;
+        left: 958px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .sf_yard {
+        position: absolute;
+        top: 571px;
+        left: 958px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .sf_1_center_west {
+        position: absolute;
+        top: 509px;
+        left: 1059px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .sf_2_center_west {
+        position: absolute;
+        top: 540px;
+        left: 1059px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    /* Signals */
+    .sf_sig_2e {
+        position: absolute;
+        top: 514px;
+        left: 961px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .sf_sig_4e-1 {
+        position: absolute;
+        top: 545px;
+        left: 961px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .sf_sig_4e-2 {
+        position: absolute;
+        top: 576px;
+        left: 961px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .sf_sig_2w {
+        position: absolute;
+        top: 491px;
+        left: 1064px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .sf_sig_4w {
+        position: absolute;
+        top: 522px;
+        left: 1064px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }

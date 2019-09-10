@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+    /* Texts */
+    .port_title {
+        position: absolute;
+        top: 145px;
+        left: 752px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .port_milepost {
+        position: absolute;
+        top: 165px;
+        left: 756px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+    .port_SW_1 {
+        position: absolute;
+        z-index: 2;
+        top: 199px;
+        left: 770px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .port_yard {
+        position: absolute;
+        top: 199px;
+        left: 745px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .port_west {
+        position: absolute;
+        top: 230px;
+        left: 745px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .port_east {
+        position: absolute;
+        top: 230px;
+        left: 808px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .port_sig_2w {
+        position: absolute;
+        top: 212px;
+        left: 808px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .port_sig_2e-2 {
+        position: absolute;
+        top: 204px;
+        left: 748px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .port_sig_2e-1 {
+        position: absolute;
+        top: 235px;
+        left: 748px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }

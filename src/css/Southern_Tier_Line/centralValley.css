@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+    /* Texts */
+    .valley_title {
+        position: absolute;
+        top: 320px;
+        left: 1360px;
+        font-size: 18px;
+        color: #14cc00;
+    }
+
+    .valley_milepost { 
+        position: absolute;
+        top: 340px;
+        left: 1420px;
+        font-size: 14px;
+        color: white;
+    }
+    /* END Text */
+
+    .valley_SW_21 {
+        position: absolute;
+        z-index: 2;
+        top: 369px;
+        left: 1432px;
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+    }
+
+    .valley_west {
+        position: absolute;
+        top: 400px;
+        left: 1407px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .valley_2_east {
+        position: absolute;
+        top: 369px;
+        left: 1470px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .valley_1_east {
+        position: absolute;
+        top: 400px;
+        left: 1470px;
+        height: 7px;
+        width: 25px;
+        background: #999999;
+    }
+
+    .valley_sig_1e {
+        position: absolute;
+        top: 405px;
+        left: 1410px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .valley_sig_2w {
+        position: absolute;
+        top: 351px;
+        left: 1472px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }
+
+    .valley_sig_1w {
+        position: absolute;
+        top: 382px;
+        left: 1472px;
+        height:8px;
+        width: 19px;
+        cursor: pointer;
+    }

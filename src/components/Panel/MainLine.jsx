@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 
+import Clock from '../../scripts/clock.js';
+
 import MaineLine_CTC from '../../scripts/mainLine_ctc.js';
+import Train from '../../scripts/train.js';
 
 import MainLineTracks from '../Panel/Main_Line/MainLineTracks.jsx';
+import Hilburn from '../Panel/Main_Line/Hilburn.jsx';
+import SF from '../Panel/Main_Line/SF.jsx';
+import WC from '../Panel/Main_Line/WC.jsx';
 import RidgewoodJunction from '../Panel/Main_Line/RidgewoodJunction.jsx';
 import Suscon from '../Panel/Main_Line/Suscon.jsx';
 import Mill from '../Panel/Main_Line/Mill.jsx';
@@ -14,42 +20,487 @@ import BT from '../Panel/Bergen_County_Line/BT.jsx';
 import PascackJunction from '../Panel/Bergen_County_Line/PascackJct.jsx';
 import HX from '../Panel/Bergen_County_Line/HX.jsx';
 
+import SouthernTierTracks from '../Panel/Southern_Tier_Line/SouthernTierTracks.jsx';
+import Sparrow from '../Panel/Southern_Tier_Line/Sparrow.jsx';
+import PA from '../Panel/Southern_Tier_Line/PA.jsx';
+import Port from '../Panel/Southern_Tier_Line/Port.jsx';
+import BC from '../Panel/Southern_Tier_Line/BC.jsx';
+import OV from '../Panel/Southern_Tier_Line/OV.jsx';
+import Howells from '../Panel/Southern_Tier_Line/Howells.jsx';
+import Hall from '../Panel/Southern_Tier_Line/Hall.jsx';
+import HudsonJunction from '../Panel/Southern_Tier_Line/HudsonJunction.jsx';
+import CentralValley from '../Panel/Southern_Tier_Line/CentralValley.jsx';
+import Harriman from '../Panel/Southern_Tier_Line/Harriman.jsx';
+import Sterling from '../Panel/Southern_Tier_Line/Sterling.jsx';
 
-var ctc = new MaineLine_CTC();
+const Empty = '#999999';
+const Route = '#75fa4c';
+const Occupied = '#eb3323';
+
+
+var clock = new Clock();
+var ctc = new MaineLine_CTC(clock);
+
+clock.startClock;
+
+//ctc.add_train(new Train("49", "1_suscon_mill", "suscon", 10));
+
+setTimeout(function(){ 
+    ctc.add_train(new Train("49", "1_sf_wc", "mill", "WEST", 12));
+    //ctc.add_train(new Train("50", "2_mill_westSecaucus", "mill", "WEST", 12));
+    ctc.test_block(); 
+}, 3000);  
+
 
 class MainLine extends Component {
     
-    state = {  
-        status_suscon: ctc.get_suscon().get_interlocking_status()
-    };
+    constructor(props) {
+        super(props);
+        this.state = {  
+            status_hilburn: ctc.get_hilburn().get_interlocking_status(),
+            status_sf: ctc.get_sf().get_interlocking_status(),
+            status_wc: ctc.get_wc().get_interlocking_status(),
+            status_ridgewood: ctc.get_ridgewood().get_interlocking_status(),
+            status_suscon: ctc.get_suscon().get_interlocking_status(),
+            status_mill: ctc.get_mill().get_interlocking_status(),
+            status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status(),
+            status_laurel: ctc.get_laurel().get_interlocking_status(),
 
+            status_mainLine: ctc.get_mainLine_blocks_status(),
+            status_bergenLine: ctc.get_bergen_blocks_status()
+        };
+    }
+
+    update_blocks = () => {
+        ctc.update_route_blocks();
+        ctc.test_block();
+        ctc.update_trains();
+        this.setState({
+            status_mainLine: ctc.get_mainLine_blocks_status(),
+            status_bergenLine: ctc.get_bergen_blocks_status(),
+            status_suscon: ctc.get_suscon().get_interlocking_status(),
+            state_mill: ctc.get_mill().get_interlocking_status()
+        });
+        //console.log(this.state.status_mainLine);
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(() => this.update_blocks(), 1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
 
     render() { 
-
-        var track_blocks = {
-            block_1: ctc.get_block_1_status(),
-            block_2: ctc.get_block_2_status()
-        };
-
         return (  
             <div>
-                <BergenTracks />
+                <SouthernTierTracks />
+                <Sparrow />
+                <PA />
+                <Port />
+                <BC />
+                <OV />
+                <Howells />
+                <Hall />
+                <HudsonJunction />
+                <CentralValley />
+                <Harriman />
+                <Sterling />
+
+                <BergenTracks 
+                    blocks={this.state.status_bergenLine}
+                />
                 <BT />
                 <PascackJunction />
                 <HX />
 
-                <MainLineTracks blocks={track_blocks}/>
-                <RidgewoodJunction />
+                <MainLineTracks 
+                    blocks={this.state.status_mainLine}
+                />
+                <Hilburn 
+                    status={this.state.status_hilburn}
+                    click_sig_2w_1={this.hilburn_click_sig_2w_1}
+                    click_sig_2w_2={this.hilburn_click_sig_2w_2}
+                    click_sig_2e={this.hilburn_click_sig_2e}
+                    throw_sw_1={this.hilburn_throw_sw_1}
+                />
+                <SF 
+                    status={this.state.status_sf}
+                    click_sig_2w={this.sf_click_sig_2w}
+                    click_sig_4w={this.sf_click_sig_4w}
+                    click_sig_2e={this.sf_click_sig_2e}
+                    click_sig_4e_1={this.sf_click_sig_4e_1}
+                    click_sig_4e_2={this.sf_click_sig_4e_2}
+                    throw_sw_1={this.sf_throw_sw_1}
+                    throw_sw_3={this.sf_throw_sw_3}
+                />
+                <WC 
+                    status={this.state.status_wc}
+                    click_sig_2w_1={this.wc_click_sig_2w_1}
+                    click_sig_2w_2={this.wc_click_sig_2w_2}
+                    click_sig_4w={this.wc_click_sig_4w}
+                    click_sig_2e_1={this.wc_click_sig_2e_1}
+                    click_sig_2e_2={this.wc_click_sig_2e_2}
+                    click_sig_4e={this.wc_click_sig_4e}
+                    throw_sw_1={this.wc_throw_sw_1}
+                    throw_sw_3={this.wc_throw_sw_3}
+                    throw_sw_5={this.wc_throw_sw_5}
+                    throw_sw_7={this.wc_throw_sw_7}
+                />
+                <RidgewoodJunction 
+                    status={this.state.status_ridgewood}
+                    click_sig_2w_1={this.ridgewood_click_sig_2w_1}
+                    click_sig_2w_2={this.ridgewood_click_sig_2w_2}
+                    click_sig_4w={this.ridgewood_click_sig_4w}
+                    click_sig_6w={this.ridgewood_click_sig_6w}
+                    click_sig_2e={this.ridgewood_click_sig_2e}
+                    click_sig_4e={this.ridgewood_click_sig_4e}
+                    click_sig_6e={this.ridgewood_click_sig_6e}
+                    throw_sw_1={this.ridgewood_throw_sw_1}
+                    throw_sw_3={this.ridgewood_throw_sw_3}
+                    throw_sw_5={this.ridgewood_throw_sw_5}
+                    throw_sw_7={this.ridgewood_throw_sw_7}
+                    throw_sw_9={this.ridgewood_throw_sw_9}
+                />
                 <Suscon 
                     status={this.state.status_suscon} 
+                    click_sig_2w={this.suscon_click_sig_2w}
+                    click_sig_2e={this.suscon_click_sig_2e}
+                    click_sig_4w={this.suscon_click_sig_4w}
+                    click_sig_4e={this.suscon_click_sig_4e}
                     throw_sw_1={this.suscon_throw_sw_1} 
                     throw_sw_3={this.suscon_throw_sw_3}
                 />
-                <Mill />
-                <WestSecaucus />
-                <Laurel />
+                <Mill 
+                    status={this.state.status_mill}
+                    click_sig_2w={this.mill_click_sig_2w}
+                    click_sig_2e={this.mill_click_sig_2e}
+                    click_sig_4w={this.mill_click_sig_4w}
+                    click_sig_4e={this.mill_click_sig_4e}
+                    throw_sw_1={this.mill_throw_sw_1}
+                    throw_sw_3={this.mill_throw_sw_3}
+                />
+                <WestSecaucus 
+                    status={this.state.status_westSecaucus}
+                    click_sig_2w={this.westSecaucus_click_sig_2w}
+                    click_sig_2e={this.westSecaucus_click_sig_2e}
+                    click_sig_4w={this.westSecaucus_click_sig_4w}
+                    click_sig_4e={this.westSecaucus_click_sig_4e}
+                    throw_sw_1={this.westSecaucus_throw_sw_1}
+                    throw_sw_3={this.westSecaucus_throw_sw_3}
+                />
+                <Laurel 
+                    status={this.state.status_laurel}
+                    click_sig_2w={this.laurel_click_sig_2w}
+                    click_sig_4w={this.laurel_click_sig_4w}
+                    click_sig_8w={this.laurel_click_sig_8w}
+                    click_sig_10w={this.laurel_click_sig_10w}
+                    click_sig_6e={this.laurel_click_sig_6e}
+                    click_sig_12e={this.laurel_click_sig_12e}
+                    click_sig_4e={this.laurel_click_sig_4e}
+                    click_sig_8e={this.laurel_click_sig_8e}
+                    throw_sw_1={this.laurel_throw_sw_1}
+                    throw_sw_3={this.laurel_throw_sw_3}
+                    throw_sw_7={this.laurel_throw_sw_7}
+                    throw_sw_9={this.laurel_throw_sw_9}
+                    throw_sw_11={this.laurel_throw_sw_11}
+                    throw_sw_13={this.laurel_throw_sw_13}
+                />
             </div>
         );
+    }
+
+    hilburn_click_sig_2w_1 = () => {
+        ctc.get_hilburn().click_sig_2w_1(
+            this.state.status_mainLine.block_sterling_hilburn
+        );
+        this.setState({status_hilburn: ctc.get_hilburn().get_interlocking_status()});
+    }
+
+    hilburn_click_sig_2w_2 = () => {
+        ctc.get_hilburn().click_sig_2w_2(
+            this.state.status_mainLine.block_sterling_hilburn
+        );
+        this.setState({status_hilburn: ctc.get_hilburn().get_interlocking_status()});
+    }
+
+    hilburn_click_sig_2e = () => {
+        ctc.get_hilburn().click_sig_2e(
+            this.state.status_mainLine.block_sterling_hilburn,
+            this.state.status_mainLine.block_hilburn_yard_west
+        );
+        this.setState({status_hilburn: ctc.get_hilburn().get_interlocking_status()});
+    }
+
+    hilburn_throw_sw_1 = () => {
+        ctc.get_hilburn().throw_sw_1();
+        this.setState({status_hilburn: ctc.get_hilburn().get_interlocking_status()});
+    }
+
+
+
+    sf_click_sig_2w = () => {
+        ctc.get_sf().click_sig_2w(
+            this.state.status_mainLine.block_sterling_sf,
+            this.state.status_mainLine.block_hilburn_sf,
+            this.state.status_mainLine.block_hilburn_yard_east
+        );
+        this.setState({status_sf: ctc.get_sf().get_interlocking_status()});
+    }
+
+    sf_click_sig_4w = () => {
+        ctc.get_sf().click_sig_4w(
+            this.state.status_mainLine.block_hilburn_sf,
+            this.state.status_mainLine.block_hilburn_yard_east
+        );
+        this.setState({status_sf: ctc.get_sf().get_interlocking_status()});
+    }
+
+    sf_click_sig_2e = () => {
+        ctc.get_sf().click_sig_2e(
+            this.state.status_mainLine.block_sf_wc_1
+        );
+        this.setState({status_sf: ctc.get_sf().get_interlocking_status()});
+    }
+
+    sf_click_sig_4e_1 = () => {
+        ctc.get_sf().click_sig_4e_1(
+            this.state.status_mainLine.block_sf_wc_1,
+            this.state.status_mainLine.block_sf_wc_2
+        );
+        this.setState({status_sf: ctc.get_sf().get_interlocking_status()});
+    }
+
+    sf_click_sig_4e_2 = () => {
+        ctc.get_sf().click_sig_4e_2(
+            this.state.status_mainLine.block_sf_wc_1,
+            this.state.status_mainLine.block_sf_wc_2
+        );
+        this.setState({status_sf: ctc.get_sf().get_interlocking_status()});
+    }
+
+    sf_throw_sw_1 = () => {
+        ctc.get_sf().throw_sw_1();
+        this.setState({status_sf: ctc.get_sf().get_interlocking_status()});
+    }
+
+    sf_throw_sw_3 = () => {
+        ctc.get_sf().throw_sw_3();
+        this.setState({status_sf: ctc.get_sf().get_interlocking_status()});
+    }
+
+
+
+    wc_click_sig_2w_1 = () => {
+        ctc.get_wc().click_sig_2w_1(
+            this.state.status_mainLine.block_sf_wc_1,
+            this.state.status_mainLine.block_sf_wc_2,
+            this.state.status_mainLine.block_wc_yard
+        );
+        this.setState({status_wc: ctc.get_wc().get_interlocking_status()});
+    }
+
+    wc_click_sig_2w_2 = () => {
+        ctc.get_wc().click_sig_2w_2(
+            this.state.status_mainLine.block_sf_wc_1,
+            this.state.status_mainLine.block_sf_wc_2,
+            this.state.status_mainLine.block_wc_yard
+        );
+        this.setState({status_wc: ctc.get_wc().get_interlocking_status()});
+    }
+
+    wc_click_sig_4w = () => {
+        ctc.get_wc().click_sig_4w(
+            this.state.status_mainLine.block_sf_wc_1,
+            this.state.status_mainLine.block_sf_wc_2,
+            this.state.status_mainLine.block_wc_yard
+        )
+        this.setState({status_wc: ctc.get_wc().get_interlocking_status()});
+    }
+
+    wc_click_sig_2e_1 = () => {
+        ctc.get_wc().click_sig_2e_1(
+            this.state.status_mainLine.block_wc_ridgewood_1,
+            this.state.status_mainLine.block_wc_ridgewood_2,
+            this.state.status_mainLine.block_wc_ridgewood_3
+        );
+        this.setState({status_wc: ctc.get_wc().get_interlocking_status()});
+    }
+
+    wc_click_sig_2e_2 = () => {
+        ctc.get_wc().click_sig_2e_2(
+            this.state.status_mainLine.block_wc_ridgewood_1,
+            this.state.status_mainLine.block_wc_ridgewood_2,
+            this.state.status_mainLine.block_wc_ridgewood_3
+        );
+        this.setState({status_wc: ctc.get_wc().get_interlocking_status()});
+    }
+
+    wc_click_sig_4e = () => {
+        ctc.get_wc().click_sig_4e(
+            this.state.status_mainLine.block_wc_ridgewood_1,
+            this.state.status_mainLine.block_wc_ridgewood_2,
+            this.state.status_mainLine.block_wc_ridgewood_3
+        );
+        this.setState({status_wc: ctc.get_wc().get_interlocking_status()});
+    }
+
+    wc_throw_sw_1 = () => {
+        ctc.get_wc().throw_sw_1();
+        this.setState({status_wc: ctc.get_wc().get_interlocking_status()});
+    }
+
+    wc_throw_sw_3 = () => {
+        ctc.get_wc().throw_sw_3();
+        this.setState({status_wc: ctc.get_wc().get_interlocking_status()});
+    }
+
+    wc_throw_sw_5 = () => {
+        ctc.get_wc().throw_sw_5();
+        this.setState({status_wc: ctc.get_wc().get_interlocking_status()});
+    }
+
+    wc_throw_sw_7 = () => {
+        ctc.get_wc().throw_sw_7();
+        this.setState({status_wc: ctc.get_wc().get_interlocking_status()});
+    }
+
+
+
+    ridgewood_click_sig_2w_1 = () => {
+        ctc.get_ridgewood().click_sig(
+            "2W-1", 
+            this.state.status_mainLine.block_wc_ridgewood_1,
+            this.state.status_mainLine.block_wc_ridgewood_2,
+            this.state.status_mainLine.block_wc_ridgewood_3,
+        );
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_click_sig_2w_2 = () => {
+        ctc.get_ridgewood().click_sig(
+            "2W-2", 
+            this.state.status_mainLine.block_wc_ridgewood_1,
+            this.state.status_mainLine.block_wc_ridgewood_2,
+            this.state.status_mainLine.block_wc_ridgewood_3,
+        );
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_click_sig_4w = () => {
+        ctc.get_ridgewood().click_sig(
+            "4W", 
+            this.state.status_mainLine.block_wc_ridgewood_1,
+            this.state.status_mainLine.block_wc_ridgewood_2,
+            this.state.status_mainLine.block_wc_ridgewood_3,
+        );
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_click_sig_6w = () => {
+        ctc.get_ridgewood().click_sig(
+            "6W", 
+            this.state.status_mainLine.block_wc_ridgewood_1,
+            this.state.status_mainLine.block_wc_ridgewood_2,
+            this.state.status_mainLine.block_wc_ridgewood_3,
+        );
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_click_sig_2e = () => {
+        ctc.get_ridgewood().click_sig(
+            "2E", 
+            this.state.status_mainLine.block_ridgewood_suscon_1,
+            this.state.status_mainLine.block_ridgewood_suscon_2,
+            this.state.status_mainLine.block_ridgewood_suscon_3,
+            this.state.status_mainLine.block_ridgewood_suscon_4
+        );
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_click_sig_4e = () => {
+        ctc.get_ridgewood().click_sig(
+            "4E", 
+            this.state.status_mainLine.block_ridgewood_suscon_1,
+            this.state.status_mainLine.block_ridgewood_suscon_2,
+            this.state.status_mainLine.block_ridgewood_suscon_3,
+            this.state.status_mainLine.block_ridgewood_suscon_4
+        );
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_click_sig_6e = () => {
+        ctc.get_ridgewood().click_sig(
+            "6E", 
+            this.state.status_mainLine.block_ridgewood_suscon_1,
+            this.state.status_mainLine.block_ridgewood_suscon_2,
+            this.state.status_mainLine.block_ridgewood_suscon_3,
+            this.state.status_mainLine.block_ridgewood_suscon_4
+        );
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_throw_sw_1 = () => {
+        ctc.get_ridgewood().throw_sw_1();
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_throw_sw_3 = () => {
+        ctc.get_ridgewood().throw_sw_3();
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_throw_sw_5 = () => {
+        ctc.get_ridgewood().throw_sw_5();
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_throw_sw_7 = () => {
+        ctc.get_ridgewood().throw_sw_7();
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+    ridgewood_throw_sw_9 = () => {
+        ctc.get_ridgewood().throw_sw_9();
+        this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
+    }
+
+
+    suscon_click_sig_2w = () => {
+        ctc.get_suscon().click_sig(
+            "2W", 
+            this.state.status_mainLine.block_ridgewood_suscon_1,
+            this.state.status_mainLine.block_ridgewood_suscon_2
+        );
+        this.setState({status_suscon: ctc.get_suscon().get_interlocking_status()});
+    }
+
+    suscon_click_sig_2e = () => {
+        ctc.get_suscon().click_sig(
+            "2E",
+            this.state.status_mainLine.block_suscon_mill_1,
+            this.state.status_mainLine.block_suscon_mill_2
+        );
+        this.setState({status_suscon: ctc.get_suscon().get_interlocking_status()});
+    }
+
+    suscon_click_sig_4w = () => {
+        ctc.get_suscon().click_sig(
+            "4W",
+            this.state.status_mainLine.block_ridgewood_suscon_1,
+            this.state.status_mainLine.block_ridgewood_suscon_2
+        );
+        this.setState({status_suscon: ctc.get_suscon().get_interlocking_status()});
+    }
+
+    suscon_click_sig_4e = () => {
+        ctc.get_suscon().click_sig(
+            "4E",
+            this.state.status_mainLine.block_suscon_mill_1,
+            this.state.status_mainLine.block_suscon_mill_2
+        );
+        this.setState({status_suscon: ctc.get_suscon().get_interlocking_status()});
     }
 
     suscon_throw_sw_1 = () => {
@@ -61,6 +512,205 @@ class MainLine extends Component {
         ctc.get_suscon().throw_sw_3();
         this.setState({status_suscon: ctc.get_suscon().get_interlocking_status()});
     }
+
+
+    mill_click_sig_2w = () => {
+        ctc.get_mill().click_sig(
+            "2W", 
+            this.state.status_mainLine.block_suscon_mill_1,
+            this.state.status_mainLine.block_suscon_mill_2
+        );
+        this.setState({status_mill: ctc.get_mill().get_interlocking_status()});
+    }
+
+    mill_click_sig_2e = () => {
+        ctc.get_mill().click_sig(
+            "2E", 
+            this.state.status_mainLine.block_mill_westSecaucus_1,
+            this.state.status_mainLine.block_mill_westSecaucus_2
+        );
+        this.setState({status_mill: ctc.get_mill().get_interlocking_status()});
+    }
+
+    mill_click_sig_4w = () => {
+        ctc.get_mill().click_sig(
+            "4W", 
+            this.state.status_mainLine.block_suscon_mill_1,
+            this.state.status_mainLine.block_suscon_mill_2
+        );
+        this.setState({status_mill: ctc.get_mill().get_interlocking_status()});
+    }
+
+    mill_click_sig_4e = () => {
+        ctc.get_mill().click_sig(
+            "4E", 
+            this.state.status_mainLine.block_mill_westSecaucus_1,
+            this.state.status_mainLine.block_mill_westSecaucus_2
+        );
+        this.setState({status_mill: ctc.get_mill().get_interlocking_status()});
+    }
+
+    mill_throw_sw_1 = () => {
+        ctc.get_mill().throw_sw_1();
+        this.setState({status_mill: ctc.get_mill().get_interlocking_status()});
+    }
+
+    mill_throw_sw_3 = () => {
+        ctc.get_mill().throw_sw_3();
+        this.setState({status_mill: ctc.get_mill().get_interlocking_status()});
+    }
+
+
+    westSecaucus_click_sig_2w = () => {
+        ctc.get_westSecaucus().click_sig(
+            "2W", 
+            this.state.status_mainLine.block_mill_westSecaucus_1,
+            this.state.status_mainLine.block_mill_westSecaucus_2
+        );
+        this.setState({status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status()});
+    }
+
+    westSecaucus_click_sig_2e = () => {
+        ctc.get_westSecaucus().click_sig(
+            "2E", 
+            this.state.status_mainLine.block_westSecaucus_laurel_1,
+            this.state.status_mainLine.block_westSecaucus_laurel_2
+        );
+        this.setState({status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status()});
+    }
+
+    westSecaucus_click_sig_4w = () => {
+        ctc.get_westSecaucus().click_sig(
+            "4W", 
+            this.state.status_mainLine.block_mill_westSecaucus_1,
+            this.state.status_mainLine.block_mill_westSecaucus_2
+        );
+        this.setState({status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status()});
+    }
+
+    westSecaucus_click_sig_4e = () => {
+        ctc.get_westSecaucus().click_sig(
+            "4E", 
+            this.state.status_mainLine.block_westSecaucus_laurel_1,
+            this.state.status_mainLine.block_westSecaucus_laurel_2
+        );
+        this.setState({status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status()});
+    }
+
+    westSecaucus_throw_sw_1 = () => {
+        ctc.get_westSecaucus().throw_sw_1();
+        this.setState({status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status()});
+    }
+
+    westSecaucus_throw_sw_3 = () => {
+        ctc.get_westSecaucus().throw_sw_3();
+        this.setState({status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status()});
+    }
+
+
+    laurel_click_sig_2w = () => {
+        ctc.get_laurel().click_sig_2w(
+            this.state.status_mainLine.block_hx_laurel_2,
+            this.state.status_mainLine.block_westSecaucus_laurel_1,
+            this.state.status_mainLine.block_hx_laurel_1
+        );
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_click_sig_4w = () => {
+        ctc.get_laurel().click_sig_4w(
+            this.state.status_mainLine.block_hx_laurel_2,
+            this.state.status_mainLine.block_westSecaucus_laurel_1,
+            this.state.status_mainLine.block_hx_laurel_1
+        );
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_click_sig_8w = () => {
+        ctc.get_laurel().click_sig_8w(
+            this.state.status_mainLine.block_hx_laurel_2,
+            this.state.status_mainLine.block_westSecaucus_laurel_1,
+            this.state.status_mainLine.block_hx_laurel_1,
+            this.state.status_mainLine.block_westSecaucus_laurel_2
+        );
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_click_sig_10w = () => {
+        ctc.get_laurel().click_sig_10w(
+            this.state.status_mainLine.block_hx_laurel_2,
+            this.state.status_mainLine.block_westSecaucus_laurel_1,
+            this.state.status_mainLine.block_hx_laurel_1,
+        );
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_click_sig_6e = () => {
+        ctc.get_laurel().click_sig_6e(
+            this.state.status_mainLine.block_westEnd_laurel_1,
+            this.state.status_mainLine.block_westEnd_laurel_2,
+            this.state.status_mainLine.block_westEnd_laurel_3,
+            this.state.status_mainLine.block_westEnd_laurel_4
+        );
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_click_sig_12e = () => {
+        ctc.get_laurel().click_sig_12e(
+            this.state.status_mainLine.block_westEnd_laurel_1,
+            this.state.status_mainLine.block_westEnd_laurel_2,
+            this.state.status_mainLine.block_westEnd_laurel_3,
+            this.state.status_mainLine.block_westEnd_laurel_4
+        );
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_click_sig_4e = () => {
+        ctc.get_laurel().click_sig_4e(
+            this.state.status_mainLine.block_westEnd_laurel_1,
+            this.state.status_mainLine.block_westEnd_laurel_2,
+            this.state.status_mainLine.block_westEnd_laurel_3,
+            this.state.status_mainLine.block_westEnd_laurel_4
+        );
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_click_sig_8e = () => {
+        ctc.get_laurel().click_sig_8e(
+            this.state.status_mainLine.block_westEnd_laurel_2
+        );
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_throw_sw_1 = () => {
+        ctc.get_laurel().throw_sw_1();
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_throw_sw_3 = () => {
+        ctc.get_laurel().throw_sw_3();
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_throw_sw_7 = () => {
+        ctc.get_laurel().throw_sw_7();
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_throw_sw_9 = () => {
+        ctc.get_laurel().throw_sw_9();
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_throw_sw_11 = () => {
+        ctc.get_laurel().throw_sw_11();
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
+
+    laurel_throw_sw_13 = () => {
+        ctc.get_laurel().throw_sw_13();
+        this.setState({status_laurel: ctc.get_laurel().get_interlocking_status()});
+    }
 }
- 
+
 export default MainLine;

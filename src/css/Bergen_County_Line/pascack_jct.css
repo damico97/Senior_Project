@@ -3,7 +3,7 @@
     /* Texts */
     .pascack_title {
         position: absolute;
-        top: 580px;
+        top: 590px;
         left: 855px;
         font-size: 18px;
         color: #14cc00;
@@ -11,7 +11,7 @@
 
     .pascack_milepost {
         position: absolute;
-        top: 600px;
+        top: 608px;
         left: 920px;
         font-size: 14px;
         color: white;
