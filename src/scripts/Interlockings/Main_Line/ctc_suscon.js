@@ -58,7 +58,7 @@ class CTC_Suscon {
                     return;
                 }
                 else {
-                    if (next_block_2 === Occupied || next_block_2 === Route) {
+                    if (next_block_2 === Occupied || next_block_2 === Lined) {
                         alert("Cannot Line Route Because Conflict With Next Block");
                         return;
                     }
@@ -79,7 +79,7 @@ class CTC_Suscon {
                     this.routes = [];
                 }
                 else {
-                    if (next_block_2 === Occupied || next_block_2 === Route) {
+                    if (next_block_2 === Occupied || next_block_2 === Lined) {
                         alert("Cannot Line Route Because Conflict With Next Block");
                         return;
                     }

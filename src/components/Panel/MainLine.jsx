@@ -47,7 +47,7 @@ clock.startClock;
 
 setTimeout(function(){ 
     ctc.add_train(new Train("49", "1_sf_wc", "mill", "WEST", 12));
-    //ctc.add_train(new Train("50", "2_mill_westSecaucus", "mill", "WEST", 12));
+    ctc.add_train(new Train("50", "2_mill_westSecaucus", "mill", "WEST", 12));
     ctc.test_block(); 
 }, 3000);  
 
@@ -57,6 +57,12 @@ class MainLine extends Component {
     constructor(props) {
         super(props);
         this.state = {  
+            status_hall: ctc.get_hall().get_interlocking_status(),
+            status_hudson: ctc.get_hudson().get_interlocking_status(),
+            status_valley: ctc.get_valley().get_interlocking_status(),
+            status_harriman: ctc.get_harriman().get_interlocking_status(),
+            status_sterling: ctc.get_sterling().get_interlocking_status(),
+
             status_hilburn: ctc.get_hilburn().get_interlocking_status(),
             status_sf: ctc.get_sf().get_interlocking_status(),
             status_wc: ctc.get_wc().get_interlocking_status(),
@@ -67,25 +73,37 @@ class MainLine extends Component {
             status_laurel: ctc.get_laurel().get_interlocking_status(),
 
             status_mainLine: ctc.get_mainLine_blocks_status(),
-            status_bergenLine: ctc.get_bergen_blocks_status()
+            status_bergenLine: ctc.get_bergen_blocks_status(),
+            status_tier: ctc.get_tier_block_status()
         };
     }
 
     update_blocks = () => {
         ctc.update_route_blocks();
         ctc.test_block();
+        this.setState({
+            status_mainLine: ctc.get_mainLine_blocks_status(),
+            status_bergenLine: ctc.get_bergen_blocks_status(),
+            status_tier: ctc.get_tier_block_status(),
+            status_suscon: ctc.get_suscon().get_interlocking_status(),
+            state_mill: ctc.get_mill().get_interlocking_status()
+        });
+    }
+
+    update_trains = () => {
         ctc.update_trains();
         this.setState({
             status_mainLine: ctc.get_mainLine_blocks_status(),
             status_bergenLine: ctc.get_bergen_blocks_status(),
+            status_tier: ctc.get_tier_block_status(),
             status_suscon: ctc.get_suscon().get_interlocking_status(),
             state_mill: ctc.get_mill().get_interlocking_status()
         });
-        //console.log(this.state.status_mainLine);
     }
 
     componentDidMount() {
         this.interval = setInterval(() => this.update_blocks(), 1000);
+        this.interval_2 = setInterval(() => this.update_trains(), 2000);
     }
 
     componentWillUnmount() {
@@ -95,18 +113,55 @@ class MainLine extends Component {
     render() { 
         return (  
             <div>
-                <SouthernTierTracks />
+                <SouthernTierTracks 
+                    blocks={this.state.status_tier}
+                />
                 <Sparrow />
                 <PA />
                 <Port />
                 <BC />
                 <OV />
                 <Howells />
-                <Hall />
-                <HudsonJunction />
-                <CentralValley />
-                <Harriman />
-                <Sterling />
+                <Hall 
+                    status={this.state.status_hall}
+                    click_sig_2w={this.hall_click_sig_2w}
+                    click_sig_4w={this.hall_click_sig_4w}
+                    click_sig_2e={this.hall_click_sig_2e}
+                    click_sig_4e={this.hall_click_sig_4e}
+                    throw_sw_1={this.hall_throw_sw_1}
+                />
+                <HudsonJunction 
+                    status={this.state.status_hudson}
+                    click_sig_2w={this.hudson_click_sig_2w}
+                    click_sig_2ws={this.hudson_click_sig_2ws}
+                    click_sig_2e={this.hudson_click_sig_2e}
+                    click_sig_2es={this.hudson_click_sig_2es}
+                    throw_sw_1={this.hudson_throw_sw_1}
+                    throw_sw_3={this.hudson_throw_sw_3}
+                />
+                <CentralValley 
+                    status={this.state.status_valley}
+                    click_sig_1w={this.valley_click_sig_1w}
+                    click_sig_2w={this.valley_click_sig_2w}
+                    click_sig_1e={this.valley_click_sig_1e}
+                    throw_sw_21={this.valley_throw_sw_21}
+                />
+                <Harriman 
+                    status={this.state.status_harriman}
+                    click_sig_1w={this.harriman_click_sig_1w}
+                    click_sig_1e={this.harriman_click_sig_1e}
+                    click_sig_2e={this.harriman_click_sig_2e}
+                    click_sig_3e={this.harriman_click_sig_3e}
+                    throw_sw_21={this.harriman_throw_sw_21}
+                    throw_sw_32={this.harriman_throw_sw_32}
+                />
+                <Sterling 
+                    status={this.state.status_sterling}
+                    click_sig_2w={this.sterling_click_sig_2w}
+                    click_sig_2ws={this.sterling_click_sig_2ws}
+                    click_sig_1e={this.sterling_click_sig_1e}
+                    throw_sw_21={this.sterling_throw_sw_21}
+                />
 
                 <BergenTracks 
                     blocks={this.state.status_bergenLine}
@@ -210,6 +265,186 @@ class MainLine extends Component {
             </div>
         );
     }
+
+    hall_click_sig_2w = () => {
+        ctc.get_hall().click_sig_2w(
+            this.state.status_tier.block_howells_hall_1
+        );
+        this.setState({status_hall: ctc.get_hall().get_interlocking_status()});
+    }
+
+    hall_click_sig_4w = () => {
+        ctc.get_hall().click_sig_4w(
+            this.state.status_tier.block_howells_hall_1,
+            this.state.status_tier.block_hall_yard
+        );
+        this.setState({status_hall: ctc.get_hall().get_interlocking_status()});
+    }
+
+    hall_click_sig_2e = () => {
+        ctc.get_hall().click_sig_2e(
+            this.state.status_tier.block_hall_hudson_1,
+            this.state.status_tier.block_hall_hudson_2
+        );
+        this.setState({status_hall: ctc.get_hall().get_interlocking_status()});
+    }
+
+    hall_click_sig_4e = () => {
+        ctc.get_hall().click_sig_4e(
+            this.state.status_tier.block_hall_hudson_2
+        );
+        this.setState({status_hall: ctc.get_hall().get_interlocking_status()});
+    }
+
+    hall_throw_sw_1 = () => {
+        ctc.get_hall().throw_sw_1();
+        this.setState({status_hall: ctc.get_hall().get_interlocking_status()});
+    }
+
+
+
+    hudson_click_sig_2w = () => {
+        ctc.get_hudson().click_sig_2w(
+            this.state.status_tier.block_hall_hudson_1,
+            this.state.status_tier.block_hall_hudson_2
+        );
+        this.setState({status_hudson: ctc.get_hudson().get_interlocking_status()});
+    }
+
+    hudson_click_sig_2ws = () => {
+        ctc.get_hudson().click_sig_2ws(
+            this.state.status_tier.block_hall_hudson_1,
+            this.state.status_tier.block_hall_hudson_2
+        );
+        this.setState({status_hudson: ctc.get_hudson().get_interlocking_status()});
+    }
+
+    hudson_click_sig_2e = () => {
+        ctc.get_hudson().click_sig_2e(
+            this.state.status_tier.block_hudson_valley_1,
+            this.state.status_tier.block_hudson_nysw
+        );
+        this.setState({status_hudson: ctc.get_hudson().get_interlocking_status()});
+    }
+
+    hudson_click_sig_2es = () => {
+        ctc.get_hudson().click_sig_2es(
+            this.state.status_tier.block_hudson_valley_1,
+            this.state.status_tier.block_hudson_nysw
+        );
+        this.setState({status_hudson: ctc.get_hudson().get_interlocking_status()});
+    }
+
+    hudson_throw_sw_1 = () => {
+        ctc.get_hudson().throw_sw_1();
+        this.setState({status_hudson: ctc.get_hudson().get_interlocking_status()});
+    }
+
+    hudson_throw_sw_3 = () => {
+        ctc.get_hudson().throw_sw_3();
+        this.setState({status_hudson: ctc.get_hudson().get_interlocking_status()});
+    }
+
+
+
+    valley_click_sig_1w = () => {
+        ctc.get_valley().click_sig_1w(
+            this.state.status_tier.block_hudson_valley_1
+        );
+        this.setState({status_valley: ctc.get_valley().get_interlocking_status()});
+    }
+
+    valley_click_sig_2w = () => {
+        ctc.get_valley().click_sig_2w(
+            this.state.status_tier.block_hudson_valley_1
+        );
+        this.setState({status_valley: ctc.get_valley().get_interlocking_status()});
+    }
+
+    valley_click_sig_1e = () => {
+        ctc.get_valley().click_sig_1e(
+            this.state.status_tier.block_valley_harriman_1,
+            this.state.status_tier.block_valley_harriman_2
+        );
+        this.setState({status_valley: ctc.get_valley().get_interlocking_status()});
+    }
+
+    valley_throw_sw_21 = () => {
+        ctc.get_valley().throw_sw_21();
+        this.setState({status_valley: ctc.get_valley().get_interlocking_status()});
+    }
+
+
+    harriman_click_sig_1w = () => {
+        ctc.get_harriman().click_sig_1w(
+            this.state.status_tier.block_valley_harriman_1,
+            this.state.status_tier.block_valley_harriman_2,
+            this.state.status_tier.block_harriman_industrial
+        );
+        this.setState({status_harriman: ctc.get_harriman().get_interlocking_status()});
+    }
+
+    harriman_click_sig_1e = () => {
+        ctc.get_harriman().click_sig_1e(
+            this.state.status_tier.block_harriman_sterling_1
+        );
+        this.setState({status_harriman: ctc.get_harriman().get_interlocking_status()});
+    }
+
+    harriman_click_sig_2e = () => {
+        ctc.get_harriman().click_sig_2e(
+            this.state.status_tier.block_harriman_sterling_1
+        );
+        this.setState({status_harriman: ctc.get_harriman().get_interlocking_status()});
+    }
+
+    harriman_click_sig_3e = () => {
+        ctc.get_harriman().click_sig_3e(
+            this.state.status_tier.block_harriman_sterling_1
+        );
+        this.setState({status_harriman: ctc.get_harriman().get_interlocking_status()});
+    }
+
+    harriman_throw_sw_21 = () => {
+        ctc.get_harriman().throw_sw_21();
+        this.setState({status_harriman: ctc.get_harriman().get_interlocking_status()});
+    }
+
+    harriman_throw_sw_32 = () => {
+        ctc.get_harriman().throw_sw_32();
+        this.setState({status_harriman: ctc.get_harriman().get_interlocking_status()});
+    }
+
+
+
+    sterling_click_sig_2w = () => {
+        ctc.get_sterling().click_sig_2w(
+            this.state.status_tier.block_harriman_sterling_1
+        );
+        this.setState({status_sterling: ctc.get_sterling().get_interlocking_status()});
+    }
+
+    sterling_click_sig_2ws = () => {
+        ctc.get_sterling().click_sig_2ws(
+            this.state.status_tier.block_harriman_sterling_1
+        );
+        this.setState({status_sterling: ctc.get_sterling().get_interlocking_status()});
+    }
+
+    sterling_click_sig_1e = () => {
+        ctc.get_sterling().click_sig_1e(
+            this.state.status_tier.block_sterling_sf,
+            this.state.status_tier.block_sterling_hilburn
+        );
+        this.setState({status_sterling: ctc.get_sterling().get_interlocking_status()});
+    }
+
+    sterling_throw_sw_21 = () => {
+        ctc.get_sterling().throw_sw_21();
+        this.setState({status_sterling: ctc.get_sterling().get_interlocking_status()});
+    }
+
+
 
     hilburn_click_sig_2w_1 = () => {
         ctc.get_hilburn().click_sig_2w_1(

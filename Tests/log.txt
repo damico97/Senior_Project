@@ -225,4 +225,28 @@ September 9, 2019:
     point now a train can run from Laurel to Sterling
     (0.25 Hours)
 
+September 10, 2019:
+    - Got the switch in sterling to throw
+    (0.25 Hours)
+
+    - Connected all the blocks on the pannel to actual block classes in the ctc class
+    (1 Hour)
+
+    - Fixed a bug in the suscon interlocking routing
+    (0.25 Hours)
+
+September 11, 2019:
+    - Hooked up the blocks on the southern tier section to the ctc mainline class
+    (0.5 Hours)
+
+    - Finished the switches and routing for Sterling, Harriman, and Central Valley interlockings
+    (2 Hours)
+
+September 12, 2019:
+    - Finished Switches and routing for Hudson Junction
+    (0.5 Hours)
+
+    
+
+
 
