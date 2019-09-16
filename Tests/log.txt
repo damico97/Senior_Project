@@ -246,7 +246,26 @@ September 12, 2019:
     - Finished Switches and routing for Hudson Junction
     (0.5 Hours)
 
-    
+    - Finished switches and routing for Howells
+    (0.5 Hours)
+
+    - Finished switches and routing for CP OV and for CP BC
+    (1 Hours)
+
+September 15, 2019:
+    - Finished Switches and routins for CP Port, CP PA and CP Sparrow. Trains can now run the entire
+    length of the pannel
+    (2 Hours)
+
+    - Finished route drawings for CP BC
+    (0.5 Hours)
+
+    - Finished route drawings for CP OV
+    (0.25 Hours)
+
+    - Finished route drawings for CP Howells
+    (0.25 Hours)
+
 
 
 

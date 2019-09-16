@@ -1,23 +1,27 @@
-import Clock from '../../src/scripts/clock';
+import Clock from '../Trains/clock.js';
 
-import RouteStacker from '../scripts/route_stacker.js';
+import CTC_Block from '../CTC/ctc_block.js';
 
-import CTC_Block from '../../src/scripts/ctc_block.js';
+import CTC_Sparrow from '../Interlockings/Southern_Tier/ctc_sparrow.js';
+import CTC_PA from '../Interlockings/Southern_Tier/ctc_pa.js';
+import CTC_Port from '../Interlockings/Southern_Tier/ctc_port.js';
+import CTC_BC from '../Interlockings/Southern_Tier/ctc_bc.js';
+import CTC_OV from '../Interlockings/Southern_Tier/ctc_ov.js';
+import CTC_Howells from '../Interlockings/Southern_Tier/ctc_howells.js';
+import CTC_Hall from '../Interlockings/Southern_Tier/ctc_hall.js';
+import CTC_Hudson from '../Interlockings/Southern_Tier/ctc_hudson.js';
+import CTC_Valley from '../Interlockings/Southern_Tier/ctc_valley.js';
+import CTC_Harriman from '../Interlockings/Southern_Tier/ctc_harriman.js';
+import CTC_Sterling from '../Interlockings/Southern_Tier/ctc_sterling.js';
 
-import CTC_Hall from '../../src/scripts/Interlockings/Southern_Tier/ctc_hall.js';
-import CTC_Hudson from '../../src/scripts/Interlockings/Southern_Tier/ctc_hudson.js';
-import CTC_Valley from '../../src/scripts/Interlockings/Southern_Tier/ctc_valley.js';
-import CTC_Harriman from '../../src/scripts/Interlockings/Southern_Tier/ctc_harriman.js';
-import CTC_Sterling from '../../src/scripts/Interlockings/Southern_Tier/ctc_sterling.js';
-
-import CTC_Hilburn from '../../src/scripts/Interlockings/Main_Line/ctc_hilburn.js';
-import CTC_SF from '../../src/scripts/Interlockings/Main_Line/ctc_sf.js';
-import CTC_WC from '../../src/scripts/Interlockings/Main_Line/ctc_wc';
-import CTC_Ridgewood from '../../src/scripts/Interlockings/Main_Line/ctc_ridgewood.js';
-import CTC_Suscon from '../../src/scripts/Interlockings/Main_Line/ctc_suscon.js';
-import CTC_Mill from '../../src/scripts/Interlockings/Main_Line/ctc_mill.js';
-import CTC_WestSecaucus from '../../src/scripts/Interlockings/Main_Line/ctc_westSecaucus.js';
-import CTC_Laurel from '../../src/scripts/Interlockings/Main_Line/ctc_laurel.js';
+import CTC_Hilburn from '../Interlockings/Main_Line/ctc_hilburn.js';
+import CTC_SF from '../Interlockings/Main_Line/ctc_sf.js';
+import CTC_WC from '../Interlockings/Main_Line/ctc_wc';
+import CTC_Ridgewood from '../Interlockings/Main_Line/ctc_ridgewood.js';
+import CTC_Suscon from '../Interlockings/Main_Line/ctc_suscon.js';
+import CTC_Mill from '../Interlockings/Main_Line/ctc_mill.js';
+import CTC_WestSecaucus from '../Interlockings/Main_Line/ctc_westSecaucus.js';
+import CTC_Laurel from '../Interlockings/Main_Line/ctc_laurel.js';
 
 
 const Empty = '#999999';
@@ -35,6 +39,12 @@ class MainLine_CTC {
 
         this.train_list = [];
 
+        this.interlocking_sparrow = new CTC_Sparrow();
+        this.interlocking_pa = new CTC_PA();
+        this.interlocking_port = new CTC_Port();
+        this.interlocking_bc = new CTC_BC();
+        this.interlocking_ov = new CTC_OV();
+        this.interlocking_howells = new CTC_Howells();
         this.interlocking_hall = new CTC_Hall();
         this.interlocking_hudson = new CTC_Hudson();
         this.interlocking_valley = new CTC_Valley();
@@ -157,6 +167,12 @@ class MainLine_CTC {
         routes = routes.concat(this.interlocking_valley.get_routes());
         routes = routes.concat(this.interlocking_hudson.get_routes());
         routes = routes.concat(this.interlocking_hall.get_routes());
+        routes = routes.concat(this.interlocking_howells.get_routes());
+        routes = routes.concat(this.interlocking_ov.get_routes());
+        routes = routes.concat(this.interlocking_bc.get_routes());
+        routes = routes.concat(this.interlocking_port.get_routes());
+        routes = routes.concat(this.interlocking_pa.get_routes());
+        routes = routes.concat(this.interlocking_sparrow.get_routes());
 
         for (var i = 0; i < routes.length; i++) {
             if (routes[i] === null) {
@@ -187,6 +203,48 @@ class MainLine_CTC {
                 }
             }
         }
+    }
+
+    /**
+     * 
+     */
+    get_sparrow() {
+        return this.interlocking_sparrow;
+    }
+
+    /**
+     * 
+     */
+    get_pa() {
+        return this.interlocking_pa;
+    }
+
+    /**
+     * 
+     */
+    get_port() {
+        return this.interlocking_port;
+    }
+
+    /**
+     * 
+     */
+    get_bc() {
+        return this.interlocking_bc;
+    }
+
+    /**
+     * 
+     */
+    get_ov() {
+        return this.interlocking_ov;
+    }
+
+    /**
+     * 
+     */
+    get_howells() {
+        return this.interlocking_howells;
     }
 
     /**
@@ -507,6 +565,24 @@ class MainLine_CTC {
         let interlocking = key.substr(first_index + 1, second_index - 2);
         //console.log(key);
         //console.log(track, interlocking);
+        if (interlocking === "sparrow") {
+            return this.get_sparrow().get_train_route(direction, track);
+        }
+        if (interlocking === "pa") {
+            return this.get_pa().get_train_route(direction, track);
+        }
+        if (interlocking === "port") {
+            return this.get_port().get_train_route(direction, track);
+        }
+        if (interlocking === "bc") {
+            return this.get_bc().get_train_route(direction, track);
+        }
+        if (interlocking === "ov") {
+            return this.get_ov().get_train_route(direction, track);
+        }
+        if (interlocking === "howells") {
+            return this.get_howells().get_train_route(direction, track);
+        }
         if (interlocking === "hall") {
             return this.get_hall().get_train_route(direction, track);
         }
@@ -621,10 +697,10 @@ class MainLine_CTC {
         else if (block === "pa_bc") {
             return this.blocks_mainLine.block_pa_bc_2;
         }
-        else if (block === "port_yard_west") {
+        else if (block === "portYard_west") {
             return this.blocks_mainLine.block_port_yard_west;
         }
-        else if (block === "port_yard_east") {
+        else if (block === "portYard_east") {
             return this.blocks_mainLine.block_port_yard_east;
         }
         else if (block === "buckleys_west") {

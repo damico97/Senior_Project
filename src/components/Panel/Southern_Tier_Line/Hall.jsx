@@ -21,7 +21,7 @@ const Occupied = '#eb3323';
 
 class Hall extends Component {
     state = {  
-        sw_1: this.props.sw_1,
+        sw_1: this.props.status.sw_1,
         sw_1_src: CX_225
     };
 

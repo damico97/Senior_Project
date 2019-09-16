@@ -1,4 +1,4 @@
-import Clock from '../scripts/clock.js';
+import Clock from '../Trains/clock.js';
 
 class Train {
     constructor(p_symbol, p_location, p_next_interlocking, p_direction, p_block_size) {

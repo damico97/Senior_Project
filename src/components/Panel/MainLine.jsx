@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Clock from '../../scripts/clock.js';
+import Clock from '../../scripts/Trains/clock.js';
 
-import MaineLine_CTC from '../../scripts/mainLine_ctc.js';
-import Train from '../../scripts/train.js';
+import MaineLine_CTC from '../../scripts/CTC/mainLine_ctc.js';
+import Train from '../../scripts/Trains/train.js';
 
 import MainLineTracks from '../Panel/Main_Line/MainLineTracks.jsx';
 import Hilburn from '../Panel/Main_Line/Hilburn.jsx';
@@ -56,7 +56,13 @@ class MainLine extends Component {
     
     constructor(props) {
         super(props);
-        this.state = {  
+        this.state = {
+            status_sparrow: ctc.get_sparrow().get_interlocking_status(),
+            status_pa: ctc.get_pa().get_interlocking_status(),
+            status_port: ctc.get_port().get_interlocking_status(),  
+            status_bc: ctc.get_bc().get_interlocking_status(),
+            status_ov: ctc.get_ov().get_interlocking_status(),
+            status_howells: ctc.get_howells().get_interlocking_status(),
             status_hall: ctc.get_hall().get_interlocking_status(),
             status_hudson: ctc.get_hudson().get_interlocking_status(),
             status_valley: ctc.get_valley().get_interlocking_status(),
@@ -116,12 +122,56 @@ class MainLine extends Component {
                 <SouthernTierTracks 
                     blocks={this.state.status_tier}
                 />
-                <Sparrow />
-                <PA />
-                <Port />
-                <BC />
-                <OV />
-                <Howells />
+                <Sparrow 
+                    status={this.state.status_sparrow}
+                    click_sig_2w_1={this.sparrow_click_sig_2w_1}
+                    click_sig_2w_2={this.sparrow_click_sig_2w_2}
+                    click_sig_2w_3={this.sparrow_click_sig_2w_3}
+                    click_sig_2e={this.sparrow_click_sig_2e}
+                    throw_sw_1={this.sparrow_throw_sw_1}
+                    throw_sw_3={this.sparrow_throw_sw_3}
+                />
+                <PA 
+                    status={this.state.status_pa}
+                    click_sig_2w_1={this.pa_click_sig_2w_1}
+                    click_sig_2w_2={this.pa_click_sig_2w_2}
+                    click_sig_4w={this.pa_click_sig_4w}
+                    click_sig_6w={this.pa_click_sig_6w}
+                    click_sig_2e={this.pa_click_sig_2e}
+                    click_sig_4e={this.pa_click_sig_4e}
+                    click_sig_6e={this.pa_click_sig_6e}
+                    throw_sw_1={this.pa_throw_sw_1}
+                    throw_sw_3={this.pa_throw_sw_3}
+                    throw_sw_5={this.pa_throw_sw_5}
+                />
+                <Port 
+                    status={this.state.status_port}
+                    click_sig_2w={this.port_click_sig_2w}
+                    click_sig_2e_1={this.port_click_sig_2e_1}
+                    click_sig_2e_2={this.port_click_sig_2e_2}
+                    throw_sw_1={this.port_throw_sw_1}
+                />
+                <BC 
+                    status={this.state.status_bc}
+                    click_sig_2w={this.bc_click_sig_2w}
+                    click_sig_2e={this.bc_click_sig_2e}
+                    click_sig_4e={this.bc_click_sig_4e}
+                    throw_sw_1={this.bc_throw_sw_1}
+                />
+                <OV 
+                    status={this.state.status_ov}
+                    click_sig_2w={this.ov_click_sig_2w}
+                    click_sig_2ws={this.ov_click_sig_2ws}
+                    click_sig_2e={this.ov_click_sig_2e}
+                    throw_sw_1={this.ov_throw_sw_1}
+                />
+                <Howells 
+                    status={this.state.status_howells}
+                    click_sig_2w={this.howells_click_sig_2w}
+                    click_sig_2e={this.howells_click_sig_2e}
+                    click_sig_2es={this.howells_click_sig_2es}
+                    throw_sw_3={this.howells_throw_sw_3}
+                />
                 <Hall 
                     status={this.state.status_hall}
                     click_sig_2w={this.hall_click_sig_2w}
@@ -163,12 +213,14 @@ class MainLine extends Component {
                     throw_sw_21={this.sterling_throw_sw_21}
                 />
 
+
                 <BergenTracks 
                     blocks={this.state.status_bergenLine}
                 />
                 <BT />
                 <PascackJunction />
                 <HX />
+
 
                 <MainLineTracks 
                     blocks={this.state.status_mainLine}
@@ -178,6 +230,7 @@ class MainLine extends Component {
                     click_sig_2w_1={this.hilburn_click_sig_2w_1}
                     click_sig_2w_2={this.hilburn_click_sig_2w_2}
                     click_sig_2e={this.hilburn_click_sig_2e}
+                    click_sig_4e={this.hilburn_click_sig_4e}
                     throw_sw_1={this.hilburn_throw_sw_1}
                 />
                 <SF 
@@ -265,6 +318,239 @@ class MainLine extends Component {
             </div>
         );
     }
+
+    sparrow_click_sig_2w_1 = () => {
+        ctc.get_sparrow().click_sig_2w_1(
+            this.state.status_tier.block_bingo_sparrow
+        );
+        this.setState({status_sparrow: ctc.get_sparrow().get_interlocking_status()});
+    }
+
+    sparrow_click_sig_2w_2 = () => {
+        ctc.get_sparrow().click_sig_2w_2(
+            this.state.status_tier.block_bingo_sparrow
+        );
+        this.setState({status_sparrow: ctc.get_sparrow().get_interlocking_status()});
+    }
+
+    sparrow_click_sig_2w_3 = () => {
+        ctc.get_sparrow().click_sig_2w_3(
+            this.state.status_tier.block_bingo_sparrow
+        );
+        this.setState({status_sparrow: ctc.get_sparrow().get_interlocking_status()});
+    }
+
+    sparrow_click_sig_2e = () => {
+        ctc.get_sparrow().click_sig_2e(
+            this.state.status_tier.block_sparrow_pa_1,
+            this.state.status_tier.block_sparrow_pa_2,
+            this.state.status_tier.block_sparrow_cripple
+        );
+        this.setState({status_sparrow: ctc.get_sparrow().get_interlocking_status()});
+    }
+
+    sparrow_throw_sw_1 = () => {
+        ctc.get_sparrow().throw_sw_1();
+        this.setState({status_sparrow: ctc.get_sparrow().get_interlocking_status()});
+    }
+
+    sparrow_throw_sw_3 = () => {
+        ctc.get_sparrow().throw_sw_3();
+        this.setState({status_sparrow: ctc.get_sparrow().get_interlocking_status()});
+    }
+
+
+
+    pa_click_sig_2w_1 = () => {
+        ctc.get_pa().click_sig_2w_1(
+            this.state.status_tier.block_sparrow_pa_1,
+            this.state.status_tier.block_sparrow_pa_2,
+            this.state.status_tier.block_buckleys_west
+        );
+        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
+    }
+
+    pa_click_sig_2w_2 = () => {
+        ctc.get_pa().click_sig_2w_2(
+            this.state.status_tier.block_sparrow_pa_1,
+            this.state.status_tier.block_sparrow_pa_2,
+            this.state.status_tier.block_buckleys_west
+        );
+        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
+    }
+
+    pa_click_sig_4w = () => {
+        ctc.get_pa().click_sig_4w(
+            this.state.status_tier.block_sparrow_pa_2,
+            this.state.status_tier.block_buckleys_west
+        );
+        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
+    }
+
+    pa_click_sig_6w = () => {
+        ctc.get_pa().click_sig_6w(
+            this.state.status_tier.block_buckleys_west
+        );
+        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
+    }
+
+    pa_click_sig_2e = () => {
+        ctc.get_pa().click_sig_2e(
+            this.state.status_tier.block_pa_port_1,
+            this.state.status_tier.block_port_yard_west
+        );
+        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
+    }
+
+    pa_click_sig_4e = () => {
+        ctc.get_pa().click_sig_4e(
+            this.state.status_tier.block_pa_port_1,
+            this.state.status_tier.block_pa_bc_2,
+            this.state.status_tier.block_port_yard_west
+        );
+        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
+    }
+
+    pa_click_sig_6e = () => {
+        ctc.get_pa().click_sig_6e(
+            this.state.status_tier.block_pa_port_1,
+            this.state.status_tier.block_pa_bc_2,
+            this.state.status_tier.block_port_yard_west,
+            this.state.status_tier.block_buckleys_east
+        );
+        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
+    }
+
+    pa_throw_sw_1 = () => {
+        ctc.get_pa().throw_sw_1();
+        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
+    }
+
+    pa_throw_sw_3 = () => {
+        ctc.get_pa().throw_sw_3();
+        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
+    }
+
+    pa_throw_sw_5 = () => {
+        ctc.get_pa().throw_sw_5();
+        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
+    }
+
+
+    port_click_sig_2w = () => {
+        ctc.get_port().click_sig_2w(
+            this.state.status_tier.block_pa_port_1,
+            this.state.status_tier.block_port_yard_east
+        );
+        this.setState({status_port: ctc.get_port().get_interlocking_status()});
+    }
+
+    port_click_sig_2e_1 = () => {
+        ctc.get_port().click_sig_2e_1(
+            this.state.status_tier.block_port_bc_1
+        );
+        this.setState({status_port: ctc.get_port().get_interlocking_status()});
+    }
+
+    port_click_sig_2e_2 = () => {
+        ctc.get_port().click_sig_2e_2(
+            this.state.status_tier.block_port_bc_1
+        );
+        this.setState({status_port: ctc.get_port().get_interlocking_status()});
+    }
+
+    port_throw_sw_1 = () => {
+        ctc.get_port().throw_sw_1();
+        this.setState({status_port: ctc.get_port().get_interlocking_status()});
+    }
+
+
+
+    bc_click_sig_2w = () => {
+        ctc.get_bc().click_sig_2w(
+            this.state.status_tier.block_port_bc_1,
+            this.state.status_tier.block_pa_bc_2
+        );
+        this.setState({status_bc: ctc.get_bc().get_interlocking_status()});
+    }
+
+    bc_click_sig_2e = () => {
+        ctc.get_bc().click_sig_2e(
+            this.state.status_tier.block_bc_ov_1
+        );
+        this.setState({status_bc: ctc.get_bc().get_interlocking_status()});
+    }
+
+    bc_click_sig_4e = () => {
+        ctc.get_bc().click_sig_4e(
+            this.state.status_tier.block_bc_ov_1
+        );
+        this.setState({status_bc: ctc.get_bc().get_interlocking_status()});
+    }
+
+    bc_throw_sw_1 = () => {
+        ctc.get_bc().throw_sw_1();
+        this.setState({status_bc: ctc.get_bc().get_interlocking_status()});
+    }
+
+
+
+    ov_click_sig_2w = () => {
+        ctc.get_ov().click_sig_2w(
+            this.state.status_tier.block_bc_ov_1
+        );
+        this.setState({status_ov: ctc.get_ov().get_interlocking_status()});
+    }
+
+    ov_click_sig_2ws = () => {
+        ctc.get_ov().click_sig_2ws(
+            this.state.status_tier.block_bc_ov_1
+        );
+        this.setState({status_ov: ctc.get_ov().get_interlocking_status()});
+    }
+    ov_click_sig_2e = () => {
+        ctc.get_ov().click_sig_2e(
+            this.state.status_tier.block_ov_howells_1,
+            this.state.status_tier.block_ov_howells_2
+        );
+        this.setState({status_ov: ctc.get_ov().get_interlocking_status()});
+    }
+
+    ov_throw_sw_1 = () => {
+        ctc.get_ov().throw_sw_1();
+        this.setState({status_ov: ctc.get_ov().get_interlocking_status()});
+    }
+
+
+
+    howells_click_sig_2w = () => {
+        ctc.get_howells().click_sig_2w(
+            this.state.status_tier.block_ov_howells_1,
+            this.state.status_tier.block_ov_howells_2
+        );
+        this.setState({status_howells: ctc.get_howells().get_interlocking_status()});
+    }
+
+    howells_click_sig_2e = () => {
+        ctc.get_howells().click_sig_2e(
+            this.state.status_tier.block_howells_hall_1
+        );
+        this.setState({status_howells: ctc.get_howells().get_interlocking_status()});
+    }
+
+    howells_click_sig_2es = () => {
+        ctc.get_howells().click_sig_2es(
+            this.state.status_tier.block_howells_hall_1
+        );
+        this.setState({status_howells: ctc.get_howells().get_interlocking_status()});
+    }
+
+    howells_throw_sw_3 = () => {
+        ctc.get_howells().throw_sw_3();
+        this.setState({status_howells: ctc.get_howells().get_interlocking_status()});
+    }
+
+
 
     hall_click_sig_2w = () => {
         ctc.get_hall().click_sig_2w(
