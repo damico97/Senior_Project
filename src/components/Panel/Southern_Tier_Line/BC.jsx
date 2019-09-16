@@ -98,10 +98,12 @@ class BC extends Component {
                     if (this.state.routes[i] === "W_1_1__|__1_port_bc") {
                         this.state.sig_2w_src = SIG_W_Clear;
                         this.state.sig_2e_src = SIG_E_Stop;
+                        this.state.sig_4e_src = SIG_E_Stop;
                     }
                     else {
                         this.state.sig_2w_src = SIG_W_Stop;
                         this.state.sig_2e_src = SIG_E_Clear;
+                        this.state.sig_4e_src = SIG_E_Stop;
                     }
                 }
             }
@@ -114,6 +116,7 @@ class BC extends Component {
                     this.state.sw_1_src = SW_U_W_R_Occupied;
 
                     this.state.sig_2w_src = SIG_W_Stop;
+                    this.state.sig_2e_src = SIG_E_Stop;
                     this.state.sig_4e_src = SIG_E_Stop;
                 }
                 else {
@@ -121,10 +124,12 @@ class BC extends Component {
 
                     if (this.state.routes[i] === "W_1_2__|__2_pa_bc") {
                         this.state.sig_2w_src = SIG_W_Clear;
+                        this.state.sig_2e_src = SIG_E_Stop;
                         this.state.sig_4e_src = SIG_E_Stop;
                     }
                     else {
                         this.state.sig_2w_src = SIG_W_Stop;
+                        this.state.sig_2e_src = SIG_E_Stop;
                         this.state.sig_4e_src = SIG_E_Clear;
                     }
                 }

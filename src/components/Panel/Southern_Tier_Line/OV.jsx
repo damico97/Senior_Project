@@ -90,6 +90,7 @@ class OV extends Component {
                     this.state.sw_1_src = SW_U_E_Occupied;
 
                     this.state.sig_2w_src = SIG_W_Stop;
+                    this.state.sig_2ws_src = SIG_W_Stop;
                     this.state.sig_2e_src = SIG_E_Stop;
                 }
                 else {
@@ -97,10 +98,12 @@ class OV extends Component {
 
                     if (this.state.routes[i] === "W_1_1__|__1_bc_ov") {
                         this.state.sig_2w_src = SIG_W_Clear;
+                        this.state.sig_2ws_src = SIG_W_Stop;
                         this.state.sig_2e_src = SIG_E_Stop;
                     }
                     else {
                         this.state.sig_2w_src = SIG_W_Stop;
+                        this.state.sig_2ws_src = SIG_W_Stop;
                         this.state.sig_2e_src = SIG_E_Clear;
                     }
                 }
@@ -114,6 +117,7 @@ class OV extends Component {
                     this.state.sw_1_src = SW_U_E_R_Occupied;
 
                     this.state.sig_2w_src = SIG_W_Stop;
+                    this.state.sig_2ws_src = SIG_W_Stop;
                     this.state.sig_2e_src = SIG_E_Stop;
                 }
                 else {
