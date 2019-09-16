@@ -271,6 +271,23 @@ September 16, 2019:
     (0.25 Hours)
 
     - Finished route drawigns fro CP Hall
-    (0.5 Hours) 
+    (0.5 Hours)
+
+    - Finished route drawings for CP Sparrow
+    (0.25 Hours)
+
+    - Finished route drawings for CP Hudson Junction
+    (0.25 Hours)
+
+    - Finished route drawings for CP Central Valley 
+    (0.25 Hours)
+
+    - Finally figured out how to occupy and interlocking, right now it just working for interlocking that have only one route,
+    but this is the majority of the interlockings, so I'll be able to get most of the interlockings working 100% in short order.
+    (0.5 Hours)
+
+    - Added occuping interlocking for CP Hudson Junction
+    (0.5 Hours)
+    
 
 

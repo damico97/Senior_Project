@@ -39,17 +39,6 @@ class Train {
         return this.current_location;
     }
 
-    can_occupy_interlocking() {
-        if (this.route) {
-            if (this.clock.getTimeFromStart - this.block_start > this.block_size) {
-                return true;
-            }
-            else {
-                return false
-            }
-        }
-    }
-
     get_block_size() {
         return this.block_size;
     }

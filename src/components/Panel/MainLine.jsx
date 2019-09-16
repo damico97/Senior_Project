@@ -46,8 +46,8 @@ clock.startClock;
 //ctc.add_train(new Train("49", "1_suscon_mill", "suscon", 10));
 
 setTimeout(function(){ 
-    ctc.add_train(new Train("49", "1_sf_wc", "mill", "WEST", 12));
-    ctc.add_train(new Train("50", "2_mill_westSecaucus", "mill", "WEST", 12));
+    ctc.add_train(new Train("49", "1_valley_harriman", "mill", "WEST", 12));
+    //ctc.add_train(new Train("50", "2_mill_westSecaucus", "mill", "WEST", 12));
     ctc.test_block(); 
 }, 3000);  
 
@@ -91,19 +91,19 @@ class MainLine extends Component {
             status_mainLine: ctc.get_mainLine_blocks_status(),
             status_bergenLine: ctc.get_bergen_blocks_status(),
             status_tier: ctc.get_tier_block_status(),
-            status_suscon: ctc.get_suscon().get_interlocking_status(),
-            state_mill: ctc.get_mill().get_interlocking_status()
         });
     }
 
     update_trains = () => {
         ctc.update_trains();
+        ctc.update_interlockings();
         this.setState({
             status_mainLine: ctc.get_mainLine_blocks_status(),
             status_bergenLine: ctc.get_bergen_blocks_status(),
             status_tier: ctc.get_tier_block_status(),
-            status_suscon: ctc.get_suscon().get_interlocking_status(),
-            state_mill: ctc.get_mill().get_interlocking_status()
+        
+            status_hudson: ctc.get_hudson().get_interlocking_status(),
+            status_valley: ctc.get_valley().get_interlocking_status(),
         });
     }
 

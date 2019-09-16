@@ -197,12 +197,33 @@ class MainLine_CTC {
                     // Train Cannot Move
                 }
                 else {
+                    // Clear Previous Block
                     this.get_block_by_name(this.train_list[i].get_location()).set_block_status("Empty");
+                    
+                    // Get the last location
+                    let location = this.train_list[i].get_location();
+
+                    // Occupy the Interlockings
+                    let cp_trk = location.substr(0, location.indexOf("_"));
+                    let cp = this.train_list[i].get_location();
+                    cp = cp.substr(cp.indexOf("_") + 1, cp.lastIndexOf("_") - 2);
+                    console.log(cp_trk, cp);
+                    this.set_occupy_interlocking(true, cp_trk, cp);
+
+                    // Occupy the Next Block
                     let block = new_route.substr(10, new_route.size);
                     this.train_list[i].update_location(block);
                 }
             }
         }
+    }
+
+    /**
+     * 
+     */
+    update_interlockings() {
+        this.interlocking_valley.can_clear();
+        this.interlocking_hudson.can_clear();
     }
 
     /**
@@ -628,9 +649,12 @@ class MainLine_CTC {
      * 
      * @param {*} name 
      */
-    get_interlocking_by_name(name) {
-        if (name === "mill") {
-            return this.get_mill();
+    set_occupy_interlocking(occupy, track, name) {
+        if (name === "valley") {
+            this.get_valley().set_occupied(true);
+        }
+        if (name === "hudson") {
+            this.get_hudson().set_occupied(true);
         }
     }
 

@@ -13,6 +13,9 @@ class CTC_Valley {
         this.route_w_trk_1 = null;
         this.route_w_trk_2 = null;
         this.route_e_trk_1 = null;
+
+        this.int_occupied = false;
+        this.time_occupied = null;
     }
 
     /**
@@ -104,6 +107,47 @@ class CTC_Valley {
     }
 
     /**
+     * 
+     * @param {*} n_state 
+     */
+    set_occupied(n_state) {
+        if (n_state === true || n_state === false) {
+            this.int_occupied = n_state;
+            this.time_occupied = new Date().getTime() / 1000;
+        }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    can_clear() {
+        //console.log(new Date().getTime() / 1000 - this.time_occupied)
+        let current_time = new Date().getTime() / 1000;
+        if (current_time - this.time_occupied > 4 && current_time - this.time_occupied < 100000) {
+            this.sig_1w = false;
+            this.sig_2w = false;
+            this.sig_1e = false;
+
+            this.route_w_trk_1 = null;
+            this.route_w_trk_2 = null;
+            this.route_e_trk_1 = null;
+
+            this.int_occupied = false;
+            this.time_occupied = null;
+        }
+    }
+
+    /**
+     * 
+     */
+    get_occupied() {
+        return this.int_occupied;
+    }
+
+    /**
      * @brief Funtion to throw switch #21 in the interlocking
      * 
      * The function sets the status of the switch, whether it is is the normal possition
@@ -136,7 +180,9 @@ class CTC_Valley {
     get_interlocking_status() {
         let status = {
             sw_21: this.sw_21,
-            sw_32: this.sw_32
+            sw_32: this.sw_32,
+            occupied: this.get_occupied(),
+            routes: this.get_routes()
         }
 
         return status;

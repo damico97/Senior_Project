@@ -191,7 +191,8 @@ class CTC_Sparrow {
     get_interlocking_status() {
         let status = {
             sw_1: this.sw_1,
-            sw_3: this.sw_3
+            sw_3: this.sw_3,
+            routes: this.get_routes()
         }
 
         return status;
