@@ -14,7 +14,10 @@ class CTC_Hall {
         this.route_w_trk_1 = null;
 		this.route_w_trk_2 = null;
 		this.route_e_trk_1 = null;
-		this.route_e_trk_2 = null;
+        this.route_e_trk_2 = null;
+
+        this.routed_trk_1 = false;
+        this.routed_trk_2 = false;
     }
 
     /**
@@ -46,6 +49,7 @@ class CTC_Hall {
         else {
             if (this.sig_2w) {
                 this.route_w_trk_1 = null;
+                this.routed_trk_1 = false;
                 this.sig_2w = false;
             }
             else {
@@ -54,6 +58,7 @@ class CTC_Hall {
                     return;
                 }
                 this.route_w_trk_1 = "W_1_1__|__1_howells_hall";
+                this.routed_trk_1 = true;
                 this.sig_2w = true;
             }
         }
@@ -63,6 +68,7 @@ class CTC_Hall {
         if (this.sw_1) {
             if (this.sig_4w) {
                 this.route_w_trk_2 = null;
+                this.routed_trk_2 = false;
                 this.sig_4w = false;
             }
             else {
@@ -71,12 +77,14 @@ class CTC_Hall {
                     return;
                 }
                 this.route_w_trk_2 = "W_2_1__|__1_howells_hall";
+                this.routed_trk_2 = true;
                 this.sig_4w = true;
             }
         }
         else {
             if (this.sig_4w) {
                 this.route_w_trk_2 = null;
+                this.routed_trk_2 = false;
                 this.sig_4w = false;
             }
             else {
@@ -85,6 +93,7 @@ class CTC_Hall {
                     return;
                 }
                 this.route_w_trk_2 = "W_2_2__|__2_hall_yard";
+                this.routed_trk_2 = true;
                 this.sig_4w = true;
             }
         }
@@ -94,6 +103,7 @@ class CTC_Hall {
         if (this.sw_1) {
             if (this.sig_2e) {
                 this.route_e_trk_1 = null;
+                this.routed_trk_1 = false;
                 this.sig_2e = false;
             }
             else {
@@ -101,13 +111,15 @@ class CTC_Hall {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_1 = "W_1_2__|__2_hall_hudson";
+                this.route_e_trk_1 = "E_1_2__|__2_hall_hudson";
+                this.routed_trk_1 = true;
                 this.sig_2e = true;
             }
         }
         else {
             if (this.sig_2e) {
                 this.route_e_trk_1 = null;
+                this.routed_trk_1 = false;
                 this.sig_2e = false;
             }
             else {
@@ -115,7 +127,8 @@ class CTC_Hall {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_1 = "W_1_1__|__1_hall_hudson";
+                this.route_e_trk_1 = "E_1_1__|__1_hall_hudson";
+                this.routed_trk_1 = true;
                 this.sig_2e = true;
             }
         }
@@ -128,6 +141,7 @@ class CTC_Hall {
         else {
             if (this.sig_4e) {
                 this.route_e_trk_2 = null;
+                this.routed_trk_2 = false;
                 this.sig_4e = false;
             }
             else {
@@ -135,7 +149,8 @@ class CTC_Hall {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_2 = "W_2_2__|__2_hall_hudson";
+                this.route_e_trk_2 = "E_2_2__|__2_hall_hudson";
+                this.routed_trk_2 = true;
                 this.sig_4e = true;
             }
         }
@@ -173,7 +188,10 @@ class CTC_Hall {
      */
     get_interlocking_status() {
         let status = {
-            sw_1: this.sw_1
+            sw_1: this.sw_1,
+            routes: this.get_routes(),
+            routed_trk_1: this.routed_trk_1,
+            routed_trk_2: this.routed_trk_2
         }
 
         return status;

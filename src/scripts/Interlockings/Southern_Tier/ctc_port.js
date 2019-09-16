@@ -135,7 +135,9 @@ class CTC_Port {
      */
     get_interlocking_status() {
         let status = {
-            sw_1: this.sw_1
+            sw_1: this.sw_1,
+
+            routes: this.get_routes()
         }
 
         return status;
