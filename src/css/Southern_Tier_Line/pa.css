@@ -62,16 +62,7 @@
         top: 261px;
         left: 446px;
         height: 7px;
-        width: 25px;
-        background: #999999;
-    }
-
-    .pa_buckleys_west {
-        position: absolute;
-        top: 292px;
-        left: 446px;
-        height: 7px;
-        width: 25px;
+        width: 63px;
         background: #999999;
     }
 
@@ -99,15 +90,6 @@
         left: 547px;
         height: 7px;
         width: 63px;
-        background: #999999;
-    }
-
-    .pa_buckleys_east {
-        position: absolute;
-        top: 292px;
-        left: 508px;
-        height: 7px;
-        width: 25px;
         background: #999999;
     }
 

@@ -47,7 +47,7 @@ class Sparrow extends Component {
         tail_2_e: Empty,
         tail_cripple: Empty,
 
-        occupied: false,
+        occupied: this.props.status.occupied,
         routes: this.props.status.routes
     };
 
@@ -55,6 +55,7 @@ class Sparrow extends Component {
         this.setState({
             sw_1: nextProps.status.sw_1,
             sw_3: nextProps.status.sw_3,
+            occupied: nextProps.status.occupied,
             routes: nextProps.status.routes
         });
     }

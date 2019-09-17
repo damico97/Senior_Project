@@ -2,6 +2,7 @@ import Clock from '../Trains/clock.js';
 
 import CTC_Block from '../CTC/ctc_block.js';
 
+// Southern Tier Interlockings
 import CTC_Sparrow from '../Interlockings/Southern_Tier/ctc_sparrow.js';
 import CTC_PA from '../Interlockings/Southern_Tier/ctc_pa.js';
 import CTC_Port from '../Interlockings/Southern_Tier/ctc_port.js';
@@ -14,6 +15,7 @@ import CTC_Valley from '../Interlockings/Southern_Tier/ctc_valley.js';
 import CTC_Harriman from '../Interlockings/Southern_Tier/ctc_harriman.js';
 import CTC_Sterling from '../Interlockings/Southern_Tier/ctc_sterling.js';
 
+// Main Line Interlockings
 import CTC_Hilburn from '../Interlockings/Main_Line/ctc_hilburn.js';
 import CTC_SF from '../Interlockings/Main_Line/ctc_sf.js';
 import CTC_WC from '../Interlockings/Main_Line/ctc_wc';
@@ -22,11 +24,6 @@ import CTC_Suscon from '../Interlockings/Main_Line/ctc_suscon.js';
 import CTC_Mill from '../Interlockings/Main_Line/ctc_mill.js';
 import CTC_WestSecaucus from '../Interlockings/Main_Line/ctc_westSecaucus.js';
 import CTC_Laurel from '../Interlockings/Main_Line/ctc_laurel.js';
-
-
-const Empty = '#999999';
-const Route = '#75fa4c';
-const Occupied = '#eb3323';
 
 
 class MainLine_CTC {
@@ -154,6 +151,8 @@ class MainLine_CTC {
         this.reset_route_mainLine_blocks();
 
         let routes = this.interlocking_suscon.get_routes();
+
+        // Add Main Line Routes
         routes = routes.concat(this.interlocking_mill.get_routes());
         routes = routes.concat(this.interlocking_westSecaucus.get_routes());
         routes = routes.concat(this.interlocking_ridgewood.get_routes());
@@ -162,6 +161,7 @@ class MainLine_CTC {
         routes = routes.concat(this.interlocking_sf.get_routes());
         routes = routes.concat(this.interlocking_hilburn.get_routes());
 
+        // Add Southern Tier Routes 
         routes = routes.concat(this.interlocking_sterling.get_routes());
         routes = routes.concat(this.interlocking_harriman.get_routes());
         routes = routes.concat(this.interlocking_valley.get_routes());
@@ -174,9 +174,10 @@ class MainLine_CTC {
         routes = routes.concat(this.interlocking_pa.get_routes());
         routes = routes.concat(this.interlocking_sparrow.get_routes());
 
+        // Update all the blocks that have routes 
         for (var i = 0; i < routes.length; i++) {
             if (routes[i] === null) {
-                
+                // Do Nothing 
             }
             else {
                 let name = routes[i].substr(routes[i].indexOf("|") + 3, routes[i].size);
@@ -229,6 +230,8 @@ class MainLine_CTC {
         this.interlocking_ov.can_clear();
         this.interlocking_bc.can_clear();
         this.interlocking_port.can_clear();
+        this.interlocking_pa.can_clear();
+        this.interlocking_sparrow.can_clear();
     }
 
     /**
@@ -370,7 +373,6 @@ class MainLine_CTC {
      */
     add_train(new_train) {
         this.train_list.push(new_train);
-        console.log(this.train_list);
     }
 
 
@@ -680,6 +682,17 @@ class MainLine_CTC {
         }
         if (name === "port") {
             this.get_port().set_occupied(true);
+        }
+        if (name === "pa") {
+            if (track === "1") {
+                this.get_pa().set_trk_1_occupied(true);
+            }
+            else {
+                this.get_pa().set_trk_2_occupied(true);
+            }
+        }
+        if (name === "sparrow") {
+            this.get_sparrow().set_occupied(true);
         }
     }
 

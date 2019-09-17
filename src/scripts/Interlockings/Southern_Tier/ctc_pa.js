@@ -6,23 +6,23 @@ class CTC_PA {
     constructor() {
         this.sw_1 = false;
         this.sw_3 = false;
-        this.sw_5 = false;
 
         this.sig_2w_1 = false;
         this.sig_2w_2 = false;
         this.sig_4w = false;
-        this.sig_6w = false;
         this.sig_2e = false;
         this.sig_4e = false;
-        this.sig_6e = false;
 
         this.route_w_trk_1 = null;
         this.route_w_trk_2 = null;
         this.route_w_trk_3 = null;
-        this.route_w_trk_4 = null;
         this.route_e_trk_1 = null;
         this.route_e_trk_2 = null;
-        this.route_e_trk_4 = null;
+
+        this.routed_trk_1 = null;
+        this.routed_trk_2 = null;
+        this.trk_1_time = null;
+        this.trk_2_time = null;
     }
 
     /**
@@ -63,6 +63,7 @@ class CTC_PA {
         else if (!this.sw_3) {
             if (this.sig_2w_1) {
                 this.route_w_trk_1 = null;
+                this.routed_trk_1 = false;
                 this.sig_2w_1 = false;
             }
             else {
@@ -71,12 +72,14 @@ class CTC_PA {
                     return;
                 }
                 this.route_w_trk_1 = "W_1_1__|__1_sparrow_pa";
+                this.routed_trk_1 = true;
                 this.sig_2w_1 = true;
             }
         }
-        else if (this.sw_3 && !this.sw_5) {
+        else if (this.sw_3) {
             if (this.sig_2w_1) {
                 this.route_w_trk_1 = null;
+                this.routed_trk_1 = false;
                 this.sig_2w_1 = false;
             }
             else {
@@ -85,20 +88,7 @@ class CTC_PA {
                     return;
                 }
                 this.route_w_trk_1 = "W_1_2__|__2_sparrow_pa";
-                this.sig_2w_1 = true;
-            }
-        }
-        else if (this.sw_3 && this.sw_5) {
-            if (this.sig_2w_1) {
-                this.route_w_trk_1 = null;
-                this.sig_2w_1 = false;
-            }
-            else {
-                if (next_block_4 === Occupied || next_block_4 === Lined) {
-                    alert("Cannot Line Route Because Conflict With Next Block");
-                    return;
-                }
-                this.route_w_trk_1 = "W_1_4__|__0_buckleys_west";
+                this.routed_trk_1 = true;
                 this.sig_2w_1 = true;
             }
         }
@@ -111,6 +101,7 @@ class CTC_PA {
         else if (!this.sw_3) {
             if (this.sig_2w_2) {
                 this.route_w_trk_3 = null;
+                this.routed_trk_1 = false;
                 this.sig_2w_2 = false;
             }
             else {
@@ -119,12 +110,14 @@ class CTC_PA {
                     return;
                 }
                 this.route_w_trk_3 = "W_3_1__|__1_sparrow_pa";
+                this.routed_trk_1 = true;
                 this.sig_2w_2 = true;
             }
         }
-        else if (this.sw_3 && !this.sw_5) {
+        else if (this.sw_3) {
             if (this.sig_2w_2) {
                 this.route_w_trk_3 = null;
+                this.routed_trk_1 = false;
                 this.sig_2w_2 = false;
             }
             else {
@@ -133,20 +126,7 @@ class CTC_PA {
                     return;
                 }
                 this.route_w_trk_3 = "W_3_2__|__2_sparrow_pa";
-                this.sig_2w_2 = true;
-            }
-        }
-        else if (this.sw_3 && this.sw_5) {
-            if (this.sig_2w_2) {
-                this.route_w_trk_3 = null;
-                this.sig_2w_2 = false;
-            }
-            else {
-                if (next_block_4 === Occupied || next_block_4 === Lined) {
-                    alert("Cannot Line Route Because Conflict With Next Block");
-                    return;
-                }
-                this.route_w_trk_3 = "W_3_4__|__0_buckleys_west";
+                this.routed_trk_1 = true;
                 this.sig_2w_2 = true;
             }
         }
@@ -156,9 +136,10 @@ class CTC_PA {
         if (this.sw_3) {
             return;
         }
-        else if (!this.sw_5) {
+        else {
             if (this.sig_4w) {
                 this.route_w_trk_2 = null;
+                this.routed_trk_2 = false;
                 this.sig_4w = false;
             }
             else {
@@ -167,41 +148,8 @@ class CTC_PA {
                     return;
                 }
                 this.route_w_trk_2 = "W_2_2__|__2_sparrow_pa";
+                this.routed_trk_2 = true;
                 this.sig_4w = true;
-            }
-        }
-        else {
-            if (this.sig_4w) {
-                this.route_w_trk_2 = null;
-                this.sig_4w = false;
-            }
-            else {
-                if (next_block_4 === Occupied || next_block_4 === Lined) {
-                    alert("Cannot Line Route Because Conflict With Next Block");
-                    return;
-                }
-                this.route_w_trk_2 = "W_4_2__|__0_buckleys_west";
-                this.sig_4w = true;
-            }
-        }
-    }
-
-    click_sig_6w(next_block_4) {
-        if (this.sw_5) {
-            return;
-        }
-        else {
-            if (this.sig_6w) {
-                this.route_w_trk_4 = null;
-                this.sig_6w = false;
-            }
-            else {
-                if (next_block_4 === Occupied || next_block_4 === Lined) {
-                    alert("Cannot Line Route Because Conflict With Next Block");
-                    return;
-                }
-                this.route_w_trk_4 = "W_4_4__|__0_buckleys_west";
-                this.sig_6w = true;
             }
         }
     }
@@ -213,6 +161,7 @@ class CTC_PA {
         else if (!this.sw_1) {
             if (this.sig_2e) {
                 this.route_e_trk_1 = null;
+                this.routed_trk_1 = false;
                 this.sig_2e = false;
             }
             else {
@@ -221,12 +170,14 @@ class CTC_PA {
                     return;
                 }
                 this.route_e_trk_1 = "E_1_1__|__1_pa_port";
+                this.routed_trk_1 = true;
                 this.sig_2e = true;
             }
         }
         else {
             if (this.sig_2e) {
                 this.route_e_trk_1 = null;
+                this.routed_trk_1 = false;
                 this.sig_2e = false;
             }
             else {
@@ -235,18 +186,17 @@ class CTC_PA {
                     return;
                 }
                 this.route_e_trk_1 = "E_1_3__|__0_portYard_west";
+                this.routed_trk_1 = true;
                 this.sig_2e = true;
             }
         }
     }
 
     click_sig_4e(next_block_1, next_block_2, next_block_3) {
-        if (this.sw_5) {
-            return;
-        }
-        else if (!this.sw_3) {
+        if (!this.sw_3) {
             if (this.sig_4e) {
                 this.route_e_trk_2 = null;
+                this.routed_trk_2 = false;
                 this.sig_4e = false;
             }
             else {
@@ -255,12 +205,14 @@ class CTC_PA {
                     return;
                 }
                 this.route_e_trk_2 = "E_2_2__|__2_pa_bc";
+                this.routed_trk_2 = true;
                 this.sig_4e = true;
             }
         }
         else if (this.sw_3 && !this.sw_1) {
             if (this.sig_4e) {
                 this.route_e_trk_2 = null;
+                this.routed_trk_2 = false;
                 this.sig_4e = false;
             }
             else {
@@ -269,12 +221,14 @@ class CTC_PA {
                     return;
                 }
                 this.route_e_trk_2 = "E_2_1__|__1_pa_port";
+                this.routed_trk_2 = true;
                 this.sig_4e = true;
             }
         }
         else if (this.sw_3 && this.sw_1) {
             if (this.sig_4e) {
                 this.route_e_trk_2 = null;
+                this.routed_trk_2 = false;
                 this.sig_4e = false;
             }
             else {
@@ -283,67 +237,67 @@ class CTC_PA {
                     return;
                 }
                 this.route_e_trk_2 = "E_2_3__|__0_portYard_west";
+                this.routed_trk_2 = true;
                 this.sig_4e = true;
             }
         }
     }
 
-    click_sig_6e (next_block_1, next_block_2, next_block_3, next_block_4) {
-        if (!this.sw_5) {
-            if (this.sig_6e) {
-                this.route_e_trk_4 = null;
-                this.sig_6e = false;
-            }
-            else {
-                if (next_block_4 === Occupied || next_block_4 === Lined) {
-                    alert("Cannot Line Route Because Conflict With Next Block");
-                    return;
-                }
-                this.route_e_trk_4 = "E_4_4__|__0_buckleys_east";
-                this.sig_6e = true;
-            }
+     /**
+     * 
+     */
+    set_trk_1_occupied(n_state) {
+        if (n_state === true) {
+            this.trk_1_occupied = n_state;
+            this.routed_trk_1 = false;
+            this.trk_1_time = new Date().getTime() / 1000;
         }
-        else if (this.sw_5 && !this.sw_3) {
-            if (this.sig_6e) {
-                this.route_e_trk_4 = null;
-                this.sig_6e = false;
-            }
-            else {
-                if (next_block_2 === Occupied || next_block_2 === Lined) {
-                    alert("Cannot Line Route Because Conflict With Next Block");
-                    return;
-                }
-                this.route_e_trk_4 = "E_4_2__|__2_pa_bc";
-                this.sig_6e = true;
-            }
+        else {
+            console.log("ERROR");
         }
-        else if (this.sw_5 && this.sw_3 && !this.sw_1) {
-            if (this.sig_6e) {
-                this.route_e_trk_4 = null;
-                this.sig_6e = false;
-            }
-            else {
-                if (next_block_2 === Occupied || next_block_2 === Lined) {
-                    alert("Cannot Line Route Because Conflict With Next Block");
-                    return;
-                }
-                this.route_e_trk_4 = "E_4_1__|__1_pa_port";
-                this.sig_6e = true;
-            }
+    }
+
+    /**
+     * 
+     */
+    set_trk_2_occupied(n_state) {
+        if (n_state === true) {
+            this.trk_2_occupied = n_state;
+            this.routed_trk_2 = false;
+            this.trk_2_time = new Date().getTime() / 1000;
         }
-        else if (this.sw_5 && this.sw_3 && this.sw_1) {
-            if (this.sig_6e) {
-                this.route_e_trk_4 = null;
-                this.sig_6e = false;
-            }
-            else {
-                if (next_block_2 === Occupied || next_block_2 === Lined) {
-                    alert("Cannot Line Route Because Conflict With Next Block");
-                    return;
-                }
-                this.route_e_trk_4 = "E_4_3__|__0_portYard_west";
-                this.sig_6e = true;
-            }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    can_clear() {
+        //console.log(new Date().getTime() / 1000 - this.time_occupied)
+        let current_time = new Date().getTime() / 1000;
+        if (current_time - this.trk_1_time > 4 && current_time - this.trk_1_time< 100000) {
+            this.sig_2w = false;
+            this.sig_2e = false;
+
+            this.route_w_trk_1 = null;
+            this.route_e_trk_1 = null;
+            this.routed_trk_1 = false;
+
+            this.trk_1_occupied = false;
+            this.trk_1_time = null;
+        }
+        if (current_time - this.trk_2_time > 4 && current_time - this.trk_2_time< 100000) {
+            this.sig_4w = false;
+            this.sig_4e = false;
+
+            this.route_w_trk_2 = null;
+            this.route_e_trk_2 = null;
+            this.routed_trk_2 = false;
+
+            this.trk_2_occupied = false;
+            this.trk_2_time = null;
         }
     }
 
@@ -397,8 +351,8 @@ class CTC_PA {
      */
     get_routes() {
         let routes = [
-            this.route_w_trk_1, this.route_w_trk_2, this.route_w_trk_3, this.route_w_trk_4,
-            this.route_e_trk_1, this.route_e_trk_2, this.route_e_trk_4
+            this.route_w_trk_1, this.route_w_trk_2, this.route_w_trk_3,
+            this.route_e_trk_1, this.route_e_trk_2
         ];
 
         return routes;
@@ -412,6 +366,11 @@ class CTC_PA {
             sw_1: this.sw_1,
             sw_3: this.sw_3,
             sw_5: this.sw_5,
+            routes: this.get_routes(),
+            routed_trk_1: this.routed_trk_1,
+            routed_trk_2: this.routed_trk_2,
+            occupied_trk_1: this.trk_1_occupied,
+            occupied_trk_2: this.trk_2_occupied
         }
 
         return status;

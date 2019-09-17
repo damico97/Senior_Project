@@ -46,7 +46,7 @@ clock.startClock;
 //ctc.add_train(new Train("49", "1_suscon_mill", "suscon", 10));
 
 setTimeout(function(){ 
-    ctc.add_train(new Train("49", "1_hudson_valley", "mill", "WEST", 12));
+    ctc.add_train(new Train("49", "1_port_bc", "mill", "WEST", 12));
     //ctc.add_train(new Train("50", "2_mill_westSecaucus", "mill", "WEST", 12));
     ctc.test_block(); 
 }, 3000);  
@@ -102,6 +102,8 @@ class MainLine extends Component {
             status_bergenLine: ctc.get_bergen_blocks_status(),
             status_tier: ctc.get_tier_block_status(),
         
+            status_sparrow: ctc.get_sparrow().get_interlocking_status(),
+            status_pa: ctc.get_pa().get_interlocking_status(),
             status_port: ctc.get_port().get_interlocking_status(),  
             status_bc: ctc.get_bc().get_interlocking_status(),
             status_ov: ctc.get_ov().get_interlocking_status(),
@@ -141,13 +143,10 @@ class MainLine extends Component {
                     click_sig_2w_1={this.pa_click_sig_2w_1}
                     click_sig_2w_2={this.pa_click_sig_2w_2}
                     click_sig_4w={this.pa_click_sig_4w}
-                    click_sig_6w={this.pa_click_sig_6w}
                     click_sig_2e={this.pa_click_sig_2e}
                     click_sig_4e={this.pa_click_sig_4e}
-                    click_sig_6e={this.pa_click_sig_6e}
                     throw_sw_1={this.pa_throw_sw_1}
                     throw_sw_3={this.pa_throw_sw_3}
-                    throw_sw_5={this.pa_throw_sw_5}
                 />
                 <Port 
                     status={this.state.status_port}
@@ -392,13 +391,6 @@ class MainLine extends Component {
         this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
     }
 
-    pa_click_sig_6w = () => {
-        ctc.get_pa().click_sig_6w(
-            this.state.status_tier.block_buckleys_west
-        );
-        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
-    }
-
     pa_click_sig_2e = () => {
         ctc.get_pa().click_sig_2e(
             this.state.status_tier.block_pa_port_1,
@@ -416,16 +408,6 @@ class MainLine extends Component {
         this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
     }
 
-    pa_click_sig_6e = () => {
-        ctc.get_pa().click_sig_6e(
-            this.state.status_tier.block_pa_port_1,
-            this.state.status_tier.block_pa_bc_2,
-            this.state.status_tier.block_port_yard_west,
-            this.state.status_tier.block_buckleys_east
-        );
-        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
-    }
-
     pa_throw_sw_1 = () => {
         ctc.get_pa().throw_sw_1();
         this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
@@ -436,10 +418,6 @@ class MainLine extends Component {
         this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
     }
 
-    pa_throw_sw_5 = () => {
-        ctc.get_pa().throw_sw_5();
-        this.setState({status_pa: ctc.get_pa().get_interlocking_status()});
-    }
 
 
     port_click_sig_2w = () => {

@@ -25,6 +25,7 @@ import SIG_E from '../../../../public/images/SIG_E.png';
 import SIG_E_Clear from '../../../../public/images/SIG_E_Clear.png';
 import SIG_E_Stop from '../../../../public/images/SIG_E_Stop.png';
 
+// Track Colors
 const Empty = '#999999';
 const Green = '#75fa4c';
 const Red = '#eb3323';

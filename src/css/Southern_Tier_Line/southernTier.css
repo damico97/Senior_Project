@@ -165,24 +165,6 @@
         background: #999999;
     }
 
-    .s_buckleys_west {
-        position: absolute;
-        top: 292px;
-        left: 411px;
-        height: 7px;
-        width: 30px;
-        background: #999999;
-    }
-
-    .s_buckleys_east {
-        position: absolute;
-        top: 292px;
-        left: 538px;
-        height: 7px;
-        width: 30px;
-        background: #999999;
-    }
-
     .s_screen_sparrow {
         position: absolute;
         top: 230px;

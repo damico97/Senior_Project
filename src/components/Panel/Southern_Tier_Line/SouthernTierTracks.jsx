@@ -86,7 +86,6 @@ class SouthernTierTracks extends Component {
                 <div className="port_jervis_tag_1">Port Jervis</div>
                 <div className="port_jervis_tag_2">Yard</div>
                 <div className="crippple_tag">Cripple</div>
-                <div className="buckleys_tag">Buckley's</div>
                 <div className="hall_yard_tag">Campbell Hall Yard</div>
                 <div className="hudson_nysw_tag">NYS&W RR</div>
                 <div className="harriman_int_tag">Harriman</div>
@@ -153,10 +152,6 @@ class SouthernTierTracks extends Component {
 
                 {/* Sparrow Cripple */}
                 <div className="s_sparrow_cripple" style={{background: this.state.sparrow_cripple}}></div>
-
-                {/* Buckleys */}
-                <div className="s_buckleys_west" style={{background: this.state.buckleys_west}}></div>
-                <div className="s_buckleys_east" style={{background: this.state.buckleys_east}}></div>
 
                 {/* Sparrow to Screen */}
                 <div className="s_screen_sparrow" style={{background: this.state.bingo_sparrow}}></div>

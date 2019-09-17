@@ -302,4 +302,13 @@ September 16, 2019:
     - Can now occupy CP BC and CP OV and CP Port
     (0.5 Hours)
 
+September 17, 2019:
+    - Drawings and occuping for CP PA
+    (1.5 Hours)
+
+    - Can now occupy CP Sparrow
+    (0.25 Hours)
+
+    
+
 
