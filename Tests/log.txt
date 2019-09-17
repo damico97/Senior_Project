@@ -288,6 +288,18 @@ September 16, 2019:
 
     - Added occuping interlocking for CP Hudson Junction
     (0.5 Hours)
-    
+
+    - Commenting
+    (0.5 Hours)
+
+    - Can now occupy CP Hall, this is an interlocking that can have multiple routes, which was gonna be
+    more difficult than one route interlockings to get it to work.
+    (0.5 Hours)
+
+    - Can now occupied CP Howells
+    (0.25 Hours)
+
+    - Can now occupy CP BC and CP OV and CP Port
+    (0.5 Hours)
 
 

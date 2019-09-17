@@ -224,6 +224,11 @@ class MainLine_CTC {
     update_interlockings() {
         this.interlocking_valley.can_clear();
         this.interlocking_hudson.can_clear();
+        this.interlocking_hall.can_clear();
+        this.interlocking_howells.can_clear();
+        this.interlocking_ov.can_clear();
+        this.interlocking_bc.can_clear();
+        this.interlocking_port.can_clear();
     }
 
     /**
@@ -655,6 +660,26 @@ class MainLine_CTC {
         }
         if (name === "hudson") {
             this.get_hudson().set_occupied(true);
+        }
+        if (name === "hall") {
+            if (track === "1") {
+                this.get_hall().set_trk_1_occupied(true);
+            }
+            else {
+                this.get_hall().set_trk_2_occupied(true);
+            }
+        }
+        if (name === "howells") {
+            this.get_howells().set_occupied(true);
+        }
+        if (name === "ov") {
+            this.get_ov().set_occupied(true);
+        }
+        if (name === "bc") {
+            this.get_bc().set_occupied(true);
+        }
+        if (name === "port") {
+            this.get_port().set_occupied(true);
         }
     }
 

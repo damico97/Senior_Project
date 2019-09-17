@@ -36,13 +36,14 @@ class OV extends Component {
         sig_2ws_src: SIG_W,
         sig_2e_src: SIG_E,
 
-        occupied: false,
+        occupied: this.props.status.occupied,
         routes: this.props.status.routes
     };
 
     componentWillReceiveProps(nextProps){
         this.setState({
             sw_1: nextProps.status.sw_1,
+            occupied: nextProps.status.occupied,
             routes: nextProps.status.routes
         });
     }

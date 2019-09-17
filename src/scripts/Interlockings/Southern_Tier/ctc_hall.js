@@ -18,6 +18,11 @@ class CTC_Hall {
 
         this.routed_trk_1 = false;
         this.routed_trk_2 = false;
+
+        this.trk_1_occupied = false;
+        this.trk_2_occupied = false;
+        this.trk_1_time = null;
+        this.trk_2_time = null;
     }
 
     /**
@@ -157,6 +162,64 @@ class CTC_Hall {
     }
 
     /**
+     * 
+     */
+    set_trk_1_occupied(n_state) {
+        if (n_state === true) {
+            this.trk_1_occupied = n_state;
+            this.routed_trk_1 = false;
+            this.trk_1_time = new Date().getTime() / 1000;
+        }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    set_trk_2_occupied(n_state) {
+        if (n_state === true) {
+            this.trk_2_occupied = n_state;
+            this.routed_trk_2 = false;
+            this.trk_2_time = new Date().getTime() / 1000;
+        }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    can_clear() {
+        //console.log(new Date().getTime() / 1000 - this.time_occupied)
+        let current_time = new Date().getTime() / 1000;
+        if (current_time - this.trk_1_time > 4 && current_time - this.trk_1_time< 100000) {
+            this.sig_2w = false;
+            this.sig_2e = false;
+
+            this.route_w_trk_1 = null;
+            this.route_e_trk_1 = null;
+            this.routed_trk_1 = false;
+
+            this.trk_1_occupied = false;
+            this.trk_1_time = null;
+        }
+        if (current_time - this.trk_2_time > 4 && current_time - this.trk_2_time< 100000) {
+            this.sig_4w = false;
+            this.sig_4e = false;
+
+            this.route_w_trk_2 = null;
+            this.route_e_trk_2 = null;
+            this.routed_trk_2 = false;
+
+            this.trk_2_occupied = false;
+            this.trk_2_time = null;
+        }
+    }
+
+    /**
      * @brief Funtion to throw switch #21 in the interlocking
      * 
      * The function sets the status of the switch, whether it is is the normal possition
@@ -191,7 +254,9 @@ class CTC_Hall {
             sw_1: this.sw_1,
             routes: this.get_routes(),
             routed_trk_1: this.routed_trk_1,
-            routed_trk_2: this.routed_trk_2
+            routed_trk_2: this.routed_trk_2,
+            occupied_trk_1: this.trk_1_occupied,
+            occupied_trk_2: this.trk_2_occupied
         }
 
         return status;

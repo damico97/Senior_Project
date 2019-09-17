@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // Import CSS style sheet
 import '../../../css/Southern_Tier_Line/howells.css';
-
+ 
 // Import Images
 // Switch Images
 import SW_U_W from '../../../../public/images/SW_U_W.png';
@@ -37,13 +37,14 @@ class Howells extends Component {
         sig_2e_src: SIG_E,
         sig_2es_src: SIG_E,
 
-        occupied: false,
+        occupied: this.props.status.occupied,
         routes: this.props.status.routes
     };
 
     componentWillReceiveProps(nextProps){
         this.setState({
             sw_3: nextProps.status.sw_3,
+            occupied: nextProps.status.occupied,
             routes: nextProps.status.routes
         });
     }
@@ -119,6 +120,7 @@ class Howells extends Component {
 
                     this.state.sig_2w_src = SIG_W_Stop;
                     this.state.sig_2e_src = SIG_E_Stop;
+                    this.state.sig_2es_src = SIG_E_Stop;
                 }
                 else {
                     this.state.sw_3_src = SW_U_W_R_Lined;

@@ -45,8 +45,8 @@ class Hall extends Component {
         sig_2e_src: SIG_E,
         sig_4e_src: SIG_E,
 
-        occupied_1: false,
-        occupied_2: false,
+        occupied_1: this.props.status.occupied_trk_1,
+        occupied_2: this.props.status.occupied_trk_2,
         route_1: this.props.status.routed_trk_1,
         route_2: this.props.status.routed_trk_2,
         routes: this.props.status.routes
@@ -55,6 +55,8 @@ class Hall extends Component {
     componentWillReceiveProps(nextProps){
         this.setState({
             sw_1: nextProps.status.sw_1,
+            occupied_1: nextProps.status.occupied_trk_1,
+            occupied_2: nextProps.status.occupied_trk_2,
             route_1: nextProps.status.routed_trk_1,
             route_2: nextProps.status.routed_trk_2,
             routes: nextProps.status.routes
@@ -91,17 +93,17 @@ class Hall extends Component {
     set_route_drawings() {
         let color_1 = Empty;
         let color_2 = Empty;
-        if (this.state.occupied_1) {
-            color_1 = Red;
-        }
         if (this.state.route_1) {
             color_1 = Green;
         }
-        if (this.state.occupied_2) {
-            color_2 = Red;
-        }
         if (this.state.route_2) {
             color_2 = Green;
+        }
+        if (this.state.occupied_1) {
+            color_1 = Red;
+        }
+        if (this.state.occupied_2) {
+            color_2 = Red;
         }
 
         for (let i = 0; i < this.state.routes.length; i++) {

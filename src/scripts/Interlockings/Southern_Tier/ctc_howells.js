@@ -12,7 +12,10 @@ class CTC_Howells {
 
         this.route_w_trk_1 = null;
 		this.route_e_trk_1 = null;
-		this.route_e_trk_2 = null;
+        this.route_e_trk_2 = null;
+        
+        this.int_occupied = false;
+        this.time_occupied = null;
     }
 
     /**
@@ -103,6 +106,40 @@ class CTC_Howells {
         }
     }
 
+     /**
+     * 
+     * @param {*} n_state 
+     */
+    set_occupied(n_state) {
+        if (n_state === true) {
+            this.int_occupied = n_state;
+            this.time_occupied = new Date().getTime() / 1000;
+        }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    can_clear() {
+        //console.log(new Date().getTime() / 1000 - this.time_occupied)
+        let current_time = new Date().getTime() / 1000;
+        if (current_time - this.time_occupied > 4 && current_time - this.time_occupied < 100000) {
+            this.sig_2w = false;
+            this.sig_2e = false;
+            this.sig_2es = false;
+
+            this.route_w_trk_1 = null;
+	    	this.route_e_trk_1 = null;
+            this.route_e_trk_2 = null;
+        
+            this.int_occupied = false;
+            this.time_occupied = null;
+        }
+    }
+
     /**
      * @brief Funtion to throw switch #3 in the interlocking
      * 
@@ -136,8 +173,8 @@ class CTC_Howells {
     get_interlocking_status() {
         let status = {
             sw_3: this.sw_3,
-
-            routes: this.get_routes()
+            routes: this.get_routes(),
+            occupied: this.int_occupied
         }
 
         return status;

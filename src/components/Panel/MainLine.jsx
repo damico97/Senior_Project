@@ -46,7 +46,7 @@ clock.startClock;
 //ctc.add_train(new Train("49", "1_suscon_mill", "suscon", 10));
 
 setTimeout(function(){ 
-    ctc.add_train(new Train("49", "1_valley_harriman", "mill", "WEST", 12));
+    ctc.add_train(new Train("49", "1_hudson_valley", "mill", "WEST", 12));
     //ctc.add_train(new Train("50", "2_mill_westSecaucus", "mill", "WEST", 12));
     ctc.test_block(); 
 }, 3000);  
@@ -102,6 +102,11 @@ class MainLine extends Component {
             status_bergenLine: ctc.get_bergen_blocks_status(),
             status_tier: ctc.get_tier_block_status(),
         
+            status_port: ctc.get_port().get_interlocking_status(),  
+            status_bc: ctc.get_bc().get_interlocking_status(),
+            status_ov: ctc.get_ov().get_interlocking_status(),
+            status_howells: ctc.get_howells().get_interlocking_status(),
+            status_hall: ctc.get_hall().get_interlocking_status(),
             status_hudson: ctc.get_hudson().get_interlocking_status(),
             status_valley: ctc.get_valley().get_interlocking_status(),
         });

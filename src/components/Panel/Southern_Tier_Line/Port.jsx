@@ -35,13 +35,14 @@ class Port extends Component {
         sig_2e_2_src: SIG_E,
         sig_2w_src: SIG_W,
 
-        occupied: false,
+        occupied: this.props.status.occupied,
         routes: this.props.status.routes
     };
 
     componentWillReceiveProps(nextProps){
         this.setState({
             sw_1: nextProps.status.sw_1,
+            occupied: nextProps.status.occupied,
             routes: nextProps.status.routes
         });
     }
