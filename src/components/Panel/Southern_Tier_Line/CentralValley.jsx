@@ -196,7 +196,7 @@ class CentralValley extends Component {
                 }
             }
         }
-    }
+    } 
 
     /**
      * @brief Changes image sources for the switches, depending on switch status

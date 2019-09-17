@@ -223,6 +223,8 @@ class MainLine_CTC {
      * 
      */
     update_interlockings() {
+        this.interlocking_hilburn.can_clear();
+
         this.interlocking_valley.can_clear();
         this.interlocking_hudson.can_clear();
         this.interlocking_hall.can_clear();
@@ -657,6 +659,9 @@ class MainLine_CTC {
      * @param {*} name 
      */
     set_occupy_interlocking(occupy, track, name) {
+        if (name === "hilburn") {
+            this.get_hilburn().set_occupied(true);
+        }
         if (name === "valley") {
             this.get_valley().set_occupied(true);
         }

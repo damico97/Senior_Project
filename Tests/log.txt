@@ -309,6 +309,9 @@ September 17, 2019:
     - Can now occupy CP Sparrow
     (0.25 Hours)
 
+    - Drawing and occupy at Hilburn
+    (0.5 Hours)
+
     
 
 
