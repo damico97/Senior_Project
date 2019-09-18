@@ -237,6 +237,7 @@ class MainLine_CTC {
      */
     update_interlockings() {
         this.interlocking_westSecaucus.can_clear();
+        this.interlocking_suscon.can_clear();
         this.interlocking_sf.can_clear();
         this.interlocking_hilburn.can_clear();
 
@@ -687,6 +688,14 @@ class MainLine_CTC {
     set_occupy_interlocking(occupy, track, name) {
         if (name === "westSecaucus") {
             this.get_westSecaucus().set_occupied(true);
+        }
+        if (name === "suscon") {
+            if (track === "1") {
+                this.get_suscon().set_trk_1_occupied(true);
+            }
+            else {
+                this.get_suscon().set_trk_2_occupied(true);
+            }
         }
         if (name === "sf") {
             if (track === "1") {

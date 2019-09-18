@@ -24,6 +24,8 @@ class CTC_SF {
         this.routed_trk_2 = false;
         this.trk_1_time = null;
         this.trk_2_time = null;
+        this.trk_1_occupied = false;
+        this.trk_2_occupied = false;
     }
 
     /**
