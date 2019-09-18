@@ -49,7 +49,7 @@ class CTC_Hilburn {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_1 = "W_1_1__|__0_sterling_hilburn";
+                this.route_w_trk_1 = "W_1_1__|__2_sterling_hilburn";
                 this.sig_2w_1 = true;
             }
         }
@@ -69,7 +69,7 @@ class CTC_Hilburn {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_2 = "W_2_1__|__0_sterling_hilburn";
+                this.route_w_trk_2 = "W_2_1__|__2_sterling_hilburn";
                 this.sig_2w_2 = true;
             }
         }
@@ -86,7 +86,7 @@ class CTC_Hilburn {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_1 = "E_1_1__|__0_hilburn_sf";
+                this.route_e_trk_1 = "E_1_1__|__2_hilburn_sf";
                 this.sig_2e = true;
             }
         }

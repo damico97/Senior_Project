@@ -205,15 +205,28 @@ class MainLine_CTC {
                     let location = this.train_list[i].get_location();
 
                     // Occupy the Interlockings
-                    let cp_trk = location.substr(0, location.indexOf("_"));
-                    let cp = this.train_list[i].get_location();
-                    cp = cp.substr(cp.indexOf("_") + 1, cp.lastIndexOf("_") - 2);
-                    console.log(cp_trk, cp);
-                    this.set_occupy_interlocking(true, cp_trk, cp);
+                    if (this.train_list[i].get_direction() === "WEST") {
+                        let cp_trk = location.substr(0, location.indexOf("_"));
+                        let cp = this.train_list[i].get_location();
+                        cp = cp.substr(cp.indexOf("_") + 1, cp.lastIndexOf("_") - 2);
+                        //console.log(cp_trk, cp);
+                        this.set_occupy_interlocking(true, cp_trk, cp);
 
-                    // Occupy the Next Block
-                    let block = new_route.substr(10, new_route.size);
-                    this.train_list[i].update_location(block);
+                        // Occupy the Next Block
+                        let block = new_route.substr(10, new_route.size);
+                        this.train_list[i].update_location(block);
+                    }
+                    else {
+                        let cp_trk = location.substr(0, location.indexOf("_"));
+                        let cp = this.train_list[i].get_location();
+                        cp = cp.substr(cp.lastIndexOf("_") + 1, cp.size);
+                        console.log(cp_trk, cp);
+                        this.set_occupy_interlocking(true, cp_trk, cp);
+
+                        // Occupy the Next Block
+                        let block = new_route.substr(10, new_route.size);
+                        this.train_list[i].update_location(block);
+                    }
                 }
             }
         }
@@ -223,8 +236,12 @@ class MainLine_CTC {
      * 
      */
     update_interlockings() {
+        this.interlocking_westSecaucus.can_clear();
+        this.interlocking_sf.can_clear();
         this.interlocking_hilburn.can_clear();
 
+        this.interlocking_sterling.can_clear();
+        this.interlocking_harriman.can_clear();
         this.interlocking_valley.can_clear();
         this.interlocking_hudson.can_clear();
         this.interlocking_hall.can_clear();
@@ -591,8 +608,17 @@ class MainLine_CTC {
     get_interlocking_route(key, direction) {
         let first_index = key.indexOf("_");
         let second_index = key.lastIndexOf("_");
-        let track = key.substr(0, first_index);
-        let interlocking = key.substr(first_index + 1, second_index - 2);
+        let track;
+        let interlocking;
+
+        if (direction === "WEST") {
+            track = key.substr(0, first_index);
+            interlocking = key.substr(first_index + 1, second_index - 2);
+        }
+        else {
+            track = key.substr(0, first_index);
+            interlocking = key.substr(second_index + 1, key.size);
+        }
         //console.log(key);
         //console.log(track, interlocking);
         if (interlocking === "sparrow") {
@@ -659,8 +685,26 @@ class MainLine_CTC {
      * @param {*} name 
      */
     set_occupy_interlocking(occupy, track, name) {
+        if (name === "westSecaucus") {
+            this.get_westSecaucus().set_occupied(true);
+        }
+        if (name === "sf") {
+            if (track === "1") {
+                this.get_sf().set_trk_1_occupied(true);
+            }
+            else {
+                this.get_sf().set_trk_2_occupied(true);
+            }
+        }
         if (name === "hilburn") {
             this.get_hilburn().set_occupied(true);
+        }
+        
+        if (name === "sterling") {
+            this.get_sterling().set_occupied(true);
+        }
+        if (name === "harriman") {
+            this.get_harriman().set_occupied(true);
         }
         if (name === "valley") {
             this.get_valley().set_occupied(true);
@@ -770,12 +814,6 @@ class MainLine_CTC {
         else if (block === "portYard_east") {
             return this.blocks_mainLine.block_port_yard_east;
         }
-        else if (block === "buckleys_west") {
-            return this.blocks_mainLine.block_buckleys_west;
-        }
-        else if (block === "buckleys_east") {
-            return this.blocks_mainLine.block_buckleys_east;
-        }
         else if (block === "sparrow_pa") {
             if (track === "1") {
                 return this.blocks_mainLine.block_sparrow_pa_1;
@@ -867,7 +905,7 @@ class MainLine_CTC {
         else if (block === "hilburn_yard_west") {
             return this.blocks_mainLine.block_hilburn_yard_west;
         }
-        else if (block === "hilburn_yard_east") {
+        else if (block === "hilburn_yardEast") {
             return this.blocks_mainLine.block_hilburn_yard_east;
         }
         else if (block === "wc_yard") {

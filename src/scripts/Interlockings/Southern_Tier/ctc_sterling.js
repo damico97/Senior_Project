@@ -13,6 +13,9 @@ class CTC_Sterling {
         this.route_w_trk_1 = null;
         this.route_w_trk_2 = null;
         this.route_e_trk_1 = null;
+
+        this.int_occupied = false;
+        this.time_occupied = null;
     }
 
     /**
@@ -20,16 +23,15 @@ class CTC_Sterling {
      */
     get_train_route(direction, track) {
         if (direction === "WEST") {
-            if (track === "1") {
-                return this.route_w_trk_1;
+            if (track === "0") {
+                return this.route_w_trk_2;
             }
             else {
-                return this.route_w_trk_2;
+                return this.route_w_trk_1;
             }
         }
         else {
             return this.route_e_trk_1;
-            
         }
     }
 
@@ -47,7 +49,7 @@ class CTC_Sterling {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_2 = "W_1_1__|__1_harriman_sterling";
+                this.route_w_trk_1 = "W_1_1__|__1_harriman_sterling";
                 this.sig_2w = true;
             }
         }
@@ -84,7 +86,7 @@ class CTC_Sterling {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_1 = "E_1_2__|__2_sterling_hilburn";
+                this.route_e_trk_1 = "E_1_2__|__2_sterling_hilburn"; 
                 this.sig_1e = true;
             }
         }
@@ -101,6 +103,40 @@ class CTC_Sterling {
                 this.route_e_trk_1 = "E_1_1__|__1_sterling_sf";
                 this.sig_1e = true;
             }
+        }
+    }
+
+     /**
+     * 
+     * @param {*} n_state 
+     */
+    set_occupied(n_state) {
+        if (n_state === true || n_state === false) {
+            this.int_occupied = n_state;
+            this.time_occupied = new Date().getTime() / 1000;
+        }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    can_clear() {
+        //console.log(new Date().getTime() / 1000 - this.time_occupied)
+        let current_time = new Date().getTime() / 1000;
+        if (current_time - this.time_occupied > 4 && current_time - this.time_occupied < 100000) {
+            this.sig_2w = false;
+            this.sig_2ws = false;
+            this.sig_1e = false;
+
+            this.route_w_trk_1 = null;
+            this.route_w_trk_2 = null;
+            this.route_e_trk_1 = null;
+
+            this.int_occupied = false;
+            this.time_occupied = null;
         }
     }
 
@@ -136,7 +172,9 @@ class CTC_Sterling {
      */
     get_interlocking_status() {
         let status = {
-            sw_21: this.sw_21
+            sw_21: this.sw_21,
+            occupied: this.int_occupied,
+            routes: this.get_routes()
         }
 
         return status;

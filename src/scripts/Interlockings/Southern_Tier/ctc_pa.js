@@ -48,7 +48,7 @@ class CTC_PA {
             	return this.route_e_trk_1;
             }   
             else if (track === "2") {
-        		return this.route_3_trk_2;
+        		return this.route_e_trk_2;
             }
         	else {
         		return this.route_e_trk_3;

@@ -94,7 +94,7 @@ class Hilburn extends Component {
         }
         for (let i = 0; i < this.state.routes.length; i++) {
             // Routes with Track 1 on both the West and East sides
-            if (this.state.routes[i] === "W_1_1__|__0_sterling_hilburn" || this.state.routes[i] === "E_1_1__|__0_hilburn_sf") {
+            if (this.state.routes[i] === "W_1_1__|__2_sterling_hilburn" || this.state.routes[i] === "E_1_1__|__2_hilburn_sf") {
                 // Tail Tracks
                 this.state.tail_e = color;
                 this.state.tail_w = color;
@@ -116,7 +116,7 @@ class Hilburn extends Component {
 
                     // Signal Images
                     // West Bound
-                    if (this.state.routes[i] === "W_1_1__|__0_sterling_hilburn") {
+                    if (this.state.routes[i] === "W_1_1__|__2_sterling_hilburn") {
                         this.state.sig_2w1_src = SIG_W_Clear;
                         this.state.sig_2w2_src = SIG_W_Stop;
                         this.state.sig_2e_src = SIG_E_Stop;
@@ -130,7 +130,7 @@ class Hilburn extends Component {
                 }
             }
             // Routes With Track 2 on West Side and Track 1 on East Side
-            else if (this.state.routes[i] === "W_2_1__|__0_sterling_hilburn" || this.state.routes[i] === "E_1_2__|__0_hilburn_yard_west") {
+            else if (this.state.routes[i] === "W_2_1__|__2_sterling_hilburn" || this.state.routes[i] === "E_1_2__|__0_hilburn_yard_west") {
                 // Tail Tracks
                 this.state.tail_yard = color;
                 this.state.tail_w = color;
@@ -138,7 +138,7 @@ class Hilburn extends Component {
                 // Drawing if the interlocking is occupied
                 if (this.state.occupied) {
                     // Switch Image
-                    this.state.sw_1_src = SW_D_E_Occupied;
+                    this.state.sw_1_src = SW_D_E_R_Occupied;
 
                     // Signal Images
                     this.state.sig_2w1_src = SIG_W_Stop;
@@ -152,7 +152,7 @@ class Hilburn extends Component {
 
                     // Signal Images
                     // West Bound Route
-                    if (this.state.routes[i] === "W_2_1__|__0_sterling_hilburn") {
+                    if (this.state.routes[i] === "W_2_1__|__2_sterling_hilburn") {
                         this.state.sig_2w1_src = SIG_W_Stop;
                         this.state.sig_2w2_src = SIG_W_Clear;
                         this.state.sig_2e_src = SIG_E_Stop;

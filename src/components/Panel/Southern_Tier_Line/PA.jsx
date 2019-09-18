@@ -341,7 +341,7 @@ class PA extends Component {
                 this.state.tail_2_w = color_2;
                 this.state.tail_1_e = color_2;
 
-                if (this.state.occupied_1) {
+                if (this.state.occupied_2) {
                     this.state.sw_3_src = CX_225_R_Occupied;
                     this.state.sw_1_src = SW_U_E_Occupied;
 

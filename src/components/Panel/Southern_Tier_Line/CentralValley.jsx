@@ -168,7 +168,7 @@ class CentralValley extends Component {
                 // Drawing if the interlocking is occupied
                 if (this.state.occupied) {
                     // Switch Image
-                    this.state.sw_21_src = SW_U_E_Occupied;
+                    this.state.sw_21_src = SW_U_E_R_Occupied;
 
                     // Signal Images
                     this.state.sig_2w_src = SIG_W_Stop;

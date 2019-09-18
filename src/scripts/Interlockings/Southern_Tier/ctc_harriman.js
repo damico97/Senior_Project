@@ -1,6 +1,6 @@
 const Empty = '#999999';
 const Lined = '#75fa4c';
-const Occupied = '#eb3323';
+const Occupy = '#eb3323';
 
 class CTC_Harriman {
 	constructor() {
@@ -16,6 +16,9 @@ class CTC_Harriman {
 		this.route_e_trk_1 = null;
 		this.route_e_trk_2 = null;
 		this.route_e_trk_3 = null;
+
+		this.int_occupied = false;
+        this.time_occupied = null;
 	}
 
 	/**
@@ -45,7 +48,7 @@ class CTC_Harriman {
 				this.sig_1w = false;
 			}
 			else {
-				if (next_block_1 === Occupied || next_block_1 === Lined) {
+				if (next_block_1 === Occupy || next_block_1 === Lined) {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
@@ -59,7 +62,7 @@ class CTC_Harriman {
 				this.sig_1w = false;
 			}
 			else {
-				if (next_block_3 === Occupied || next_block_3 === Lined) {
+				if (next_block_3 === Occupy || next_block_3 === Lined) {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
@@ -73,7 +76,7 @@ class CTC_Harriman {
 				this.sig_1w = false;
 			}
 			else {
-				if (next_block_2 === Occupied || next_block_2 === Lined) {
+				if (next_block_2 === Occupy || next_block_2 === Lined) {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
@@ -93,7 +96,7 @@ class CTC_Harriman {
 				this.sig_1e = false;
 			}
 			else {
-				if (next_block_1 === Occupied || next_block_1 === Lined) {
+				if (next_block_1 === Occupy || next_block_1 === Lined) {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
@@ -113,11 +116,11 @@ class CTC_Harriman {
 				this.sig_2e = false;
 			}
 			else {
-				if (next_block_1 === Occupied || next_block_1 === Lined) {
+				if (next_block_1 === Occupy || next_block_1 === Lined) {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_2 = "E_1_1__|__1_harriman_sterling";
+                this.route_e_trk_2 = "E_2_1__|__1_harriman_sterling";
                 this.sig_2e = true;
 			}
 		}
@@ -133,15 +136,51 @@ class CTC_Harriman {
 				this.sig_3e = false;
 			}
 			else {
-				if (next_block_1 === Occupied || next_block_1 === Lined) {
+				if (next_block_1 === Occupy || next_block_1 === Lined) {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_3 = "E_1_1__|__1_harriman_sterling";
+                this.route_e_trk_3 = "E_3_1__|__1_harriman_sterling";
                 this.sig_3e = true;
 			}
 		}
 	}
+
+	/**
+     * 
+     * @param {*} n_state 
+     */
+    set_occupied(n_state) {
+        if (n_state === true || n_state === false) {
+            this.int_occupied = n_state;
+            this.time_occupied = new Date().getTime() / 1000;
+        }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    can_clear() {
+        //console.log(new Date().getTime() / 1000 - this.time_occupied)
+        let current_time = new Date().getTime() / 1000;
+        if (current_time - this.time_occupied > 4 && current_time - this.time_occupied < 100000) {
+            this.sig_1w = false;
+			this.sig_1e = false;
+			this.sig_2e = false;
+			this.sig_3e = false;
+
+			this.route_w_trk_1 = null;
+			this.route_e_trk_1 = null;
+			this.route_e_trk_2 = null;
+			this.route_e_trk_3 = null;
+
+			this.int_occupied = false;
+			this.time_occupied = null;
+        }
+    }
 
 	/**
      * @brief Funtion to throw switch #21 in the interlocking
@@ -191,7 +230,9 @@ class CTC_Harriman {
     get_interlocking_status() {
         let status = {
             sw_21: this.sw_21,
-            sw_32: this.sw_32
+			sw_32: this.sw_32,
+			occupied: this.int_occupied,
+			routes: this.get_routes()
         }
 
         return status;

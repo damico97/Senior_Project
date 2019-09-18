@@ -46,10 +46,10 @@ clock.startClock;
 //ctc.add_train(new Train("49", "1_suscon_mill", "suscon", 10));
 
 setTimeout(function(){ 
-    ctc.add_train(new Train("49", "2_hilburn_sf", "mill", "WEST", 12));
+    ctc.add_train(new Train("49", "1_westSecaucus_laurel", "mill", "WEST", 12));
     //ctc.add_train(new Train("50", "2_mill_westSecaucus", "mill", "WEST", 12));
     ctc.test_block(); 
-}, 3000);  
+}, 1500);  
 
 
 class MainLine extends Component {
@@ -111,8 +111,12 @@ class MainLine extends Component {
             status_hall: ctc.get_hall().get_interlocking_status(),
             status_hudson: ctc.get_hudson().get_interlocking_status(),
             status_valley: ctc.get_valley().get_interlocking_status(),
+            status_harriman: ctc.get_harriman().get_interlocking_status(),
+            status_sterling: ctc.get_sterling().get_interlocking_status(),
 
             status_hilburn: ctc.get_hilburn().get_interlocking_status(),
+            status_sf: ctc.get_sf().get_interlocking_status(),
+            status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status(),
         });
     }
 
@@ -733,7 +737,7 @@ class MainLine extends Component {
 
     hilburn_click_sig_2e = () => {
         ctc.get_hilburn().click_sig_2e(
-            this.state.status_mainLine.block_sterling_hilburn,
+            this.state.status_mainLine.block_hilburn_sf,
             this.state.status_mainLine.block_hilburn_yard_west
         );
         this.setState({status_hilburn: ctc.get_hilburn().get_interlocking_status()});
