@@ -47,7 +47,7 @@ clock.startClock;
 
 setTimeout(function(){ 
     ctc.add_train(new Train("49", "2_yard_hall", "mill", "EAST", 12));
-    ctc.add_train(new Train("50", "1_port_bc", "mill", "WEST", 12));
+    //ctc.add_train(new Train("50", "3_ridgewood_bt", "mill", "WEST", 12));
     ctc.test_block(); 
 }, 1500);  
 
@@ -116,6 +116,7 @@ class MainLine extends Component {
 
             status_hilburn: ctc.get_hilburn().get_interlocking_status(),
             status_sf: ctc.get_sf().get_interlocking_status(),
+            status_ridgewood: ctc.get_ridgewood().get_interlocking_status(),
             status_suscon: ctc.get_suscon().get_interlocking_status(),
             status_mill: ctc.get_mill().get_interlocking_status(),
             status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status(),
@@ -881,8 +882,7 @@ class MainLine extends Component {
 
 
     ridgewood_click_sig_2w_1 = () => {
-        ctc.get_ridgewood().click_sig(
-            "2W-1", 
+        ctc.get_ridgewood().click_sig_2w1(
             this.state.status_mainLine.block_wc_ridgewood_1,
             this.state.status_mainLine.block_wc_ridgewood_2,
             this.state.status_mainLine.block_wc_ridgewood_3,
@@ -891,8 +891,7 @@ class MainLine extends Component {
     }
 
     ridgewood_click_sig_2w_2 = () => {
-        ctc.get_ridgewood().click_sig(
-            "2W-2", 
+        ctc.get_ridgewood().click_sig_2w2(
             this.state.status_mainLine.block_wc_ridgewood_1,
             this.state.status_mainLine.block_wc_ridgewood_2,
             this.state.status_mainLine.block_wc_ridgewood_3,
@@ -901,8 +900,7 @@ class MainLine extends Component {
     }
 
     ridgewood_click_sig_4w = () => {
-        ctc.get_ridgewood().click_sig(
-            "4W", 
+        ctc.get_ridgewood().click_sig_4w(
             this.state.status_mainLine.block_wc_ridgewood_1,
             this.state.status_mainLine.block_wc_ridgewood_2,
             this.state.status_mainLine.block_wc_ridgewood_3,
@@ -911,8 +909,7 @@ class MainLine extends Component {
     }
 
     ridgewood_click_sig_6w = () => {
-        ctc.get_ridgewood().click_sig(
-            "6W", 
+        ctc.get_ridgewood().click_sig_6w(
             this.state.status_mainLine.block_wc_ridgewood_1,
             this.state.status_mainLine.block_wc_ridgewood_2,
             this.state.status_mainLine.block_wc_ridgewood_3,
@@ -921,8 +918,7 @@ class MainLine extends Component {
     }
 
     ridgewood_click_sig_2e = () => {
-        ctc.get_ridgewood().click_sig(
-            "2E", 
+        ctc.get_ridgewood().click_sig_2e(
             this.state.status_mainLine.block_ridgewood_suscon_1,
             this.state.status_mainLine.block_ridgewood_suscon_2,
             this.state.status_mainLine.block_ridgewood_suscon_3,
@@ -932,8 +928,7 @@ class MainLine extends Component {
     }
 
     ridgewood_click_sig_4e = () => {
-        ctc.get_ridgewood().click_sig(
-            "4E", 
+        ctc.get_ridgewood().click_sig_4e(
             this.state.status_mainLine.block_ridgewood_suscon_1,
             this.state.status_mainLine.block_ridgewood_suscon_2,
             this.state.status_mainLine.block_ridgewood_suscon_3,
@@ -943,8 +938,7 @@ class MainLine extends Component {
     }
 
     ridgewood_click_sig_6e = () => {
-        ctc.get_ridgewood().click_sig(
-            "6E", 
+        ctc.get_ridgewood().click_sig_6e(
             this.state.status_mainLine.block_ridgewood_suscon_1,
             this.state.status_mainLine.block_ridgewood_suscon_2,
             this.state.status_mainLine.block_ridgewood_suscon_3,

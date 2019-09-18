@@ -247,6 +247,7 @@ class MainLine_CTC {
         this.interlocking_westSecaucus.can_clear();
         this.interlocking_mill.can_clear();
         this.interlocking_suscon.can_clear();
+        this.interlocking_ridgewood.can_clear();
         this.interlocking_sf.can_clear();
         this.interlocking_hilburn.can_clear();
 
@@ -714,6 +715,17 @@ class MainLine_CTC {
                 this.get_suscon().set_trk_2_occupied(true);
             }
         }
+        if (name === "ridgewood") {
+            if (track === "1" || track === "4") {
+                this.get_ridgewood().set_trk_1_occupied(true);
+            }
+            else if (track === "2") {
+                this.get_ridgewood().set_trk_2_occupied(true);
+            }
+            else {
+                this.get_ridgewood().set_trk_3_occupied(true);
+            }
+        }
         if (name === "sf") {
             if (track === "1") {
                 this.get_sf().set_trk_1_occupied(true);
@@ -962,7 +974,7 @@ class MainLine_CTC {
             }
         }
         else if (block === "ridgewood_bt") {
-            if (track === "1") {
+            if (track === "1" || track === "3") {
                 return this.blocks_mainLine.block_ridgewood_bt_1;
             }
             else {
