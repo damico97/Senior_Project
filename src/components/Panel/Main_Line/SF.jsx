@@ -211,7 +211,7 @@ class SF extends Component {
                     }
                 }
             }
-            else if (this.state.routes[i] === "W_2_3__|__3_hilburn_yardEast" || this.state.routes[i] === "E_3_2__|__2_sf_wc") {
+            else if (this.state.routes[i] === "W_2_3__|__3_yardHilburn_sf" || this.state.routes[i] === "E_3_2__|__2_sf_wc") {
                 // Tail Tracks
                 this.state.tail_2_e = color_2;
                 this.state.tail_yard = color_2;
@@ -232,7 +232,7 @@ class SF extends Component {
                     this.state.sw_1_src = SW_D_W_R_Lined;
 
                     // Signals
-                    if (this.state.routes[i] === "W_2_3__|__3_hilburn_yardEast") {
+                    if (this.state.routes[i] === "W_2_3__|__3_yardHilburn_sf") {
                         this.state.sig_4w_src = SIG_W_Clear;
                         this.state.sig_4e1_src = SIG_E_Stop;
                         this.state.sig_4e2_src = SIG_E_Stop;
@@ -296,7 +296,7 @@ class SF extends Component {
                     this.state.sig_4e2_src = SIG_E_Stop;
                 }
             }
-            else if (this.state.routes[i] === "W_1_3__|__2_hilburn_yardEast") {
+            else if (this.state.routes[i] === "W_1_3__|__2_yardHilburn_sf") {
                 // Tail Tracks
                 this.state.tail_1_e = color_1;
                 this.state.tail_yard = color_1;

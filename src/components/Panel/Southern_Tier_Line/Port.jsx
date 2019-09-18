@@ -108,7 +108,7 @@ class Port extends Component {
                     }
                 }
             }
-            else if (this.state.routes[i] === "W_1_3__|__3_portYard_east" || this.state.routes[i] === "E_3_1__|__1_port_bc") {
+            else if (this.state.routes[i] === "W_1_3__|__3_yardEast_port" || this.state.routes[i] === "E_3_1__|__1_port_bc") {
                 // Tail Tracks
                 this.state.tail_east = color;
                 this.state.tail_yard = color;
@@ -123,7 +123,7 @@ class Port extends Component {
                 else {
                     this.state.sw_1_src = SW_U_W_R_Lined;
 
-                    if (this.state.routes[i] === "W_1_3__|__3_portYard_east") {
+                    if (this.state.routes[i] === "W_1_3__|__3_yardEast_port") {
                         this.state.sig_2w_src = SIG_W_Clear;
                         this.state.sig_2e_1_src = SIG_E_Stop;
                         this.state.sig_2e_2_src = SIG_E_Stop;

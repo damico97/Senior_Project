@@ -66,7 +66,7 @@ class CTC_Harriman {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_1 = "W_1_3__|__3_harriman_industrial";
+                this.route_w_trk_1 = "W_1_3__|__3_industrial_harriman";
                 this.sig_1w = true;
 			}
 		}

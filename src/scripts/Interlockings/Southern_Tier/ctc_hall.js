@@ -97,7 +97,7 @@ class CTC_Hall {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_2 = "W_2_2__|__2_hall_yard";
+                this.route_w_trk_2 = "W_2_2__|__2_yard_hall";
                 this.routed_trk_2 = true;
                 this.sig_4w = true;
             }

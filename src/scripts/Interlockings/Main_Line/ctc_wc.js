@@ -95,7 +95,7 @@ class CTC_WC {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_1 = "W_1_3__|__0_wc_yard"
+                this.route_w_trk_1 = "W_1_3__|__0_yard_wc"
                 this.sig_2w_1 = true;
             }
         }
@@ -143,7 +143,7 @@ class CTC_WC {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_3 = "W_3_3__|__0_wc_yard";
+                this.route_w_trk_3 = "W_3_3__|__0_yard_wc";
                 this.sig_2w_2 = true;
             }
         }
@@ -191,7 +191,7 @@ class CTC_WC {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_2 = "W_2_3__|__0_wc_yard";
+                this.route_w_trk_2 = "W_2_3__|__0_yard_wc";
                 this.sig_4w = true;
             }
         }

@@ -148,7 +148,7 @@ class Hall extends Component {
                     }
                 }
             }
-            else if (this.state.routes[i] === "W_2_2__|__2_hall_yard" || this.state.routes[i] === "E_2_2__|__2_hall_hudson") {
+            else if (this.state.routes[i] === "W_2_2__|__2_yard_hall" || this.state.routes[i] === "E_2_2__|__2_hall_hudson") {
                 // Tail Tracks
                 this.state.tail_2_east = color_2;
                 this.state.tail_yard = color_2;
@@ -178,7 +178,7 @@ class Hall extends Component {
                         this.state.sw_1_src = CX_225_Lined_Top;
                     }
 
-                    if (this.state.routes[i] === "W_2_2__|__2_hall_yard") {
+                    if (this.state.routes[i] === "W_2_2__|__2_yard_hall") {
                         this.state.sig_4w_src = SIG_W_Clear;
                         this.state.sig_4e_src = SIG_E_Stop;
                     }

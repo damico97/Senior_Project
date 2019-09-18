@@ -330,6 +330,19 @@ September 17, 2019:
     - Route drawings and Occupy finished at Suscon
     (0.75 Hours)
 
-    
+September 18, 2019:
+    - Route drawings and Occupy finished at Mill
+    (0.25 Hours)
+
+    - Bug Fixes at CP Port
+    (0.25 Hours)
+
+    - Trains now delete if they reach the ends of the railraod, either when they reach a 
+    yard, or the end of pannels west of CP Sparrow or east of Laurel
+    (0.5 Hours)
+
+    - Fixed all east facing yard leads so trains to leave from them, had to change the way 
+    those blocks were named
+    (0.25 Hours)
 
 

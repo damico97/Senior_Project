@@ -190,12 +190,20 @@ class MainLine_CTC {
      *  
      */
     update_trains() {
+        console.log(this.train_list);
         for (let i = 0; i < this.train_list.length; i++) {
             if (this.train_list[i].can_update_location()) {
                 let new_route = this.get_interlocking_route(this.train_list[i].get_location(), this.train_list[i].get_direction());
                 if (new_route === null) {
                     // Do Nothing
                     // Train Cannot Move
+                }
+                else if (new_route === undefined) {
+                    // Clear Previous Block
+                    this.get_block_by_name(this.train_list[i].get_location()).set_block_status("Empty");
+
+                    this.train_list.splice(i, 1);
+                    break;
                 }
                 else {
                     // Clear Previous Block
@@ -237,6 +245,7 @@ class MainLine_CTC {
      */
     update_interlockings() {
         this.interlocking_westSecaucus.can_clear();
+        this.interlocking_mill.can_clear();
         this.interlocking_suscon.can_clear();
         this.interlocking_sf.can_clear();
         this.interlocking_hilburn.can_clear();
@@ -689,6 +698,14 @@ class MainLine_CTC {
         if (name === "westSecaucus") {
             this.get_westSecaucus().set_occupied(true);
         }
+        if (name === "mill") {
+            if (track === "1") {
+                this.get_mill().set_trk_1_occupied(true);
+            }
+            else {
+                this.get_mill().set_trk_2_occupied(true);
+            }
+        }
         if (name === "suscon") {
             if (track === "1") {
                 this.get_suscon().set_trk_1_occupied(true);
@@ -774,7 +791,7 @@ class MainLine_CTC {
                 return this.blocks_mainLine.block_valley_harriman_2;
             }
         }
-        else if (block === "harriman_industrial") {
+        else if (block === "industrial_harriman") {
             return this.blocks_mainLine.block_harriman_industrial;
         }
         else if (block === "hudson_valley") {
@@ -791,7 +808,7 @@ class MainLine_CTC {
                 return this.blocks_mainLine.block_hall_hudson_2;
             }
         }
-        else if (block === "hall_yard") {
+        else if (block === "yard_hall") {
             return this.blocks_mainLine.block_hall_yard;
         }
         else if (block === "howells_hall") {
@@ -817,10 +834,10 @@ class MainLine_CTC {
         else if (block === "pa_bc") {
             return this.blocks_mainLine.block_pa_bc_2;
         }
-        else if (block === "portYard_west") {
+        else if (block === "port_yardWest") {
             return this.blocks_mainLine.block_port_yard_west;
         }
-        else if (block === "portYard_east") {
+        else if (block === "yardEast_port") {
             return this.blocks_mainLine.block_port_yard_east;
         }
         else if (block === "sparrow_pa") {
@@ -914,10 +931,10 @@ class MainLine_CTC {
         else if (block === "hilburn_yard_west") {
             return this.blocks_mainLine.block_hilburn_yard_west;
         }
-        else if (block === "hilburn_yardEast") {
+        else if (block === "yardHilburn_sf") {
             return this.blocks_mainLine.block_hilburn_yard_east;
         }
-        else if (block === "wc_yard") {
+        else if (block === "yard_wc") {
             return this.blocks_mainLine.block_wc_yard;
         }
         else if (block === "hx_laurel") {

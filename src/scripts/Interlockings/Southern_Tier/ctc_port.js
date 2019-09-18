@@ -46,7 +46,7 @@ class CTC_Port {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_1 = "W_1_3__|__3_portYard_east";
+                this.route_w_trk_1 = "W_1_3__|__3_yardEast_port";
                 this.sig_2w = true;
             }
         }

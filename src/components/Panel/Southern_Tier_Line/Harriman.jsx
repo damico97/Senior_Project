@@ -178,20 +178,27 @@ class Harriman extends Component {
                     }
                 }
             }
-            else if (this.state.routes[i] === "W_1_3__|__3_harriman_industrial" || this.state.routes[i] === "E_3_1__|__1_harriman_sterling") {
+            else if (this.state.routes[i] === "W_1_3__|__3_industrial_harriman" || this.state.routes[i] === "E_3_1__|__1_harriman_sterling") {
                 // Tail Tracks
                 this.state.tail_ind = color;
                 this.state.tail_e = color;
 
                 if (this.state.occupied) {
+                    // Switch Images
+                    this.state.sw_32_src = SW_D_W_R_Occupied;
 
+                    // Signals
+                    this.state.sig_1w_src = SIG_W_Stop;
+                    this.state.sig_1e_src = SIG_E_Stop;
+                    this.state.sig_2e_src = SIG_E_Stop;
+                    this.state.sig_3e_src = SIG_E_Stop;
                 }
                 else {
                     // Switch Images
                     this.state.sw_32_src = SW_D_W_R_Lined;
 
                     // Signal Images
-                    if (this.state.routes[i] === "W_1_3__|__3_harriman_industrial") {
+                    if (this.state.routes[i] === "W_1_3__|__3_industrial_harriman") {
                         this.state.sig_1w_src = SIG_W_Clear;
                         this.state.sig_1e_src = SIG_E_Stop;
                         this.state.sig_2e_src = SIG_E_Stop;
