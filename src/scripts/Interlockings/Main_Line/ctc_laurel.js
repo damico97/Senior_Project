@@ -35,6 +35,7 @@ class CTC_Laurel {
      * 
      */
     get_train_route(direction, track) {
+        console.log(this.route_e_trk_3);
         if (direction === "WEST") {
             if (track === "1") {
                 return this.route_w_trk_1;
@@ -88,7 +89,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_1 = "W_1_1__|__2_hx_laurel"
+                this.route_w_trk_1 = "W_1_1__|__1_hx_laurel"
                 this.sig_2w = true;
             }
         }
@@ -102,7 +103,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_1 = "W_1_3__|__1_hx_laurel"
+                this.route_w_trk_1 = "W_1_3__|__3_hx_laurel"
                 this.sig_2w = true;
             }
         }
@@ -117,7 +118,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_1 = "W_1_2__|__1_westSecaucus_laurel";
+                this.route_w_trk_1 = "W_1_2__|__2_westSecaucus_laurel";
                 this.sig_2w = true;
             }
         }
@@ -137,7 +138,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_2 = "W_2_2__|__1_westSecaucus_laurel";
+                this.route_w_trk_2 = "W_2_2__|__2_westSecaucus_laurel";
                 this.sig_4w = true;
             }
         }
@@ -182,7 +183,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_4 = "W_4_4__|__2_westSecaucus_laurel";
+                this.route_w_trk_4 = "W_4_4__|__4_westSecaucus_laurel";
                 this.sig_8w = true;
             }
         }
@@ -196,7 +197,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_4 = "W_4_2__|__1_westSecaucus_laurel";
+                this.route_w_trk_4 = "W_4_2__|__2_westSecaucus_laurel";
                 this.sig_8w = true;
             }
         }
@@ -241,7 +242,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_3 = "W_3_3__|__1_hx_laurel";
+                this.route_w_trk_3 = "W_3_3__|__3_hx_laurel";
                 this.sig_10w = true;
             }
         }
@@ -255,7 +256,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_3 = "W_3_1__|__2_hx_laurel";
+                this.route_w_trk_3 = "W_3_1__|__1_hx_laurel";
                 this.sig_10w = true;
             }
         }
@@ -269,7 +270,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_3 = "W_3_2__|__1_westSecaucus_laurel";
+                this.route_w_trk_3 = "W_3_2__|__2_westSecaucus_laurel";
                 this.sig_10w = true;
             }
         }
@@ -348,7 +349,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_3 = "W_1_1__|__1_laurel_westEnd";
+                this.route_e_trk_3 = "E_1_1__|__1_laurel_westEnd";
                 this.sig_12e = true;
             }
         }
@@ -362,7 +363,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_3 = "W_1_3__|__3_laurel_westEnd";
+                this.route_e_trk_3 = "E_1_3__|__3_laurel_westEnd";
                 this.sig_12e = true;
             }
         }
@@ -376,7 +377,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_3 = "W_1_2__|__2_laurel_westEnd";
+                this.route_e_trk_3 = "E_1_2__|__2_laurel_westEnd";
                 this.sig_12e = true;
             }
         }
@@ -390,7 +391,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_3 = "W_1_4__|__4_laurel_westEnd";
+                this.route_e_trk_3 = "E_1_4__|__4_laurel_westEnd";
                 this.sig_12e = true;
             }
         }
@@ -410,13 +411,13 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_2 = "W_2_2__|__2_laurel_westEnd";
+                this.route_e_trk_2 = "E_2_2__|__2_laurel_westEnd";
                 this.sig_4e = true;
             }
         }   
         else if (!this.sw_7 && this.sw_13) {
             if (this.sig_4e) {
-                this.route_e_trk_2 = null;
+                this.route_e_trk_3 = null;
                 this.sig_4e = false;
             }
             else {
@@ -424,7 +425,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_2 = "W_2_4__|__4_laurel_westEnd";
+                this.route_e_trk_2 = "E_2_4__|__4_laurel_westEnd";
                 this.sig_4e = true;
             }
         }   
@@ -438,7 +439,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_2 = "W_2_1__|__1_laurel_westEnd";
+                this.route_e_trk_2 = "E_2_1__|__1_laurel_westEnd";
                 this.sig_4e = true;
             }
         } 

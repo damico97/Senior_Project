@@ -179,7 +179,7 @@ class RidgewoodJunction extends Component {
                 this.state.tail_1_center = color_1;
                 this.state.tail_1_w = color_1;
 
-                if (this.state.occupied_trk_1) {
+                if (this.state.occupied_track_1) {
                     // Switch Images
                     this.state.sw_9_src = SW_U_E_Occupied;
 
@@ -262,7 +262,7 @@ class RidgewoodJunction extends Component {
                 this.state.tail_1_center = color_1;
                 this.state.tail_1_w = color_1;
 
-                if (this.state.occupied_trk_1) {
+                if (this.state.occupied_track_1) {
                     // Switch Images
                     this.state.sw_9_src = SW_U_E_R_Occupied;
 
@@ -350,8 +350,8 @@ class RidgewoodJunction extends Component {
                         this.state.sw_5_src = CX_225_Lined_Top_Occupied_Bottom;
                     }
                     else if (this.state.occupied_track_1) {
-                        this.state.sw_3_src = CX_135_Occuped_Both;
-                        this.state.sw_5_src = CX_225_Occuped_Both;
+                        this.state.sw_3_src = CX_135_Occupied_Both;
+                        this.state.sw_5_src = CX_225_Occupied_Both;
                     }
                     else {
                         this.state.sw_3_src = CX_135_Occupied_Bottom;
@@ -368,8 +368,8 @@ class RidgewoodJunction extends Component {
                         this.state.sw_5_src = CX_225_Lined_Both;
                     }
                     else if (this.state.occupied_track_1) {
-                        this.state.sw_3_src = CX_135_Occuped_Top_Lined_Bottom;
-                        this.state.sw_5_src = CX_225_Occuped_Top_Lined_Bottom;
+                        this.state.sw_3_src = CX_135_Occupied_Top_Lined_Bottom;
+                        this.state.sw_5_src = CX_225_Occupied_Top_Lined_Bottom;
                     }
                     else {
                         this.state.sw_3_src = CX_135_Lined_Bottom;
@@ -1147,7 +1147,7 @@ class RidgewoodJunction extends Component {
                 this.state.tail_m_2_e = color_1;
                 this.state.tail_1_w = color_1;
 
-                if (this.state.occupied_track_2) {
+                if (this.state.occupied_track_1) {
                     this.state.sw_5_src = CX_225_Occupied_Bottom;
                     this.state.sw_3_src = CX_135_R_Occupied;
 

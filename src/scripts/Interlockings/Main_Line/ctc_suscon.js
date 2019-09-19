@@ -16,7 +16,6 @@ class CTC_Suscon {
 
         this.sw_1 = false;
         this.sw_3 = false;
-        this.cross_over = false;
 
         this.sig_2w = false;
         this.sig_2e = false;

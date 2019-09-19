@@ -25,6 +25,14 @@ import CTC_Mill from '../Interlockings/Main_Line/ctc_mill.js';
 import CTC_WestSecaucus from '../Interlockings/Main_Line/ctc_westSecaucus.js';
 import CTC_Laurel from '../Interlockings/Main_Line/ctc_laurel.js';
 
+// Bergen County Interlockings
+import CTC_BT from '../Interlockings/Bergen_Line/ctc_bt.js';
+import CTC_Pascack from '../Interlockings/Bergen_Line/ctc_pascack.js';
+import CTC_HX from '../Interlockings/Bergen_Line/ctc_hx.js';
+
+const Empty = '#999999';
+const Route = '#75fa4c';
+const Occupied = '#eb3323';
 
 class MainLine_CTC {
     /**
@@ -56,6 +64,10 @@ class MainLine_CTC {
         this.interlocking_mill = new CTC_Mill();
         this.interlocking_westSecaucus = new CTC_WestSecaucus();
         this.interlocking_laurel = new CTC_Laurel();
+
+        this.interlocking_bt = new CTC_BT();
+        this.interlocking_pascack = new CTC_Pascack();
+        this.interlocking_hx = new CTC_HX();
 
         this.blocks_mainLine = {
             // Southern Tier Blocks
@@ -139,7 +151,11 @@ class MainLine_CTC {
             block_bt_pascack_2: new CTC_Block("2_bt_pascack"),
 
             block_ridgewood_bt_1: new CTC_Block("1_ridgewood_bt"),
-            block_ridgewood_bt_2: new CTC_Block("2_ridgewood_bt")
+            block_ridgewood_bt_2: new CTC_Block("2_ridgewood_bt"),
+
+            block_bt_nysw: new CTC_Block("3_bt_nysw"),
+            block_hx_croxton_1: new CTC_Block("1_hx_croxton"),
+            block_hx_croxton_2: new CTC_Block("2_hx_croxton")
         };
     }
 
@@ -150,16 +166,22 @@ class MainLine_CTC {
     update_route_blocks() {
         this.reset_route_mainLine_blocks();
 
-        let routes = this.interlocking_suscon.get_routes();
+        let routes = [];
 
         // Add Main Line Routes
-        routes = routes.concat(this.interlocking_mill.get_routes());
-        routes = routes.concat(this.interlocking_westSecaucus.get_routes());
-        routes = routes.concat(this.interlocking_ridgewood.get_routes());
         routes = routes.concat(this.interlocking_laurel.get_routes());
+        routes = routes.concat(this.interlocking_westSecaucus.get_routes());
+        routes = routes.concat(this.interlocking_mill.get_routes());
+        routes = routes.concat(this.interlocking_suscon.get_routes());
+        routes = routes.concat(this.interlocking_ridgewood.get_routes());
         routes = routes.concat(this.interlocking_wc.get_routes());
         routes = routes.concat(this.interlocking_sf.get_routes());
         routes = routes.concat(this.interlocking_hilburn.get_routes());
+
+        // Add Bergen County Routes
+        routes = routes.concat(this.interlocking_hx.get_routes());
+        routes = routes.concat(this.interlocking_pascack.get_routes());
+        routes = routes.concat(this.interlocking_bt.get_routes());
 
         // Add Southern Tier Routes 
         routes = routes.concat(this.interlocking_sterling.get_routes());
@@ -248,6 +270,7 @@ class MainLine_CTC {
         this.interlocking_mill.can_clear();
         this.interlocking_suscon.can_clear();
         this.interlocking_ridgewood.can_clear();
+        this.interlocking_wc.can_clear();
         this.interlocking_sf.can_clear();
         this.interlocking_hilburn.can_clear();
 
@@ -397,6 +420,27 @@ class MainLine_CTC {
         return this.interlocking_laurel;
     }
 
+    /**
+     * 
+     */
+    get_bt() {
+        return this.interlocking_bt;
+    }
+
+    /**
+     * 
+     */
+    get_pascack() {
+        return this.interlocking_pascack;
+    }
+
+    /**
+     * 
+     */
+    get_hx() {
+        return this.interlocking_hx;
+    }
+
 
     /**
      * 
@@ -472,6 +516,10 @@ class MainLine_CTC {
 
         this.blocks_mainLine.block_ridgewood_bt_1.reset_block();
         this.blocks_mainLine.block_ridgewood_bt_2.reset_block();
+
+        this.blocks_mainLine.block_bt_nysw.reset_block();
+        this.blocks_mainLine.block_hx_croxton_1.reset_block();
+        this.blocks_mainLine.block_hx_croxton_2.reset_block();
 
         // Southern Tier Line
         this.blocks_mainLine.block_harriman_sterling_1.reset_block();
@@ -565,7 +613,11 @@ class MainLine_CTC {
             block_bt_pascack_2: this.blocks_mainLine.block_bt_pascack_2.get_block_status(),
 
             block_ridgewood_bt_1: this.blocks_mainLine.block_ridgewood_bt_1.get_block_status(),
-            block_ridgewood_bt_2: this.blocks_mainLine.block_ridgewood_bt_2.get_block_status()
+            block_ridgewood_bt_2: this.blocks_mainLine.block_ridgewood_bt_2.get_block_status(),
+
+            block_bt_nysw: this.blocks_mainLine.block_bt_nysw.get_block_status(),
+            block_hx_croxton_1: this.blocks_mainLine.block_hx_croxton_1.get_block_status(),
+            block_hx_croxton_2: this.blocks_mainLine.block_hx_croxton_2.get_block_status()
         };
 
         return status;
@@ -630,8 +682,10 @@ class MainLine_CTC {
             track = key.substr(0, first_index);
             interlocking = key.substr(second_index + 1, key.size);
         }
-        //console.log(key);
-        //console.log(track, interlocking);
+        console.log(key);
+        console.log(track, interlocking);
+
+        // Southern Tier Line
         if (interlocking === "sparrow") {
             return this.get_sparrow().get_train_route(direction, track);
         }
@@ -665,6 +719,8 @@ class MainLine_CTC {
         if (interlocking === "sterling") {
             return this.get_sterling().get_train_route(direction, track);
         }
+
+        // Main Line
         if (interlocking === "hilburn") {
             return this.get_hilburn().get_train_route(direction, track);
         }
@@ -688,6 +744,17 @@ class MainLine_CTC {
         }
         if (interlocking === "laurel") {
             return this.get_laurel().get_train_route(direction, track);
+        }
+
+        // Bergen County Line
+        if (interlocking === "bt") {
+            return this.get_bt().get_train_route(direction, track);
+        }
+        if (interlocking === "pascack") {
+            return this.get_pascack().get_train_route(direction, track);
+        }
+        if (interlocking === "hx") {
+            return this.get_hx().get_train_route(direction, track);
         }
     }
 
@@ -724,6 +791,14 @@ class MainLine_CTC {
             }
             else {
                 this.get_ridgewood().set_trk_3_occupied(true);
+            }
+        }
+        if (name === "wc") {
+            if (track === "2") {
+                this.get_wc().set_trk_2_occupied(true);
+            }
+            else {
+                this.get_wc().set_trk_1_occupied(true);
             }
         }
         if (name === "sf") {
@@ -881,10 +956,10 @@ class MainLine_CTC {
             }
         }
         else if (block === "westSecaucus_laurel") {
-            if (track === "1") {
+            if (track === "2") {
                 return this.blocks_mainLine.block_westSecaucus_laurel_1;
             }
-            else if (track === "2") {
+            else if (track === "4") {
                 return this.blocks_mainLine.block_westSecaucus_laurel_2;
             }
         }
@@ -950,7 +1025,7 @@ class MainLine_CTC {
             return this.blocks_mainLine.block_wc_yard;
         }
         else if (block === "hx_laurel") {
-            if (track === "1") {
+            if (track === "3") {
                 return this.blocks_mainLine.block_hx_laurel_1;
             }
             else {
@@ -979,6 +1054,17 @@ class MainLine_CTC {
             }
             else {
                 return this.blocks_mainLine.block_ridgewood_bt_2;
+            }
+        }
+        else if (block === "bt_nysw") {
+            return this.blocks_mainLine.block_bt_nysw;
+        }
+        else if (block === "hx_croxton") {
+            if (track === "1" || track === "4") {
+                return this.blocks_mainLine.block_hx_croxton_1;
+            }
+            else {
+                return this.blocks_mainLine.block_hx_croxton_2;
             }
         }
         else {

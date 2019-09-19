@@ -46,8 +46,9 @@ clock.startClock;
 //ctc.add_train(new Train("49", "1_suscon_mill", "suscon", 10));
 
 setTimeout(function(){ 
-    ctc.add_train(new Train("49", "2_yard_hall", "mill", "EAST", 12));
-    //ctc.add_train(new Train("50", "3_ridgewood_bt", "mill", "WEST", 12));
+    ctc.add_train(new Train("49", "1_pascack_hx", "mill", "EAST", 6));
+    //ctc.add_train(new Train("50", "1_mill_westSecaucus", "mill", "EAST", 12));
+    ctc.add_train(new Train("50", "4_ridgewood_bt", "mill", "WEST", 6));
     ctc.test_block(); 
 }, 1500);  
 
@@ -77,6 +78,10 @@ class MainLine extends Component {
             status_mill: ctc.get_mill().get_interlocking_status(),
             status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status(),
             status_laurel: ctc.get_laurel().get_interlocking_status(),
+
+            status_bt: ctc.get_bt().get_interlocking_status(),
+            status_pascack: ctc.get_pascack().get_interlocking_status(),
+            status_hx: ctc.get_hx().get_interlocking_status(),
 
             status_mainLine: ctc.get_mainLine_blocks_status(),
             status_bergenLine: ctc.get_bergen_blocks_status(),
@@ -116,6 +121,7 @@ class MainLine extends Component {
 
             status_hilburn: ctc.get_hilburn().get_interlocking_status(),
             status_sf: ctc.get_sf().get_interlocking_status(),
+            status_wc: ctc.get_wc().get_interlocking_status(),
             status_ridgewood: ctc.get_ridgewood().get_interlocking_status(),
             status_suscon: ctc.get_suscon().get_interlocking_status(),
             status_mill: ctc.get_mill().get_interlocking_status(),
@@ -230,9 +236,38 @@ class MainLine extends Component {
                 <BergenTracks 
                     blocks={this.state.status_bergenLine}
                 />
-                <BT />
-                <PascackJunction />
-                <HX />
+                <BT 
+                    status={this.state.status_bt}
+                    click_sig_2w1={this.bt_click_sig_2w1}
+                    click_sig_2w2={this.bt_click_sig_2w2}
+                    click_sig_4w={this.bt_click_sig_4w}
+                    click_sig_2e={this.bt_click_sig_2e}
+                    click_sig_4e={this.bt_click_sig_4e}
+                    throw_sw_1={this.bt_throw_sw_1}
+                    throw_sw_3={this.bt_throw_sw_3}
+                    throw_sw_5={this.bt_throw_sw_5}
+                />
+                <PascackJunction 
+                    status={this.state.status_pascack}
+                    click_sig_2w={this.pascack_click_sig_2w}
+                    click_sig_4w={this.pascack_click_sig_4w}
+                    click_sig_2e={this.pascack_click_sig_2e}
+                    click_sig_4e={this.pascack_click_sig_4e}
+                    throw_sw_1={this.pascack_throw_sw_1}
+                    throw_sw_3={this.pascack_throw_sw_3}
+                />
+                <HX 
+                    status={this.state.status_hx}
+                    click_sig_2w1={this.hx_click_sig_2w1}
+                    click_sig_2w2={this.hx_click_sig_2w2}
+                    click_sig_2w3={this.hx_click_sig_2w3}
+                    click_sig_4w={this.hx_click_sig_4w}
+                    click_sig_2e={this.hx_click_sig_2e}
+                    click_sig_4e={this.hx_click_sig_4e}
+                    throw_sw_1={this.hx_throw_sw_1}
+                    throw_sw_3={this.hx_throw_sw_3}
+                    throw_sw_5={this.hx_throw_sw_5}
+                />
 
 
                 <MainLineTracks 
@@ -331,6 +366,176 @@ class MainLine extends Component {
             </div>
         );
     }
+
+    hx_click_sig_2w1 = () => {
+        ctc.get_hx().click_sig_2w1(
+            this.state.status_bergenLine.block_pascack_hx_1,
+            this.state.status_bergenLine.block_pascack_hx_2
+        );
+        this.setState({status_hx: ctc.get_hx().get_interlocking_status()});
+    }
+
+    hx_click_sig_2w2 = () => {
+        ctc.get_hx().click_sig_2w2(
+            this.state.status_bergenLine.block_pascack_hx_1,
+            this.state.status_bergenLine.block_pascack_hx_2
+        );
+        this.setState({status_hx: ctc.get_hx().get_interlocking_status()});
+    }
+
+    hx_click_sig_2w3 = () => {
+        ctc.get_hx().click_sig_2w3(
+            this.state.status_bergenLine.block_pascack_hx_1,
+            this.state.status_bergenLine.block_pascack_hx_2
+        );
+        this.setState({status_hx: ctc.get_hx().get_interlocking_status()});
+    }
+
+    hx_click_sig_4w = () => {
+        ctc.get_hx().click_sig_4w(
+            this.state.status_bergenLine.block_pascack_hx_2
+        );
+        this.setState({status_hx: ctc.get_hx().get_interlocking_status()});
+    }
+
+    hx_click_sig_2e = () => {
+        ctc.get_hx().click_sig_2e(
+            this.state.status_bergenLine.block_hx_laurel_1,
+            this.state.status_bergenLine.block_hx_croxton_2,
+            this.state.status_bergenLine.block_hx_croxton_1
+        );
+        this.setState({status_hx: ctc.get_hx().get_interlocking_status()});
+    }
+
+    hx_click_sig_4e = () => {
+        ctc.get_hx().click_sig_4e(
+            this.state.status_bergenLine.block_hx_laurel_1,
+            this.state.status_bergenLine.block_hx_laurel_2,
+            this.state.status_bergenLine.block_hx_croxton_2,
+            this.state.status_bergenLine.block_hx_croxton_1
+        );
+        this.setState({status_hx: ctc.get_hx().get_interlocking_status()});
+    }
+
+    hx_throw_sw_1 = () => {
+        ctc.get_hx().throw_sw_1();
+        this.setState({status_hx: ctc.get_hx().get_interlocking_status()});
+    }
+
+    hx_throw_sw_3 = () => {
+        ctc.get_hx().throw_sw_3();
+        this.setState({status_hx: ctc.get_hx().get_interlocking_status()});
+    }
+
+    hx_throw_sw_5 = () => {
+        ctc.get_hx().throw_sw_5();
+        this.setState({status_hx: ctc.get_hx().get_interlocking_status()});
+    }
+
+
+
+    pascack_click_sig_2w = () => {
+        ctc.get_pascack().click_sig_2w(
+            this.state.status_bergenLine.block_bt_pascack_1,
+            this.state.status_bergenLine.block_bt_pascack_2
+        );
+        this.setState({status_pascack: ctc.get_pascack().get_interlocking_status()});
+    }
+
+    pascack_click_sig_4w = () => {
+        ctc.get_pascack().click_sig_4w(
+            this.state.status_bergenLine.block_bt_pascack_1,
+            this.state.status_bergenLine.block_bt_pascack_2
+        );
+        this.setState({status_pascack: ctc.get_pascack().get_interlocking_status()});
+    }
+
+    pascack_click_sig_2e = () => {
+        ctc.get_pascack().click_sig_2e(
+            this.state.status_bergenLine.block_pascack_hx_1,
+            this.state.status_bergenLine.block_pascack_hx_2
+        );
+        this.setState({status_pascack: ctc.get_pascack().get_interlocking_status()});
+    }
+
+    pascack_click_sig_4e = () => {
+        ctc.get_pascack().click_sig_4e(
+            this.state.status_bergenLine.block_pascack_hx_1,
+            this.state.status_bergenLine.block_pascack_hx_2
+        );
+        this.setState({status_pascack: ctc.get_pascack().get_interlocking_status()});
+    }
+
+    pascack_throw_sw_1 = () => {
+        ctc.get_pascack().throw_sw_1();
+        this.setState({status_pascack: ctc.get_pascack().get_interlocking_status()});
+    }
+
+    pascack_throw_sw_3 = () => {
+        ctc.get_pascack().throw_sw_3();
+        this.setState({status_pascack: ctc.get_pascack().get_interlocking_status()});
+    }
+
+
+
+    bt_click_sig_2w1 = () => {
+        ctc.get_bt().click_sig_2w1(
+            this.state.status_bergenLine.block_ridgewood_bt_1,
+            this.state.status_bergenLine.block_ridgewood_bt_2
+        );
+        this.setState({status_bt: ctc.get_bt().get_interlocking_status()});
+    }
+
+    bt_click_sig_2w2 = () => {
+        ctc.get_bt().click_sig_2w2(
+            this.state.status_bergenLine.block_ridgewood_bt_1,
+            this.state.status_bergenLine.block_ridgewood_bt_2
+        );
+        this.setState({status_bt: ctc.get_bt().get_interlocking_status()});
+    }
+
+    bt_click_sig_4w = () => {
+        ctc.get_bt().click_sig_4w(
+            this.state.status_bergenLine.block_ridgewood_bt_1,
+            this.state.status_bergenLine.block_ridgewood_bt_2
+        );
+        this.setState({status_bt: ctc.get_bt().get_interlocking_status()});
+    }
+
+    bt_click_sig_2e = () => {
+        ctc.get_bt().click_sig_2e(
+            this.state.status_bergenLine.block_bt_pascack_1,
+            this.state.status_bergenLine.block_bt_pascack_2,
+            this.state.status_bergenLine.block_bt_nysw
+        );
+        this.setState({status_bt: ctc.get_bt().get_interlocking_status()});
+    }
+
+    bt_click_sig_4e = () => {
+        ctc.get_bt().click_sig_4e(
+            this.state.status_bergenLine.block_bt_pascack_1,
+            this.state.status_bergenLine.block_bt_pascack_2,
+            this.state.status_bergenLine.block_bt_nysw
+        );
+        this.setState({status_bt: ctc.get_bt().get_interlocking_status()});
+    }
+
+    bt_throw_sw_1 = () => {
+        ctc.get_bt().throw_sw_1();
+        this.setState({status_bt: ctc.get_bt().get_interlocking_status()});
+    }
+
+    bt_throw_sw_3 = () => {
+        ctc.get_bt().throw_sw_3();
+        this.setState({status_bt: ctc.get_bt().get_interlocking_status()});
+    }
+
+    bt_throw_sw_5 = () => {
+        ctc.get_bt().throw_sw_5();
+        this.setState({status_bt: ctc.get_bt().get_interlocking_status()});
+    }
+
+
 
     sparrow_click_sig_2w_1 = () => {
         ctc.get_sparrow().click_sig_2w_1(

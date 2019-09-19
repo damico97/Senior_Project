@@ -26,7 +26,7 @@
     .m_laurel_3_east {
         position: absolute;
         top: 788px;
-        left: 1596px;
+        left: 1558px;
         height: 7px;
         width: 25px;
         background: #999999;
@@ -35,7 +35,7 @@
     .m_laurel_1_east {
         position: absolute;
         top: 819px;
-        left: 1596px;
+        left: 1558px;
         height: 7px;
         width: 25px;
         background: #999999;
@@ -44,7 +44,7 @@
     .m_laurel_2_east {
         position: absolute;
         top: 850px;
-        left: 1596px;
+        left: 1558px;
         height: 7px;
         width: 25px;
         background: #999999;
@@ -53,7 +53,7 @@
     .m_laurel_4_east {
         position: absolute;
         top: 881px;
-        left: 1596px;
+        left: 1558px;
         height: 7px;
         width: 25px;
         background: #999999;
@@ -64,7 +64,7 @@
         top: 788px;
         left: 1444px;
         height: 7px;
-        width: 114px;
+        width: 76px;
         background: #999999;
     }
 
@@ -100,7 +100,7 @@
         top: 881px;
         left: 1406px;
         height: 7px;
-        width: 152px;
+        width: 114px;
         background: #999999;
     }
 
@@ -149,7 +149,7 @@
         position: absolute;
         z-index: 2;
         top: 788px;
-        left: 1558px;
+        left: 1520px;
         height: 38px;
         width: 38px;
         cursor: pointer;
@@ -159,7 +159,7 @@
         position: absolute;
         z-index: 2;
         top: 850px;
-        left: 1558px;
+        left: 1520px;
         height: 38px;
         width: 38px;
         cursor: pointer;
@@ -170,7 +170,7 @@
     .laurel_sig_10w {
         position: absolute;
         top: 770px;
-        left: 1595px;
+        left: 1557px;
         height: 10px;
         width: 24px;
         height: 38px;
@@ -181,7 +181,7 @@
     .laurel_sig_2w {
         position: absolute;
         top: 801px;
-        left: 1595px;
+        left: 1557px;
         height: 10px;
         width: 24px;
         height: 38px;
@@ -192,7 +192,7 @@
     .laurel_sig_4w {
         position: absolute;
         top: 832px;
-        left: 1595px;
+        left: 1557px;
         height: 10px;
         width: 24px;
         height: 38px;
@@ -203,7 +203,7 @@
     .laurel_sig_8w {
         position: absolute;
         top: 863px;
-        left: 1595px;
+        left: 1557px;
         height: 10px;
         width: 24px;
         height: 38px;

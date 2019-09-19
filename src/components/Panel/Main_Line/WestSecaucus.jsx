@@ -91,7 +91,7 @@ class WestSecaucus extends Component {
 
     set_route_drawing = () => {
         for (let i = 0; i < this.state.routes.length; i++) {
-            if (this.state.routes[i] === "W_1_1__|__1_mill_westSecaucus" || this.state.routes[i] === "E_1_1__|__1_westSecaucus_laurel") {
+            if (this.state.routes[i] === "W_1_1__|__1_mill_westSecaucus" || this.state.routes[i] === "E_1_1__|__2_westSecaucus_laurel") {
                 if (this.state.occupied) {
                     this.state.tail_1_e = Occupied;
                     this.state.tail_center = Occupied;
@@ -127,7 +127,7 @@ class WestSecaucus extends Component {
                     }
                 }
             }
-            else if (this.state.routes[i] === "W_1_2__|__2_mill_westSecaucus" || this.state.routes[i] === "E_2_1__|__1_westSecaucus_laurel") {
+            else if (this.state.routes[i] === "W_1_2__|__2_mill_westSecaucus" || this.state.routes[i] === "E_2_1__|__2_westSecaucus_laurel") {
                 if (this.state.occupied) {
                     this.state.tail_1_e = Occupied;
                     this.state.tail_center = Occupied;
@@ -163,7 +163,7 @@ class WestSecaucus extends Component {
                     }
                 }
             }
-            else if (this.state.routes[i] === "W_2_1__|__1_mill_westSecaucus" || this.state.routes[i] === "E_1_2__|__2_westSecaucus_laurel") {
+            else if (this.state.routes[i] === "W_2_1__|__1_mill_westSecaucus" || this.state.routes[i] === "E_1_2__|__4_westSecaucus_laurel") {
                 if (this.state.occupied) {
                     this.state.tail_2_e = Occupied;
                     this.state.tail_center = Occupied;
@@ -199,7 +199,7 @@ class WestSecaucus extends Component {
                     }
                 }
             }
-            else if (this.state.routes[i] === "W_2_2__|__2_mill_westSecaucus" || this.state.routes[i] === "E_2_2__|__2_westSecaucus_laurel") {
+            else if (this.state.routes[i] === "W_2_2__|__2_mill_westSecaucus" || this.state.routes[i] === "E_2_2__|__4_westSecaucus_laurel") {
                 if (this.state.occupied) {
                     this.state.tail_2_e = Occupied;
                     this.state.tail_center = Occupied;

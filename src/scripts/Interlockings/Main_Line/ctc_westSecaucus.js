@@ -106,7 +106,7 @@ class CTC_WestSecaucus {
                         alert("Cannot Line Route Because Conflict With Next Block");
                         return;
                     }
-                    this.route_e_trk_1 = "E_1_1__|__1_westSecaucus_laurel"
+                    this.route_e_trk_1 = "E_1_1__|__2_westSecaucus_laurel"
                     this.sig_2e = true;
                 }
             }
@@ -121,7 +121,7 @@ class CTC_WestSecaucus {
                         alert("Cannot Line Route Because Conflict With Next Block");
                         return;
                     }
-                    this.route_e_trk_1 = "E_1_2__|__2_westSecaucus_laurel"
+                    this.route_e_trk_1 = "E_1_2__|__4_westSecaucus_laurel"
                     this.sig_2e = true;
                 }
             }
@@ -141,7 +141,7 @@ class CTC_WestSecaucus {
                         alert("Cannot Line Route Because Conflict With Next Block");
                         return;
                     }
-                    this.route = "E_2_1__|__1_westSecaucus_laurel";
+                    this.route = "E_2_1__|__2_westSecaucus_laurel";
                     this.sig_4e = true;
                 }
             }
@@ -156,7 +156,7 @@ class CTC_WestSecaucus {
                         alert("Cannot Line Route Because Conflict With Next Block");
                         return;
                     }
-                    this.route_e_trk_2 = "E_2_2__|__2_westSecaucus_laurel"
+                    this.route_e_trk_2 = "E_2_2__|__4_westSecaucus_laurel"
                     this.sig_4e = true;
                 }
             }
@@ -211,10 +211,10 @@ class CTC_WestSecaucus {
     get_train_route(direction, track) {
         if (direction === "WEST") {
             if (track === "1") {
-                return this.route_w_trk_1;
+                return this.route_w_trk_2;
             }
             else {
-                return this.route_w_trk_2;
+                return this.route_w_trk_1;
             }
         }
         else {
