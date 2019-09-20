@@ -266,6 +266,10 @@ class MainLine_CTC {
      * 
      */
     update_interlockings() {
+        this.interlocking_hx.can_clear();
+        this.interlocking_pascack.can_clear();
+        this.interlocking_bt.can_clear();
+
         this.interlocking_westSecaucus.can_clear();
         this.interlocking_mill.can_clear();
         this.interlocking_suscon.can_clear();
@@ -763,6 +767,30 @@ class MainLine_CTC {
      * @param {*} name 
      */
     set_occupy_interlocking(occupy, track, name) {
+        if (name === "hx") {
+            if (track === "2") {
+                this.get_hx().set_trk_2_occupied(true);
+            }
+            else {
+                this.get_hx().set_trk_1_occupied(true);
+            }
+        }
+        if (name === "pascack") {
+            if (track === "1") {
+                this.get_pascack().set_trk_1_occupied(true);
+            }
+            else {
+                this.get_pascack().set_trk_2_occupied(true);
+            }
+        }
+        if (name === "bt") {
+            if (track === "2") {
+                this.get_bt().set_trk_2_occupied(true);
+            }
+            else {
+                this.get_bt().set_trk_1_occupied(true);
+            }
+        }
         if (name === "westSecaucus") {
             this.get_westSecaucus().set_occupied(true);
         }
@@ -1015,7 +1043,7 @@ class MainLine_CTC {
         else if (block === "sterling_hilburn") {
             return this.blocks_mainLine.block_sterling_hilburn;
         }
-        else if (block === "hilburn_yard_west") {
+        else if (block === "hilburn_yardWest") {
             return this.blocks_mainLine.block_hilburn_yard_west;
         }
         else if (block === "yardHilburn_sf") {

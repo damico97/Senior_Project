@@ -6,7 +6,7 @@ class CTC_Ridgewood {
     /**
      * 
      */
-    constructor() {
+    constructor() { 
         this.sw_1 = false;
         this.sw_3 = false;
         this.sw_5 = false;

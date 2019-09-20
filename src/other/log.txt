@@ -374,5 +374,20 @@ September 19, 2019:
     - Bug fixes with routing around the laurel area
     (0.75 Hours)
 
+    - Route drawings and occupy working at BT interlocking
+    (1 Hour)
+
+    - Route drawings and occupy working at Pascack interlocking
+    (0.75 Hours)
+
+    - Route drawings and occupy working at HX interlocking
+    (1 Hours)
+
+September 20, 2019:
+    - Working on Drawings for Laurel Interlocking, finished about a third of them
+    (2 Hours)
+
+    - Debugging for the Laurel Interlocking
+    (0.75 Hours)
 
 

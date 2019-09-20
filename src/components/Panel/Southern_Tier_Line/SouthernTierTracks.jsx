@@ -83,8 +83,7 @@ class SouthernTierTracks extends Component {
         return (  
             <div>
                 {/* Tags */}
-                <div className="port_jervis_tag_1">Port Jervis</div>
-                <div className="port_jervis_tag_2">Yard</div>
+                <div className="port_jervis_tag_1">Port Jervis Yard</div>
                 <div className="crippple_tag">Cripple</div>
                 <div className="hall_yard_tag">Campbell Hall Yard</div>
                 <div className="hudson_nysw_tag">NYS&W RR</div>

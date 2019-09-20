@@ -100,7 +100,7 @@ class CTC_Hilburn {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_e_trk_1 = "E_1_2__|__0_hilburn_yard_west";
+                this.route_e_trk_1 = "E_1_2__|__0_hilburn_yardWest";
                 this.sig_2e = true;
             }
         }

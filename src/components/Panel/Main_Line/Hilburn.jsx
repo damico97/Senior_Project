@@ -130,7 +130,7 @@ class Hilburn extends Component {
                 }
             }
             // Routes With Track 2 on West Side and Track 1 on East Side
-            else if (this.state.routes[i] === "W_2_1__|__2_sterling_hilburn" || this.state.routes[i] === "E_1_2__|__0_hilburn_yard_west") {
+            else if (this.state.routes[i] === "W_2_1__|__2_sterling_hilburn" || this.state.routes[i] === "E_1_2__|__0_hilburn_yardWest") {
                 // Tail Tracks
                 this.state.tail_yard = color;
                 this.state.tail_w = color;

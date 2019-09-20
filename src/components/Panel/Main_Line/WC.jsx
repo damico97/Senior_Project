@@ -200,19 +200,19 @@ class WC extends Component {
                         this.state.sw_1_src = CX_225_Lined_Top;
                         this.state.sw_5_src = CX_135_Lined_Top;
                     }
-                }
 
-                if (this.state.routes[i] === "W_1_1__|__1_sf_wc") {
-                    this.state.sig_2w1_src = SIG_W_Clear;
-                    this.state.sig_2w2_src = SIG_W_Stop;
-                    this.state.sig_2e1_src = SIG_E_Stop;
-                    this.state.sig_2e2_src = SIG_E_Stop;
-                }
-                else {
-                    this.state.sig_2w1_src = SIG_W_Stop;
-                    this.state.sig_2w2_src = SIG_W_Stop;
-                    this.state.sig_2e1_src = SIG_E_Clear;
-                    this.state.sig_2e2_src = SIG_E_Stop;
+                    if (this.state.routes[i] === "W_1_1__|__1_sf_wc") {
+                        this.state.sig_2w1_src = SIG_W_Clear;
+                        this.state.sig_2w2_src = SIG_W_Stop;
+                        this.state.sig_2e1_src = SIG_E_Stop;
+                        this.state.sig_2e2_src = SIG_E_Stop;
+                    }
+                    else {
+                        this.state.sig_2w1_src = SIG_W_Stop;
+                        this.state.sig_2w2_src = SIG_W_Stop;
+                        this.state.sig_2e1_src = SIG_E_Clear;
+                        this.state.sig_2e2_src = SIG_E_Stop;
+                    }
                 }
             }
             else if (this.state.routes[i] === "W_2_2__|__2_sf_wc" || this.state.routes[i] === "E_2_2__|__2_wc_ridgewood") {

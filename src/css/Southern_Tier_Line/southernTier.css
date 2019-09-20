@@ -1,34 +1,21 @@
+/*
+ *    
+ */
 @charset "UTF-8";
 
     /* Tags */
     .port_jervis_tag_1 {
         position: absolute;
-        top: 180px;
-        left: 642px;
-        font-size: 16px;
-        color: #52fff6;
-    }
-
-    .port_jervis_tag_2 {
-        position: absolute;
-        top: 193px;
-        left: 662px;
+        top: 150px;
+        left: 625px;
         font-size: 16px;
         color: #52fff6;
     }
 
     .crippple_tag {
         position: absolute;
-        top: 193px;
-        left: 275px;
-        font-size: 16px;
-        color: #52fff6;
-    }
-
-    .buckleys_tag {
-        position: absolute;
-        top: 300px;
-        left: 480px;
+        top: 180px;
+        left: 300px;
         font-size: 16px;
         color: #52fff6;
     }
@@ -161,7 +148,7 @@
         top: 199px;
         left: 241px;
         height: 7px;
-        width: 30px;
+        width: 50px;
         background: #999999;
     }
 
