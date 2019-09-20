@@ -223,32 +223,34 @@ class WC extends Component {
 
                 if (this.state.occupied_2) {
                     if (this.state.route_1) {
+                        this.state.sw_2_src = CX_225_Occupied_Top_Lined_Bottom;
                         this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
                     }
                     else if (this.state.occupied_1) {
+                        this.state.sw_1_src = CX_225_Occupied_Both;
                         this.state.sw_5_src = CX_135_Occupied_Both;
                     }
                     else {
+                        this.state.sw_1_src = CX_225_Occupied_Bottom;
                         this.state.sw_5_src = CX_135_Occupied_Bottom;
                     }
-
-                    this.state.sw_1_src = CX_225_Occupied_Bottom;
 
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_4e_src = SIG_E_Stop;
                 }
                 else {
                     if (this.state.route_1) {
+                        this.state.sw_1_src = CX_225_Lined_Both
                         this.state.sw_5_src = CX_135_Lined_Both;
                     }
                     else if (this.state.occupied_1) {
+                        this.state.sw_1_src = CX_225_Occupied_Top_Lined_Bottom;
                         this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
                     }
                     else {
+                        this.state.sw_1_src = CX_225_Lined_Bottom;
                         this.state.sw_5_src = CX_135_Lined_Bottom;
                     }
-
-                    this.state.sw_1_src = CX_225_Lined_Bottom;
 
                     if (this.state.routes[i] === "W_2_2__|__2_sf_wc") {
                         this.state.sig_4w_src = SIG_W_Clear;
