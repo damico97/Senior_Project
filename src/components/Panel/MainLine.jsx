@@ -46,7 +46,7 @@ clock.startClock;
 //ctc.add_train(new Train("49", "1_suscon_mill", "suscon", 10));
 
 setTimeout(function(){ 
-    ctc.add_train(new Train("49", "3_yardEast_port", "mill", "EAST", 8));
+    ctc.add_train(new Train("49", "3_hx_laurel", "mill", "EAST", 8));
     //ctc.add_train(new Train("50", "1_laurel_westEnd", "mill", "WEST", 8));
     //ctc.add_train(new Train("50", "1_pascack_hx", "mill", "WEST", 6));
     ctc.test_block(); 
@@ -126,6 +126,7 @@ class MainLine extends Component {
             status_suscon: ctc.get_suscon().get_interlocking_status(),
             status_mill: ctc.get_mill().get_interlocking_status(),
             status_westSecaucus: ctc.get_westSecaucus().get_interlocking_status(),
+            status_laurel: ctc.get_laurel().get_interlocking_status(),
 
             status_bt: ctc.get_bt().get_interlocking_status(),
             status_pascack: ctc.get_pascack().get_interlocking_status(),

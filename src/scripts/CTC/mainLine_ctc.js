@@ -270,6 +270,7 @@ class MainLine_CTC {
         this.interlocking_pascack.can_clear();
         this.interlocking_bt.can_clear();
 
+        this.interlocking_laurel.can_clear();
         this.interlocking_westSecaucus.can_clear();
         this.interlocking_mill.can_clear();
         this.interlocking_suscon.can_clear();
@@ -789,6 +790,20 @@ class MainLine_CTC {
             }
             else {
                 this.get_bt().set_trk_1_occupied(true);
+            }
+        }
+        if (name === "laurel") {
+            if (track === "1") {
+                this.get_laurel().set_trk_1_occupied(true);
+            }
+            else if (track === "2") {
+                this.get_laurel().set_trk_2_occupied(true);
+            }
+            else if (track === "3") {
+                this.get_laurel().set_trk_3_occupied(true);
+            }
+            else {
+                this.get_laurel().set_trk_4_occupied(true);
             }
         }
         if (name === "westSecaucus") {

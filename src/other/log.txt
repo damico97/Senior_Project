@@ -167,6 +167,7 @@ September 3, 2019:
 September 4, 2019:
     - Finally found a good way to store and display routes, using something that I 
     already had in place.
+    (1 Hour)
 
     - Created a class for the the trains, and now have a actual train moving around the pannel
     (2.5 Hours)
@@ -389,5 +390,19 @@ September 20, 2019:
 
     - Debugging for the Laurel Interlocking
     (0.75 Hours)
+
+    - Continued Drawings for Laurel Interlocking, finsihed about 2/3 of the them at this point
+    (2 Hours)
+    
+September 21: 2019:
+    - Finished drawings for the laurel interlocking and debugging some of the drawings that change
+    when another track has a different status.
+    (2 Hours)
+
+    - Finished the routing and occupy for Laurel Interlocking
+    (0.5 Hours)
+
+
+TOTAL: 125 Hours
 
 

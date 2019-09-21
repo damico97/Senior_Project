@@ -189,7 +189,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_2 = "W_2_3__|__1_hx_laurel";
+                this.route_w_trk_2 = "W_2_3__|__3_hx_laurel";
                 this.routed_trk_2 = true;
                 this.sig_4w = true;
             }
@@ -256,7 +256,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_4 = "W_4_3__|__1_hx_laurel";
+                this.route_w_trk_4 = "W_4_3__|__3_hx_laurel";
                 this.routed_trk_4 = true;
                 this.sig_8w = true;
             }
@@ -473,7 +473,7 @@ class CTC_Laurel {
         }   
         else if (!this.sw_7 && this.sw_13) {
             if (this.sig_4e) {
-                this.route_e_trk_3 = null;
+                this.route_e_trk_2 = null;
                 this.routed_trk_2 = false;
                 this.sig_4e = false;
             }
@@ -546,11 +546,119 @@ class CTC_Laurel {
     /**
      * 
      */
+    set_trk_1_occupied(n_state) {
+        if (n_state === true) {
+            this.occupied_trk_1 = n_state;
+            this.routed_trk_1 = false;
+            this.trk_1_time = new Date().getTime() / 1000;
+        }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    set_trk_2_occupied(n_state) {
+        if (n_state === true) {
+            this.occupied_trk_2 = n_state;
+            this.routed_trk_2 = false;
+            this.trk_2_time = new Date().getTime() / 1000;
+        }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    set_trk_3_occupied(n_state) {
+        if (n_state === true) {
+            this.occupied_trk_3 = n_state;
+            this.routed_trk_3 = false;
+            this.trk_3_time = new Date().getTime() / 1000;
+        }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    set_trk_4_occupied(n_state) {
+        if (n_state === true) {
+            this.occupied_trk_4 = n_state;
+            this.routed_trk_4 = false;
+            this.trk_4_time = new Date().getTime() / 1000;
+        }
+        else {
+            console.log("ERROR");
+        }
+    }
+
+    /**
+     * 
+     */
+    can_clear() {
+        //console.log(new Date().getTime() / 1000 - this.time_occupied)
+        let current_time = new Date().getTime() / 1000;
+        if (current_time - this.trk_1_time > 4 && current_time - this.trk_1_time< 100000) {
+            this.sig_2w = false;
+            this.sig_12e = false;
+
+            this.route_w_trk_1 = null;
+            this.route_e_trk_1 = null;
+            this.routed_trk_1 = false;
+
+            this.occupied_trk_1 = false;
+            this.trk_1_time = null;
+        }
+        if (current_time - this.trk_2_time > 4 && current_time - this.trk_2_time< 100000) {
+            this.sig_4w = false;
+            this.sig_4e = false;
+
+            this.route_w_trk_2 = null;
+            this.route_e_trk_2 = null;
+            this.routed_trk_2 = false;
+
+            this.occupied_trk_2 = false;
+            this.trk_2_time = null;
+        }
+        if (current_time - this.trk_3_time > 4 && current_time - this.trk_3_time< 100000) {
+            this.sig_10w = false;
+            this.sig_6e = false;
+
+            this.route_w_trk_3 = null;
+            this.route_e_trk_3 = null;
+            this.routed_trk_3 = false;
+
+            this.occupied_trk_3 = false;
+            this.trk_3_time = null;
+        }
+        if (current_time - this.trk_4_time > 4 && current_time - this.trk_4_time< 100000) {
+            this.sig_8w = false;
+            this.sig_8e = false;
+
+            this.route_w_trk_4 = null;
+            this.route_e_trk_4 = null;
+            this.routed_trk_4 = false;
+
+            this.occupied_trk_4 = false;
+            this.trk_4_time = null;
+        }
+    }
+
+    /**
+     * 
+     */
     get_routes() {
         let routes = [
-            this.route_e_trk_3, this.route_e_trk_4,
-            this.route_w_trk_3, this.route_w_trk_4,
-            this.route_e_trk_2, this.route_e_trk_1,
+            this.route_e_trk_4, this.route_e_trk_3,
+            this.route_e_trk_1, this.route_e_trk_2,
+            this.route_w_trk_4, this.route_w_trk_3,
             this.route_w_trk_2, this.route_w_trk_1,
         ];
 
