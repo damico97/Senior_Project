@@ -15,9 +15,17 @@ class CTC_Block {
     get_block_status() {
         return this.block_status;
     }
-
+ 
     get_size() {
         return this.block_size;
+    }
+
+    set_symbol(n_symbol) {
+        this.train_symbol = n_symbol;
+    }
+
+    get_symbol() {
+        return this.train_symbol;
     }
 
     reset_block() {

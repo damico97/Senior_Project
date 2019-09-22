@@ -156,6 +156,7 @@ class WC extends Component {
             color_2 = Red;
         }
 
+        // Loop Through All The Routes
         for (let i = 0; i < this.state.routes.length; i++) {
             if (this.state.routes[i] === "W_1_1__|__1_sf_wc" || this.state.routes[i] === "E_1_1__|__1_wc_ridgewood") {
                 // Tail Tracks
@@ -163,50 +164,68 @@ class WC extends Component {
                 this.state.tail_1_w = color_1;
 
                 if (this.state.occupied_1) {
+                    // Switches
                     this.state.sw_7_src = SW_U_E_Occupied;
                     this.state.sw_3_src = SW_U_W_Occupied;
 
-                    if (this.state.route_2) {
-                        this.state.sw_1_src = CX_225_Occupied_Top_Lined_Bottom;
-                        this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
+                    // Crossovers that could change based off of Track #2 Status
+                    if (this.state.routes.includes("W_2_2__|__2_sf_wc") || this.state.routes.includes("E_2_2__|__2_wc_ridgewood")) {
+                        // Track #2 Is Occupied
+                        if (this.state.occupied_2) {
+                            this.state.sw_5_src = CX_135_Occupied_Both;
+                            this.state.sw_1_src = CX_225_Occupied_Bottom;
+                        }
+                        // Track #2 Routed
+                        else if (this.state.route_2) {
+                            this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
+                            this.state.sw_1_src = CX_225_Occupied_Top_Lined_Bottom;
+                        }
                     }
-                    else if (this.state.occupied_2) {
-                        this.state.sw_1_src = CX_225_Occupied_Both;
-                        this.state.sw_5_src = CX_135_Occupied_Both;
-                    }
+                    // Nothing Track #2
                     else {
-                        this.state.sw_1_src = CX_225_Occupied_Top;
                         this.state.sw_5_src = CX_135_Occupied_Top;
+                        this.state.sw_1_src = CX_225_Occupied_Top;
                     }
 
+                    // Signals
                     this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
                 }
                 else {
+                    // Switches
                     this.state.sw_7_src = SW_U_E_Lined;
                     this.state.sw_3_src = SW_U_W_Lined;
 
-                    if (this.state.route_2) {
-                        this.state.sw_1_src = CX_225_Lined_Both;
-                        this.state.sw_5_src = CX_135_Lined_Both;
+                    // Crossovers that could change based off of Track #2 Status
+                    if (this.state.routes.includes("W_2_2__|__2_sf_wc") || this.state.routes.includes("E_2_2__|__2_wc_ridgewood")) {
+                        // Track #2 Occupied
+                        if (this.state.occupied_2) {
+                            this.state.sw_5_src = CX_135_Lined_Top_Occupied_Bottom;
+                            this.state.sw_1_src = CX_225_Lined_Top_Occupied_Bottom;
+                        }
+                        // Track #2 Routed
+                        else if (this.state.route_2) {
+                            this.state.sw_5_src = CX_135_Lined_Both;
+                            this.state.sw_1_src = CX_225_Lined_Both;
+                        }
                     }
-                    else if (this.state.occupied_2) {
-                        this.state.sw_1_src = CX_225_Lined_Top_Occupied_Bottom;
-                        this.state.sw_5_src = CX_135_Lined_Top_Occupied_Bottom;
-                    }
+                    // Nothing Track #2
                     else {
-                        this.state.sw_1_src = CX_225_Lined_Top;
                         this.state.sw_5_src = CX_135_Lined_Top;
+                        this.state.sw_1_src = CX_225_Lined_Top;
                     }
 
+                    // Signals
+                    // West Bound Signals
                     if (this.state.routes[i] === "W_1_1__|__1_sf_wc") {
                         this.state.sig_2w1_src = SIG_W_Clear;
                         this.state.sig_2w2_src = SIG_W_Stop;
                         this.state.sig_2e1_src = SIG_E_Stop;
                         this.state.sig_2e2_src = SIG_E_Stop;
                     }
+                    // East Bound Signals
                     else {
                         this.state.sig_2w1_src = SIG_W_Stop;
                         this.state.sig_2w2_src = SIG_W_Stop;
@@ -216,46 +235,86 @@ class WC extends Component {
                 }
             }
             else if (this.state.routes[i] === "W_2_2__|__2_sf_wc" || this.state.routes[i] === "E_2_2__|__2_wc_ridgewood") {
-                // Tail Tracks
+                // Set Tail Track Colors
                 this.state.tail_2_e = color_2;
                 this.state.tail_2_center = color_2;
                 this.state.tail_2_w = color_2;
 
+                // If The Route Is Occupied
                 if (this.state.occupied_2) {
-                    if (this.state.route_1) {
-                        this.state.sw_2_src = CX_225_Occupied_Top_Lined_Bottom;
-                        this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
+                    // Switches
+                    // Crossovers that could change based of the state of Track #1
+                    if (this.state.routes.includes("W_1_1__|__1_sf_wc") || this.state.routes.includes("E_1_1__|__1_wc_ridgewood") ||
+                        this.state.routes.includes("W_3_1__|__1_sf_wc") || this.state.routes.includes("E_1_3__|__3_wc_ridgewood")) {
+                        if (this.state.occupied_1) {
+                            this.state.sw_5_src = CX_135_Occupied_Both;
+                            this.state.sw_1_src = CX_225_Occupied_Both;
+                        }
+                        else if (this.state.route_1) {
+                            this.state.sw_5_src = CX_135_Lined_Top_Occupied_Bottom;
+                            this.state.sw_1_src = CX_225_Lined_Top_Occupied_Bottom;
+                        }
                     }
-                    else if (this.state.occupied_1) {
-                        this.state.sw_1_src = CX_225_Occupied_Both;
-                        this.state.sw_5_src = CX_135_Occupied_Both;
+                    else if (this.state.routes.includes("W_3_3__|__0_yard_wc") || this.state.routes.includes("E_3_3__|__3_wc_ridgewood") ||
+                        this.state.routes.includes("W_1_3__|__0_yard_wc") || this.state.routes.includes("E_3_1__|__1_wc_ridgewood")) {
+                        if (this.state.occupied_1) {
+                            this.state.sw_5_src = CX_135_Occupied_Both;
+                            this.state.sw_1_src = CX_225_Occupied_Bottom;
+                        }
+                        else if (this.state.route_1) {
+                            this.state.sw_5_src = CX_135_Lined_Top_Occupied_Bottom;
+                            this.state.sw_1_src = CX_225_Occupied_Bottom;
+                        }
                     }
+                    // Nothing Track #1
                     else {
-                        this.state.sw_1_src = CX_225_Occupied_Bottom;
                         this.state.sw_5_src = CX_135_Occupied_Bottom;
+                        this.state.sw_1_src = CX_225_Occupied_Bottom;
                     }
 
+                    // Signals
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_4e_src = SIG_E_Stop;
                 }
+                // The Route Is NOT Occupied
                 else {
-                    if (this.state.route_1) {
-                        this.state.sw_1_src = CX_225_Lined_Both
-                        this.state.sw_5_src = CX_135_Lined_Both;
+                    // Switches
+                    // Crossovers that could change based of the state of Track #1
+                    if (this.state.routes.includes("W_1_1__|__1_sf_wc") || this.state.routes.includes("E_1_1__|__1_wc_ridgewood") ||
+                        this.state.routes.includes("W_3_1__|__1_sf_wc") || this.state.routes.includes("E_1_3__|__3_wc_ridgewood")) {
+                        if (this.state.occupied_1) {
+                            this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
+                            this.state.sw_1_src = CX_225_Occupied_Top_Lined_Bottom;
+                        }
+                        else if (this.state.route_1) {
+                            this.state.sw_5_src = CX_135_Lined_Both;
+                            this.state.sw_1_src = CX_225_Lined_Both;
+                        }
                     }
-                    else if (this.state.occupied_1) {
-                        this.state.sw_1_src = CX_225_Occupied_Top_Lined_Bottom;
-                        this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
+                    else if (this.state.routes.includes("W_3_3__|__0_yard_wc") || this.state.routes.includes("E_3_3__|__3_wc_ridgewood") ||
+                        this.state.routes.includes("W_1_3__|__0_yard_wc") || this.state.routes.includes("E_3_1__|__1_wc_ridgewood")) {
+                        if (this.state.occupied_1) {
+                            this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
+                            this.state.sw_1_src = CX_225_Lined_Bottom;
+                        }
+                        else if (this.state.route_1) {
+                            this.state.sw_5_src = CX_135_Lined_Both;
+                            this.state.sw_1_src = CX_225_Lined_Bottom;
+                        }
                     }
+                    // Nothing Track #1
                     else {
-                        this.state.sw_1_src = CX_225_Lined_Bottom;
                         this.state.sw_5_src = CX_135_Lined_Bottom;
+                        this.state.sw_1_src = CX_225_Lined_Bottom;
                     }
 
+                    // Signals
+                    // West Bound Signals
                     if (this.state.routes[i] === "W_2_2__|__2_sf_wc") {
                         this.state.sig_4w_src = SIG_W_Clear;
                         this.state.sig_4e_src = SIG_E_Stop;
                     }
+                    // East Bound Signals
                     else {
                         this.state.sig_4w_src = SIG_W_Stop;
                         this.state.sig_4e_src = SIG_E_Clear;
@@ -263,269 +322,97 @@ class WC extends Component {
                 }
             }
             else if (this.state.routes[i] === "W_3_1__|__1_sf_wc" || this.state.routes[i] === "E_1_3__|__3_wc_ridgewood") {
-                // Tail Tracks
+                // Set Tail Track Colors
                 this.state.tail_3_e = color_1;
                 this.state.tail_1_w = color_1;
 
+                // If The Route Is Occupied
                 if (this.state.occupied_1) {
-                    this.state.sw_3_src = SW_U_W_Occupied;
+                    // Switches
                     this.state.sw_7_src = SW_U_E_R_Occupied;
-
-                    if (this.state.route_2) {
-                        if (this.state.routes.includes("W_3_3__|__0_yard_wc") || this.state.routes.includes("E_3_3__|__3_wc_ridgewood"
-                        || this.state.routes.includes("W_1_3__|__0_yard_wc") || this.state.routes.includes("E_3_1__|__1_wc_ridgewood"))) {
-                            this.state.sw_1_src = CX_225_Lined_Bottom;    
-                        }
-                        else {
-                            this.state.sw_1_src = CX_225_Occupied_Top_Lined_Bottom;
-                        }
-                        this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
-                    }
-                    else if (this.state.occupied_2) {
-                        if (this.state.routes.includes("W_3_3__|__0_yard_wc") || this.state.routes.includes("E_3_3__|__3_wc_ridgewood"
-                        || this.state.routes.includes("W_1_3__|__0_yard_wc") || this.state.routes.includes("E_3_1__|__1_wc_ridgewood"))) {
-                            this.state.sw_1_src = CX_225_Occupied_Bottom;    
-                        }
-                        else {
-                            this.state.sw_1_src = CX_225_Occupied_Both;
-                        }
-                        this.state.sw_5_src = CX_135_Occupied_Both;
-                    }
-                    else {
-                        this.state.sw_1_src = CX_225_Occupied_Top;
-                        this.state.sw_5_src = CX_135_Occupied_Top;
-                    }
+                    this.state.sw_5_src = CX_135_Occupied_Top;
+                    this.state.sw_3_src = SW_U_W_Occupied;
+                    this.state.sw_1_src = CX_225_Occupied_Top;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
                 }
+                // The Route Is NOT Occupied
                 else {
-                    this.state.sw_3_src = SW_U_W_Lined;
+                    // Switches
                     this.state.sw_7_src = SW_U_E_R_Lined;
+                    this.state.sw_5_src = CX_135_Lined_Top;
+                    this.state.sw_3_src = SW_U_W_Lined;
+                    this.state.sw_1_src = CX_225_Lined_Top;
 
-                    if (this.state.route_2) {
-                        if (this.state.routes.includes("W_3_3__|__0_yard_wc") || this.state.routes.includes("E_3_3__|__3_wc_ridgewood"
-                        || this.state.routes.includes("W_1_3__|__0_yard_wc") || this.state.routes.includes("E_3_1__|__1_wc_ridgewood"))) {
-                            this.state.sw_1_src = CX_225_Lined_Bottom;    
-                        }
-                        else {
-                            this.state.sw_1_src = CX_225_Lined_Both;
-                        }
-                        this.state.sw_5_src = CX_135_Lined_Both;
-                    }
-                    else if (this.state.occupied_2) {
-                        if (this.state.routes.includes("W_3_3__|__0_yard_wc") || this.state.routes.includes("E_3_3__|__3_wc_ridgewood"
-                        || this.state.routes.includes("W_1_3__|__0_yard_wc") || this.state.routes.includes("E_3_1__|__1_wc_ridgewood"))) {
-                            this.state.sw_1_src = CX_225_Occupied_Bottom;    
-                        }
-                        else {
-                            this.state.sw_1_src = CX_225_Lined_Top_Occupied_Bottom;
-                        }
-                        this.state.sw_5_src = CX_135_Lined_Top_Occupied_Bottom;
-                    }
-                    else {
-                        this.state.sw_1_src = CX_225_Lined_Top;
-                        this.state.sw_5_src = CX_135_Lined_Top;
-                    }
-
+                    // Signals
+                    // West Bound Signals
                     if (this.state.routes[i] === "W_3_1__|__1_sf_wc") {
-                        this.state.sig_2w1_src = SIG_W_Stop;
                         this.state.sig_2w2_src = SIG_W_Clear;
+                        this.state.sig_2w1_src = SIG_W_Stop;
                         this.state.sig_2e1_src = SIG_E_Stop;
                         this.state.sig_2e2_src = SIG_E_Stop;
                     }
+                    // East Bound Signals
                     else {
-                        this.state.sig_2w1_src = SIG_W_Stop;
                         this.state.sig_2w2_src = SIG_W_Stop;
+                        this.state.sig_2w1_src = SIG_W_Stop;
                         this.state.sig_2e1_src = SIG_E_Clear;
                         this.state.sig_2e2_src = SIG_E_Stop;
                     }
                 }
             }
             else if (this.state.routes[i] === "W_3_3__|__0_yard_wc" || this.state.routes[i] === "E_3_3__|__3_wc_ridgewood") {
-                // Tail Tracks
+                // Set Tail Track Colors
                 this.state.tail_3_e = color_1;
                 this.state.tail_yard = color_1;
 
+                // The Route Is Occupied
                 if (this.state.occupied_1) {
+                    // Switches
                     this.state.sw_7_src = SW_U_E_R_Occupied;
+                    this.state.sw_5_src = CX_135_Occupied_Top;
                     this.state.sw_3_src = SW_U_W_R_Occupied;
 
-                    if (this.state.route_2) {
-                        this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
-                    }
-                    else if (this.state.occupied_2) {
-                        this.state.sw_5_src = CX_135_Occupied_Both;
-                    }
-                    else {
-                        this.state.sw_5_src = CX_135_Occupied_Top;
-                    }
-
-                    this.state.sig_2w1_src = SIG_W_Stop;
+                    // Signals
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
                 }
+                // The Route Is NOT Occupied
                 else {
+                    // Switches
                     this.state.sw_7_src = SW_U_E_R_Lined;
+                    this.state.sw_5_src = CX_135_Lined_Top;
                     this.state.sw_3_src = SW_U_W_R_Lined;
 
-                    if (this.state.route_2) {
-                        this.state.sw_5_src = CX_135_Lined_Both;
-                    }
-                    else if (this.state.occupied_2) {
-                        this.state.sw_5_src = CX_135_Lined_Top_Occupied_Bottom;
-                    }
-                    else {
-                        this.state.sw_5_src = CX_135_Lined_Top;
-                    }
-
-                    if (this.state.routes[i] === "W_3_1__|__1_sf_wc") {
-                        this.state.sig_2w1_src = SIG_W_Stop;
+                    // Signals
+                    // West Bound Signals
+                    if (this.state.routes[i] === "W_3_3__|__0_yard_wc") {
                         this.state.sig_2w2_src = SIG_W_Clear;
+                        this.state.sig_2w1_src = SIG_W_Stop;
                         this.state.sig_2e1_src = SIG_E_Stop;
                         this.state.sig_2e2_src = SIG_E_Stop;
                     }
+                    // East Bound Signals
                     else {
-                        this.state.sig_2w1_src = SIG_W_Stop;
                         this.state.sig_2w2_src = SIG_W_Stop;
+                        this.state.sig_2w1_src = SIG_W_Stop;
                         this.state.sig_2e1_src = SIG_E_Stop;
                         this.state.sig_2e2_src = SIG_E_Clear;
                     }
-                }
-            }
-            else if (this.state.routes[i] === "W_1_3__|__0_yard_wc" || this.state.routes[i] === "E_3_1__|__1_wc_ridgewood") {
-                // Tail Tracks
-                this.state.tail_1_e = color_1;
-                this.state.tail_yard = color_1;
-
-                if (this.state.occupied_1) {
-                    this.state.sw_7_src = SW_U_E_Occupied;
-                    this.state.sw_3_src = SW_U_W_R_Occupied;
-
-                    if (this.state.route_2) {
-                        this.state.sw_5_src = CX_135_Occupied_Top_Lined_Bottom;
-                    }
-                    else if (this.state.occupied_2) {
-                        this.state.sw_5_src = CX_135_Occupied_Both;
-                    }
-                    else {
-                        this.state.sw_5_src = CX_135_Occupied_Top;
-                    }
-
-                    this.state.sig_2w1_src = SIG_W_Stop;
-                    this.state.sig_2w2_src = SIG_W_Stop;
-                    this.state.sig_2e1_src = SIG_E_Stop;
-                    this.state.sig_2e2_src = SIG_E_Stop;
-                }
-                else {
-                    this.state.sw_7_src = SW_U_E_Lined;
-                    this.state.sw_3_src = SW_U_W_R_Lined;
-
-                    if (this.state.route_2) {
-                        this.state.sw_5_src = CX_135_Lined_Both;
-                    }
-                    else if (this.state.occupied_2) {
-                        this.state.sw_5_src = CX_135_Lined_Top_Occupied_Bottom;
-                    }
-                    else {
-                        this.state.sw_5_src = CX_135_Lined_Top;
-                    }
-
-                    if (this.state.routes[i] === "W_1_3__|__0_yard_wc") {
-                        this.state.sig_2w1_src = SIG_W_Clear;
-                        this.state.sig_2w2_src = SIG_W_Stop;
-                        this.state.sig_2e1_src = SIG_E_Stop;
-                        this.state.sig_2e2_src = SIG_E_Stop;
-                    }
-                    else {
-                        this.state.sig_2w1_src = SIG_W_Stop;
-                        this.state.sig_2w2_src = SIG_W_Stop;
-                        this.state.sig_2e1_src = SIG_E_Stop;
-                        this.state.sig_2e2_src = SIG_E_Clear;
-                    }
-                }
-            }
-            else if (this.state.routes[i] === "W_1_2__|__2_sf_wc") {
-                // Tail Tracks
-                this.state.tail_1_e = color_1;
-                this.state.tail_2_w = color_1;
-
-                if (this.state.occupied_1) {
-                    // Switches
-                    this.state.sw_7_src = SW_U_E_Occupied;
-                    this.state.sw_5_src = CX_135_Occupied_Top;
-                    this.state.sw_3_src = SW_U_W_Occupied;
-                    this.state.sw_1_src = CX_225_R_Occupied;
-
-                    // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
-                    this.state.sig_2w2_src = SIG_W_Stop;
-                    this.state.sig_4w_src = SIG_W_Stop;
-                    this.state.sig_2e1_src = SIG_E_Stop;
-                    this.state.sig_2e2_src = SIG_E_Stop;
-                    this.state.sig_4e_src = SIG_E_Stop;
-                }
-                else {
-                    // Switches
-                    this.state.sw_7_src = SW_U_E_Lined;
-                    this.state.sw_5_src = CX_135_Lined_Top;
-                    this.state.sw_3_src = SW_U_W_Lined;
-                    this.state.sw_1_src = CX_225_R_Lined;
-
-                    // Signals
-                    this.state.sig_2w1_src = SIG_W_Clear;
-                    this.state.sig_2w2_src = SIG_W_Stop;
-                    this.state.sig_4w_src = SIG_W_Stop;
-                    this.state.sig_2e1_src = SIG_E_Stop;
-                    this.state.sig_2e2_src = SIG_E_Stop;
-                    this.state.sig_4e_src = SIG_E_Stop;
-                }
-            }
-            else if (this.state.routes[i] === "E_2_1__|__1_wc_ridgewood") {
-                // Tail Tracks
-                this.state.tail_1_e = color_2;
-                this.state.tail_2_w = color_2;
-
-                if (this.state.occupied_2) {
-                    // Switches
-                    this.state.sw_7_src = SW_U_E_Occupied;
-                    this.state.sw_5_src = CX_135_Occupied_Top;
-                    this.state.sw_3_src = SW_U_W_Occupied;
-                    this.state.sw_1_src = CX_225_R_Occupied;
-
-                    // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
-                    this.state.sig_2w2_src = SIG_W_Stop;
-                    this.state.sig_4w_src = SIG_W_Stop;
-                    this.state.sig_2e1_src = SIG_E_Stop;
-                    this.state.sig_2e2_src = SIG_E_Stop;
-                    this.state.sig_4e_src = SIG_E_Stop;
-                }
-                else {
-                    // Switches
-                    this.state.sw_7_src = SW_U_E_Lined;
-                    this.state.sw_5_src = CX_135_Lined_Top;
-                    this.state.sw_3_src = SW_U_W_Lined;
-                    this.state.sw_1_src = CX_225_R_Lined;
-
-                    // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
-                    this.state.sig_2w2_src = SIG_W_Stop;
-                    this.state.sig_4w_src = SIG_W_Stop;
-                    this.state.sig_2e1_src = SIG_E_Stop;
-                    this.state.sig_2e2_src = SIG_E_Stop;
-                    this.state.sig_4e_src = SIG_E_Clear;
                 }
             }
             else if (this.state.routes[i] === "W_3_2__|__2_sf_wc") {
-                // Tail Tracks
+                // Set Tail Track Colors
                 this.state.tail_3_e = color_1;
                 this.state.tail_2_w = color_1;
 
+                // The Route Is Occupied
                 if (this.state.occupied_1) {
                     // Switches
                     this.state.sw_7_src = SW_U_E_R_Occupied;
@@ -534,13 +421,14 @@ class WC extends Component {
                     this.state.sw_1_src = CX_225_R_Occupied;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
                     this.state.sig_4e_src = SIG_E_Stop;
                 }
+                // The Route Is NOT Occupied
                 else {
                     // Switches
                     this.state.sw_7_src = SW_U_E_R_Lined;
@@ -549,8 +437,8 @@ class WC extends Component {
                     this.state.sw_1_src = CX_225_R_Lined;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Clear;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
@@ -558,10 +446,11 @@ class WC extends Component {
                 }
             }
             else if (this.state.routes[i] === "E_2_3__|__3_wc_ridgewood") {
-                // Tail Tracks
+                // Set Tail Track Colors
                 this.state.tail_3_e = color_2;
                 this.state.tail_2_w = color_2;
 
+                // The Route Is Occupied
                 if (this.state.occupied_2) {
                     // Switches
                     this.state.sw_7_src = SW_U_E_R_Occupied;
@@ -570,13 +459,14 @@ class WC extends Component {
                     this.state.sw_1_src = CX_225_R_Occupied;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
                     this.state.sig_4e_src = SIG_E_Stop;
                 }
+                // The Route Is NOT Occupied
                 else {
                     // Switches
                     this.state.sw_7_src = SW_U_E_R_Lined;
@@ -585,8 +475,84 @@ class WC extends Component {
                     this.state.sw_1_src = CX_225_R_Lined;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
+                    this.state.sig_4w_src = SIG_W_Stop;
+                    this.state.sig_2e1_src = SIG_E_Stop;
+                    this.state.sig_2e2_src = SIG_E_Stop;
+                    this.state.sig_4e_src = SIG_E_Clear;
+                }
+            }
+            else if (this.state.routes[i] === "W_1_2__|__2_sf_wc") {
+                // Set Tail Track Colors
+                this.state.tail_1_e = color_1;
+                this.state.tail_2_w = color_1;
+
+                // The Route Is Occupied
+                if (this.state.occupied_1) {
+                    // Switches
+                    this.state.sw_7_src = SW_U_E_Occupied;
+                    this.state.sw_5_src = CX_135_Occupied_Top;
+                    this.state.sw_3_src = SW_U_W_Occupied;
+                    this.state.sw_1_src = CX_225_R_Occupied;
+
+                    // Signals
+                    this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
+                    this.state.sig_4w_src = SIG_W_Stop;
+                    this.state.sig_2e1_src = SIG_E_Stop;
+                    this.state.sig_2e2_src = SIG_E_Stop;
+                    this.state.sig_4e_src = SIG_E_Stop;
+                }
+                // The Route Is NOT Occupied
+                else {
+                    // Switches
+                    this.state.sw_7_src = SW_U_E_Lined;
+                    this.state.sw_5_src = CX_135_Lined_Top;
+                    this.state.sw_3_src = SW_U_W_Lined;
+                    this.state.sw_1_src = CX_225_R_Lined;
+
+                    // Signals
+                    this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Clear;
+                    this.state.sig_4w_src = SIG_W_Stop;
+                    this.state.sig_2e1_src = SIG_E_Stop;
+                    this.state.sig_2e2_src = SIG_E_Stop;
+                    this.state.sig_4e_src = SIG_E_Stop;
+                }
+            }
+            else if (this.state.routes[i] === "E_2_1__|__1_wc_ridgewood") {
+                // Set Tail Track Colors
+                this.state.tail_1_e = color_2;
+                this.state.tail_2_w = color_2;
+
+                // The Route Is Occupied
+                if (this.state.occupied_2) {
+                    // Switches
+                    this.state.sw_7_src = SW_U_E_Occupied;
+                    this.state.sw_5_src = CX_135_Occupied_Top;
+                    this.state.sw_3_src = SW_U_W_Occupied;
+                    this.state.sw_1_src = CX_225_R_Occupied;
+
+                    // Signals
+                    this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
+                    this.state.sig_4w_src = SIG_W_Stop;
+                    this.state.sig_2e1_src = SIG_E_Stop;
+                    this.state.sig_2e2_src = SIG_E_Stop;
+                    this.state.sig_4e_src = SIG_E_Stop;
+                }
+                // The Route Is NOT Occupied
+                else {
+                    // Switches
+                    this.state.sw_7_src = SW_U_E_Lined;
+                    this.state.sw_5_src = CX_135_Lined_Top;
+                    this.state.sw_3_src = SW_U_W_Lined;
+                    this.state.sw_1_src = CX_225_R_Lined;
+
+                    // Signals
+                    this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
@@ -594,10 +560,11 @@ class WC extends Component {
                 }
             }
             else if (this.state.routes[i] === "W_2_1__|__1_sf_wc") {
-                // Tail Tracks
+                // Set Tail Track Colors
                 this.state.tail_2_e = color_2;
                 this.state.tail_1_w = color_2;
 
+                // If The Route Is Occupied
                 if (this.state.occupied_2) {
                     // Switches
                     this.state.sw_5_src = CX_135_R_Occupied;
@@ -605,13 +572,14 @@ class WC extends Component {
                     this.state.sw_1_src = CX_225_Occupied_Top;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
                     this.state.sig_4e_src = SIG_E_Stop;
                 }
+                // If The Route Is NOT Occupied
                 else {
                     // Switches
                     this.state.sw_5_src = CX_135_R_Lined;
@@ -619,8 +587,8 @@ class WC extends Component {
                     this.state.sw_1_src = CX_225_Lined_Top;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Clear;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
@@ -628,10 +596,11 @@ class WC extends Component {
                 }
             }
             else if (this.state.routes[i] === "E_1_2__|__2_wc_ridgewood") {
-                // Tail Tracks
+                // Set Tail Track Colors
                 this.state.tail_2_e = color_1;
                 this.state.tail_1_w = color_1;
 
+                // If The Route Is Occupied
                 if (this.state.occupied_1) {
                     // Switches
                     this.state.sw_5_src = CX_135_R_Occupied;
@@ -639,13 +608,14 @@ class WC extends Component {
                     this.state.sw_1_src = CX_225_Occupied_Top;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
                     this.state.sig_4e_src = SIG_E_Stop;
                 }
+                // If The Route Is NOT Occupied
                 else {
                     // Switches
                     this.state.sw_5_src = CX_135_R_Lined;
@@ -653,8 +623,8 @@ class WC extends Component {
                     this.state.sw_1_src = CX_225_Lined_Top;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Clear;
                     this.state.sig_2e2_src = SIG_E_Stop;
@@ -662,31 +632,33 @@ class WC extends Component {
                 }
             }
             else if (this.state.routes[i] === "W_2_3__|__0_yard_wc") {
-                // Tail Tracks
+                // Set Tail Track Colors
                 this.state.tail_2_e = color_2;
                 this.state.tail_yard = color_2;
 
+                // If The Route Is Occupied
                 if (this.state.occupied_2) {
-                    // Swithces
+                    // Switches
                     this.state.sw_5_src = CX_135_R_Occupied;
                     this.state.sw_3_src = SW_U_W_R_Occupied;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
                     this.state.sig_4e_src = SIG_E_Stop;
                 }
+                // The Route Is NOT Occupied
                 else {
-                    // Swithces
+                    // Switches
                     this.state.sw_5_src = CX_135_R_Lined;
                     this.state.sw_3_src = SW_U_W_R_Lined;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Clear;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
@@ -694,31 +666,33 @@ class WC extends Component {
                 }
             }
             else if (this.state.routes[i] === "E_3_2__|__2_wc_ridgewood") {
-                // Tail Tracks
+                // Set Tail Track Colors
                 this.state.tail_2_e = color_1;
                 this.state.tail_yard = color_1;
 
+                // If The Route Is Occupied
                 if (this.state.occupied_1) {
-                    // Swithces
+                    // Switches
                     this.state.sw_5_src = CX_135_R_Occupied;
                     this.state.sw_3_src = SW_U_W_R_Occupied;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Stop;
                     this.state.sig_4e_src = SIG_E_Stop;
                 }
+                // The Route Is NOT Occupied
                 else {
-                    // Swithces
+                    // Switches
                     this.state.sw_5_src = CX_135_R_Lined;
                     this.state.sw_3_src = SW_U_W_R_Lined;
 
                     // Signals
-                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_2w2_src = SIG_W_Stop;
+                    this.state.sig_2w1_src = SIG_W_Stop;
                     this.state.sig_4w_src = SIG_W_Stop;
                     this.state.sig_2e1_src = SIG_E_Stop;
                     this.state.sig_2e2_src = SIG_E_Clear;

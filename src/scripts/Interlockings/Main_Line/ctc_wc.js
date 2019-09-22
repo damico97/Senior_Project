@@ -91,7 +91,7 @@ class CTC_WC {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_1 = "W_1_2__|__2_sf_wc"
+                this.route_w_trk_1 = "W_1_2__|__2_sf_wc";
                 this.routed_trk_1 = true;
                 this.sig_2w_1 = true;
             }
@@ -510,8 +510,9 @@ class CTC_WC {
      */
     get_routes() {
         let routes = [
-            this.route_w_trk_1, this.route_w_trk_2, this.route_w_trk_3,
-            this.route_e_trk_1, this.route_e_trk_2, this.route_e_trk_3
+            this.route_w_trk_1, this.route_w_trk_3,
+            this.route_e_trk_1, this.route_e_trk_3,
+            this.route_e_trk_2, this.route_w_trk_2,
         ];
 
         return routes;

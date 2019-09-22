@@ -229,6 +229,7 @@ class MainLine_CTC {
                 }
                 else {
                     // Clear Previous Block
+                    this.get_block_by_name(this.train_list[i].get_location()).set_symbol('');
                     this.get_block_by_name(this.train_list[i].get_location()).set_block_status("Empty");
                     
                     // Get the last location
@@ -467,6 +468,7 @@ class MainLine_CTC {
             }
             else {
                 block.set_block_status("Occupied");
+                block.set_symbol(this.train_list[i].get_symbol());
             }
         }
     }
@@ -630,6 +632,7 @@ class MainLine_CTC {
 
     get_tier_block_status() {
         let status = {
+            // Block Status
             block_harriman_sterling_1: this.blocks_mainLine.block_harriman_sterling_1.get_block_status(),
 
             block_valley_harriman_1: this.blocks_mainLine.block_valley_harriman_1.get_block_status(),
@@ -667,6 +670,36 @@ class MainLine_CTC {
         };
 
         return status;
+    }
+
+    get_tier_symbols() {
+        let symbols = {
+            // Train Symbols
+            symbol_bingo_sparrow: this.blocks_mainLine.block_bingo_sparrow.get_symbol(),
+            symbol_sparrow_pa_1: this.blocks_mainLine.block_sparrow_pa_1.get_symbol(),
+            symbol_sparrow_pa_2: this.blocks_mainLine.block_sparrow_pa_2.get_symbol(),
+            symbol_pa_port_1: this.blocks_mainLine.block_pa_port_1.get_symbol(),
+            symbol_port_bc_1: this.blocks_mainLine.block_port_bc_1.get_symbol(),
+            symbol_pa_bc_2: this.blocks_mainLine.block_pa_bc_2.get_symbol(),
+            symbol_port_yardEast: this.blocks_mainLine.block_port_yard_east.get_symbol(),
+            symbol_bc_ov: this.blocks_mainLine.block_bc_ov_1.get_symbol(),
+            symbol_ov_howells_1: this.blocks_mainLine.block_ov_howells_1.get_symbol(),
+            symbol_ov_howells_2: this.blocks_mainLine.block_ov_howells_2.get_symbol(),
+            // Second Row
+            symbol_howells_hall: this.blocks_mainLine.block_howells_hall_1.get_symbol(),
+            symbol_hall_yard: this.blocks_mainLine.block_hall_yard.get_symbol(),
+            symbol_hall_hudson_1: this.blocks_mainLine.block_hall_hudson_1.get_symbol(),
+            symbol_hall_hudson_2: this.blocks_mainLine.block_hall_hudson_2.get_symbol(),
+            symbol_hudson_valley: this.blocks_mainLine.block_hudson_valley_1.get_symbol(),
+            symbol_hudson_nysw: this.blocks_mainLine.block_hudson_nysw.get_symbol(),
+            symbol_valley_harriman_1: this.blocks_mainLine.block_valley_harriman_1.get_symbol(),
+            symbol_valley_harriman_2: this.blocks_mainLine.block_valley_harriman_2.get_symbol(),
+            // Third Row
+            symbol_harriman_sterling: this.blocks_mainLine.block_harriman_sterling_1.get_symbol(),
+            symbol_harriman_industrial: this.blocks_mainLine.block_harriman_industrial.get_symbol(),
+        };
+
+        return symbols;
     }
 
     /**

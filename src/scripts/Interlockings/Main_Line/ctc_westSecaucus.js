@@ -141,7 +141,7 @@ class CTC_WestSecaucus {
                         alert("Cannot Line Route Because Conflict With Next Block");
                         return;
                     }
-                    this.route = "E_2_1__|__2_westSecaucus_laurel";
+                    this.route_e_trk_2 = "E_2_1__|__2_westSecaucus_laurel";
                     this.sig_4e = true;
                 }
             }

@@ -4,6 +4,32 @@ import '../../../css/Southern_Tier_Line/southernTier.css';
 
 class SouthernTierTracks extends Component {
     state = {  
+        // Train Symbols
+        symbol_bingo_sparrow: this.props.symbols.symbol_bingo_sparrow,
+        symbol_sparrow_pa_1: this.props.symbols.symbol_sparrow_pa_1,
+        symbol_sparrow_pa_2: this.props.symbols.symbol_sparrow_pa_2,
+        symbol_pa_port_1: this.props.symbols.symbol_pa_port_1,
+        symbol_port_bc_1: this.props.symbols.symbol_port_bc_1,
+        symbol_pa_bc_2: this.props.symbols.symbol_pa_bc_2,
+        symbol_port_yardEast: this.props.symbols.symbol_port_yardEast,
+        symbol_bc_ov: this.props.symbols.symbol_bc_ov,
+        symbol_ov_howells_1: this.props.symbols.symbol_ov_howells_1,
+        symbol_ov_howells_2: this.props.symbols.symbol_ov_howells_2,
+        // Second Row
+        symbol_howells_hall: this.props.symbols.symbol_howells_hall,
+        symbol_hall_yard: this.props.symbols.symbol_hall_yard,
+        symbol_hall_hudson_1: this.props.symbols.symbol_hall_hudson_1,
+        symbol_hall_hudson_2: this.props.symbols.symbol_hall_hudson_2,
+        symbol_hudson_valley: this.props.symbols.symbol_hudson_valley,
+        symbol_hudson_nysw: this.props.symbols.symbol_hudson_nysw,
+        symbol_valley_harriman_1: this.props.symbols.symbol_valley_harriman_1,
+        symbol_valley_harriman_2: this.props.symbols.symbol_valley_harriman_2,
+        // Third Row
+        symbol_harriman_sterling: this.props.symbols.symbol_harriman_sterling,
+        symbol_harriman_industrial: this.props.symbols.symbol_harriman_industrial,
+
+
+        // Blocks
         harriman_sterling_1: this.props.blocks.block_harriman_sterling_1,
 
         valley_harriman_1: this.props.blocks.block_valley_harriman_1,
@@ -42,6 +68,32 @@ class SouthernTierTracks extends Component {
 
     componentWillReceiveProps(nextProps){
         this.setState({
+            // Train Symbols
+            symbol_bingo_sparrow: nextProps.symbols.symbol_bingo_sparrow,
+            symbol_sparrow_pa_1: nextProps.symbols.symbol_sparrow_pa_1,
+            symbol_sparrow_pa_2: nextProps.symbols.symbol_sparrow_pa_2,
+            symbol_pa_port_1: nextProps.symbols.symbol_pa_port_1,
+            symbol_port_bc_1: nextProps.symbols.symbol_port_bc_1,
+            symbol_pa_bc_2: nextProps.symbols.symbol_pa_bc_2,
+            symbol_port_yardEast: nextProps.symbols.symbol_port_yardEast,
+            symbol_bc_ov: nextProps.symbols.symbol_bc_ov,
+            symbol_ov_howells_1: nextProps.symbols.symbol_ov_howells_1,
+            symbol_ov_howells_2: nextProps.symbols.symbol_ov_howells_2,
+            // Second Row
+            symbol_howells_hall: nextProps.symbols.symbol_howells_hall,
+            symbol_hall_yard: nextProps.symbols.symbol_hall_yard,
+            symbol_hall_hudson_1: nextProps.symbols.symbol_hall_hudson_1,
+            symbol_hall_hudson_2: nextProps.symbols.symbol_hall_hudson_2,
+            symbol_hudson_valley: nextProps.symbols.symbol_hudson_valley,
+            symbol_hudson_nysw: nextProps.symbols.symbol_hudson_nysw,
+            symbol_valley_harriman_1: nextProps.symbols.symbol_valley_harriman_1,
+            symbol_valley_harriman_2: nextProps.symbols.symbol_valley_harriman_2,
+            // Third Row
+            symbol_harriman_sterling: nextProps.symbols.symbol_harriman_sterling,
+            symbol_harriman_industrial: nextProps.symbols.symbol_harriman_industrial,
+            
+
+            // Blocks
             harriman_sterling_1: nextProps.blocks.block_harriman_sterling_1,
 
             valley_harriman_1: nextProps.blocks.block_valley_harriman_1,
@@ -80,6 +132,7 @@ class SouthernTierTracks extends Component {
     }
 
     render() { 
+
         return (  
             <div>
                 {/* Tags */}
@@ -89,6 +142,31 @@ class SouthernTierTracks extends Component {
                 <div className="hudson_nysw_tag">NYS&W RR</div>
                 <div className="harriman_int_tag">Harriman</div>
                 <div className="harriman_int_tag_2">Industrial</div>
+
+                {/* Train Symbols */}
+                {/* First Row */}
+                <div className="symbol_bingo_sparrow">{this.state.symbol_bingo_sparrow}</div>
+                <div className="symbol_sparrow_pa_1">{this.state.symbol_sparrow_pa_1}</div>
+                <div className="symbol_sparrow_pa_2">{this.state.symbol_sparrow_pa_2}</div>
+                <div className="symbol_port_yardEast">{this.state.symbol_port_yardEast}</div>
+                <div className="symbol_pa_port_1">{this.state.symbol_pa_port_1}</div>
+                <div className="symbol_port_bc_1">{this.state.symbol_port_bc_1}</div>
+                <div className="symbol_pa_bc_2">{this.state.symbol_pa_bc_2}</div>
+                <div className="symbol_bc_ov">{this.state.symbol_bc_ov}</div>
+                <div className="symbol_ov_howells_1">{this.state.symbol_ov_howells_1}</div>
+                <div className="symbol_ov_howells_2">{this.state.symbol_ov_howells_2}</div>
+                {/* Second Row */}
+                <div className="symbol_howells_hall">{this.state.symbol_howells_hall}</div>
+                <div className="symbol_hall_yard">{this.state.symbol_hall_yard}</div>
+                <div className="symbol_hall_hudson_1">{this.state.symbol_hall_hudson_1}</div>
+                <div className="symbol_hall_hudson_2">{this.state.symbol_hall_hudson_2}</div>
+                <div className="symbol_hudson_valley">{this.state.symbol_hudson_valley}</div>
+                <div className="symbol_hudson_nysw">{this.state.symbol_hudson_nysw}</div>
+                <div className="symbol_valley_harriman_1">{this.state.symbol_valley_harriman_1}</div>
+                <div className="symbol_valley_harriman_2">{this.state.symbol_valley_harriman_2}</div>
+                {/* Third Row */}
+                <div className="symbol_harriman_sterling">{this.state.symbol_harriman_sterling}</div>
+                <div className="symbol_harriman_industrial">{this.state.symbol_harriman_industrial}</div>
 
                 {/* First Line */}
                 {/* Sterling to Harriman */}

@@ -402,7 +402,17 @@ September 21: 2019:
     - Finished the routing and occupy for Laurel Interlocking
     (0.5 Hours)
 
+    - Rewrote the drawings for the WC interlocking using the new system I created and used at Laurel,
+    this fixed the bugs that had arrised in that interlocking
+    (3 Hours)
 
-TOTAL: 125 Hours
+    - Started adding symbol tags to the pannel for the blocks, finished all the symbols on the 
+    southern tier section of the pannel
+    (1.5 Hours)
+
+    - Bug fixes at West Secaucus
+
+
+TOTAL: 130 Hours
 
 

@@ -135,7 +135,7 @@ class PascackJct extends Component {
                 if (this.state.occupied_1) {
                     // Switches
                     if (this.state.route_2) {
-                        this.state.sw_1_src = CX_235_Occupied_Top_Lined_Bottom;
+                        this.state.sw_1_src = CX_225_Occupied_Top_Lined_Bottom;
                         this.state.sw_3_src = CX_135_Occupied_Top_Lined_Bottom;
                     }
                     else if (this.state.occupied_2) {

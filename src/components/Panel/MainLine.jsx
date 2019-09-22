@@ -46,9 +46,11 @@ clock.startClock;
 //ctc.add_train(new Train("49", "1_suscon_mill", "suscon", 10));
 
 setTimeout(function(){ 
-    ctc.add_train(new Train("49", "3_hx_laurel", "mill", "EAST", 8));
-    //ctc.add_train(new Train("50", "1_laurel_westEnd", "mill", "WEST", 8));
-    //ctc.add_train(new Train("50", "1_pascack_hx", "mill", "WEST", 6));
+    ctc.add_train(new Train("49", "3_yardEast_port", "mill", "EAST", 10));
+    ctc.add_train(new Train("50", "2_laurel_westEnd", "mill", "WEST", 10));
+    ctc.add_train(new Train("50", "4_laurel_westEnd", "mill", "WEST", 10));
+    ctc.add_train(new Train("50", "3_yardHilburn_sf", "mill", "EAST", 10));
+    ctc.add_train(new Train("[E] SU-100", "1_bingo_sparrow", " ", "EAST", 10));
     ctc.test_block(); 
 }, 1500);  
 
@@ -85,7 +87,8 @@ class MainLine extends Component {
 
             status_mainLine: ctc.get_mainLine_blocks_status(),
             status_bergenLine: ctc.get_bergen_blocks_status(),
-            status_tier: ctc.get_tier_block_status()
+            status_tier: ctc.get_tier_block_status(),
+            symbols_tier: ctc.get_tier_symbols()
         };
     }
 
@@ -96,6 +99,7 @@ class MainLine extends Component {
             status_mainLine: ctc.get_mainLine_blocks_status(),
             status_bergenLine: ctc.get_bergen_blocks_status(),
             status_tier: ctc.get_tier_block_status(),
+            symbols_tier: ctc.get_tier_symbols()
         });
     }
 
@@ -106,6 +110,7 @@ class MainLine extends Component {
             status_mainLine: ctc.get_mainLine_blocks_status(),
             status_bergenLine: ctc.get_bergen_blocks_status(),
             status_tier: ctc.get_tier_block_status(),
+            symbols_tier: ctc.get_tier_symbols(),
         
             status_sparrow: ctc.get_sparrow().get_interlocking_status(),
             status_pa: ctc.get_pa().get_interlocking_status(),
@@ -148,6 +153,7 @@ class MainLine extends Component {
             <div>
                 <SouthernTierTracks 
                     blocks={this.state.status_tier}
+                    symbols={this.state.symbols_tier}
                 />
                 <Sparrow 
                     status={this.state.status_sparrow}
