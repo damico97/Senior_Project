@@ -102,7 +102,7 @@ class CTC_Laurel {
                     alert("Cannot Line Route Because Conflict With Next Block");
                     return;
                 }
-                this.route_w_trk_1 = "W_1_1__|__1_hx_laurel";
+                this.route_w_trk_1 = "W_1_1__|__2_hx_laurel";
                 this.routed_trk_1 = true;
                 this.sig_2w = true;
             }

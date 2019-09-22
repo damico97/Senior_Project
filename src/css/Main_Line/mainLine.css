@@ -1,10 +1,4 @@
 @charset "UTF-8";
-/* 
-    Track Color: #999999 
-    Route Color: #75fa4c
-    Occupied Color: #eb3323
-*/
-
     /* Tags */
     .wc_yard_tag {
         position: absolute;
@@ -285,6 +279,7 @@
     /* END Symbols */
 
 
+    /* Tracks */
     .m_sterling_hilburn_2 {
         position: absolute;
         top: 540px;
@@ -518,3 +513,4 @@
         width: 88px;
         background: #999999;
     }
+    /* END Tracks */

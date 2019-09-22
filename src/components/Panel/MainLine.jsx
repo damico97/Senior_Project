@@ -46,9 +46,11 @@ clock.startClock;
 //ctc.add_train(new Train("49", "1_suscon_mill", "suscon", 10));
 
 setTimeout(function(){ 
-    ctc.add_train(new Train("49", "3_yardEast_port", "mill", "EAST", 10));
-    ctc.add_train(new Train("50", "2_laurel_westEnd", "mill", "WEST", 10));
-    ctc.add_train(new Train("50", "4_laurel_westEnd", "mill", "WEST", 10));
+    ctc.add_train(new Train("[E] 49", "3_yardEast_port", "mill", "EAST", 10));
+    ctc.add_train(new Train("3", "3_laurel_westEnd", "mill", "WEST", 10));
+    ctc.add_train(new Train("1", "1_laurel_westEnd", "mill", "WEST", 10));
+    ctc.add_train(new Train("2", "2_laurel_westEnd", "mill", "WEST", 10));
+    ctc.add_train(new Train("4", "4_laurel_westEnd", "mill", "WEST", 10));
     ctc.add_train(new Train("50", "3_yardHilburn_sf", "mill", "EAST", 10));
     ctc.add_train(new Train("[E] SU100", "1_bingo_sparrow", " ", "EAST", 10));
     ctc.test_block(); 
@@ -86,7 +88,9 @@ class MainLine extends Component {
             status_hx: ctc.get_hx().get_interlocking_status(),
 
             status_mainLine: ctc.get_mainLine_blocks_status(),
+            symbols_mailLine: ctc.get_mainLine_symbols(),
             status_bergenLine: ctc.get_bergen_blocks_status(),
+            symbols_bergenLine: ctc.get_bergen_symbols(),
             status_tier: ctc.get_tier_block_status(),
             symbols_tier: ctc.get_tier_symbols()
         };
@@ -97,7 +101,9 @@ class MainLine extends Component {
         ctc.test_block();
         this.setState({
             status_mainLine: ctc.get_mainLine_blocks_status(),
+            symbols_mailLine: ctc.get_mainLine_symbols(),
             status_bergenLine: ctc.get_bergen_blocks_status(),
+            symbols_bergenLine: ctc.get_bergen_symbols(),
             status_tier: ctc.get_tier_block_status(),
             symbols_tier: ctc.get_tier_symbols()
         });
@@ -108,7 +114,9 @@ class MainLine extends Component {
         ctc.update_interlockings();
         this.setState({
             status_mainLine: ctc.get_mainLine_blocks_status(),
+            symbols_mailLine: ctc.get_mainLine_symbols(),
             status_bergenLine: ctc.get_bergen_blocks_status(),
+            symbols_bergenLine: ctc.get_bergen_symbols(),
             status_tier: ctc.get_tier_block_status(),
             symbols_tier: ctc.get_tier_symbols(),
         
@@ -246,6 +254,7 @@ class MainLine extends Component {
 
                 <BergenTracks 
                     blocks={this.state.status_bergenLine}
+                    symbols={this.state.symbols_bergenLine}
                 />
                 <BT 
                     status={this.state.status_bt}
@@ -283,6 +292,7 @@ class MainLine extends Component {
 
                 <MainLineTracks 
                     blocks={this.state.status_mainLine}
+                    symbols={this.state.symbols_mailLine}
                 />
                 <Hilburn 
                     status={this.state.status_hilburn}

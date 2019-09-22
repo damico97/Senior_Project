@@ -69,7 +69,7 @@
         height: 7px;
         width: 55px;
         background: #999999;
-        -webkit-transform: 
+        transform: 
             translateY(15px)
             translateX(0px)
             rotate(-37deg);

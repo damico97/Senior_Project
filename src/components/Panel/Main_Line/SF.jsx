@@ -217,7 +217,21 @@ class SF extends Component {
                 this.state.tail_yard = color_2;
 
                 if (this.state.occupied_2) {
+                    if (this.state.route_1) {
+                        this.state.sw_3_src = CX_225_Lined_Top_Occupied_Bottom;
+                    }
+                    else if (this.state.occupied_1) {
+                        this.state.sw_3_src = CX_225_Occupied_Both;
+                    }
+                    else {
+                        this.state.sw_3_src = CX_225_Occupied_Bottom;
+                    }
+                    this.state.sw_1_src = SW_D_W_R_Occupied;
 
+                    // Signals
+                    this.state.sig_4w_src = SIG_W_Stop;
+                    this.state.sig_4e1_src = SIG_E_Stop;
+                    this.state.sig_4e2_src = SIG_E_Stop;
                 }
                 else {
                     if (this.state.route_1) {

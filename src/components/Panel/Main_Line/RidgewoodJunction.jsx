@@ -526,7 +526,7 @@ class RidgewoodJunction extends Component {
                         this.state.sw_7_src = CX_225_Occupied_Both;
                     }
                     else {
-                        this.state.sw_7_src = CX_225_Occupy_Bottom;
+                        this.state.sw_7_src = CX_225_Occupied_Bottom;
                     }
 
                     this.state.sw_9_src = SW_U_E_R_Occupied;
@@ -577,7 +577,7 @@ class RidgewoodJunction extends Component {
                         this.state.sw_7_src = CX_225_Occupied_Both;
                     }
                     else {
-                        this.state.sw_7_src = CX_225_Occupy_Bottom;
+                        this.state.sw_7_src = CX_225_Occupied_Bottom;
                     }
 
                     this.state.sw_9_src = SW_U_E_R_Occupied;

@@ -9,6 +9,7 @@
  * of that status of the interlocking
  */
 
+// Import React Component
 import React, { Component } from 'react';
 // Import CSS Style Sheet
 import '../../../css/Main_Line/laurel.css';
@@ -239,7 +240,7 @@ class Laurel extends Component {
 
         // Loop Through All The Routes
         for (let i = 0; i < this.state.routes.length; i++) {
-            if (this.state.routes[i] === "W_1_1__|__1_hx_laurel" || this.state.routes[i] === "E_1_1__|__1_laurel_westEnd") {
+            if (this.state.routes[i] === "W_1_1__|__2_hx_laurel" || this.state.routes[i] === "E_1_1__|__1_laurel_westEnd") {
                 // Setting Tail Track Color
                 this.state.tail_1_e = color_1;
                 this.state.tail_1_w = color_1;
@@ -340,7 +341,7 @@ class Laurel extends Component {
 
                     // Signals
                     // West Bound Signals
-                    if (this.state.routes[i] === "W_1_1__|__1_hx_laurel") {
+                    if (this.state.routes[i] === "W_1_1__|__2_hx_laurel") {
                         this.state.sig_2w_src = SIG_W_Clear;
                         this.state.sig_12e_src = SIG_E_Stop;
                     }

@@ -7,6 +7,34 @@ const Occupied = '#eb3323';
 
 class MainLineTracks extends Component {
     state = {
+        // Symbols
+        symbol_sterling_sf_1: this.props.symbols.symbol_sterling_sf_1,
+        symbol_sterling_hilburn_2: this.props.symbols.symbol_sterling_hilburn_2,
+        symbol_hilburn_sf_2: this.props.symbols.symbol_hilburn_sf_2,
+        symbol_hilburn_yardWest: this.props.symbols.symbol_hilburn_yardWest,
+        symbol_hilburn_yardEast: this.props.symbols.symbol_hilburn_yardEast,
+        symbol_sf_wc_1: this.props.symbols.symbol_sf_wc_1,
+        symbol_sf_wc_2: this.props.symbols.symbol_sf_wc_2,
+        symbol_wc_yard: this.props.symbols.symbol_wc_yard,
+        symbol_wc_ridgewood_1: this.props.symbols.symbol_wc_ridgewood_1,
+        symbol_wc_ridgewood_2: this.props.symbols.symbol_wc_ridgewood_2,
+        symbol_wc_ridgewood_3: this.props.symbols.symbol_wc_ridgewood_3,
+        // Second Row
+        symbol_ridgewood_suscon_1: this.props.symbols.symbol_ridgewood_suscon_1,
+        symbol_ridgewood_suscon_2: this.props.symbols.symbol_ridgewood_suscon_2,
+        symbol_suscon_mill_1: this.props.symbols.symbol_suscon_mill_1,
+        symbol_suscon_mill_2: this.props.symbols.symbol_suscon_mill_2,
+        symbol_mill_westSecaucus_1: this.props.symbols.symbol_mill_westSecaucus_1,
+        symbol_mill_westSecaucus_2: this.props.symbols.symbol_mill_westSecaucus_2,
+        symbol_westSecaucus_laurel_1: this.props.symbols.symbol_westSecaucus_laurel_1,
+        symbol_westSecaucus_laurel_2: this.props.symbols.symbol_westSecaucus_laurel_2,
+        symbol_laurel_westEnd_1: this.props.symbols.symbol_westEnd_laurel_1,
+        symbol_laurel_westEnd_2: this.props.symbols.symbol_westEnd_laurel_2,
+        symbol_laurel_westEnd_3: this.props.symbols.symbol_westEnd_laurel_3,
+        symbol_laurel_westEnd_4: this.props.symbols.symbol_westEnd_laurel_4,
+
+        
+        // Blocks
         westEnd_laurel_1: this.props.blocks.block_westEnd_laurel_1,
         westEnd_laurel_2: this.props.blocks.block_westEnd_laurel_2,
         westEnd_laurel_3: this.props.blocks.block_westEnd_laurel_3,
@@ -44,6 +72,34 @@ class MainLineTracks extends Component {
 
     componentWillReceiveProps(nextProps){
         this.setState({
+            // Symbols
+            // Symbols
+            symbol_sterling_sf_1: nextProps.symbols.symbol_sterling_sf_1,
+            symbol_sterling_hilburn_2: nextProps.symbols.symbol_sterling_hilburn_2,
+            symbol_hilburn_sf_2: nextProps.symbols.symbol_hilburn_sf_2,
+            symbol_hilburn_yardWest: nextProps.symbols.symbol_hilburn_yardWest,
+            symbol_hilburn_yardEast: nextProps.symbols.symbol_hilburn_yardEast,
+            symbol_sf_wc_1: nextProps.symbols.symbol_sf_wc_1,
+            symbol_sf_wc_2: nextProps.symbols.symbol_sf_wc_2,
+            symbol_wc_yard: nextProps.symbols.symbol_wc_yard,
+            symbol_wc_ridgewood_1: nextProps.symbols.symbol_wc_ridgewood_1,
+            symbol_wc_ridgewood_2: nextProps.symbols.symbol_wc_ridgewood_2,
+            symbol_wc_ridgewood_3: nextProps.symbols.symbol_wc_ridgewood_3,
+            // Second Row
+            symbol_ridgewood_suscon_1: nextProps.symbols.symbol_ridgewood_suscon_1,
+            symbol_ridgewood_suscon_2: nextProps.symbols.symbol_ridgewood_suscon_2,
+            symbol_suscon_mill_1: nextProps.symbols.symbol_suscon_mill_1,
+            symbol_suscon_mill_2: nextProps.symbols.symbol_suscon_mill_2,
+            symbol_mill_westSecaucus_1: nextProps.symbols.symbol_mill_westSecaucus_1,
+            symbol_mill_westSecaucus_2: nextProps.symbols.symbol_mill_westSecaucus_2,
+            symbol_westSecaucus_laurel_1: nextProps.symbols.symbol_westSecaucus_laurel_1,
+            symbol_westSecaucus_laurel_2: nextProps.symbols.symbol_westSecaucus_laurel_2,
+            symbol_laurel_westEnd_1: nextProps.symbols.symbol_laurel_westEnd_1,
+            symbol_laurel_westEnd_2: nextProps.symbols.symbol_laurel_westEnd_2,
+            symbol_laurel_westEnd_3: nextProps.symbols.symbol_laurel_westEnd_3,
+            symbol_laurel_westEnd_4: nextProps.symbols.symbol_laurel_westEnd_4,
+
+            // Blocks
             westEnd_laurel_1: nextProps.blocks.block_westEnd_laurel_1,
             westEnd_laurel_2: nextProps.blocks.block_westEnd_laurel_2,
             westEnd_laurel_3: nextProps.blocks.block_westEnd_laurel_3,
@@ -89,30 +145,30 @@ class MainLineTracks extends Component {
 
                 {/* Symbols */}
                 {/* First Row */}
-                <div className="symbol_sterling_sf_1">TEST</div>
-                <div className="symbol_sterling_hilburn_2">TEST</div>
-                <div className="symbol_hilburn_sf_2">TEST</div>
-                <div className="symbol_hilburn_yardWest">TEST</div>
-                <div className="symbol_hilburn_yardEast">TEST</div>
-                <div className="symbol_sf_wc_1">TEST</div>
-                <div className="symbol_sf_wc_2">TEST</div>
-                <div className="symbol_wc_yard">TEST</div>
-                <div className="symbol_wc_ridgewood_1">TEST</div>
-                <div className="symbol_wc_ridgewood_2">TEST</div>
-                <div className="symbol_wc_ridgewood_3">TEST</div>
+                <div className="symbol_sterling_sf_1">{this.state.symbol_sterling_sf_1}</div>
+                <div className="symbol_sterling_hilburn_2">{this.state.symbol_sterling_hilburn_2}</div>
+                <div className="symbol_hilburn_sf_2">{this.state.symbol_hilburn_sf_2}</div>
+                <div className="symbol_hilburn_yardWest">{this.state.symbol_hilburn_yardWest}</div>
+                <div className="symbol_hilburn_yardEast">{this.state.symbol_hilburn_yardEast}</div>
+                <div className="symbol_sf_wc_1">{this.state.symbol_sf_wc_1}</div>
+                <div className="symbol_sf_wc_2">{this.state.symbol_sf_wc_2}</div>
+                <div className="symbol_wc_yard">{this.state.symbol_wc_yard}</div>
+                <div className="symbol_wc_ridgewood_1">{this.state.symbol_wc_ridgewood_1}</div>
+                <div className="symbol_wc_ridgewood_2">{this.state.symbol_wc_ridgewood_2}</div>
+                <div className="symbol_wc_ridgewood_3">{this.state.symbol_wc_ridgewood_3}</div>
                 {/* Second Row */}
-                <div className="symbol_ridgewood_suscon_1">TEST</div>
-                <div className="symbol_ridgewood_suscon_2">TEST</div>
-                <div className="symbol_suscon_mill_1">TEST</div>
-                <div className="symbol_suscon_mill_2">TEST</div>
-                <div className="symbol_mill_westSecaucus_1">TEST</div>
-                <div className="symbol_mill_westSecaucus_2">TEST</div>
-                <div className="symbol_westSecaucus_laurel_1">TEST</div>
-                <div className="symbol_westSecaucus_laurel_2">TEST</div>
-                <div className="symbol_laurel_westEnd_4">TEST</div>
-                <div className="symbol_laurel_westEnd_3">TEST</div>
-                <div className="symbol_laurel_westEnd_1">TEST</div>
-                <div className="symbol_laurel_westEnd_2">TEST</div>
+                <div className="symbol_ridgewood_suscon_1">{this.state.symbol_ridgewood_suscon_1}</div>
+                <div className="symbol_ridgewood_suscon_2">{this.state.symbol_ridgewood_suscon_2}</div>
+                <div className="symbol_suscon_mill_1">{this.state.symbol_suscon_mill_1}</div>
+                <div className="symbol_suscon_mill_2">{this.state.symbol_suscon_mill_2}</div>
+                <div className="symbol_mill_westSecaucus_1">{this.state.symbol_mill_westSecaucus_1}</div>
+                <div className="symbol_mill_westSecaucus_2">{this.state.symbol_mill_westSecaucus_2}</div>
+                <div className="symbol_westSecaucus_laurel_1">{this.state.symbol_westSecaucus_laurel_1}</div>
+                <div className="symbol_westSecaucus_laurel_2">{this.state.symbol_westSecaucus_laurel_2}</div>
+                <div className="symbol_laurel_westEnd_4">{this.state.symbol_laurel_westEnd_3}</div>
+                <div className="symbol_laurel_westEnd_3">{this.state.symbol_laurel_westEnd_1}</div>
+                <div className="symbol_laurel_westEnd_1">{this.state.symbol_laurel_westEnd_2}</div>
+                <div className="symbol_laurel_westEnd_2">{this.state.symbol_laurel_westEnd_4}</div>
 
                 {/* First Row */}
                 {/* West End to Laurel */}

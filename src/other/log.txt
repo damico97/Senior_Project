@@ -419,6 +419,17 @@ September 22, 2019:
     - CSS fixes for the text symbos on the pannel to keep it from moving around if the windo is resized
     (0.25 Hours)
 
+    - Got the symbols of the Main Line working correctly
+    (1 Hour)
+
+    - Got the trains to get the size of the current block so it's more realistically timed as a train 
+    moves accross the railroad.
+    (1 Hour)
+
+    - Finished the symbols on the bergen line
+    (0.75 Hours)
+    
+
 TOTAL: 130 Hours
 
 

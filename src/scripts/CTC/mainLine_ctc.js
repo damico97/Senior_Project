@@ -30,9 +30,6 @@ import CTC_BT from '../Interlockings/Bergen_Line/ctc_bt.js';
 import CTC_Pascack from '../Interlockings/Bergen_Line/ctc_pascack.js';
 import CTC_HX from '../Interlockings/Bergen_Line/ctc_hx.js';
 
-const Empty = '#999999';
-const Route = '#75fa4c';
-const Occupied = '#eb3323';
 
 class MainLine_CTC {
     /**
@@ -71,91 +68,91 @@ class MainLine_CTC {
 
         this.blocks_mainLine = {
             // Southern Tier Blocks
-            block_harriman_sterling_1: new CTC_Block("1_harriman_sterling"),
+            block_harriman_sterling_1: new CTC_Block("1_harriman_sterling", 105),
 
-            block_valley_harriman_1: new CTC_Block("1_valley_harriman"),
-            block_valley_harriman_2: new CTC_Block("2_valley_harriman"),
-            block_harriman_industrial: new CTC_Block("1_harriman_industrial"),
+            block_valley_harriman_1: new CTC_Block("1_valley_harriman", 28),
+            block_valley_harriman_2: new CTC_Block("2_valley_harriman", 28),
+            block_harriman_industrial: new CTC_Block("1_harriman_industrial", 8),
 
-            block_hudson_valley_1: new CTC_Block("1_hudson_valley"),
-            block_hudson_nysw: new CTC_Block("2_hudson_nysw"),
+            block_hudson_valley_1: new CTC_Block("1_hudson_valley", 156),
+            block_hudson_nysw: new CTC_Block("2_hudson_nysw", 8),
 
-            block_hall_hudson_1: new CTC_Block("1_hall_hudson"),
-            block_hall_hudson_2: new CTC_Block("2_hall_hudson"),
-            block_hall_yard: new CTC_Block("2_hall_yard"),
+            block_hall_hudson_1: new CTC_Block("1_hall_hudson", 13),
+            block_hall_hudson_2: new CTC_Block("2_hall_hudson", 13),
+            block_hall_yard: new CTC_Block("2_hall_yard", 8),
             
-            block_howells_hall_1: new CTC_Block("1_howells_hall"),
+            block_howells_hall_1: new CTC_Block("1_howells_hall", 132),
             
-            block_ov_howells_1: new CTC_Block("1_ov_howells"),
-            block_ov_howells_2: new CTC_Block("2_ov_howells"),
+            block_ov_howells_1: new CTC_Block("1_ov_howells", 59),
+            block_ov_howells_2: new CTC_Block("2_ov_howells", 59),
 
-            block_bc_ov_1: new CTC_Block("1_bc_ov"),
+            block_bc_ov_1: new CTC_Block("1_bc_ov", 117),
 
-            block_port_bc_1: new CTC_Block("1_port_bc"),
-            block_pa_port_1: new CTC_Block("1_pa_port"),
-            block_pa_bc_2: new CTC_Block("2_pa_bc"),
-            block_port_yard_west: new CTC_Block("3_port_yard_west"),
-            block_port_yard_east: new CTC_Block("3_port_yard_east"),
+            block_port_bc_1: new CTC_Block("1_port_bc", 8),
+            block_pa_port_1: new CTC_Block("1_pa_port", 8),
+            block_pa_bc_2: new CTC_Block("2_pa_bc", 16),
+            block_port_yard_west: new CTC_Block("3_port_yard_west", 8),
+            block_port_yard_east: new CTC_Block("3_port_yard_east", 8),
 
-            block_buckleys_west: new CTC_Block("4_buckleys_west"),
-            block_buckleys_east: new CTC_Block("4_buckleys_east"),
+            block_buckleys_west: new CTC_Block("4_buckleys_west", 12),
+            block_buckleys_east: new CTC_Block("4_buckleys_east", 12),
 
-            block_sparrow_pa_1: new CTC_Block("1_sparrow_pa"),
-            block_sparrow_pa_2: new CTC_Block("2_sparrow_pa"),
-            block_sparrow_cripple: new CTC_Block("3_sparrow_cripple"),
+            block_sparrow_pa_1: new CTC_Block("1_sparrow_pa", 16),
+            block_sparrow_pa_2: new CTC_Block("2_sparrow_pa", 16),
+            block_sparrow_cripple: new CTC_Block("3_sparrow_cripple", 8),
 
-            block_bingo_sparrow: new CTC_Block("1_bingo_sparrow"),
+            block_bingo_sparrow: new CTC_Block("1_bingo_sparrow", 25),
 
             // Main Line Blocks
-            block_westEnd_laurel_1: new CTC_Block("1_westEnd_laurel"),
-            block_westEnd_laurel_2: new CTC_Block("2_westEnd_laurel"),
-            block_westEnd_laurel_3: new CTC_Block("3_westEnd_laurel"),
-            block_westEnd_laurel_4: new CTC_Block("4_westEnd_laurel"),
+            block_westEnd_laurel_1: new CTC_Block("1_westEnd_laurel", 8),
+            block_westEnd_laurel_2: new CTC_Block("2_westEnd_laurel", 8),
+            block_westEnd_laurel_3: new CTC_Block("3_westEnd_laurel", 8),
+            block_westEnd_laurel_4: new CTC_Block("4_westEnd_laurel", 8),
 
-            block_westSecaucus_laurel_1: new CTC_Block("1_laurel_westSecaucus"),
-            block_westSecaucus_laurel_2: new CTC_Block("2_laurel_westSecaucus"),
+            block_westSecaucus_laurel_1: new CTC_Block("1_laurel_westSecaucus", 8),
+            block_westSecaucus_laurel_2: new CTC_Block("2_laurel_westSecaucus", 8),
 
-            block_mill_westSecaucus_1: new CTC_Block("1_mill_westSecaucus"),
-            block_mill_westSecaucus_2: new CTC_Block("2_mill_westSecaucus"),
+            block_mill_westSecaucus_1: new CTC_Block("1_mill_westSecaucus", 61),
+            block_mill_westSecaucus_2: new CTC_Block("2_mill_westSecaucus", 61),
 
-            block_suscon_mill_1: new CTC_Block("1_suscon_mill"),
-            block_suscon_mill_2: new CTC_Block("2_suscon_mill"),
+            block_suscon_mill_1: new CTC_Block("1_suscon_mill", 64),
+            block_suscon_mill_2: new CTC_Block("2_suscon_mill", 64),
 
-            block_ridgewood_suscon_1: new CTC_Block("1_ridgewood_suscon", 10),
-            block_ridgewood_suscon_2: new CTC_Block("2_ridgewood_suscon", 10),
+            block_ridgewood_suscon_1: new CTC_Block("1_ridgewood_suscon", 28),
+            block_ridgewood_suscon_2: new CTC_Block("2_ridgewood_suscon", 28),
 
-            block_wc_ridgewood_3: new CTC_Block("3_wc_ridgewood"),
-            block_wc_ridgewood_1: new CTC_Block("1_wc_ridgewood"),
-            block_wc_ridgewood_2: new CTC_Block("2_wc_ridgewood"),
+            block_wc_ridgewood_3: new CTC_Block("3_wc_ridgewood", 33),
+            block_wc_ridgewood_1: new CTC_Block("1_wc_ridgewood", 33),
+            block_wc_ridgewood_2: new CTC_Block("2_wc_ridgewood", 33),
 
-            block_sf_wc_1: new CTC_Block("1_sf_wc"),
-            block_sf_wc_2: new CTC_Block("2_sf_wc"),
+            block_sf_wc_1: new CTC_Block("1_sf_wc", 69),
+            block_sf_wc_2: new CTC_Block("2_sf_wc", 69),
 
-            block_hilburn_sf: new CTC_Block("2_hilburn_sf"),
+            block_hilburn_sf: new CTC_Block("2_hilburn_sf", 20),
 
-            block_sterling_sf: new CTC_Block("1_sterling_sf"),
-            block_sterling_hilburn: new CTC_Block("2_sterling_hilburn"),
+            block_sterling_sf: new CTC_Block("1_sterling_sf", 40),
+            block_sterling_hilburn: new CTC_Block("2_sterling_hilburn", 20),
 
-            block_hilburn_yard_west: new CTC_Block("1_hilburn_yard_west"),
-            block_hilburn_yard_east: new CTC_Block("1_hilburn_yard_east"),
-            block_wc_yard: new CTC_Block("1_wc_yard"),
+            block_hilburn_yard_west: new CTC_Block("1_hilburn_yard_west", 8),
+            block_hilburn_yard_east: new CTC_Block("1_hilburn_yard_east", 8),
+            block_wc_yard: new CTC_Block("1_wc_yard", 8),
 
             // Bergen County Blocks
-            block_hx_laurel_1: new CTC_Block("1_hx_laurel"),
-            block_hx_laurel_2: new CTC_Block("2_hx_laurel"),
+            block_hx_laurel_1: new CTC_Block("1_hx_laurel", 11),
+            block_hx_laurel_2: new CTC_Block("2_hx_laurel", 11),
 
-            block_pascack_hx_1: new CTC_Block("1_pascack_hx"),
-            block_pascack_hx_2: new CTC_Block("2_pascack_hx"),
+            block_pascack_hx_1: new CTC_Block("1_pascack_hx", 22),
+            block_pascack_hx_2: new CTC_Block("2_pascack_hx", 22),
 
-            block_bt_pascack_1: new CTC_Block("1_bt_pascack"),
-            block_bt_pascack_2: new CTC_Block("2_bt_pascack"),
+            block_bt_pascack_1: new CTC_Block("1_bt_pascack", 66),
+            block_bt_pascack_2: new CTC_Block("2_bt_pascack", 66),
 
-            block_ridgewood_bt_1: new CTC_Block("1_ridgewood_bt"),
-            block_ridgewood_bt_2: new CTC_Block("2_ridgewood_bt"),
+            block_ridgewood_bt_1: new CTC_Block("1_ridgewood_bt", 61),
+            block_ridgewood_bt_2: new CTC_Block("2_ridgewood_bt", 61),
 
-            block_bt_nysw: new CTC_Block("3_bt_nysw"),
-            block_hx_croxton_1: new CTC_Block("1_hx_croxton"),
-            block_hx_croxton_2: new CTC_Block("2_hx_croxton")
+            block_bt_nysw: new CTC_Block("3_bt_nysw", 8),
+            block_hx_croxton_1: new CTC_Block("1_hx_croxton", 8),
+            block_hx_croxton_2: new CTC_Block("2_hx_croxton", 8)
         };
     }
 
@@ -222,6 +219,7 @@ class MainLine_CTC {
                 }
                 else if (new_route === undefined) {
                     // Clear Previous Block
+                    this.get_block_by_name(this.train_list[i].get_location()).set_symbol('');
                     this.get_block_by_name(this.train_list[i].get_location()).set_block_status("Empty");
 
                     this.train_list.splice(i, 1);
@@ -245,6 +243,8 @@ class MainLine_CTC {
 
                         // Occupy the Next Block
                         let block = new_route.substr(10, new_route.size);
+                        this.train_list[i].set_block_size(this.get_block_by_name(block).get_size());
+                        //this.train_list[i].set_block_size(8);
                         this.train_list[i].update_location(block);
                     }
                     else {
@@ -256,6 +256,8 @@ class MainLine_CTC {
 
                         // Occupy the Next Block
                         let block = new_route.substr(10, new_route.size);
+                        this.train_list[i].set_block_size(this.get_block_by_name(block).get_size());
+                        //this.train_list[i].set_block_size(8);
                         this.train_list[i].update_location(block);
                     }
                 }
@@ -672,9 +674,59 @@ class MainLine_CTC {
         return status;
     }
 
+    get_bergen_symbols() {
+        let symbols = {
+            symbol_ridgewood_bt_1: this.blocks_mainLine.block_ridgewood_bt_1.get_symbol(),
+            symbol_ridgewood_bt_2: this.blocks_mainLine.block_ridgewood_bt_2.get_symbol(),
+            symbol_bt_pascack_1: this.blocks_mainLine.block_bt_pascack_1.get_symbol(),
+            symbol_bt_pascack_2: this.blocks_mainLine.block_bt_pascack_2.get_symbol(),
+            symbol_bt_nysw: this.blocks_mainLine.block_bt_nysw.get_symbol(),
+            symbol_pascack_hx_1: this.blocks_mainLine.block_pascack_hx_1.get_symbol(),
+            symbol_pascack_hx_2: this.blocks_mainLine.block_pascack_hx_2.get_symbol(),
+            symbol_hx_laurel_1: this.blocks_mainLine.block_hx_laurel_1.get_symbol(),
+            symbol_hx_laurel_2: this.blocks_mainLine.block_hx_laurel_2.get_symbol(),
+            symbol_hx_croxton_1: this.blocks_mainLine.block_hx_croxton_1.get_symbol(),
+            symbol_hx_croxton_2: this.blocks_mainLine.block_hx_croxton_2.get_symbol(),
+        };
+
+        return symbols;
+    }
+
+    get_mainLine_symbols() {
+        let symbols = {
+            // First Row
+            symbol_sterling_sf_1: this.blocks_mainLine.block_sterling_sf.get_symbol(),
+            symbol_sterling_hilburn_2: this.blocks_mainLine.block_sterling_hilburn.get_symbol(),
+            symbol_hilburn_sf_2: this.blocks_mainLine.block_hilburn_sf.get_symbol(),
+            symbol_hilburn_yardWest: this.blocks_mainLine.block_hilburn_yard_west.get_symbol(),
+            symbol_hilburn_yardEast: this.blocks_mainLine.block_hilburn_yard_east.get_symbol(),
+            symbol_sf_wc_1: this.blocks_mainLine.block_sf_wc_1.get_symbol(),
+            symbol_sf_wc_2: this.blocks_mainLine.block_sf_wc_2.get_symbol(),
+            symbol_wc_yard: this.blocks_mainLine.block_wc_yard.get_symbol(),
+            symbol_wc_ridgewood_1: this.blocks_mainLine.block_wc_ridgewood_1.get_symbol(),
+            symbol_wc_ridgewood_2: this.blocks_mainLine.block_wc_ridgewood_2.get_symbol(),
+            symbol_wc_ridgewood_3: this.blocks_mainLine.block_wc_ridgewood_3.get_symbol(),
+            // Second Row
+            symbol_ridgewood_suscon_1: this.blocks_mainLine.block_ridgewood_suscon_1.get_symbol(),
+            symbol_ridgewood_suscon_2: this.blocks_mainLine.block_ridgewood_suscon_2.get_symbol(),
+            symbol_suscon_mill_1: this.blocks_mainLine.block_suscon_mill_1.get_symbol(),
+            symbol_suscon_mill_2: this.blocks_mainLine.block_suscon_mill_2.get_symbol(),
+            symbol_mill_westSecaucus_1: this.blocks_mainLine.block_mill_westSecaucus_1.get_symbol(),
+            symbol_mill_westSecaucus_2: this.blocks_mainLine.block_mill_westSecaucus_2.get_symbol(),
+            symbol_westSecaucus_laurel_1: this.blocks_mainLine.block_westSecaucus_laurel_1.get_symbol(),
+            symbol_westSecaucus_laurel_2: this.blocks_mainLine.block_westSecaucus_laurel_2.get_symbol(),
+            symbol_laurel_westEnd_1: this.blocks_mainLine.block_westEnd_laurel_1.get_symbol(),
+            symbol_laurel_westEnd_2: this.blocks_mainLine.block_westEnd_laurel_2.get_symbol(),
+            symbol_laurel_westEnd_3: this.blocks_mainLine.block_westEnd_laurel_3.get_symbol(),
+            symbol_laurel_westEnd_4: this.blocks_mainLine.block_westEnd_laurel_4.get_symbol(),
+        };
+
+        return symbols;
+    }
+
     get_tier_symbols() {
         let symbols = {
-            // Train Symbols
+            // First Row
             symbol_bingo_sparrow: this.blocks_mainLine.block_bingo_sparrow.get_symbol(),
             symbol_sparrow_pa_1: this.blocks_mainLine.block_sparrow_pa_1.get_symbol(),
             symbol_sparrow_pa_2: this.blocks_mainLine.block_sparrow_pa_2.get_symbol(),
