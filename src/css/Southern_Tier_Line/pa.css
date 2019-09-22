@@ -3,6 +3,8 @@
     /* Texts */
     .pa_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 145px;
         left: 505px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .pa_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 165px;
         left: 495px;
         font-size: 14px;

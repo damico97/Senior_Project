@@ -7,6 +7,8 @@
     /* Texts */
     .ridgewood_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 745px;
         left: 85px;
         font-size: 18px;
@@ -15,6 +17,8 @@
 
     .ridgewood_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 765px;
         left: 165px;
         font-size: 14px;

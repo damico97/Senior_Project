@@ -3,6 +3,8 @@
      /* Texts */
      .bt_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 650px;
         left: 612px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .bt_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 670px;
         left: 600px;
         font-size: 14px;

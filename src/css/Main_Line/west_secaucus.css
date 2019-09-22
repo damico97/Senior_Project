@@ -7,6 +7,8 @@
     /* Texts */
     .westSecaucus_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 805px;
         left: 1155px;
         font-size: 18px;
@@ -15,6 +17,8 @@
 
     .westSecaucus_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 825px;
         left: 1235px;
         font-size: 14px;

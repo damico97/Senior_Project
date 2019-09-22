@@ -3,6 +3,8 @@
     /* Texts */
     .ov_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 180px;
         left: 1412px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .ov_milepost { 
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 200px;
         left: 1405px;
         font-size: 14px;

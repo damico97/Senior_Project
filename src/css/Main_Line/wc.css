@@ -3,6 +3,8 @@
     /* Texts */
     .wc_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 430px;
         left: 1430px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .wc_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 450px;
         left: 1420px;
         font-size: 14px;

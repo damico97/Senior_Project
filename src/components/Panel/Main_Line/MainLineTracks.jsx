@@ -87,6 +87,33 @@ class MainLineTracks extends Component {
                 <div className="wc_yard_tag">Waldwick Yard</div>
                 <div className="hilburn_yard_tag">Hilburn Yard</div>
 
+                {/* Symbols */}
+                {/* First Row */}
+                <div className="symbol_sterling_sf_1">TEST</div>
+                <div className="symbol_sterling_hilburn_2">TEST</div>
+                <div className="symbol_hilburn_sf_2">TEST</div>
+                <div className="symbol_hilburn_yardWest">TEST</div>
+                <div className="symbol_hilburn_yardEast">TEST</div>
+                <div className="symbol_sf_wc_1">TEST</div>
+                <div className="symbol_sf_wc_2">TEST</div>
+                <div className="symbol_wc_yard">TEST</div>
+                <div className="symbol_wc_ridgewood_1">TEST</div>
+                <div className="symbol_wc_ridgewood_2">TEST</div>
+                <div className="symbol_wc_ridgewood_3">TEST</div>
+                {/* Second Row */}
+                <div className="symbol_ridgewood_suscon_1">TEST</div>
+                <div className="symbol_ridgewood_suscon_2">TEST</div>
+                <div className="symbol_suscon_mill_1">TEST</div>
+                <div className="symbol_suscon_mill_2">TEST</div>
+                <div className="symbol_mill_westSecaucus_1">TEST</div>
+                <div className="symbol_mill_westSecaucus_2">TEST</div>
+                <div className="symbol_westSecaucus_laurel_1">TEST</div>
+                <div className="symbol_westSecaucus_laurel_2">TEST</div>
+                <div className="symbol_laurel_westEnd_4">TEST</div>
+                <div className="symbol_laurel_westEnd_3">TEST</div>
+                <div className="symbol_laurel_westEnd_1">TEST</div>
+                <div className="symbol_laurel_westEnd_2">TEST</div>
+
                 {/* First Row */}
                 {/* West End to Laurel */}
                 <div className="m_westEnd_laurel_1" style={{background: this.state.westEnd_laurel_2}}></div>

@@ -5,8 +5,11 @@
     Occupied Color: #eb3323
 */
 
+    /* Tags */
     .wc_yard_tag {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 470px;
         left: 1225px;
         font-size: 16px;
@@ -15,11 +18,272 @@
 
     .hilburn_yard_tag {
         position: absolute;
-        top: 565px;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 575px;
         left: 828px;
         font-size: 16px;
         color: #52fff6;
     }
+    /*Second Row*/
+    /* END Tags */
+
+    /* Symbols */
+    /* First Row */
+    .symbol_sterling_hilburn_2 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 524px;
+        left: 610px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_hilburn_sf_2 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 524px;
+        left: 830px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_hilburn_yardWest {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 555px;
+        left: 785px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_hilburn_yardEast {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 555px;
+        left: 900px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_sterling_sf_1 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 493px;
+        left: 750px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_sf_wc_2 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 524px;
+        left: 1180px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_sf_wc_1 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 493px;
+        left: 1180px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_wc_ridgewood_2 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 524px;
+        left: 1560px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_wc_ridgewood_1 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 493px;
+        left: 1560px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_wc_ridgewood_3 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 462px;
+        left: 1560px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_wc_yard {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 462px;
+        left: 1330px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+    /* Second Row */
+    .symbol_ridgewood_suscon_1 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 834px;
+        left: 400px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_ridgewood_suscon_2 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 865px;
+        left: 400px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_suscon_mill_1 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 834px;
+        left: 720px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_suscon_mill_2 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 865px;
+        left: 720px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_mill_westSecaucus_1 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 834px;
+        left: 1050px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_mill_westSecaucus_2 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 865px;
+        left: 1050px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_westSecaucus_laurel_1 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 834px;
+        left: 1340px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_westSecaucus_laurel_2 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 865px;
+        left: 1340px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_laurel_westEnd_4 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 772px;
+        left: 1590px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_laurel_westEnd_3 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 803px;
+        left: 1590px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_laurel_westEnd_1 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 834px;
+        left: 1590px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+
+    .symbol_laurel_westEnd_2 {
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 865px;
+        left: 1590px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #eb3323
+    }
+    /* END Symbols */
+
 
     .m_sterling_hilburn_2 {
         position: absolute;

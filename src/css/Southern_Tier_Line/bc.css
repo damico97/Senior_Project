@@ -3,6 +3,8 @@
     /* Texts */
     .bc_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 180px;
         left: 1008px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .bc_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 200px;
         left: 1000px;
         font-size: 14px;

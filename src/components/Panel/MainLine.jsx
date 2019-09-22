@@ -50,7 +50,7 @@ setTimeout(function(){
     ctc.add_train(new Train("50", "2_laurel_westEnd", "mill", "WEST", 10));
     ctc.add_train(new Train("50", "4_laurel_westEnd", "mill", "WEST", 10));
     ctc.add_train(new Train("50", "3_yardHilburn_sf", "mill", "EAST", 10));
-    ctc.add_train(new Train("[E] SU-100", "1_bingo_sparrow", " ", "EAST", 10));
+    ctc.add_train(new Train("[E] SU100", "1_bingo_sparrow", " ", "EAST", 10));
     ctc.test_block(); 
 }, 1500);  
 

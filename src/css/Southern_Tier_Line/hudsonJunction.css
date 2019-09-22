@@ -3,6 +3,8 @@
     /* Texts */
     .hudson_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 320px;
         left: 835px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .hudson_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 340px;
         left: 900px;
         font-size: 14px;

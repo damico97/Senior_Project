@@ -7,6 +7,8 @@
     /* Texts */
     .suscon_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 805px;
         left: 546px;
         font-size: 18px;
@@ -15,6 +17,8 @@
 
     .suscon_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 825px;
         left: 559px;
         font-size: 14px;

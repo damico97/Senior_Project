@@ -3,6 +3,8 @@
     /* Texts */
     .hx_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 620px;
         left: 1207px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .hx_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 640px;
         left: 1200px;
         font-size: 14px;

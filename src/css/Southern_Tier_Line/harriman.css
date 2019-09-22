@@ -3,6 +3,8 @@
     /* Texts */
     .harriman_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 460px;
         left: 115px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .harriman_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 480px;
         left: 148px;
         font-size: 14px;

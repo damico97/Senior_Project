@@ -3,6 +3,8 @@
     /* Texts */
     .sterling_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 455px;
         left: 490px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .sterling_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 475px;
         left: 520px;
         font-size: 14px;

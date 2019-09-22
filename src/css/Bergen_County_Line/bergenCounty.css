@@ -6,6 +6,8 @@
 */
     .bt_nysw_tag {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 689px;
         left: 775px;
         font-size: 16px;
@@ -14,6 +16,8 @@
 
     .hx_line_tag {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 674px;
         left: 1380px;
         font-size: 16px;

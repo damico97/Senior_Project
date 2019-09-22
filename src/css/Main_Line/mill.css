@@ -7,6 +7,8 @@
     /* Texts */
     .mill_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 805px;
         left: 910px;
         font-size: 18px;
@@ -15,6 +17,8 @@
 
     .mill_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 825px;
         left: 910px;
         font-size: 14px;

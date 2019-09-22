@@ -394,7 +394,7 @@ September 20, 2019:
     - Continued Drawings for Laurel Interlocking, finsihed about 2/3 of the them at this point
     (2 Hours)
     
-September 21: 2019:
+September 21, 2019:
     - Finished drawings for the laurel interlocking and debugging some of the drawings that change
     when another track has a different status.
     (2 Hours)
@@ -412,6 +412,12 @@ September 21: 2019:
 
     - Bug fixes at West Secaucus
 
+September 22, 2019:
+    - Finished locations on all the symbols for the main line, still have to get the workings.
+    (0.75 Hours)
+
+    - CSS fixes for the text symbos on the pannel to keep it from moving around if the windo is resized
+    (0.25 Hours)
 
 TOTAL: 130 Hours
 

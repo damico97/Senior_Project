@@ -3,6 +3,8 @@
     /* Texts */
     .howells_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 320px;
         left: 295px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .howells_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 340px;
         left: 322px;
         font-size: 14px;

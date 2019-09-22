@@ -3,6 +3,8 @@
     /* Texts */
     .port_title {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 145px;
         left: 752px;
         font-size: 18px;
@@ -11,6 +13,8 @@
 
     .port_milepost {
         position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
         top: 165px;
         left: 756px;
         font-size: 14px;
