@@ -1,9 +1,13 @@
+/**
+ * @file laurel.css
+ * @author Joey Damico
+ * @date June 4, 2019
+ * @brief CSS Stylesheet for the Laurel Interlocking
+ *
+ * Styles the divs tracks and other tags for the Laurel Interlocking
+ */
+
 @charset "UTF-8";
-/* 
-    Track Color: #999999 
-    Route Color: #75fa4c
-    Occupied Color: #eb3323
-*/
     /* Texts */
     .laurel_title {
         position: absolute;
@@ -107,6 +111,7 @@
         width: 114px;
         background: #999999;
     }
+    /* END Tail Tracks */
 
     /* Switches */
     .laurel_SW_1 {
@@ -250,3 +255,4 @@
         width: 19px;
         cursor: pointer;
     }
+    /* END Signals */

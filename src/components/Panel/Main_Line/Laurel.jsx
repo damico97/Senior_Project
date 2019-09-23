@@ -1,7 +1,7 @@
 /**
  * @file Laurel.jsx
  * @author Joey Damico
- * @date June 3, 2019
+ * @date September 25, 2019
  * @brief React JSX Component Class that is for Laurel Interlocking
  *
  * Extends the React Component Class and is the UI part of the Laurel Interlocking,
@@ -75,18 +75,20 @@ class Laurel extends Component {
      * correctly
      */
     state = {  
+        // Switch Status
         sw_1: this.props.status.sw_1,
         sw_3: this.props.status.sw_3,
         sw_7: this.props.status.sw_7,
         sw_9: this.props.status.sw_9,
         sw_11: this.props.status.sw_11,
         sw_13: this.props.status.sw_13,
+        // Image File for the switch - Will change depending on route
         sw_1_src: CX_135,
         sw_3_src: CX_135,
         sw_7_src: CX_225,
         sw_11_src: CX_225,
         sw_13_src: CX_135,
-
+        // Image File for the signals - Will change depending on route
         sig_2w_src: SIG_W,
         sig_4w_src: SIG_W,
         sig_8w_src: SIG_W,
@@ -95,7 +97,7 @@ class Laurel extends Component {
         sig_6e_src: SIG_E,
         sig_8e_src: SIG_E,
         sig_12e_src: SIG_E,
-
+        // Colors for tail tracks - Will change depending on route
         tail_3_e: Empty,
         tail_1_e: Empty,
         tail_2_e: Empty,
@@ -105,7 +107,7 @@ class Laurel extends Component {
         tail_1_w: Empty,
         tail_2_w: Empty,
         tail_4_w: Empty,
-
+        // Information For Interlocking Routes
         routes: this.props.status.routes,
         routed_1: this.props.status.routed_1,
         routed_2: this.props.status.routed_2,
@@ -118,6 +120,7 @@ class Laurel extends Component {
     };
 
     /**
+     * componentWillReceiveProps()
      * @brief Function that updates the state of the component
      * 
      * The data that is being changed is passed down from the CTC classes in the simulation backend
@@ -147,6 +150,7 @@ class Laurel extends Component {
 
 
     /**
+     * render()
      * @brief standard React function that draws the interlocking to the screen
      */
     render() { 
@@ -160,32 +164,40 @@ class Laurel extends Component {
         // Returns the HTML to draw the interlocking and it's current state to the screen
         return (  
             <div>
+                {/* Tags */}
                 <div className="laurel_title">LAUREL</div>
                 <div className="laurel_milepost">MP 4.3</div>
 
+                {/* West Side Tail Tracks */}
                 <div className="b_laurel_3_west" style={{background: this.state.tail_3_w}}></div>
                 <div className="b_laurel_2_west" style={{background: this.state.tail_1_w}}></div>
                 <div className="m_laurel_2_west" style={{background: this.state.tail_2_w}}></div>
                 <div className="m_laurel_4_west" style={{background: this.state.tail_4_w}}></div>
 
+                {/* Switches */}
                 <div className="laurel_SW_1" onClick={this.props.throw_sw_1}><img src={this.state.sw_1_src}/></div>
                 <div className="laurel_SW_3" onClick={this.props.throw_sw_3}><img src={this.state.sw_3_src}/></div>
                 <div className="laurel_SW_7" onClick={this.props.throw_sw_7}><img src={this.state.sw_7_src}/></div>
                 <div className="laurel_SW_11" onClick={this.props.throw_sw_11}><img src={this.state.sw_11_src}/></div>
                 <div className="laurel_SW_13" onClick={this.props.throw_sw_13}><img src={this.state.sw_13_src}/></div>
 
+                {/* Center Tail Tracks */}
                 <div className="m_laurel_3_center" style={{background: this.state.tail_3_center}}></div>
 
+                {/* East Side Tail Tracks */}
                 <div className="m_laurel_3_east" style={{background: this.state.tail_3_e}}></div>
                 <div className="m_laurel_1_east" style={{background: this.state.tail_1_e}}></div>
                 <div className="m_laurel_2_east" style={{background: this.state.tail_2_e}}></div>
                 <div className="m_laurel_4_east" style={{background: this.state.tail_4_e}}></div>
 
+
+                {/* Signals */}
+                {/* West Signals */}
                 <div className="laurel_sig_10w" onClick={this.props.click_sig_10w}><img src={this.state.sig_10w_src}/></div>
                 <div className="laurel_sig_2w" onClick={this.props.click_sig_2w}><img src={this.state.sig_2w_src}/></div>
                 <div className="laurel_sig_4w" onClick={this.props.click_sig_4w}><img src={this.state.sig_4w_src}/></div>
                 <div className="laurel_sig_8w" onClick={this.props.click_sig_8w}><img src={this.state.sig_8w_src}/></div>
-
+                {/* East Signals */}
                 <div className="laurel_sig_4e" onClick={this.props.click_sig_4e}><img src={this.state.sig_4e_src}/></div>
                 <div className="laurel_sig_6e" onClick={this.props.click_sig_6e}><img src={this.state.sig_6e_src}/></div>
                 <div className="laurel_sig_8e" onClick={this.props.click_sig_8e}><img src={this.state.sig_8e_src}/></div>
@@ -196,6 +208,7 @@ class Laurel extends Component {
     // ---- END render() ----
 
     /**
+     * set_route_drawings()
      * @brief Sets the drawing for the route through the interlocking
      * 
      * Function takes what routes are currently set in the Interlocking class and displays that route in the UI, the drawing
@@ -1983,6 +1996,7 @@ class Laurel extends Component {
 
 
     /**
+     * set_switch_img()
      * @brief Changes image sources for the switches, depending on switch status
      * 
      * This function uses the data passed in through status from the CTC classes and 
@@ -2054,6 +2068,7 @@ class Laurel extends Component {
 
 
     /**
+     * reset_drawings()
      * @brief Function to reset the signal images and track colors
      * 
      * This function is need, because if the player was to remove a route,

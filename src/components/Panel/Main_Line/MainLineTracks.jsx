@@ -1,11 +1,35 @@
+/**
+ * @file MainLineTracks.jsx
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief React JSX Component Class that is for The Tracks of the Main Line
+ *
+ * Extends the React Component Class and is the UI part of the Main Line Tracks,
+ * this class controls all the drawings of routes, and also gives a visual reprenstation
+ * of that status of the interlocking
+ */
+
+// Import React Component
 import React, { Component } from 'react';
+// Import CSS style sheet
 import '../../../css/Main_Line/mainLine.css';
 
-const Empty = '#999999';
-const Route = '#75fa4c';
-const Occupied = '#eb3323';
 
+/**
+ * CLASS MaineLineTracks
+ * @brief The React JSX Component Class for the Tracks in the Main Line portion
+ * 
+ * This class is a JSX React Component for the Maine Line Tracks, this will control all the UI for the comonent,
+ * showing what blocks are occupied by a train
+ */
 class MainLineTracks extends Component {
+    /**
+     * State
+     * @brief Object that holds the state or status information for the component
+     * 
+     * This object holds all the information for the tracks that is required to display the routes 
+     * correctly
+     */
     state = {
         // Symbols
         symbol_sterling_sf_1: this.props.symbols.symbol_sterling_sf_1,
@@ -70,6 +94,14 @@ class MainLineTracks extends Component {
         wc_yard: this.props.blocks.block_wc_yard
     };
 
+    /**
+     * componentWillReceiveProps()
+     * @brief Function that updates the state of the component
+     * 
+     * The data that is being changed is passed down from the CTC classes in the simulation backend
+     * 
+     * @param nextProps, the new data to set the component state too
+     */
     componentWillReceiveProps(nextProps){
         this.setState({
             // Symbols
@@ -135,7 +167,12 @@ class MainLineTracks extends Component {
             wc_yard: nextProps.blocks.block_wc_yard
         });
     }
+    // ---- END componentWillReceiveProps() ----
     
+    /**
+     * render()
+     * @brief standard React function that draws the interlocking to the screen
+     */
     render() { 
         return (  
             <div>
@@ -226,6 +263,8 @@ class MainLineTracks extends Component {
             </div>
         );
     }
+    // ---- END render() ----
 }
  
+// Export the tracks to be drawn on the screen
 export default MainLineTracks;

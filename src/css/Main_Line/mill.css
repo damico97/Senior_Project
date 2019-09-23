@@ -1,9 +1,13 @@
+/**
+ * @file mill.css
+ * @author Joey Damico
+ * @date June 5, 2019
+ * @brief CSS Stylesheet for the Mill Interlocking
+ *
+ * Styles the divs tracks and other tags for the Mill Interlocking
+ */
+
 @charset "UTF-8";
-/* 
-    Track Color: #999999 
-    Route Color: #75fa4c
-    Occupied Color: #eb3323
-*/
     /* Texts */
     .mill_title {
         position: absolute;

@@ -1,3 +1,15 @@
+/**
+ * @file Hilburn.jsx
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief React JSX Component Class that is for Hilburn Interlocking
+ *
+ * Extends the React Component Class and is the UI part of the Hilburn Interlocking,
+ * this class controls all the drawings of routes, and also gives a visual reprenstation
+ * of that status of the interlocking
+ */
+
+// Import React Component
 import React, { Component } from 'react';
 // Import CSS style sheet
 import '../../../css/Main_Line/hilburn.css';
@@ -25,26 +37,48 @@ const Green = '#75fa4c';
 const Red = '#eb3323';
 
 
+/**
+ * CLASS Hilburn
+ * @brief The React JSX Component Class for the Hilburn Interlocking
+ * 
+ * This class is a JSX React Component for the Hilburn Interlocking, this will control all the UI for the comonent,
+ * and the click events that will pass reference between the backend and the user. This also controls drawing the 
+ * route drawings to show if a route(s) is setup in the interlocking or if the route is occupied
+ */
 class Hilburn extends Component {
+    /**
+     * State
+     * @brief Object that holds the state or status information for the component
+     * 
+     * This object holds all the information for the interlocking that is required to display the routes 
+     * correctly
+     */
     state = {  
+        // Switch Status
         sw_1: this.props.status.sw_1,
         // Image File for the switch - Will change depending on route
         sw_1_src: SW_D_E,
-        
         // Image File for the signals - Will change depending on route
         sig_2w1_src: SIG_W,
         sig_2w2_src: SIG_W,
         sig_2e_src: SIG_E,
-
         // Colors for tail tracks - Will change depending on route
         tail_w: Empty,
         tail_e: Empty,
         tail_yard: Empty,
-
+        // Information For Interlocking Routes
         occupied: this.props.status.occupied,
         routes: this.props.status.routes
     };
 
+    /**
+     * componentWillReceiveProps()
+     * @brief Function that updates the state of the component
+     * 
+     * The data that is being changed is passed down from the CTC classes in the simulation backend
+     * 
+     * @param nextProps, the new data to set the component state too
+     */
     componentWillReceiveProps(nextProps){
         this.setState({
             sw_1: nextProps.status.sw_1,
@@ -52,30 +86,41 @@ class Hilburn extends Component {
             routes: nextProps.status.routes
         });
     }
+    // ---- END componentWillReceiveProps() ----
 
+    /**
+     * render()
+     * @brief standard React function that draws the interlocking to the screen
+     */
     render() { 
+        // Clear all the drawings from the interlocking so if a train clears the route is gone
         this.reset_drawings(); 
+        // Set the switch images based off the state of each crossover
         this.set_switch_img();
+        // Draw all the current routes in the interlocking
         this.set_route_drawings();
 
+        // Returns the HTML to draw the interlocking and it's current state to the screen
         return (  
             <div>
+                {/* Tags */}
                 <div className="hilburn_title">HILBURN</div>
                 <div className="hilburn_milepost">MP 32.3</div>
-
+                {/* West Side Tail Tracks */}
                 <div className="hilburn_west" style={{background: this.state.tail_w}}></div>
-
+                {/* Switches */}
                 <div className="hilburn_SW_1" onClick={this.props.throw_sw_1}><img src={this.state.sw_1_src}/></div>
-
+                {/* East Side Tail Tracks */}
                 <div className="hilburn_east" style={{background: this.state.tail_e}}></div>
                 <div className="hilburn_yard" style={{background: this.state.tail_yard}}></div>
-
+                {/* Signals */}
                 <div className="hilburn_sig_2w-1" onClick={this.props.click_sig_2w_1}><img src={this.state.sig_2w1_src}/></div>
                 <div className="hilburn_sig_2w-2" onClick={this.props.click_sig_2w_2}><img src={this.state.sig_2w2_src}/></div>
                 <div className="hilburn_sig_2e" onClick={this.props.click_sig_2e}><img src={this.state.sig_2e_src}/></div>
             </div>
         );
     }
+    // ---- END render() ----
 
     /**
      * @brief Sets the drawing for the route through the interlocking
@@ -92,6 +137,8 @@ class Hilburn extends Component {
         else {
             color = Green;
         }
+
+        // Loop through all the routes
         for (let i = 0; i < this.state.routes.length; i++) {
             // Routes with Track 1 on both the West and East sides
             if (this.state.routes[i] === "W_1_1__|__2_sterling_hilburn" || this.state.routes[i] === "E_1_1__|__2_hilburn_sf") {
@@ -167,15 +214,28 @@ class Hilburn extends Component {
             }
         }
     }
+    // ---- END set_route_drawings() ----
 
+    /**
+     * set_switch_img()
+     * @brief Changes image sources for the switches, depending on switch status
+     * 
+     * This function uses the data passed in through status from the CTC classes and 
+     * shows if the switches are reversed or not on the screen, by changing the image
+     * source files, to the correct .png file respectivly
+     */
     set_switch_img = () => {
+        // Set SW #1
+        // SW #1 Reversed
         if (this.state.sw_1) {
             this.state.sw_1_src = SW_D_E_R;
         }
+        // SW #1 Normal
         else {
             this.state.sw_1_src = SW_D_E;
         }
     }
+    // ---- END set_switch_image() ----
 
     /**
      * @brief Function to reset the signal images and track colors
@@ -193,6 +253,8 @@ class Hilburn extends Component {
         this.state.tail_e = Empty;
         this.state.tail_yard = Empty;
     }
+    //---- END reset_drawings() ----
 }
  
+// Export the interlocking to be drawn on the screen
 export default Hilburn;
