@@ -1,11 +1,35 @@
+/**
+ * @file BergenTracks.jsx
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief React JSX Component Class that is for The Tracks of the Bergen County Line
+ *
+ * Extends the React Component Class and is the UI part of the Bergen County Line Tracks,
+ * this class controls all the drawings of routes, and also gives a visual reprenstation
+ * of that status of the interlocking
+ */
+
+// Import React Component
 import React, { Component } from 'react';
+// Import CSS style sheet
 import '../../../css/Bergen_County_Line/bergenCounty.css';
 
-const Empty = '#999999';
-const Route = '#75fa4c';
-const Occupied = '#eb3323';
 
+/**
+ * CLASS BergenTracks
+ * @brief The React JSX Component Class for the Tracks in the Bergen County Line portion
+ * 
+ * This class is a JSX React Component for the Bergen County Line Tracks, this will control all the UI for the comonent,
+ * showing what blocks are occupied by a train
+ */
 class BergenTracks extends Component {
+    /**
+     * State
+     * @brief Object that holds the state or status information for the component
+     * 
+     * This object holds all the information for the tracks that is required to display the routes 
+     * correctly
+     */
     state = {  
         // Symbols
         symbol_ridgewood_bt_1: this.props.symbols.symbol_ridgewood_bt_1,
@@ -38,6 +62,14 @@ class BergenTracks extends Component {
         block_hx_croxton_1: this.props.blocks.block_hx_croxton_2
     };
 
+    /**
+     * componentWillReceiveProps()
+     * @brief Function that updates the state of the component
+     * 
+     * The data that is being changed is passed down from the CTC classes in the simulation backend
+     * 
+     * @param nextProps, the new data to set the component state too
+     */
     componentWillReceiveProps(nextProps) {
         this.setState({
             // Symbols
@@ -71,6 +103,12 @@ class BergenTracks extends Component {
             block_hx_croxton_2: nextProps.blocks.block_hx_croxton_2
         });
     }
+    // ---- END componentWillReceiveProps() ----
+    
+    /**
+     * render()
+     * @brief standard React function that draws the interlocking to the screen
+     */
     render() { 
         return (  
             <div>
@@ -91,6 +129,7 @@ class BergenTracks extends Component {
                 <div className="symbol_hx_croxton_1">{this.state.symbol_hx_croxton_1}</div>
                 <div className="symbol_hx_croxton_2">{this.state.symbol_hx_croxton_2}</div>
 
+                {/* Tracks */}
                 <div className="b_croxton_1" style={{background: this.state.block_hx_croxton_1}}></div>
                 <div className="b_croxton_2" style={{background: this.state.block_hx_croxton_2}}></div>
 
@@ -118,6 +157,8 @@ class BergenTracks extends Component {
             </div>
         );
     }
+    // ---- END render() ----
 }
  
+// Export the tracks to be drawn on the screen
 export default BergenTracks;

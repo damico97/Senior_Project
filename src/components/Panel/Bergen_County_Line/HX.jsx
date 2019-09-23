@@ -1,3 +1,15 @@
+/**
+ * @file HX.jsx
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief React JSX Component Class that is for HX Interlocking
+ *
+ * Extends the React Component Class and is the UI part of the HX Interlocking,
+ * this class controls all the drawings of routes, and also gives a visual reprenstation
+ * of that status of the interlocking
+ */
+
+// Import React Component
 import React, { Component } from 'react';
 // Import CSS style sheet
 import '../../../css/Bergen_County_Line/hx.css';
@@ -17,7 +29,6 @@ import CX_225_Occupied_Bottom from '../../../../public/images/CX_225_Occupied_Bo
 import CX_225_Occupied_Both from '../../../../public/images/CX_225_Occupied_Both.png';
 import CX_225_R_Occupied from '../../../../public/images/CX_225_R_Occupied.png';
 
-
 import SW_U_E from '../../../../public/images/SW_U_E.png';
 import SW_U_E_Lined from '../../../../public/images/SW_U_E_Lined.png';
 import SW_U_E_Occupied from '../../../../public/images/SW_U_E_Occupied.png';
@@ -33,35 +44,51 @@ import SIG_E from '../../../../public/images/SIG_E.png';
 import SIG_E_Clear from '../../../../public/images/SIG_E_Clear.png';
 import SIG_E_Stop from '../../../../public/images/SIG_E_Stop.png';
 
-// Track Colors
+// Color Constants For Drawing Routes
 const Empty = '#999999';
 const Green = '#75fa4c';
 const Red = '#eb3323';
 
-
+/**
+ * CLASS HX
+ * @brief The React JSX Component Class for the HX Interlocking
+ * 
+ * This class is a JSX React Component for the HX Interlocking, this will control all the UI for the comonent,
+ * and the click events that will pass reference between the backend and the user. This also controls drawing the 
+ * route drawings to show if a route(s) is setup in the interlocking or if the route is occupied
+ */
 class HX extends Component {
+    /**
+     * State
+     * @brief Object that holds the state or status information for the component
+     * 
+     * This object holds all the information for the interlocking that is required to display the routes 
+     * correctly
+     */
     state = {  
+        // Switch Status
         sw_1: this.props.status.sw_1,
         sw_3: this.props.status.sw_3,
         sw_5: this.props.status.sw_5,
+        // Image File for the switch - Will change depending on route
         sw_1_src: CX_225,
         sw_3_src: SW_U_E,
         sw_5_src: SW_U_E,
-
+        // Colors for tail tracks - Will change depending on route
         tail_1_w: Empty,
         tail_2_w: Empty,
         tail_1_e: Empty,
         tail_2_e: Empty,
         tail_3_e: Empty,
         tail_4_e: Empty,
-
+        // Image File for the signals - Will change depending on route
         sig_2w1_src: SIG_W,
         sig_2w2_src: SIG_W,
         sig_2w3_src: SIG_W,
         sig_4w_src: SIG_W,
         sig_2e_src: SIG_E,
         sig_4e_src: SIG_E,
-
+        // Information For Interlocking Routes
         occupied_1: this.props.status.occupied_trk_1,
         occupied_2: this.props.status.occupied_trk_2,
         route_1: this.props.status.routed_1,
@@ -69,6 +96,14 @@ class HX extends Component {
         routes: this.props.status.routes
     };
 
+    /**
+     * componentWillReceiveProps()
+     * @brief Function that updates the state of the component
+     * 
+     * The data that is being changed is passed down from the CTC classes in the simulation backend
+     * 
+     * @param nextProps, the new data to set the component state too
+     */
     componentWillReceiveProps(nextProps){
         this.setState({
             sw_1: nextProps.status.sw_1, 
@@ -82,40 +117,56 @@ class HX extends Component {
             routes: nextProps.status.routes
         });
     }
+    // ---- END componentWillReceiveProps() ----
 
+    /**
+     * render()
+     * @brief standard React function that draws the interlocking to the screen
+     */
     render() { 
+        // Clear all the drawings from the interlocking so if a train clears the route is gone
         this.reset_drawings();
+        // Set the switch images based off the state of each crossover
         this.set_switch_images();
+        // Draw all the current routes in the interlocking
         this.set_route_drawings();
 
+        // Returns the HTML to draw the interlocking and it's current state to the screen
         return (  
             <div>
+                {/* Tags */}
                 <div className="hx_title">HX</div>
                 <div className="hx_milepost">MP 5.4</div>
-
+                {/* West Side Tail Tracks */}
                 <div className="hx_1_west" style={{background: this.state.tail_1_w}}></div>
                 <div className="hx_2_west" style={{background: this.state.tail_2_w}}></div>
-
+                {/* Switches */}
                 <div className="hx_SW_1" onClick={this.props.throw_sw_1}><img src={this.state.sw_1_src}/></div>
                 <div className="hx_SW_3" onClick={this.props.throw_sw_3}><img src={this.state.sw_3_src}/></div>
                 <div className="hx_SW_5" onClick={this.props.throw_sw_5}><img src={this.state.sw_5_src}/></div>
-
+                {/* East Side Tail Tracks */}
                 <div className="hx_1_east" style={{background: this.state.tail_1_e}}></div>
                 <div className="hx_2_east" style={{background: this.state.tail_2_e}}></div>
                 <div className="hx_croxton_1" style={{background: this.state.tail_4_e}}></div>
                 <div className="hx_croxton_2" style={{background: this.state.tail_3_e}}></div>
-                
+                {/* Signals */}
                 <div className="hx_sig_2w-3" onClick={this.props.click_sig_2w3}><img src={this.state.sig_2w3_src}/></div>
                 <div className="hx_sig_2w-2" onClick={this.props.click_sig_2w2}><img src={this.state.sig_2w2_src}/></div>
                 <div className="hx_sig_2w-1" onClick={this.props.click_sig_2w1}><img src={this.state.sig_2w1_src}/></div>
                 <div className="hx_sig_4w" onClick={this.props.click_sig_4w}><img src={this.state.sig_4w_src}/></div>
-
                 <div className="hx_sig_2e" onClick={this.props.click_sig_2e}><img src={this.state.sig_2e_src}/></div>
                 <div className="hx_sig_4e" onClick={this.props.click_sig_4e}><img src={this.state.sig_4e_src}/></div>
             </div>
         );
     }
+    // ---- END render() ----
 
+    /**
+     * @brief Sets the drawing for the route through the interlocking
+     * 
+     * Function takes what routes are currently set in the Interlocking class and displays that route in the UI, the drawing
+     * will change depending on if the interlocking is occupied or not
+     */
     set_route_drawings() {
         let color_1 = Empty;
         let color_2 = Empty;
@@ -610,30 +661,56 @@ class HX extends Component {
             }
         }
     }
+    // ---- END set_route_drawings() ----
 
+    /**
+     * set_switch_images()
+     * @brief Changes image sources for the switches, depending on switch status
+     * 
+     * This function uses the data passed in through status from the CTC classes and 
+     * shows if the switches are reversed or not on the screen, by changing the image
+     * source files, to the correct .png file respectivly
+     */
     set_switch_images() {
+        // Set SW #1
+        // SW #1 Reversed
         if (this.state.sw_1) {
             this.state.sw_1_src = CX_225_R;
         }
+        // SW #1 Normal
         else {
             this.state.sw_1_src = CX_225;
         }
 
+        // Set SW #3
+        // SW #3 Reversed
         if (this.state.sw_3) {
             this.state.sw_3_src = SW_U_E_R;
         }
+        // SW #3 Normal
         else {
             this.state.sw_3_src = SW_U_E;
         }
 
+        // Set SW #5
+        // SW #5 Reversed
         if (this.state.sw_5) {
             this.state.sw_5_src = SW_U_E_R;
         }
+        // SW #5 Normal
         else {
             this.state.sw_5_src = SW_U_E;
         }
     }
+    // ---- END set_switch_images() ----
 
+    /**
+     * @brief Function to reset the signal images and track colors
+     * 
+     * This function is need, because if the player was to remove a route,
+     * or when the train clears the interlocking nothing will clear the route
+     * the is displaying on the screen, even if it's gone in the backend
+     */
     reset_drawings() {
         this.state.tail_1_w = Empty;
         this.state.tail_2_w = Empty;
@@ -649,6 +726,8 @@ class HX extends Component {
         this.state.sig_2e_src = SIG_E;
         this.state.sig_4e_src = SIG_E;
     }
+    //---- END reset_drawings() ----
 }
  
+// Export the interlocking to be drawn on the screen
 export default HX;

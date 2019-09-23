@@ -19,7 +19,7 @@ import '../../../css/Main_Line/mainLine.css';
  * CLASS MaineLineTracks
  * @brief The React JSX Component Class for the Tracks in the Main Line portion
  * 
- * This class is a JSX React Component for the Maine Line Tracks, this will control all the UI for the comonent,
+ * This class is a JSX React Component for the Main Line Tracks, this will control all the UI for the comonent,
  * showing what blocks are occupied by a train
  */
 class MainLineTracks extends Component {
