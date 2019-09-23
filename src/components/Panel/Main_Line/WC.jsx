@@ -79,6 +79,15 @@ const Red = '#eb3323';
  * route drawings to show if a route(s) is setup in the interlocking or if the route is occupied
  */
 class WC extends Component {
+    /**
+     * State
+     * @brief Object that holds the state or status information for the component
+     * 
+     * This object holds all the information for the interlocking that is required to display the routes 
+     * correctly
+     * 
+     * Anything that has "this.props." is passed down from the CTC interlocking class
+     */
     state = {  
         // Switch Status
         sw_1: this.props.status.sw_1,

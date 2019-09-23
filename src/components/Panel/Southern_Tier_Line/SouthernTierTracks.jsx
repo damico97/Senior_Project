@@ -1,8 +1,35 @@
-import React, { Component } from 'react';
+/**
+ * @file SouthernTierTracks.jsx
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief React JSX Component Class that is for The Tracks of the Southern Tier
+ *
+ * Extends the React Component Class and is the UI part of the Southern Tier Tracks,
+ * this class controls all the drawings of routes, and also gives a visual reprenstation
+ * of that status of the interlocking
+ */
 
+// Import React Component
+import React, { Component } from 'react';
+// Import CSS style sheet
 import '../../../css/Southern_Tier_Line/southernTier.css';
 
+
+/**
+ * CLASS SouthernTierTracks
+ * @brief The React JSX Component Class for the Tracks in the Southern Tier portion
+ * 
+ * This class is a JSX React Component for the Southern Tier Tracks, this will control all the UI for the comonent,
+ * showing what blocks are occupied by a train
+ */
 class SouthernTierTracks extends Component {
+    /**
+     * State
+     * @brief Object that holds the state or status information for the component
+     * 
+     * This object holds all the information for the tracks that is required to display the routes 
+     * correctly
+     */
     state = {  
         // Train Symbols
         symbol_bingo_sparrow: this.props.symbols.symbol_bingo_sparrow,
@@ -66,6 +93,14 @@ class SouthernTierTracks extends Component {
         bingo_sparrow: this.props.blocks.block_bingo_sparrow
     };
 
+    /**
+     * componentWillReceiveProps()
+     * @brief Function that updates the state of the component
+     * 
+     * The data that is being changed is passed down from the CTC classes in the simulation backend
+     * 
+     * @param nextProps, the new data to set the component state too
+     */
     componentWillReceiveProps(nextProps){
         this.setState({
             // Train Symbols
@@ -130,7 +165,12 @@ class SouthernTierTracks extends Component {
             bingo_sparrow: nextProps.blocks.block_bingo_sparrow
         });
     }
-
+    // ---- END componentWillReceiveProps() ----
+    
+    /**
+     * render()
+     * @brief standard React function that draws the interlocking to the screen
+     */
     render() { 
 
         return (  
@@ -235,6 +275,8 @@ class SouthernTierTracks extends Component {
             </div>
         );
     }
+    // ---- END render() ----
 }
  
+// Export the tracks to be drawn on the screen
 export default SouthernTierTracks;

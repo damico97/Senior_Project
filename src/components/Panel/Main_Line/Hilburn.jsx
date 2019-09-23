@@ -41,7 +41,7 @@ const Red = '#eb3323';
  * CLASS Hilburn
  * @brief The React JSX Component Class for the Hilburn Interlocking
  * 
- * This class is a JSX React Component for the Hilburn Interlocking, this will control all the UI for the comonent,
+ * This class is a JSX React Component for the Hilburn Interlocking, this will control all the UI for the component,
  * and the click events that will pass reference between the backend and the user. This also controls drawing the 
  * route drawings to show if a route(s) is setup in the interlocking or if the route is occupied
  */
@@ -52,6 +52,8 @@ class Hilburn extends Component {
      * 
      * This object holds all the information for the interlocking that is required to display the routes 
      * correctly
+     * 
+     * Anything that has "this.props." is passed down from the CTC interlocking class
      */
     state = {  
         // Switch Status
@@ -235,7 +237,7 @@ class Hilburn extends Component {
             this.state.sw_1_src = SW_D_E;
         }
     }
-    // ---- END set_switch_image() ----
+    // ---- END set_switch_img() ----
 
     /**
      * @brief Function to reset the signal images and track colors

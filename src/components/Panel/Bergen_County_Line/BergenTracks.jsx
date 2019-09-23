@@ -29,6 +29,8 @@ class BergenTracks extends Component {
      * 
      * This object holds all the information for the tracks that is required to display the routes 
      * correctly
+     * 
+     * Anything that has "this.props." is passed down from the CTC interlocking class
      */
     state = {  
         // Symbols
@@ -130,9 +132,12 @@ class BergenTracks extends Component {
                 <div className="symbol_hx_croxton_2">{this.state.symbol_hx_croxton_2}</div>
 
                 {/* Tracks */}
+                {/* Yard Leads */}
                 <div className="b_croxton_1" style={{background: this.state.block_hx_croxton_1}}></div>
                 <div className="b_croxton_2" style={{background: this.state.block_hx_croxton_2}}></div>
+                <div className="b_nysw" style={{background: this.state.block_bt_nysw}}></div>
 
+                {/* Laurel to HX */}
                 <div className="b_laurel_hx_1_west" style={{background: this.state.block_hx_laurel_1}}></div>
                 <div className="b_laurel_hx_1_diag" style={{background: this.state.block_hx_laurel_1}}></div>
                 <div className="b_laurel_hx_1_east" style={{background: this.state.block_hx_laurel_1}}></div>
@@ -140,14 +145,15 @@ class BergenTracks extends Component {
                 <div className="b_laurel_hx_2_diag" style={{background: this.state.block_hx_laurel_2}}></div>
                 <div className="b_laurel_hx_2_east" style={{background: this.state.block_hx_laurel_2}}></div>
 
+                {/* HX to Pascack Junction */}
                 <div className="b_hx_pascack_1" style={{background: this.state.block_pascack_hx_1}}></div>
                 <div className="b_hx_pascack_2" style={{background: this.state.block_pascack_hx_2}}></div>
 
+                {/* Pascack Junction to BT */}
                 <div className="b_pascack_bt_1" style={{background: this.state.block_bt_pascack_1}}></div>
                 <div className="b_pascack_bt_2" style={{background: this.state.block_bt_pascack_2}}></div>
 
-                <div className="b_nysw" style={{background: this.state.block_bt_nysw}}></div>
-
+                {/* BT to Ridgewood Junction */}
                 <div className="b_bt_ridgewood_1_east" style={{background: this.state.block_ridgewood_bt_1}}></div>
                 <div className="b_bt_ridgewood_1_diag" style={{background: this.state.block_ridgewood_bt_1}}></div>
                 <div className="b_bt_ridgewood_1_west" style={{background: this.state.block_ridgewood_bt_1}}></div>

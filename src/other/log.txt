@@ -439,8 +439,16 @@ September 22, 2019:
     - Finished commenting for all of Mill Interlocking
     (0.5 Hours)
 
-    
+    - Finsihed commenting on all of the JSX components for the Main Line section
+    (2.5 Hours)
 
-TOTAL: 131 Hours
+    - Finsihed commenting on all of the JSX components for the Bergen County Line section
+    (1 Hour)
+
+September 23, 2019:
+    - Commenting on JSX components
+    (3 Hours)
+
+TOTAL: 139.25 Hours
 
 

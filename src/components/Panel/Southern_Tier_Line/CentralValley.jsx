@@ -36,24 +36,38 @@ const Green = '#75fa4c';
 const Red = '#eb3323';
 
 
+/**
+ * CLASS CentralValley
+ * @brief The React JSX Component Class for the Central Valley Interlocking
+ * 
+ * This class is a JSX React Component for the Central Valley Interlocking, this will control all the UI for the comonent,
+ * and the click events that will pass reference between the backend and the user. This also controls drawing the 
+ * route drawings to show if a route(s) is setup in the interlocking or if the route is occupied
+ */
 class CentralValley extends Component {
-    // Information for this interlocking
-    // Anything that has "this.props." is passed down from the CTC interlocking class
+    /**
+     * State
+     * @brief Object that holds the state or status information for the component
+     * 
+     * This object holds all the information for the interlocking that is required to display the routes 
+     * correctly
+     * 
+     * Anything that has "this.props." is passed down from the CTC interlocking class
+     */
     state = {  
+        // Switch Status
         sw_21: this.props.status.sw_21,
         // Image File for the switch - Will change depending on route
         sw_21_src: SW_U_E,
-
         // Image File for the signals - Will change depending on route
         sig_2w_src: SIG_W,
         sig_1w_src: SIG_W,
         sig_1e_src: SIG_E,
-
         // Colors for tail tracks - Will change depending on route
         tail_w: Empty,
         tail_1_e: Empty,
         tail_2_e: Empty,
-
+        // Information For Interlocking Routes
         occupied: this.props.status.occupied,
         routes: this.props.status.routes
     };
@@ -72,15 +86,20 @@ class CentralValley extends Component {
             routes: nextProps.status.routes
         });
     }
+    // ---- END componentWillReceiveProps() ----
 
     /**
      * @brief standard React function that draws the interlocking to the screen
      */
     render() { 
+        // Clear all the drawings from the interlocking so if a train clears the route is gone
         this.reset_drawings();
+        // Set the switch images based off the state of each crossover
         this.set_switch_img();
+        // Draw all the current routes in the interlocking
         this.set_route_drawings();
 
+        // Returns the HTML to draw the interlocking and it's current state to the screen
         return (  
             <div>
                 {/* Title Text */}
@@ -106,6 +125,7 @@ class CentralValley extends Component {
             </div>
         );
     }
+    // ---- END render() ----
 
     /**
      * @brief Sets the drawing for the route through the interlocking
@@ -197,6 +217,7 @@ class CentralValley extends Component {
             }
         }
     } 
+    // ---- END set_route_drawings() ----
 
     /**
      * @brief Changes image sources for the switches, depending on switch status
@@ -216,6 +237,7 @@ class CentralValley extends Component {
             this.state.sw_21_src = SW_U_E;
         }
     }
+    // ---- END set_switch_image() ----
 
     /**
      * @brief Function to reset the signal images and track colors
@@ -233,6 +255,8 @@ class CentralValley extends Component {
         this.state.tail_1_e = Empty;
         this.state.tail_2_e = Empty;
     }
+    //---- END reset_drawings() ----
 }
  
+// Export the interlocking to be drawn on the screen
 export default CentralValley;

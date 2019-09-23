@@ -72,6 +72,8 @@ class Suscon extends Component {
      * 
      * This object holds all the information for the interlocking that is required to display the routes 
      * correctly
+     * 
+     * Anything that has "this.props." is passed down from the CTC interlocking class
      */
     state = {
         sw_1: this.props.status.sw_1,
