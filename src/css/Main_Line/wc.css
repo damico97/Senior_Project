@@ -1,3 +1,12 @@
+/**
+ * @file wc.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the WC Interlocking
+ *
+ * Styles the divs tracks and other tags for the WC Interlocking
+ */
+
 @charset "UTF-8";
 
     /* Texts */
@@ -22,6 +31,7 @@
     }
     /* END Text */
 
+    /* Switches */
     .wc_SW_1 {
         position: absolute;
         z-index: 2;
@@ -61,7 +71,9 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches */
 
+    /* Tail Tracks */
     .wc_yard {
         position: absolute;
         top: 478px;
@@ -124,7 +136,9 @@
         width: 63px;
         background: #999999;
     }
+    /* END Tail Tracks */
 
+    /* Signals */
     .wc_sig_2e-2 {
         position: absolute;
         top: 483px;
@@ -178,3 +192,4 @@
         width: 19px;
         cursor: pointer;
     }
+    /* Signals */

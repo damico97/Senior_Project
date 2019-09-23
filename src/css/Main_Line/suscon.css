@@ -1,9 +1,13 @@
+/**
+ * @file suscon.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the Suscon Interlocking
+ *
+ * Styles the divs tracks and other tags for the Suscon Interlocking
+ */
+
 @charset "UTF-8";
-/* 
-    Track Color: #999999 
-    Route Color: #75fa4c
-    Occupied Color: #eb3323
-*/
     /* Texts */
     .suscon_title {
         position: absolute;

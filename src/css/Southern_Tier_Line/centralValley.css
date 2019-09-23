@@ -1,5 +1,13 @@
-@charset "UTF-8";
+/**
+ * @file centralValley.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the CP Central Valley Interlocking
+ *
+ * Styles the divs tracks and other tags for the CP Central Valley Interlocking
+ */
 
+@charset "UTF-8";
     /* Texts */
     .valley_title {
         position: absolute;
@@ -22,6 +30,7 @@
     }
     /* END Text */
 
+    /* Switches */
     .valley_SW_21 {
         position: absolute;
         z-index: 2;
@@ -31,7 +40,9 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches */
 
+    /* Tail Tracks */
     .valley_west {
         position: absolute;
         top: 400px;
@@ -58,7 +69,9 @@
         width: 25px;
         background: #999999;
     }
+    /* END Tail Tracks */
 
+    /* Signals */
     .valley_sig_1e {
         position: absolute;
         top: 405px;
@@ -85,3 +98,4 @@
         width: 19px;
         cursor: pointer;
     }
+    /* END Signals */

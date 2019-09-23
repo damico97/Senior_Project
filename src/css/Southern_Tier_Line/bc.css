@@ -1,5 +1,13 @@
-@charset "UTF-8";
+/**
+ * @file bc.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the CP BC Interlocking
+ *
+ * Styles the divs tracks and other tags for the CP BC Interlocking
+ */
 
+@charset "UTF-8";
     /* Texts */
     .bc_title {
         position: absolute;
@@ -22,6 +30,7 @@
     }
     /* END Text */
 
+    /* Switches */
     .bc_SW_1 {
         position: absolute;
         z-index: 2;
@@ -31,7 +40,9 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches*/
 
+    /* Tail Tracks */
     .bc_1_west {
         position: absolute;
         top: 230px;
@@ -58,7 +69,9 @@
         width: 25px;
         background: #999999;
     }
+    /* END Tail Tracks */
 
+    /* Signals */
     .bc_sig_2e {
         position: absolute;
         top: 235px;
@@ -85,3 +98,4 @@
         width: 19px;
         cursor: pointer;
     }
+    /* END Signals */

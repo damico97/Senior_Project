@@ -1,5 +1,13 @@
-@charset "UTF-8";
+/**
+ * @file sf.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the SF Interlocking
+ *
+ * Styles the divs tracks and other tags for the SF Interlocking
+ */
 
+@charset "UTF-8";
     /* Texts */
     .sf_title {
         position: absolute;
@@ -22,6 +30,7 @@
     }
     /* END Text */
 
+    /* Switches */
     .sf_SW_1 {
         position: absolute;
         z-index: 2;
@@ -61,7 +70,9 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches */
 
+    /* Tail Tracks */
     .sf_1_west {
         position: absolute;
         top: 509px;
@@ -106,6 +117,7 @@
         width: 25px;
         background: #999999;
     }
+    /* END Tail Tracks */
 
     /* Signals */
     .sf_sig_2e {

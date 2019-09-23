@@ -1,9 +1,13 @@
+/**
+ * @file ridgewood_jct.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the Ridgewood Junction Interlocking
+ *
+ * Styles the divs tracks and other tags for the Ridgewood Junction Interlocking
+ */
+
 @charset "UTF-8";
-/* 
-    Track Color: #999999 
-    Route Color: #75fa4c
-    Occupied Color: #eb3323
-*/
     /* Texts */
     .ridgewood_title {
         position: absolute;
@@ -26,6 +30,7 @@
     }
     /* END Text */
 
+    /* Tail Tracks */
     .m_ridgewood_3_west {
         position: absolute;
         top: 819px;
@@ -119,6 +124,7 @@
         width: 152px;
         background: #999999;
     }
+    /* END Tail Tracks */
 
     /* Switches */
 	.ridgewood_1 {
@@ -170,6 +176,7 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches */
 
     /* Signals */
     .ridgewood_sig_6w {
@@ -240,3 +247,4 @@
         width: 19px;
         cursor: pointer;
     }
+    /* END Signals */

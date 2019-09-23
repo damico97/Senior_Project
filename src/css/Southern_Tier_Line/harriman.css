@@ -1,5 +1,13 @@
-@charset "UTF-8";
+/**
+ * @file harriman.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the CP Harriman Interlocking
+ *
+ * Styles the divs tracks and other tags for the CP Harriman Interlocking
+ */
 
+@charset "UTF-8";
     /* Texts */
     .harriman_title {
         position: absolute;

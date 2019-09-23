@@ -1,9 +1,13 @@
+/**
+ * @file bergenCounty.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the Bergen County Tracks
+ *
+ * Styles the divs tracks and other tags for the Bergen County Tracks
+ */
+
 @charset "UTF-8";
-/* 
-    Track Color: #999999 
-    Route Color: #75fa4c
-    Occupied Color: #eb3323
-*/
     /* Tags */
     .bt_nysw_tag {
         position: absolute;
@@ -149,6 +153,7 @@
     }
     /* END Symbols */
 
+    /* Tracks */
     .b_croxton_1 {
         position: absolute;
         top: 664px;

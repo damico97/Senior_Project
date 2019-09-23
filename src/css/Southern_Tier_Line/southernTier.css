@@ -1,5 +1,10 @@
-/*
- *    
+/**
+ * @file southernTier.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the Southern Tier Tracks
+ *
+ * Styles the divs tracks and other tags for the Southern Tier Section of the pannel
  */
 @charset "UTF-8";
 
@@ -291,6 +296,7 @@
     /* END Train Symbols */
 
 
+    /* Tracks */
     .s_ov_screen_2 {
         position: absolute;
         top: 230px;

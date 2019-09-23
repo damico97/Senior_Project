@@ -1,3 +1,12 @@
+/**
+ * @file bt.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the BT Interlocking
+ *
+ * Styles the divs tracks and other tags for the BT Interlocking
+ */
+
 @charset "UTF-8";
 
      /* Texts */
@@ -22,6 +31,7 @@
     }
     /* END Text */
 
+    /* Switches */
     .bt_SW_1 {
         position: absolute;
         z-index: 2;
@@ -51,7 +61,9 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches */
 
+    /* Tail Tracks */
     .bt_1_west {
         position: absolute;
         top: 726px;
@@ -96,6 +108,7 @@
         width: 25px;
         background: #999999;
     }
+    /* END Tail Tracks */
 
     /* Signals */
     .bt_sig_2w-2 {

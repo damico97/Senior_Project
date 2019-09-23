@@ -1,9 +1,13 @@
+/**
+ * @file west_secaucus.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the West Secaucus Interlocking
+ *
+ * Styles the divs tracks and other tags for the West Secaucus Interlocking
+ */
+
 @charset "UTF-8";
-/* 
-    Track Color: #999999 
-    Route Color: #75fa4c
-    Occupied Color: #eb3323
-*/
     /* Texts */
     .westSecaucus_title {
         position: absolute;
@@ -26,6 +30,7 @@
     }
     /* END Text */  
 
+    /* Switches */
     .westSecaucus_SW_1 {
         position: absolute;
         z-index: 2;
@@ -54,6 +59,7 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches */
 
     /* Tail Tracks */
     .m_westSecaucus_1_west {
@@ -129,3 +135,4 @@
         width: 19px;
         cursor: pointer;
     }
+    /* END Signals */

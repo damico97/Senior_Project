@@ -1,3 +1,12 @@
+/**
+ * @file port.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the CP Port Interlocking
+ *
+ * Styles the divs tracks and other tags for the CP Port Interlocking
+ */
+
 @charset "UTF-8";
 
     /* Texts */
@@ -22,6 +31,7 @@
     }
     /* END Text */
 
+    /* Switches */
     .port_SW_1 {
         position: absolute;
         z-index: 2;
@@ -31,7 +41,9 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches */
 
+    /* Tail Tracks */
     .port_yard {
         position: absolute;
         top: 199px;
@@ -58,7 +70,9 @@
         width: 25px;
         background: #999999;
     }
+    /* END Tail Tracks */
 
+    /* Signals */
     .port_sig_2w {
         position: absolute;
         top: 212px;
@@ -85,3 +99,4 @@
         width: 19px;
         cursor: pointer;
     }
+    /* END Signals */

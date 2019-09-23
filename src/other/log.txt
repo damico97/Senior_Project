@@ -449,6 +449,8 @@ September 23, 2019:
     - Commenting on JSX components
     (3 Hours)
 
+    - Commenting finished on all CSS Files
+
 TOTAL: 139.25 Hours
 
 

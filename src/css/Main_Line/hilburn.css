@@ -1,5 +1,13 @@
-@charset "UTF-8";
+/**
+ * @file hilburn.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the Hilburn Interlocking
+ *
+ * Styles the divs tracks and other tags for the Hilburn Interlocking
+ */
 
+@charset "UTF-8";
     /* Texts */
     .hilburn_title {
         position: absolute;

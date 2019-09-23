@@ -1,5 +1,13 @@
-@charset "UTF-8";
+/**
+ * @file pascack_jct.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the Pascack Junction Interlocking
+ *
+ * Styles the divs tracks and other tags for the Pascack Junction Interlocking
+ */
 
+@charset "UTF-8";
     /* Texts */
     .pascack_title {
         position: absolute;

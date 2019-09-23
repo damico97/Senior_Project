@@ -1,5 +1,13 @@
-@charset "UTF-8";
+/**
+ * @file hudsonJunction.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the CP Hudson Junction Interlocking
+ *
+ * Styles the divs tracks and other tags for the CP Hudson Junction Interlocking
+ */
 
+@charset "UTF-8";
     /* Texts */
     .hudson_title {
         position: absolute;
@@ -22,6 +30,7 @@
     }
     /* END Text */
 
+    /* Switches */
     .hudson_SW_1 {
         position: absolute;
         z-index: 2;
@@ -41,7 +50,9 @@
         width: 38px;
         cursor: pointer;
     }
+    /* END Switches */
 
+    /* Tail Tracks */
     .hudson_east {
         position: absolute;
         top: 400px;
@@ -77,7 +88,9 @@
         width: 25px;
         background: #999999;
     }
+    /* END Tail Tracks */
 
+    /* Signals */
     .hudson_sig_2es {
         position: absolute;
         top: 374px;
@@ -113,3 +126,4 @@
         width: 19px;
         cursor: pointer;
     }
+    /* END Signals */
