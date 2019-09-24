@@ -450,6 +450,10 @@ September 23, 2019:
     (3 Hours)
 
     - Commenting finished on all CSS Files
+    (1 Hour)
+
+    - Commenting on all controller JS classes for the Bergen Line & Southern Tier Line
+    (4 Hours)
 
 TOTAL: 139.25 Hours
 

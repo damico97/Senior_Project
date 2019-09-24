@@ -1,28 +1,74 @@
+/**
+ * @file ctc_.js
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CTC Controller Class for the CP Hudson Junction Interlocking
+ */
+
+// Color Constants For Drawing Routes
 const Empty = '#999999';
 const Lined = '#75fa4c';
 const Occupied = '#eb3323';
 
+
+/**
+ * CLASS CTC_Hudson
+ * @brief Class is the Backend for the CP Hudson Junction Interlocking
+ * 
+ * @details This class is what controlls the CP Hudson Junction Interlocking, it is sort of like a backen, but is
+ * the controller, this is what makes all the train movements possible, and the ReactJS Component class
+ * gets information from this class to display the correct status of the interlocking on the screen
+ * 
+ * MEMBER VARIABLES
+ * sw_1 -> Bool if Switch #1 is Reveresed or Not
+ * sw_3 -> Bool if Switch #3 is Reveresed or Not
+ * 
+ * sig_2w -> Bool if Signal #2w is Lined or Not
+ * sig_2ws -> Bool if Signal #2ws is Lined or Not
+ * sig_2e -> Bool if Signal #2e is Lined or Not
+ * sig_2es -> Bool if Signal #2es is Lined or Not
+ * 
+ * route_w_trk_1 = The west bound route for track #1
+ * route_w_trk_3 = The west bound route for track #3
+ * route_e_trk_1 = The east bound route for track #1
+ * route_e_trk_2 = The east bound route for track #2
+ * 
+ * time_occupied = The time the track was occupied, used to know when to clear the route
+ * int_occupied = Bool if the track is occupied or not
+ */
 class CTC_Hudson {
+    /**
+     * constructor()
+     * @brief The constructor for the CTC_Hudson class
+     * 
+     * @details This will initialize all the member variables when the program is started
+     */
     constructor() {
+        // Bools for the switches
         this.sw_1 = false;
         this.sw_3 = false;
-
+        // Bools for the signals
         this.sig_2w = false;
         this.sig_2ws = false;
         this.sig_2e = false;
         this.sig_2es = false;
-
+        // Track routes
         this.route_w_trk_1 = null;
         this.route_w_trk_3 = null;
         this.route_e_trk_1 = null;
         this.route_e_trk_2 = null;
-
+        // Used for routing and occupying the tracks 
         this.int_occupied = false;
         this.time_occupied = null;
     }
+    // ---- END constructor() ----
 
     /**
+     * get_train_route()
+     * @brief Returns the route for the train at a given track
      * 
+     * @param direction, The direction the train is moving
+     * @param track, The Track number of the train 
      */
     get_train_route(direction, track) {
         if (direction === "WEST") {
@@ -42,7 +88,18 @@ class CTC_Hudson {
             }
         }
     }
+    // ---- END get_train_route() ----
 
+    /**
+     * click_sig_2w()
+     * @brief the function that is called when clicking the signal, creates a route
+     * 
+     * @details When the function is called it will determine if a route can be created, 
+     * and if so what the route is and sets it based off of the switch status
+     * 
+     * @param next_block_1, The next block on Track #1
+     * @param next_block_2, The next block on Track #2
+     */
     click_sig_2w(next_block_1, next_block_2) {
         if (this.sw_3) {
             return;
@@ -76,7 +133,18 @@ class CTC_Hudson {
 			}
         }
     }
+    // ---- END click_sig_2w() ----
 
+    /**
+     * click_sig_2ws()
+     * @brief the function that is called when clicking the signal, creates a route
+     * 
+     * @details When the function is called it will determine if a route can be created, 
+     * and if so what the route is and sets it based off of the switch status
+     * 
+     * @param next_block_1, The next block on Track #1
+     * @param next_block_2, The next block on Track #2
+     */
     click_sig_2ws(next_block_1, next_block_2) {
         if (!this.sw_3) {
             return;
@@ -110,7 +178,18 @@ class CTC_Hudson {
 			}
         }
     }
+    // ---- END click_sig_2ws() ----
 
+    /**
+     * click_sig_2e()
+     * @brief the function that is called when clicking the signal, creates a route
+     * 
+     * @details When the function is called it will determine if a route can be created, 
+     * and if so what the route is and sets it based off of the switch status
+     * 
+     * @param next_block_1, The next block on Track #1
+     * @param next_block_3, The next block on Track #3
+     */
     click_sig_2e(next_block_1, next_block_3) {
         if (this.sw_1) {
             return;
@@ -144,7 +223,18 @@ class CTC_Hudson {
 			}
         }
     }
+    // ---- END click_sig_2e() ----
 
+    /**
+     * click_sig_2es()
+     * @brief the function that is called when clicking the signal, creates a route
+     * 
+     * @details When the function is called it will determine if a route can be created, 
+     * and if so what the route is and sets it based off of the switch status
+     * 
+     * @param next_block_1, The next block on Track #1
+     * @param next_block_3, The next block on Track #3
+     */
     click_sig_2es(next_block_1, next_block_3) {
         if (!this.sw_1) {
             return;
@@ -178,10 +268,14 @@ class CTC_Hudson {
 			}
         }
     }
+    // ---- END click_sig_2es() ----
 
     /**
+     * set_occupied()
+     * @brief Sets the track as occupied
      * 
-     * @param {*} n_state 
+     * @param n_state, The new state of the track
+     * This was used to test, and never removed passing the state as a paramemter, which is not needed anymore
      */
     set_occupied(n_state) {
         if (n_state === true) {
@@ -192,9 +286,14 @@ class CTC_Hudson {
             console.log("ERROR");
         }
     }
+    // ---- END set_occupied() ----
 
     /**
+     * can_clear()
+     * @brief Checks if a track could be cleared, meaning a train is no longer in the interlocking
      * 
+     * @details Check the track if a train has been in the interlocking for more then 4 seconds, if so it
+     * clears that track
      */
     can_clear() {
         //console.log(new Date().getTime() / 1000 - this.time_occupied)
@@ -214,13 +313,18 @@ class CTC_Hudson {
             this.time_occupied = null;
         }
     }
+    // ---- END can_clear() ----
 
     /**
+     * get_occupied()
+     * @breif Getter for the int_occupied variable
      * 
+     * @returns If the interlocking is occupied or not
      */
     get_occupied() {
         return this.int_occupied;
     }
+    // ---- END get_occupied() ----
 
     /**
      * @brief Funtion to throw switch #1 in the interlocking
@@ -236,6 +340,7 @@ class CTC_Hudson {
             this.sw_1 = false;
         }
     }
+    // ---- END throw_sw_3() ----
 
     /**
      * @brief Funtion to throw switch #3 in the interlocking
@@ -251,9 +356,13 @@ class CTC_Hudson {
             this.sw_3 = false;
         }
     }
-
+    // ---- END throw_sw_3() ----
+    
     /**
+     * get_routes()
+     * @brief Gets all the routes from the interlocking
      * 
+     * @returns An Array holding every route variable from the interlocking
      */
     get_routes() {
         let routes = [
@@ -263,9 +372,14 @@ class CTC_Hudson {
 
         return routes;
     }
+    // ---- END get_routes() ----
 
     /**
+     * get_interlocking_status()
+     * @brief returns the status of the interlocking that would be needed by the ReactJS Components
      * 
+     * @details All the information that is returned here is what is needed by the ReactJS Component 
+     * for the interlocking that is need to draw the interlocking to the screen
      */
     get_interlocking_status() {
         let status = {
@@ -277,6 +391,8 @@ class CTC_Hudson {
 
         return status;
     }
+    // ---- END get_interlocking_status() ----
 }
 
+// This is required when using ReactJS
 export default CTC_Hudson;

@@ -1,25 +1,68 @@
+/**
+ * @file ctc_port.js
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CTC Controller Class for the CP Port Interlocking
+ */
+
+// Color Constants For Drawing Routes
 const Empty = '#999999';
 const Lined = '#75fa4c';
 const Occupied = '#eb3323';
 
-class CTC_Port {
-    constructor() {
-        this.sw_1 = false;
 
+/**
+ * CLASS CTC_Port
+ * @brief Class is the Backend for the CP Port Interlocking
+ * 
+ * @details This class is what controlls the CP Port Interlocking, it is sort of like a backen, but is
+ * the controller, this is what makes all the train movements possible, and the ReactJS Component class
+ * gets information from this class to display the correct status of the interlocking on the screen
+ * 
+ * MEMBER VARIABLES
+ * sw_1 -> Bool if Switch #1 is Reveresed or Not
+ * 
+ * sig_2w -> Bool if Signal #2w is Lined or Not
+ * sig_2e_1 -> Bool if Signal #2e_1 is Lined or Not
+ * sig_2e_2 -> Bool if Signal #2e_2 is Lined or Not
+ * 
+ * route_w_trk_1 = The west bound route for track #1
+ * route_e_trk_1 = The east bound route for track #1
+ * route_e_trk_3 = The east bound route for track #3
+ * 
+ * time_occupied = The time the track was occupied, used to know when to clear the route
+ * int_occupied = Bool if the track is occupied or not
+ */
+class CTC_Port {
+    /**
+     * constructor()
+     * @brief The constructor for the CTC_Port class
+     * 
+     * @details This will initialize all the member variables when the program is started
+     */
+    constructor() {
+        // Bools for the switches
+        this.sw_1 = false;
+        // Bools for the signals
         this.sig_2w = false;
         this.sig_2e_1 = false;
         this.sig_2e_2 = false;
-
+        // Track routes
         this.route_w_trk_1 = null;
         this.route_e_trk_1 = null;
         this.route_e_trk_3 = null;
-
+        // Used for routing and occupying the tracks 
         this.int_occupied = false;
         this.time_occupied = null;
     }
+    // ---- END constructor() ----
 
     /**
+     * get_train_route()
+     * @brief Returns the route for the train at a given track
      * 
+     * @param direction, The direction the train is moving
+     * @param track, The Track number of the train 
      */
     get_train_route(direction, track) {
         if (direction === "WEST") {
@@ -34,7 +77,18 @@ class CTC_Port {
         	}
         }
     }
+    // ---- END get_train_route() ----
 
+    /**
+     * click_sig_2w()
+     * @brief the function that is called when clicking the signal, creates a route
+     * 
+     * @details When the function is called it will determine if a route can be created, 
+     * and if so what the route is and sets it based off of the switch status
+     * 
+     * @param next_block_1, The next block on Track #1
+     * @param next_block_2, The next block on Track #2
+     */
     click_sig_2w(next_block_1, next_block_2) {
         if (this.sw_1) {
             if (this.sig_2w) {
@@ -65,7 +119,17 @@ class CTC_Port {
             }
         }
     }
+    // ---- END click_sig_2w() ----
 
+    /**
+     * click_sig_2e_1()
+     * @brief the function that is called when clicking the signal, creates a route
+     * 
+     * @details When the function is called it will determine if a route can be created, 
+     * and if so what the route is and sets it based off of the switch status
+     * 
+     * @param next_block_1, The next block on Track #1
+     */
     click_sig_2e_1(next_block_1) {
         if (this.sw_1) {
             return;
@@ -85,7 +149,17 @@ class CTC_Port {
             }
         }
     }
+    // ---- END click_sig_2e_1() ----
 
+    /**
+     * click_sig_2e_2()
+     * @brief the function that is called when clicking the signal, creates a route
+     * 
+     * @details When the function is called it will determine if a route can be created, 
+     * and if so what the route is and sets it based off of the switch status
+     * 
+     * @param next_block_1, The next block on Track #1
+     */
     click_sig_2e_2(next_block_1) {
         if (!this.sw_1) {
             return;
@@ -105,10 +179,14 @@ class CTC_Port {
             }
         }
     }
+    // ---- END click_sig_2e_2() ----
 
     /**
+     * set_occupied()
+     * @brief Sets the track as occupied
      * 
-     * @param {*} n_state 
+     * @param n_state, The new state of the track
+     * This was used to test, and never removed passing the state as a paramemter, which is not needed anymore
      */
     set_occupied(n_state) {
         if (n_state === true) {
@@ -119,12 +197,17 @@ class CTC_Port {
             console.log("ERROR");
         }
     }
+    // ---- END set_occupied() ----
 
     /**
+     * can_clear()
+     * @brief Checks if a track could be cleared, meaning a train is no longer in the interlocking
      * 
+     * @details Check the track if a train has been in the interlocking for more then 4 seconds, if so it
+     * clears that track
      */
     can_clear() {
-        //console.log(new Date().getTime() / 1000 - this.time_occupied)
+        // Get Current Time
         let current_time = new Date().getTime() / 1000;
         if (current_time - this.time_occupied > 4 && current_time - this.time_occupied < 100000) {
             this.sig_2w = false;
@@ -139,6 +222,7 @@ class CTC_Port {
             this.time_occupied = null;
         }
     }
+    // ---- END can_clear() ----
 
     /**
      * @brief Funtion to throw switch #1 in the interlocking
@@ -154,9 +238,13 @@ class CTC_Port {
             this.sw_1 = false;
         }
     }
-
+    // ---- END throw_sw_1() ----
+    
     /**
+     * get_routes()
+     * @brief Gets all the routes from the interlocking
      * 
+     * @returns An Array holding every route variable from the interlocking
      */
     get_routes() {
         let routes = [
@@ -166,9 +254,14 @@ class CTC_Port {
 
         return routes;
     }
+    // ---- END get_routes() ----
 
     /**
+     * get_interlocking_status()
+     * @brief returns the status of the interlocking that would be needed by the ReactJS Components
      * 
+     * @details All the information that is returned here is what is needed by the ReactJS Component 
+     * for the interlocking that is need to draw the interlocking to the screen
      */
     get_interlocking_status() {
         let status = {
@@ -179,6 +272,8 @@ class CTC_Port {
 
         return status;
     }
+    // ---- END get_interlocking_status() ----
 }
 
+// This is required when using ReactJS
 export default CTC_Port;
