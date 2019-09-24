@@ -274,7 +274,7 @@ class CTC_Hall {
 
     /**
      * set_trk_2_occupied()
-     * @brief Sets track #1 as occupied
+     * @brief Sets track #2 as occupied
      * 
      * @param n_state, The new state of the track
      * This was used to test, and never removed passing the state as a paramemter, which is not needed anymore
@@ -367,6 +367,8 @@ class CTC_Hall {
      * 
      * @details All the information that is returned here is what is needed by the ReactJS Component 
      * for the interlocking that is need to draw the interlocking to the screen
+     * 
+     * @returns Object with the status of the interlocking
      */
     get_interlocking_status() {
         let status = {

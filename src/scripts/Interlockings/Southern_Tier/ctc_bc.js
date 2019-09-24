@@ -263,6 +263,8 @@ class CTC_BC {
      * 
      * @details All the information that is returned here is what is needed by the ReactJS Component 
      * for the interlocking that is need to draw the interlocking to the screen
+     * 
+     * @returns Object with the status of the interlocking
      */
     get_interlocking_status() {
         let status = {

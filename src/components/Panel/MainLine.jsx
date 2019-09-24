@@ -60,13 +60,13 @@ clock.startClock;
 
 
 setTimeout(function(){ 
-    ctc.add_train(new Train("[E] 49", "3_yardEast_port", "mill", "EAST", 10));
-    ctc.add_train(new Train("3", "3_laurel_westEnd", "mill", "WEST", 10));
-    ctc.add_train(new Train("1", "1_laurel_westEnd", "mill", "WEST", 10));
-    ctc.add_train(new Train("2", "2_laurel_westEnd", "mill", "WEST", 10));
-    ctc.add_train(new Train("4", "4_laurel_westEnd", "mill", "WEST", 10));
-    ctc.add_train(new Train("50", "3_yardHilburn_sf", "mill", "EAST", 10));
-    ctc.add_train(new Train("[E] SU100", "1_bingo_sparrow", " ", "EAST", 10));
+    ctc.add_train(new Train("[E] 49", "3_yardEast_port", "EAST", 10));
+    ctc.add_train(new Train("3", "3_laurel_westEnd", "WEST", 10));
+    ctc.add_train(new Train("1", "1_laurel_westEnd", "WEST", 10));
+    ctc.add_train(new Train("2", "2_laurel_westEnd", "WEST", 10));
+    ctc.add_train(new Train("4", "4_laurel_westEnd", "WEST", 10));
+    ctc.add_train(new Train("50", "3_yardHilburn_sf", "EAST", 10));
+    ctc.add_train(new Train("[E] SU100", "1_bingo_sparrow", "EAST", 10));
     ctc.test_block(); 
 }, 1500);  
 
