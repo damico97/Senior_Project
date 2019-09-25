@@ -455,6 +455,13 @@ September 23, 2019:
     - Commenting on all controller JS classes for the Bergen Line & Southern Tier Line
     (4 Hours)
 
-TOTAL: 139.25 Hours
+    - Finish commenting on all the controller JS classes which was for the Main Line and others
+    (3 Hours)
+
+September 24, 2019:
+    - Finished the manual and what ever was left of the documentation
+    (6 Hours)
+
+TOTAL: 156.25 Hours
 
 

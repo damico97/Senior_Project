@@ -2,7 +2,7 @@
  * @file Hilburn.jsx
  * @author Joey Damico
  * @date September 25, 2019
- * @brief React JSX Component Class that is for SF Interlocking
+ * @summary React JSX Component Class that is for SF Interlocking
  *
  * Extends the React Component Class and is the UI part of the SF Interlocking,
  * this class controls all the drawings of routes, and also gives a visual reprenstation
@@ -51,8 +51,7 @@ const Red = '#eb3323';
 
 
 /**
- * CLASS SF
- * @brief The React JSX Component Class for the SF Interlocking
+ * The React JSX Component Class for the SF Interlocking
  * 
  * This class is a JSX React Component for the SF Interlocking, this will control all the UI for the comonent,
  * and the click events that will pass reference between the backend and the user. This also controls drawing the 
@@ -61,7 +60,7 @@ const Red = '#eb3323';
 class SF extends Component {
     /**
      * State
-     * @brief Object that holds the state or status information for the component
+     * @summary Object that holds the state or status information for the component
      * 
      * This object holds all the information for the interlocking that is required to display the routes 
      * correctly
@@ -97,7 +96,7 @@ class SF extends Component {
 
     /**
      * componentWillReceiveProps()
-     * @brief Function that updates the state of the component
+     * @summary Function that updates the state of the component
      * 
      * The data that is being changed is passed down from the CTC classes in the simulation backend
      * 
@@ -118,7 +117,7 @@ class SF extends Component {
 
     /**
      * render()
-     * @brief standard React function that draws the interlocking to the screen
+     * @summary standard React function that draws the interlocking to the screen
      */
     render() { 
         // Clear all the drawings from the interlocking so if a train clears the route is gone
@@ -156,7 +155,7 @@ class SF extends Component {
     // ---- END render() ----
 
     /**
-     * @brief Sets the drawing for the route through the interlocking
+     * @summary Sets the drawing for the route through the interlocking
      * 
      * Function takes what routes are currently set in the Interlocking class and displays that route in the UI, the drawing
      * will change depending on if the interlocking is occupied or not
@@ -492,7 +491,7 @@ class SF extends Component {
 
     /**
      * set_switch_img()
-     * @brief Changes image sources for the switches, depending on switch status
+     * @summary Changes image sources for the switches, depending on switch status
      * 
      * This function uses the data passed in through status from the CTC classes and 
      * shows if the switches are reversed or not on the screen, by changing the image
@@ -522,7 +521,7 @@ class SF extends Component {
     // ---- END set_switch_image() ----
 
     /**
-     * @brief Function to reset the signal images and track colors
+     * @summary Function to reset the signal images and track colors
      * 
      * This function is need, because if the player was to remove a route,
      * or when the train clears the interlocking nothing will clear the route

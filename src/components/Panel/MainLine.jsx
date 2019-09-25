@@ -2,9 +2,9 @@
  * @file MainLine.jsx
  * @author Joey Damico
  * @date September 25, 2019
- * @brief React JSX Component Class that is for the entire Pannel
+ * @summary React JSX Component Class that is for the entire Pannel
  *
- * Extends the React Component Class and is the UI of the entrie Pannel, this component
+ * @description Extends the React Component Class and is the UI of the entrie Pannel, this component
  * contains all the other components, and holds the functions that allows each component to
  * change the back end class for each enterlocking
  */
@@ -67,23 +67,20 @@ setTimeout(function(){
     ctc.add_train(new Train("4", "4_laurel_westEnd", "WEST", 10));
     ctc.add_train(new Train("50", "3_yardHilburn_sf", "EAST", 10));
     ctc.add_train(new Train("[E] SU100", "1_bingo_sparrow", "EAST", 10));
-    ctc.test_block(); 
+    ctc.occupy_blocks(); 
 }, 1500);  
 
 
 /**
- * CLASS MaineLine
- * @brief The React JSX Component Class for the entire Maine Line Dispatcher Panel
- * 
- * This class is a JSX React Component for the Maine Line Dispatch Panel, this will control all the other components
- * that make up the pannel. This also controls the functions that allow each component to change their respected 
+ * The React JSX Component Class for the entire Maine Line Dispatcher Panel This class is a JSX React Component for the Maine Line Dispatch Panel, 
+ * this will control all the other components that make up the pannel. This also controls the functions that allow each component to change their respected 
  * back end functions.
  */
 class MainLine extends Component {
     
     /**
      * constructor()
-     * @brief The Constructor for the MainLine JSX class.
+     * @summary The Constructor for the MainLine JSX class.
      * 
      * All this does is set that state for every thing getting the information fro the CTC controller, the state here
      * is used to send to the child components so they can render the correct information
@@ -94,7 +91,7 @@ class MainLine extends Component {
         super(props);
         /**
          * State
-         * @brief Object that holds the state or status information for the component
+         * @summary Object that holds the state or status information for the component
          * 
          * This object holds all the information for everything on the pannel that is required to display the routes 
          * correctly
@@ -142,13 +139,11 @@ class MainLine extends Component {
 
     /**
      * update_blocks()
-     * @brief This function is called every 0.5 Seconds and updates all the tracks blocks
+     * @summary This function is called every 0.5 Seconds and updates all the tracks blocks
      * 
-     * When this function is called it call 2 functions in the CTC controler class.
-     * 
+     * @description When this function is called it call 2 functions in the CTC controler class.
      * The first one will check find all the routes at each interlocking and set the correct
      * next block to routed, so the route can be displayed on the pannel
-     * 
      * The second will get all the trains current locations and make those blocks as occupied,
      * to show the correct location of each train on the pannel
      */
@@ -156,7 +151,7 @@ class MainLine extends Component {
         // Update All The Routes
         ctc.update_route_blocks();
         // Update All The Trains
-        ctc.test_block();
+        ctc.occupy_blocks();
         // Set the Component State
         this.setState({
             // Main Line Tracks & Symbols
@@ -174,13 +169,11 @@ class MainLine extends Component {
 
     /**
      * update_trains()
-     * @brief This function is called every 2 Seconds and updates all the Trains locations
+     * @summary This function is called every 2 Seconds and updates all the Trains locations
      * 
-     * When this function is called it will call 2 functions in the CTC controler
-     * 
+     * @description When this function is called it will call 2 functions in the CTC controler
      * The first function updates the trains allowing them to move to the next location if the
      * correct time has be spend in their current block
-     * 
      * The second function updates the interlockings showing if they are occupied or cleared if the
      * correct time has passed
      */
@@ -233,10 +226,9 @@ class MainLine extends Component {
 
     /**
      * componentDidMount()
-     * @brief ReactJS function that allows you do set the intervals for when certin functions are called
+     * @summary ReactJS function that allows you do set the intervals for when certin functions are called
      * 
-     * This function sets the intervals for each function that is called repeadely after a amount of time
-     * 
+     * @description This function sets the intervals for each function that is called repeadely after a amount of time
      * Will call the update_blocks() function every 0.5 Seconds
      * Will call the update_trains() function every 2 Seconds
      */
@@ -250,9 +242,9 @@ class MainLine extends Component {
 
     /**
      * componentWillUnmount()
-     * @brief ReactJS function that removes the intervals, this is never called in this program
+     * @summary ReactJS function that removes the intervals, this is never called in this program
      * 
-     * This function deletes the intervals that are used to update the blocks & trains
+     * @description This function deletes the intervals that are used to update the blocks & trains
      * This is never called in this program
      */
     componentWillUnmount() {
@@ -263,9 +255,9 @@ class MainLine extends Component {
 
     /**
      * render()
-     * @brief standard React function that draws all the other interlockings and track components to the screen
+     * @summary standard React function that draws all the other interlockings and track components to the screen
      * 
-     * This will draw all the components to the screen to assemble the pannel, it also passes all the function
+     * @description This will draw all the components to the screen to assemble the pannel, it also passes all the function
      * and information to each components through their properties or (props)
      */
     render() { 
@@ -522,7 +514,7 @@ class MainLine extends Component {
     /* Functions for the HX Interlocking */
     /**
      * hx_click_sig_2w1()
-     * @brief The event handler for Signal #2w-1
+     * @summary The event handler for Signal #2w-1
      */
     hx_click_sig_2w1 = () => {
         // Get the backend function for corresponding signal
@@ -538,7 +530,7 @@ class MainLine extends Component {
 
     /**
      * hx_click_sig_2w2()
-     * @brief The event handler for the Signal #2w2
+     * @summary The event handler for the Signal #2w2
      */
     hx_click_sig_2w2 = () => {
         // Get the backend function for the corresponding signal
@@ -554,7 +546,7 @@ class MainLine extends Component {
 
     /**
      * hx_click_sig_2w3()
-     * @brief The event handler for the Signal #2w3
+     * @summary The event handler for the Signal #2w3
      */
     hx_click_sig_2w3 = () => {
         // Get the backend function for the corresponding signal
@@ -570,7 +562,7 @@ class MainLine extends Component {
 
     /**
      * hx_click_sig_4w()
-     * @brief The event handler for the Signal #4w
+     * @summary The event handler for the Signal #4w
      */
     hx_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -585,7 +577,7 @@ class MainLine extends Component {
 
     /**
      * hx_click_sig_2e()
-     * @brief The event handler for the Signal 2e
+     * @summary The event handler for the Signal 2e
      */
     hx_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -602,7 +594,7 @@ class MainLine extends Component {
 
     /**
      * hx_click_sig_4e()
-     * @brief The event handler for the Signal 4e
+     * @summary The event handler for the Signal 4e
      */
     hx_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -620,7 +612,7 @@ class MainLine extends Component {
 
     /**
      * hx_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     hx_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -632,7 +624,7 @@ class MainLine extends Component {
 
     /**
      * hx_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     hx_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -644,7 +636,7 @@ class MainLine extends Component {
 
     /**
      * hx_throw_sw_5()
-     * @brief The event handler for switch #5
+     * @summary The event handler for switch #5
      */
     hx_throw_sw_5 = () => {
         // Get the backend function for the corresponding switch
@@ -659,7 +651,7 @@ class MainLine extends Component {
     /* Functions for the Pascack Junction Interlocking */
     /**
      * pascack_click_sig_2w()
-     * @brief Event handler for the signal #2w
+     * @summary Event handler for the signal #2w
      */
     pascack_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -675,7 +667,7 @@ class MainLine extends Component {
 
     /**
      * pascack_click_sig_4w()
-     * @brief Event handler for the signal #4w
+     * @summary Event handler for the signal #4w
      */
     pascack_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -691,7 +683,7 @@ class MainLine extends Component {
 
     /**
      * pascack_click_sig_2e()
-     * @brief Event handler for the signal #2e
+     * @summary Event handler for the signal #2e
      */
     pascack_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -707,7 +699,7 @@ class MainLine extends Component {
 
     /**
      * pascack_click_sig_4e()
-     * @brief Event handler for the signal #4e
+     * @summary Event handler for the signal #4e
      */
     pascack_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -723,7 +715,7 @@ class MainLine extends Component {
 
     /**
      * pascack_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     pascack_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -735,7 +727,7 @@ class MainLine extends Component {
 
     /**
      * pascack_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     pascack_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -750,7 +742,7 @@ class MainLine extends Component {
     /* Functions for the BT Interlocking */
     /**
      * bt_click_sig_2w1()
-     * @brief Event handler for the signal #2w1
+     * @summary Event handler for the signal #2w1
      */
     bt_click_sig_2w1 = () => {
         // Get the backend function for the corresponding signal
@@ -766,7 +758,7 @@ class MainLine extends Component {
 
     /**
      * bt_click_sig_2w2()
-     * @brief Event handler for the signal #2w2
+     * @summary Event handler for the signal #2w2
      */
     bt_click_sig_2w2 = () => {
         // Get the backend function for the corresponding signal
@@ -782,7 +774,7 @@ class MainLine extends Component {
 
     /**
      * bt_click_sig_4w()
-     * @brief Event handler for the signal #4
+     * @summary Event handler for the signal #4
      */
     bt_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -798,7 +790,7 @@ class MainLine extends Component {
 
     /**
      * bt_click_sig_2e()
-     * @brief Event handler for the signal #2e
+     * @summary Event handler for the signal #2e
      */
     bt_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -815,7 +807,7 @@ class MainLine extends Component {
 
     /**
      * bt_click_sig_4e()
-     * @brief Event handler for the signal #4e
+     * @summary Event handler for the signal #4e
      */
     bt_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -832,7 +824,7 @@ class MainLine extends Component {
 
     /**
      * bt_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     bt_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -844,7 +836,7 @@ class MainLine extends Component {
 
     /**
      * bt_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     bt_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -856,7 +848,7 @@ class MainLine extends Component {
 
     /**
      * bt_throw_sw_5()
-     * @brief The event handler for switch #5
+     * @summary The event handler for switch #5
      */
     bt_throw_sw_5 = () => {
         // Get the backend function for the corresponding switch
@@ -875,7 +867,7 @@ class MainLine extends Component {
     /* Functions for CP Sparrow */
     /**
      * sparrow_click_sig_2w_1()
-     * @brief The event handler for Signal #2w_1
+     * @summary The event handler for Signal #2w_1
      */
     sparrow_click_sig_2w_1 = () => {
         // Get the backend function for the corresponding signal
@@ -890,7 +882,7 @@ class MainLine extends Component {
 
     /**
      * sparrow_click_sig_2w_2()
-     * @brief The event handler for Signal #2w_2
+     * @summary The event handler for Signal #2w_2
      */
     sparrow_click_sig_2w_2 = () => {
         // Get the backend function for the corresponding signal
@@ -905,7 +897,7 @@ class MainLine extends Component {
 
     /**
      * sparrow_click_sig_2w_3()
-     * @brief The event handler for Signal #2w_3
+     * @summary The event handler for Signal #2w_3
      */
     sparrow_click_sig_2w_3 = () => {
         // Get the backend function for the corresponding signal
@@ -920,7 +912,7 @@ class MainLine extends Component {
 
     /**
      * sparrow_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     sparrow_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -937,7 +929,7 @@ class MainLine extends Component {
 
     /**
      * sparrow_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     sparrow_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -949,7 +941,7 @@ class MainLine extends Component {
 
     /**
      * sparrow_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     sparrow_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -964,7 +956,7 @@ class MainLine extends Component {
     /* Functions for CP PA */
     /**
      * pa_click_sig_2w_1()
-     * @brief The event handler for Signal #2w_1
+     * @summary The event handler for Signal #2w_1
      */
     pa_click_sig_2w_1 = () => {
         // Get the backend function for the corresponding signal
@@ -981,7 +973,7 @@ class MainLine extends Component {
 
     /**
      * pa_click_sig_2w_2()
-     * @brief The event handler for Signal #2w_2
+     * @summary The event handler for Signal #2w_2
      */
     pa_click_sig_2w_2 = () => {
         // Get the backend function for the corresponding signal
@@ -998,7 +990,7 @@ class MainLine extends Component {
 
     /**
      * pa_click_sig_4w()
-     * @brief The event handler for Signal #4w
+     * @summary The event handler for Signal #4w
      */
     pa_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -1014,7 +1006,7 @@ class MainLine extends Component {
 
     /**
      * pa_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     pa_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -1030,7 +1022,7 @@ class MainLine extends Component {
 
     /**
      * pa_click_sig_4e()
-     * @brief The event handler for Signal #4e
+     * @summary The event handler for Signal #4e
      */
     pa_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -1047,7 +1039,7 @@ class MainLine extends Component {
 
     /**
      * pa_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     pa_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -1059,7 +1051,7 @@ class MainLine extends Component {
 
     /**
      * pa_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     pa_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -1074,7 +1066,7 @@ class MainLine extends Component {
     /* Functions for CP Port */
     /**
      * pa_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     port_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -1090,7 +1082,7 @@ class MainLine extends Component {
 
     /**
      * pa_click_sig_2e_1()
-     * @brief The event handler for Signal #2e_1
+     * @summary The event handler for Signal #2e_1
      */
     port_click_sig_2e_1 = () => {
         // Get the backend function for the corresponding signal
@@ -1105,7 +1097,7 @@ class MainLine extends Component {
 
     /**
      * pa_click_sig_2e_2()
-     * @brief The event handler for Signal #2e_2
+     * @summary The event handler for Signal #2e_2
      */
     port_click_sig_2e_2 = () => {
         // Get the backend function for the corresponding signal
@@ -1120,7 +1112,7 @@ class MainLine extends Component {
 
     /**
      * port_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     port_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -1135,7 +1127,7 @@ class MainLine extends Component {
     /* Functions for CP BC */
     /**
      * bc_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     bc_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -1151,7 +1143,7 @@ class MainLine extends Component {
 
     /**
      * bc_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     bc_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -1166,7 +1158,7 @@ class MainLine extends Component {
 
     /**
      * bc_click_sig_4e()
-     * @brief The event handler for Signal #4e
+     * @summary The event handler for Signal #4e
      */
     bc_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -1181,7 +1173,7 @@ class MainLine extends Component {
 
     /**
      * bc_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     bc_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -1196,7 +1188,7 @@ class MainLine extends Component {
     /* Functions for CP OV */
     /**
      * ov_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     ov_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -1211,7 +1203,7 @@ class MainLine extends Component {
 
     /**
      * ov_click_sig_2ws()
-     * @brief The event handler for Signal #2ws
+     * @summary The event handler for Signal #2ws
      */
     ov_click_sig_2ws = () => {
         // Get the backend function for the corresponding signal
@@ -1226,7 +1218,7 @@ class MainLine extends Component {
 
     /**
      * ov_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     ov_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -1242,7 +1234,7 @@ class MainLine extends Component {
 
     /**
      * ov_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     ov_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -1257,7 +1249,7 @@ class MainLine extends Component {
     /* Functions for CP Howells */
     /**
      * howells_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     howells_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -1273,7 +1265,7 @@ class MainLine extends Component {
 
     /**
      * howells_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     howells_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -1288,7 +1280,7 @@ class MainLine extends Component {
 
     /**
      * howells_click_sig_2es()
-     * @brief The event handler for Signal #2es
+     * @summary The event handler for Signal #2es
      */
     howells_click_sig_2es = () => {
         // Get the backend function for the corresponding signal
@@ -1303,7 +1295,7 @@ class MainLine extends Component {
 
     /**
      * howells_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     howells_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -1318,7 +1310,7 @@ class MainLine extends Component {
     /* Functions for CP Hall */
     /**
      * hall_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     hall_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -1333,7 +1325,7 @@ class MainLine extends Component {
 
     /**
      * hall_click_sig_4w()
-     * @brief The event handler for Signal #4w
+     * @summary The event handler for Signal #4w
      */
     hall_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -1349,7 +1341,7 @@ class MainLine extends Component {
 
     /**
      * hall_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     hall_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -1365,7 +1357,7 @@ class MainLine extends Component {
 
     /**
      * hall_click_sig_4e()
-     * @brief The event handler for Signal #4e
+     * @summary The event handler for Signal #4e
      */
     hall_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -1380,7 +1372,7 @@ class MainLine extends Component {
 
     /**
      * hall_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     hall_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -1395,7 +1387,7 @@ class MainLine extends Component {
     /* Functions for CP Hudson Junction */
     /**
      * hudson_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     hudson_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -1411,7 +1403,7 @@ class MainLine extends Component {
 
     /**
      * hudson_click_sig_2ws()
-     * @brief The event handler for Signal #2ws
+     * @summary The event handler for Signal #2ws
      */
     hudson_click_sig_2ws = () => {
         // Get the backend function for the corresponding signal
@@ -1427,7 +1419,7 @@ class MainLine extends Component {
 
     /**
      * hudson_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     hudson_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -1443,7 +1435,7 @@ class MainLine extends Component {
 
     /**
      * hudson_click_sig_2es()
-     * @brief The event handler for Signal #2es
+     * @summary The event handler for Signal #2es
      */
     hudson_click_sig_2es = () => {
         // Get the backend function for the corresponding signal
@@ -1459,7 +1451,7 @@ class MainLine extends Component {
 
     /**
      * hudson_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     hudson_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -1471,7 +1463,7 @@ class MainLine extends Component {
 
     /**
      * hudson_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     hudson_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -1486,7 +1478,7 @@ class MainLine extends Component {
     /* Functions for CP Central Valley */
     /**
      * valley_click_sig_1w()
-     * @brief The event handler for Signal #1w
+     * @summary The event handler for Signal #1w
      */
     valley_click_sig_1w = () => {
         // Get the backend function for the corresponding signal
@@ -1501,7 +1493,7 @@ class MainLine extends Component {
 
     /**
      * valley_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     valley_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -1516,7 +1508,7 @@ class MainLine extends Component {
 
     /**
      * valley_click_sig_1e()
-     * @brief The event handler for Signal #1e
+     * @summary The event handler for Signal #1e
      */
     valley_click_sig_1e = () => {
         // Get the backend function for the corresponding signal
@@ -1532,7 +1524,7 @@ class MainLine extends Component {
 
     /**
      * valley_throw_sw_21()
-     * @brief The event handler for switch #21
+     * @summary The event handler for switch #21
      */
     valley_throw_sw_21 = () => {
         // Get the backend function for the corresponding switch
@@ -1547,7 +1539,7 @@ class MainLine extends Component {
     /* Functions for CP Harriman */
     /**
      * harriman_click_sig_1w()
-     * @brief The event handler for Signal #1w
+     * @summary The event handler for Signal #1w
      */
     harriman_click_sig_1w = () => {
         // Get the backend function for the corresponding signal
@@ -1564,7 +1556,7 @@ class MainLine extends Component {
 
     /**
      * harriman_click_sig_1e()
-     * @brief The event handler for Signal #1e
+     * @summary The event handler for Signal #1e
      */
     harriman_click_sig_1e = () => {
         // Get the backend function for the corresponding signal
@@ -1579,7 +1571,7 @@ class MainLine extends Component {
 
     /**
      * harriman_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     harriman_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -1594,7 +1586,7 @@ class MainLine extends Component {
 
     /**
      * harriman_click_sig_3e()
-     * @brief The event handler for Signal #3e
+     * @summary The event handler for Signal #3e
      */
     harriman_click_sig_3e = () => {
         // Get the backend function for the corresponding signal
@@ -1609,7 +1601,7 @@ class MainLine extends Component {
 
     /**
      * harriman_throw_sw_21()
-     * @brief The event handler for switch #21
+     * @summary The event handler for switch #21
      */
     harriman_throw_sw_21 = () => {
         // Get the backend function for the corresponding switch
@@ -1621,7 +1613,7 @@ class MainLine extends Component {
 
     /**
      * harriman_throw_sw_32()
-     * @brief The event handler for switch #32
+     * @summary The event handler for switch #32
      */
     harriman_throw_sw_32 = () => {
         // Get the backend function for the corresponding switch
@@ -1636,7 +1628,7 @@ class MainLine extends Component {
     /* Functions for CP Sterling */
     /**
      * sterling_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     sterling_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -1651,7 +1643,7 @@ class MainLine extends Component {
 
     /**
      * sterling_click_sig_2ws()
-     * @brief The event handler for Signal #2ws
+     * @summary The event handler for Signal #2ws
      */
     sterling_click_sig_2ws = () => {
         // Get the backend function for the corresponding signal
@@ -1666,7 +1658,7 @@ class MainLine extends Component {
 
     /**
      * sterling_click_sig_1e()
-     * @brief The event handler for Signal #1e
+     * @summary The event handler for Signal #1e
      */
     sterling_click_sig_1e = () => {
         // Get the backend function for the corresponding signal
@@ -1682,7 +1674,7 @@ class MainLine extends Component {
 
     /**
      * sterling_throw_sw_21()
-     * @brief The event handler for switch #21
+     * @summary The event handler for switch #21
      */
     sterling_throw_sw_21 = () => {
         // Get the backend function for the corresponding switch
@@ -1701,7 +1693,7 @@ class MainLine extends Component {
     /* Functions for Hilburn Interlocking */
     /**
      * hilburn_click_sig_2w_1()
-     * @brief The event handler for Signal #2w_1
+     * @summary The event handler for Signal #2w_1
      */
     hilburn_click_sig_2w_1 = () => {
         // Get the backend function for the corresponding signal
@@ -1716,7 +1708,7 @@ class MainLine extends Component {
 
     /**
      * hilburn_click_sig_2w_2()
-     * @brief The event handler for Signal #2w_2
+     * @summary The event handler for Signal #2w_2
      */
     hilburn_click_sig_2w_2 = () => {
         // Get the backend function for the corresponding signal
@@ -1731,7 +1723,7 @@ class MainLine extends Component {
 
     /**
      * hilburn_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     hilburn_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -1747,7 +1739,7 @@ class MainLine extends Component {
 
     /**
      * hilburn_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     hilburn_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -1762,7 +1754,7 @@ class MainLine extends Component {
     /* Functions for SF Interlocking */
     /**
      * sf_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     sf_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -1779,7 +1771,7 @@ class MainLine extends Component {
 
     /**
      * sf_click_sig_4w()
-     * @brief The event handler for Signal #4w
+     * @summary The event handler for Signal #4w
      */
     sf_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -1795,7 +1787,7 @@ class MainLine extends Component {
 
     /**
      * sf_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     sf_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -1810,7 +1802,7 @@ class MainLine extends Component {
 
     /**
      * sf_click_sig_4e_1()
-     * @brief The event handler for Signal #4e_1
+     * @summary The event handler for Signal #4e_1
      */
     sf_click_sig_4e_1 = () => {
         // Get the backend function for the corresponding signal
@@ -1826,7 +1818,7 @@ class MainLine extends Component {
 
     /**
      * sf_click_sig_4e_2()
-     * @brief The event handler for Signal #4e_2
+     * @summary The event handler for Signal #4e_2
      */
     sf_click_sig_4e_2 = () => {
         // Get the backend function for the corresponding signal
@@ -1842,7 +1834,7 @@ class MainLine extends Component {
 
     /**
      * sf_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     sf_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -1854,7 +1846,7 @@ class MainLine extends Component {
 
     /**
      * sf_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     sf_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -1869,7 +1861,7 @@ class MainLine extends Component {
     /* Functions for WC Interlocking */
     /**
      * wc_click_sig_2w_1()
-     * @brief The event handler for Signal #2w_1
+     * @summary The event handler for Signal #2w_1
      */
     wc_click_sig_2w_1 = () => {
         // Get the backend function for the corresponding signal
@@ -1886,7 +1878,7 @@ class MainLine extends Component {
 
     /**
      * wc_click_sig_2w_2()
-     * @brief The event handler for Signal #2w_2
+     * @summary The event handler for Signal #2w_2
      */
     wc_click_sig_2w_2 = () => {
         // Get the backend function for the corresponding signal
@@ -1903,7 +1895,7 @@ class MainLine extends Component {
 
     /**
      * wc_click_sig_4w()
-     * @brief The event handler for Signal #4w
+     * @summary The event handler for Signal #4w
      */
     wc_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -1920,7 +1912,7 @@ class MainLine extends Component {
 
     /**
      * wc_click_sig_2e_1()
-     * @brief The event handler for Signal #2e_1
+     * @summary The event handler for Signal #2e_1
      */
     wc_click_sig_2e_1 = () => {
         // Get the backend function for the corresponding signal
@@ -1937,7 +1929,7 @@ class MainLine extends Component {
 
     /**
      * wc_click_sig_2e_2()
-     * @brief The event handler for Signal #2e_2
+     * @summary The event handler for Signal #2e_2
      */
     wc_click_sig_2e_2 = () => {
         // Get the backend function for the corresponding signal
@@ -1954,7 +1946,7 @@ class MainLine extends Component {
 
     /**
      * wc_click_sig_4e()
-     * @brief The event handler for Signal #4e
+     * @summary The event handler for Signal #4e
      */
     wc_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -1971,7 +1963,7 @@ class MainLine extends Component {
 
     /**
      * wc_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     wc_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -1983,7 +1975,7 @@ class MainLine extends Component {
 
     /**
      * wc_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     wc_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -1995,7 +1987,7 @@ class MainLine extends Component {
 
     /**
      * wc_throw_sw_5()
-     * @brief The event handler for switch #5
+     * @summary The event handler for switch #5
      */
     wc_throw_sw_5 = () => {
         // Get the backend function for the corresponding switch
@@ -2007,7 +1999,7 @@ class MainLine extends Component {
 
     /**
      * wc_throw_sw_7()
-     * @brief The event handler for switch #7
+     * @summary The event handler for switch #7
      */
     wc_throw_sw_7 = () => {
         // Get the backend function for the corresponding switch
@@ -2022,7 +2014,7 @@ class MainLine extends Component {
     /* Functions for Ridgewood Junction Interlocking */
     /**
      * ridgewood_click_sig_2w_1()
-     * @brief The event handler for Signal #2w_1
+     * @summary The event handler for Signal #2w_1
      */
     ridgewood_click_sig_2w_1 = () => {
         // Get the backend function for the corresponding signal
@@ -2039,7 +2031,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_click_sig_2w_2()
-     * @brief The event handler for Signal #2w_2
+     * @summary The event handler for Signal #2w_2
      */
     ridgewood_click_sig_2w_2 = () => {
         // Get the backend function for the corresponding signal
@@ -2056,7 +2048,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_click_sig_4w()
-     * @brief The event handler for Signal #4w
+     * @summary The event handler for Signal #4w
      */
     ridgewood_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -2073,7 +2065,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_click_sig_6w()
-     * @brief The event handler for Signal #6w
+     * @summary The event handler for Signal #6w
      */
     ridgewood_click_sig_6w = () => {
         // Get the backend function for the corresponding signal
@@ -2090,7 +2082,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     ridgewood_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -2108,7 +2100,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_click_sig_4e()
-     * @brief The event handler for Signal #4e
+     * @summary The event handler for Signal #4e
      */
     ridgewood_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -2126,7 +2118,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_click_sig_6e()
-     * @brief The event handler for Signal #6e
+     * @summary The event handler for Signal #6e
      */
     ridgewood_click_sig_6e = () => {
         // Get the backend function for the corresponding signal
@@ -2144,7 +2136,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     ridgewood_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -2156,7 +2148,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     ridgewood_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -2168,7 +2160,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_throw_sw_5()
-     * @brief The event handler for switch #5
+     * @summary The event handler for switch #5
      */
     ridgewood_throw_sw_5 = () => {
         // Get the backend function for the corresponding switch
@@ -2180,7 +2172,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_throw_sw_7()
-     * @brief The event handler for switch #7
+     * @summary The event handler for switch #7
      */
     ridgewood_throw_sw_7 = () => {
         // Get the backend function for the corresponding switch
@@ -2192,7 +2184,7 @@ class MainLine extends Component {
 
     /**
      * ridgewood_throw_sw_9()
-     * @brief The event handler for switch #9
+     * @summary The event handler for switch #9
      */
     ridgewood_throw_sw_9 = () => {
         // Get the backend function for the corresponding switch
@@ -2207,7 +2199,7 @@ class MainLine extends Component {
     /* Functions for Suscon Interlocking */
     /**
      * suscon_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     suscon_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -2224,7 +2216,7 @@ class MainLine extends Component {
 
     /**
      * suscon_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     suscon_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -2241,7 +2233,7 @@ class MainLine extends Component {
 
     /**
      * suscon_click_sig_4w()
-     * @brief The event handler for Signal #4w
+     * @summary The event handler for Signal #4w
      */
     suscon_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -2258,7 +2250,7 @@ class MainLine extends Component {
 
     /**
      * suscon_click_sig_4e()
-     * @brief The event handler for Signal #4e
+     * @summary The event handler for Signal #4e
      */
     suscon_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -2275,7 +2267,7 @@ class MainLine extends Component {
 
     /**
      * suscon_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     suscon_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -2287,7 +2279,7 @@ class MainLine extends Component {
 
     /**
      * suscon_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     suscon_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -2302,7 +2294,7 @@ class MainLine extends Component {
     /* Functions for Mill Interlocking */
     /**
      * mill_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     mill_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -2319,7 +2311,7 @@ class MainLine extends Component {
 
     /**
      * mill_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     mill_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -2336,7 +2328,7 @@ class MainLine extends Component {
 
     /**
      * mill_click_sig_4w()
-     * @brief The event handler for Signal #4w
+     * @summary The event handler for Signal #4w
      */
     mill_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -2353,7 +2345,7 @@ class MainLine extends Component {
 
     /**
      * mill_click_sig_4e()
-     * @brief The event handler for Signal #4e
+     * @summary The event handler for Signal #4e
      */
     mill_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -2370,7 +2362,7 @@ class MainLine extends Component {
 
     /**
      * mill_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     mill_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -2382,7 +2374,7 @@ class MainLine extends Component {
 
     /**
      * mill_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     mill_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -2397,7 +2389,7 @@ class MainLine extends Component {
     /* Functions for West Secaucus Interlocking */
     /**
      * westSecaucus_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     westSecaucus_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -2414,7 +2406,7 @@ class MainLine extends Component {
 
     /**
      * westSecaucus_click_sig_2e()
-     * @brief The event handler for Signal #2e
+     * @summary The event handler for Signal #2e
      */
     westSecaucus_click_sig_2e = () => {
         // Get the backend function for the corresponding signal
@@ -2431,7 +2423,7 @@ class MainLine extends Component {
 
     /**
      * westSecaucus_click_sig_4w()
-     * @brief The event handler for Signal #4w
+     * @summary The event handler for Signal #4w
      */
     westSecaucus_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -2448,7 +2440,7 @@ class MainLine extends Component {
 
     /**
      * westSecaucus_click_sig_4e()
-     * @brief The event handler for Signal #4e
+     * @summary The event handler for Signal #4e
      */
     westSecaucus_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -2465,7 +2457,7 @@ class MainLine extends Component {
 
     /**
      * westSecaucus_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     westSecaucus_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -2477,7 +2469,7 @@ class MainLine extends Component {
 
     /**
      * westSecaucus_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     westSecaucus_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -2492,7 +2484,7 @@ class MainLine extends Component {
     /* Functions for Laurel Interlocking */
     /**
      * laurel_click_sig_2w()
-     * @brief The event handler for Signal #2w
+     * @summary The event handler for Signal #2w
      */
     laurel_click_sig_2w = () => {
         // Get the backend function for the corresponding signal
@@ -2509,7 +2501,7 @@ class MainLine extends Component {
 
     /**
      * laurel_click_sig_4w()
-     * @brief The event handler for Signal #4w
+     * @summary The event handler for Signal #4w
      */
     laurel_click_sig_4w = () => {
         // Get the backend function for the corresponding signal
@@ -2526,7 +2518,7 @@ class MainLine extends Component {
 
     /**
      * laurel_click_sig_8w()
-     * @brief The event handler for Signal #8w
+     * @summary The event handler for Signal #8w
      */
     laurel_click_sig_8w = () => {
         // Get the backend function for the corresponding signal
@@ -2544,7 +2536,7 @@ class MainLine extends Component {
 
     /**
      * laurel_click_sig_10w()
-     * @brief The event handler for Signal #10w
+     * @summary The event handler for Signal #10w
      */
     laurel_click_sig_10w = () => {
         // Get the backend function for the corresponding signal
@@ -2561,7 +2553,7 @@ class MainLine extends Component {
 
     /**
      * laurel_click_sig_6e()
-     * @brief The event handler for Signal #6e
+     * @summary The event handler for Signal #6e
      */
     laurel_click_sig_6e = () => {
         // Get the backend function for the corresponding signal
@@ -2579,7 +2571,7 @@ class MainLine extends Component {
 
     /**
      * laurel_click_sig_12e()
-     * @brief The event handler for Signal #12e
+     * @summary The event handler for Signal #12e
      */
     laurel_click_sig_12e = () => {
         // Get the backend function for the corresponding signal
@@ -2597,7 +2589,7 @@ class MainLine extends Component {
 
     /**
      * laurel_click_sig_4e()
-     * @brief The event handler for Signal #4e
+     * @summary The event handler for Signal #4e
      */
     laurel_click_sig_4e = () => {
         // Get the backend function for the corresponding signal
@@ -2615,7 +2607,7 @@ class MainLine extends Component {
 
     /**
      * laurel_click_sig_8e()
-     * @brief The event handler for Signal #8e
+     * @summary The event handler for Signal #8e
      */
     laurel_click_sig_8e = () => {
         // Get the backend function for the corresponding signal
@@ -2630,7 +2622,7 @@ class MainLine extends Component {
 
     /**
      * laurel_throw_sw_1()
-     * @brief The event handler for switch #1
+     * @summary The event handler for switch #1
      */
     laurel_throw_sw_1 = () => {
         // Get the backend function for the corresponding switch
@@ -2642,7 +2634,7 @@ class MainLine extends Component {
 
     /**
      * laurel_throw_sw_3()
-     * @brief The event handler for switch #3
+     * @summary The event handler for switch #3
      */
     laurel_throw_sw_3 = () => {
         // Get the backend function for the corresponding switch
@@ -2654,7 +2646,7 @@ class MainLine extends Component {
 
     /**
      * laurel_throw_sw_7()
-     * @brief The event handler for switch #7
+     * @summary The event handler for switch #7
      */
     laurel_throw_sw_7 = () => {
         // Get the backend function for the corresponding switch
@@ -2666,7 +2658,7 @@ class MainLine extends Component {
 
     /**
      * laurel_throw_sw_11()
-     * @brief The event handler for switch #11
+     * @summary The event handler for switch #11
      */
     laurel_throw_sw_11 = () => {
         // Get the backend function for the corresponding switch
@@ -2678,7 +2670,7 @@ class MainLine extends Component {
 
     /**
      * laurel_throw_sw_13()
-     * @brief The event handler for switch #13
+     * @summary The event handler for switch #13
      */
     laurel_throw_sw_13 = () => {
         // Get the backend function for the corresponding switch

@@ -2,7 +2,7 @@
  * @file SouthernTierTracks.jsx
  * @author Joey Damico
  * @date September 25, 2019
- * @brief React JSX Component Class that is for The Tracks of the Southern Tier
+ * @summary React JSX Component Class that is for The Tracks of the Southern Tier
  *
  * Extends the React Component Class and is the UI part of the Southern Tier Tracks,
  * this class controls all the drawings of routes, and also gives a visual reprenstation
@@ -16,8 +16,7 @@ import '../../../css/Southern_Tier_Line/southernTier.css';
 
 
 /**
- * CLASS SouthernTierTracks
- * @brief The React JSX Component Class for the Tracks in the Southern Tier portion
+ * The React JSX Component Class for the Tracks in the Southern Tier portion
  * 
  * This class is a JSX React Component for the Southern Tier Tracks, this will control all the UI for the comonent,
  * showing what blocks are occupied by a train
@@ -25,7 +24,7 @@ import '../../../css/Southern_Tier_Line/southernTier.css';
 class SouthernTierTracks extends Component {
     /**
      * State
-     * @brief Object that holds the state or status information for the component
+     * @summary Object that holds the state or status information for the component
      * 
      * This object holds all the information for the tracks that is required to display the routes 
      * correctly
@@ -95,7 +94,7 @@ class SouthernTierTracks extends Component {
 
     /**
      * componentWillReceiveProps()
-     * @brief Function that updates the state of the component
+     * @summary Function that updates the state of the component
      * 
      * The data that is being changed is passed down from the CTC classes in the simulation backend
      * 
@@ -169,7 +168,7 @@ class SouthernTierTracks extends Component {
     
     /**
      * render()
-     * @brief standard React function that draws the interlocking to the screen
+     * @summary standard React function that draws the interlocking to the screen
      */
     render() { 
 

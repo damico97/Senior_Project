@@ -2,7 +2,7 @@
  * @file ctc_pascack.js
  * @author Joey Damico
  * @date September 25, 2019
- * @brief CTC Controller Class for the Pascack Junction Interlocking
+ * @summary CTC Controller Class for the Pascack Junction Interlocking
  */
 
 // Color Constants For Drawing Routes
@@ -12,40 +12,37 @@ const Occupied = '#eb3323';
 
 
 /**
- * CLASS CTC_Pascack
- * @brief Class is the Backend for the Pascack Junction Interlocking
- * 
- * @details This class is what controlls the Pascack Junction Interlocking, it is sort of like a backen, but is
- * the controller, this is what makes all the train movements possible, and the ReactJS Component class
+ * Class is the Backend for the Pascack Junction Interlocking This class is what controlls the Pascack Junction Interlocking, 
+ * it is sort of like a backen, but is the controller, this is what makes all the train movements possible, and the ReactJS Component class
  * gets information from this class to display the correct status of the interlocking on the screen
  * 
  * MEMBER VARIABLES
- * sw_1 -> Bool if Switch #1 is Reveresed or Not
- * sw_3 -> Bool if Switch #3 is Reveresed or Not
+ * @member sw_1 -> Bool if Switch #1 is Reveresed or Not
+ * @member sw_3 -> Bool if Switch #3 is Reveresed or Not
  * 
- * sig_2w -> Bool if Signal #2w is Lined or Not
- * sig_4w -> Bool if Signal #4w is Lined or Not
- * sig_2e -> Bool if Signal #2e is Lined or Not
- * sig_4e -> Bool if Signal #4e is Lined or Not
+ * @member sig_2w -> Bool if Signal #2w is Lined or Not
+ * @member sig_4w -> Bool if Signal #4w is Lined or Not
+ * @member sig_2e -> Bool if Signal #2e is Lined or Not
+ * @member sig_4e -> Bool if Signal #4e is Lined or Not
  * 
- * route_w_trk_1 = The west bound route for track #1
- * route_w_trk_2 = The west bound route for track #2
- * route_e_trk_1 = The east bound route for track #1
- * route_e_trk_2 = The east bound route for track #2
+ * @member route_w_trk_1 = The west bound route for track #1
+ * @member route_w_trk_2 = The west bound route for track #2
+ * @member route_e_trk_1 = The east bound route for track #1
+ * @member route_e_trk_2 = The east bound route for track #2
  * 
- * routed_trk_1 = Bool if track #1 is routed or not
- * routed_trk_2 = Bool if track #2 is routed or not
- * trk_1_time = The time track #1 was occupied, used to know when to clear the route
- * trk_2_time = The time track #2 was occupied, used to know when to clear the route
- * trk_1_occupied = Bool if track #1 is occupied or not
- * trk_2_occupied = Bool if track #2 is occupied or not
+ * @member routed_trk_1 = Bool if track #1 is routed or not
+ * @member routed_trk_2 = Bool if track #2 is routed or not
+ * @member trk_1_time = The time track #1 was occupied, used to know when to clear the route
+ * @member trk_2_time = The time track #2 was occupied, used to know when to clear the route
+ * @member trk_1_occupied = Bool if track #1 is occupied or not
+ * @member trk_2_occupied = Bool if track #2 is occupied or not
  */
 class CTC_Pascack {
     /**
      * constructor()
-     * @brief The constructor for the CTC_BT class
+     * @summary The constructor for the CTC_BT class
      * 
-     * @details This will initialize all the member variables when the program is started
+     * @description This will initialize all the member variables when the program is started
      */
     constructor() {
         // Bools for the switches
@@ -73,7 +70,7 @@ class CTC_Pascack {
 
     /**
      * get_train_route()
-     * @brief Returns the route for the train at a given track
+     * @summary Returns the route for the train at a given track
      * 
      * @param direction, The direction the train is moving
      * @param track, The Track number of the train 
@@ -100,9 +97,9 @@ class CTC_Pascack {
 
     /**
      * click_sig_2w()
-     * @brief the function that is called when clicking the signal, creates a route
+     * @summary the function that is called when clicking the signal, creates a route
      * 
-     * @details When the function is called it will determine if a route can be created, 
+     * @description When the function is called it will determine if a route can be created, 
      * and if so what the route is and sets it based off of the switch status
      * 
      * @param next_block_1, The next block on Track #1
@@ -149,9 +146,9 @@ class CTC_Pascack {
 
     /**
      * click_sig_4w()
-     * @brief the function that is called when clicking the signal, creates a route
+     * @summary the function that is called when clicking the signal, creates a route
      * 
-     * @details When the function is called it will determine if a route can be created, 
+     * @description When the function is called it will determine if a route can be created, 
      * and if so what the route is and sets it based off of the switch status
      * 
      * @param next_block_1, The next block on Track #1
@@ -198,9 +195,9 @@ class CTC_Pascack {
 
     /**
      * click_sig_2e()
-     * @brief the function that is called when clicking the signal, creates a route
+     * @summary the function that is called when clicking the signal, creates a route
      * 
-     * @details When the function is called it will determine if a route can be created, 
+     * @description When the function is called it will determine if a route can be created, 
      * and if so what the route is and sets it based off of the switch status
      * 
      * @param next_block_1, The next block on Track #1
@@ -247,9 +244,9 @@ class CTC_Pascack {
 
     /**
      * click_sig_4e()
-     * @brief the function that is called when clicking the signal, creates a route
+     * @summary the function that is called when clicking the signal, creates a route
      * 
-     * @details When the function is called it will determine if a route can be created, 
+     * @description When the function is called it will determine if a route can be created, 
      * and if so what the route is and sets it based off of the switch status
      * 
      * @param next_block_1, The next block on Track #1
@@ -296,7 +293,7 @@ class CTC_Pascack {
 
     /**
      * set_trk_1_occupied()
-     * @brief Sets track #1 as occupied
+     * @summary Sets track #1 as occupied
      * 
      * @param n_state, The new state of the track
      * This was used to test, and never removed passing the state as a paramemter, which is not needed anymore
@@ -315,7 +312,7 @@ class CTC_Pascack {
 
     /**
      * set_trk_2_occupied()
-     * @brief Sets track #1 as occupied
+     * @summary Sets track #1 as occupied
      * 
      * @param n_state, The new state of the track
      * This was used to test, and never removed passing the state as a paramemter, which is not needed anymore
@@ -334,9 +331,9 @@ class CTC_Pascack {
 
     /**
      * can_clear()
-     * @brief Checks if a track could be cleared, meaning a train is no longer in the interlocking
+     * @summary Checks if a track could be cleared, meaning a train is no longer in the interlocking
      * 
-     * @details Check both track if a train has been in the interlocking for more then 4 seconds, if so it
+     * @description Check both track if a train has been in the interlocking for more then 4 seconds, if so it
      * clears that track
      */
     can_clear() {
@@ -373,7 +370,7 @@ class CTC_Pascack {
 
     /**
      * throw_sw_1()
-     * @brief Changes the current state of switch #1, used when user clicks the switch
+     * @summary Changes the current state of switch #1, used when user clicks the switch
      */
     throw_sw_1() {
         if (this.sw_1 === false) {
@@ -387,7 +384,7 @@ class CTC_Pascack {
 
     /**
      * throw_sw_3()
-     * @brief Changes the current state of switch #3, used when user clicks the switch
+     * @summary Changes the current state of switch #3, used when user clicks the switch
      */
     throw_sw_3() {
         if (this.sw_3 === false) {
@@ -401,7 +398,7 @@ class CTC_Pascack {
     
     /**
      * get_routes()
-     * @brief Gets all the routes from the interlocking
+     * @summary Gets all the routes from the interlocking
      * 
      * @returns An Array holding every route variable from the interlocking
      */
@@ -417,9 +414,9 @@ class CTC_Pascack {
 
     /**
      * get_interlocking_status()
-     * @brief returns the status of the interlocking that would be needed by the ReactJS Components
+     * @summary returns the status of the interlocking that would be needed by the ReactJS Components
      * 
-     * @details All the information that is returned here is what is needed by the ReactJS Component 
+     * @description All the information that is returned here is what is needed by the ReactJS Component 
      * for the interlocking that is need to draw the interlocking to the screen
      * 
      * @returns Object with the status of the interlocking

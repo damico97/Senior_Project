@@ -2,9 +2,9 @@
  * @file Hilburn.jsx
  * @author Joey Damico
  * @date September 25, 2019
- * @brief React JSX Component Class that is for Hilburn Interlocking
+ * @summary React JSX Component Class that is for Hilburn Interlocking
  *
- * Extends the React Component Class and is the UI part of the Hilburn Interlocking,
+ * @description Extends the React Component Class and is the UI part of the Hilburn Interlocking,
  * this class controls all the drawings of routes, and also gives a visual reprenstation
  * of that status of the interlocking
  */
@@ -38,9 +38,7 @@ const Red = '#eb3323';
 
 
 /**
- * CLASS Hilburn
- * @brief The React JSX Component Class for the Hilburn Interlocking
- * 
+ * The React JSX Component Class for the Hilburn Interlocking
  * This class is a JSX React Component for the Hilburn Interlocking, this will control all the UI for the component,
  * and the click events that will pass reference between the backend and the user. This also controls drawing the 
  * route drawings to show if a route(s) is setup in the interlocking or if the route is occupied
@@ -48,12 +46,10 @@ const Red = '#eb3323';
 class Hilburn extends Component {
     /**
      * State
-     * @brief Object that holds the state or status information for the component
+     * @summary Object that holds the state or status information for the component
      * 
-     * This object holds all the information for the interlocking that is required to display the routes 
-     * correctly
-     * 
-     * Anything that has "this.props." is passed down from the CTC interlocking class
+     * @description This object holds all the information for the interlocking that is required to display the routes 
+     * correctly Anything that has "this.props." is passed down from the CTC interlocking class
      */
     state = {  
         // Switch Status
@@ -75,9 +71,9 @@ class Hilburn extends Component {
 
     /**
      * componentWillReceiveProps()
-     * @brief Function that updates the state of the component
+     * @summary Function that updates the state of the component
      * 
-     * The data that is being changed is passed down from the CTC classes in the simulation backend
+     * @description The data that is being changed is passed down from the CTC classes in the simulation backend
      * 
      * @param nextProps, the new data to set the component state too
      */
@@ -92,7 +88,7 @@ class Hilburn extends Component {
 
     /**
      * render()
-     * @brief standard React function that draws the interlocking to the screen
+     * @summary standard React function that draws the interlocking to the screen
      */
     render() { 
         // Clear all the drawings from the interlocking so if a train clears the route is gone
@@ -125,9 +121,9 @@ class Hilburn extends Component {
     // ---- END render() ----
 
     /**
-     * @brief Sets the drawing for the route through the interlocking
+     * @summary Sets the drawing for the route through the interlocking
      * 
-     * Function takes what routes are currently set in the Interlocking class and displays that route in the UI, the drawing
+     * @description Function takes what routes are currently set in the Interlocking class and displays that route in the UI, the drawing
      * will change depending on if the interlocking is occupied or not
      */
     set_route_drawings() {
@@ -220,7 +216,7 @@ class Hilburn extends Component {
 
     /**
      * set_switch_img()
-     * @brief Changes image sources for the switches, depending on switch status
+     * @summary Changes image sources for the switches, depending on switch status
      * 
      * This function uses the data passed in through status from the CTC classes and 
      * shows if the switches are reversed or not on the screen, by changing the image
@@ -240,9 +236,9 @@ class Hilburn extends Component {
     // ---- END set_switch_img() ----
 
     /**
-     * @brief Function to reset the signal images and track colors
+     * @summary Function to reset the signal images and track colors
      * 
-     * This function is need, because if the player was to remove a route,
+     * @description This function is need, because if the player was to remove a route,
      * or when the train clears the interlocking nothing will clear the route
      * the is displaying on the screen, even if it's gone in the backend
      */

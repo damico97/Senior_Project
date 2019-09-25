@@ -2,7 +2,7 @@
  * @file WestSecaucus.jsx
  * @author Joey Damico
  * @date September 25, 2019
- * @brief React JSX Component Class that is for West Secaucus Interlocking
+ * @summary React JSX Component Class that is for West Secaucus Interlocking
  *
  * Extends the React Component Class and is the UI part of the West Secaucus Interlocking,
  * this class controls all the drawings of routes, and also gives a visual reprenstation
@@ -45,8 +45,7 @@ const Occupied = '#eb3323';
 
 
 /**
- * CLASS West Secaucus
- * @brief The React JSX Component Class for the West Secaucus Interlocking
+ * The React JSX Component Class for the West Secaucus Interlocking
  * 
  * This class is a JSX React Component for the West Secaucus Interlocking, this will control all the UI for the comonent,
  * and the click events that will pass reference between the backend and the user. This also controls drawing the 
@@ -55,7 +54,7 @@ const Occupied = '#eb3323';
 class WestSecaucus extends Component {
     /**
      * State
-     * @brief Object that holds the state or status information for the component
+     * @summary Object that holds the state or status information for the component
      * 
      * This object holds all the information for the interlocking that is required to display the routes 
      * correctly
@@ -86,7 +85,7 @@ class WestSecaucus extends Component {
 
     /**
      * componentWillReceiveProps()
-     * @brief Function that updates the state of the component
+     * @summary Function that updates the state of the component
      * 
      * The data that is being changed is passed down from the CTC classes in the simulation backend
      * 
@@ -113,7 +112,7 @@ class WestSecaucus extends Component {
 
     /**
      * render()
-     * @brief standard React function that draws the interlocking to the screen
+     * @summary standard React function that draws the interlocking to the screen
      */
     render() { 
         // Set the switch images based off the state of each crossover
@@ -148,7 +147,7 @@ class WestSecaucus extends Component {
     // ---- END render() ----
 
     /**
-     * @brief Sets the drawing for the route through the interlocking
+     * @summary Sets the drawing for the route through the interlocking
      * 
      * Function takes what routes are currently set in the Interlocking class and displays that route in the UI, the drawing
      * will change depending on if the interlocking is occupied or not
@@ -345,7 +344,7 @@ class WestSecaucus extends Component {
 
     /**
      * set_switch_img()
-     * @brief Changes image sources for the switches, depending on switch status
+     * @summary Changes image sources for the switches, depending on switch status
      * 
      * This function uses the data passed in through status from the CTC classes and 
      * shows if the switches are reversed or not on the screen, by changing the image

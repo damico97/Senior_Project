@@ -1,5 +1,14 @@
-import Clock from '../Trains/clock.js';
+/**
+ * @file mainLine_ctc.js
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @summary CTC Controller that uses all the other CTC classes and controlls basically the entire game
+ */
 
+
+// Import my custom clock class
+import Clock from '../Trains/clock.js';
+// Import the block class, that is a piece of track
 import CTC_Block from '../CTC/ctc_block.js';
 
 // Southern Tier Interlockings
@@ -31,9 +40,46 @@ import CTC_Pascack from '../Interlockings/Bergen_Line/ctc_pascack.js';
 import CTC_HX from '../Interlockings/Bergen_Line/ctc_hx.js';
 
 
+/**
+ * Class that runs the entire railroad, and the routes and train movements. Controlls updating all the blocks and trains, and routes. 
+ * It really is the engine behind everything in the simulation.
+ *   
+ * @member game_clock -> Clock class to keep track of time in the simulation  
+ *   
+ * @member train_list -> An array that holds all the trains that are on the railroad  
+ *   
+ * @member interlocking_sparrow -> The CTC class for CP Sparrow  
+ * @member interlocking_pa -> The CTC class for CP PA  
+ * @member interlocking_port -> The CTC class for CP Port  
+ * @member interlocking_bc -> The CTC class for CP BC  
+ * @member interlocking_ov -> The CTC class for CP OV  
+ * @member interlocking_howells -> The CTC class for CP Howells  
+ * @member interlocking_hall -> The CTC class for CP Hall  
+ * @member interlocking_hudson -> The CTC class for CP Hudson Junction  
+ * @member interlocking_valley -> The CTC class for CP Central Valley  
+ * @member interlocking_harriman -> The CTC class for CP Harriman  
+ * @member interlocking_sterling -> The CTC class for CP Sterling  
+ *   
+ * @member interlocking_hilburn -> The CTC class for the Hilburn Interlocking  
+ * @member interlocking_sf -> The CTC class for the SF Interlocking  
+ * @member interlocking_wc -> The CTC class for the WC Interlocking  
+ * @member interlocking_ridgewood -> The CTC class for the Ridgewood Junction Interlocking  
+ * @member interlocking_suscon -> The CTC class for the Suscon Interlocking  
+ * @member interlocking_mill -> The CTC class for the Mill Interlocking  
+ * @member interlocking_westSecacus -> The CTC class for the West Secacus Interlocking  
+ *   
+ * @member interlocking_bt -> The CTC class for the BT Interlocking  
+ * @member interlocking_pascack -> THE CTC class for Pascack Junction Interlocking  
+ * @member interlocking_hx -> The CTC class for HX Interlocking  
+ *   
+ * @member blocks_mainLine -> An object that holds all the Block classes for the railroad  
+ */
 class MainLine_CTC {
     /**
+     * constructor()
+     * @summary The constructor for the Clock class
      * 
+     * @details This will initialize all the member variables when the program is started
      */
     constructor() {
         this.game_clock = new Clock();
@@ -155,12 +201,14 @@ class MainLine_CTC {
             block_hx_croxton_2: new CTC_Block("2_hx_croxton", 8)
         };
     }
-
+    // ---- END constructor() ----
 
     /**
-     *  
+     *  update_route_blocks()
+     * @summary Gets all the routes from each interlocking and sets the accoriding blocks
      */
     update_route_blocks() {
+        // Reset All The Blocks
         this.reset_route_mainLine_blocks();
 
         let routes = [];
@@ -204,12 +252,14 @@ class MainLine_CTC {
             }
         }
     }
+    // ---- END update_route_blocks() ----
     
     /**
-     *  
+     * updates_trains() 
+     * @summary Goes through all the trains in the list and updates their location if they're capable of doing so 
      */
     update_trains() {
-        console.log(this.train_list);
+        // Loop through all the trains
         for (let i = 0; i < this.train_list.length; i++) {
             if (this.train_list[i].can_update_location()) {
                 let new_route = this.get_interlocking_route(this.train_list[i].get_location(), this.train_list[i].get_direction());
@@ -239,7 +289,7 @@ class MainLine_CTC {
                         let cp = this.train_list[i].get_location();
                         cp = cp.substr(cp.indexOf("_") + 1, cp.lastIndexOf("_") - 2);
                         //console.log(cp_trk, cp);
-                        this.set_occupy_interlocking(true, cp_trk, cp);
+                        this.set_occupy_interlocking(cp_trk, cp);
 
                         // Occupy the Next Block
                         let block = new_route.substr(10, new_route.size);
@@ -252,7 +302,7 @@ class MainLine_CTC {
                         let cp = this.train_list[i].get_location();
                         cp = cp.substr(cp.lastIndexOf("_") + 1, cp.size);
                         console.log(cp_trk, cp);
-                        this.set_occupy_interlocking(true, cp_trk, cp);
+                        this.set_occupy_interlocking(cp_trk, cp);
 
                         // Occupy the Next Block
                         let block = new_route.substr(10, new_route.size);
@@ -264,15 +314,19 @@ class MainLine_CTC {
             }
         }
     }
+    // ---- END update_trains() ----
 
     /**
-     * 
+     * update_interlockings()
+     * @summary Goes through to see if each interlocking can have a train clear if it's occupied
      */
     update_interlockings() {
+        // Bergen County Line
         this.interlocking_hx.can_clear();
         this.interlocking_pascack.can_clear();
         this.interlocking_bt.can_clear();
 
+        // Main Line
         this.interlocking_laurel.can_clear();
         this.interlocking_westSecaucus.can_clear();
         this.interlocking_mill.can_clear();
@@ -282,6 +336,7 @@ class MainLine_CTC {
         this.interlocking_sf.can_clear();
         this.interlocking_hilburn.can_clear();
 
+        // Southern Tier Line
         this.interlocking_sterling.can_clear();
         this.interlocking_harriman.can_clear();
         this.interlocking_valley.can_clear();
@@ -294,179 +349,270 @@ class MainLine_CTC {
         this.interlocking_pa.can_clear();
         this.interlocking_sparrow.can_clear();
     }
+    // ---- END update_interlockings() ----
 
     /**
+     * get_sparrow()
+     * @summary Gets reference to the CP Sparrow Interlocking
      * 
+     * @returns Reference to the CP Sparrow Interlocking
      */
     get_sparrow() {
         return this.interlocking_sparrow;
     }
+    // ---- END get_sparrow() ----
 
     /**
+     * get_pa()
+     * @summary Gets reference to the CP PA Interlocking
      * 
+     * @returns Reference to the CP PA Interlocking
      */
     get_pa() {
         return this.interlocking_pa;
     }
+    // ---- END get_pa() ----
 
     /**
+     * get_port()
+     * @summary Gets reference to the CP Port Interlocking
      * 
+     * @returns Reference to the CP Port Interlocking
      */
     get_port() {
         return this.interlocking_port;
     }
+    // ---- END get_port() ----
 
     /**
+     * get_bc()
+     * @summary Gets reference to the CP BC Interlocking
      * 
+     * @returns Reference to the CP BC Interlocking
      */
     get_bc() {
         return this.interlocking_bc;
     }
+    // ---- END get_bc() ----
 
     /**
+     * get_ov()
+     * @summary Gets reference to the CP OV Interlocking
      * 
+     * @returns Reference to the CP OV Interlocking
      */
     get_ov() {
         return this.interlocking_ov;
     }
+    // ---- END get_ov() ----
 
     /**
+     * get_howells()
+     * @summary Gets reference to the CP Howells Interlocking
      * 
+     * @returns Reference to the CP Howells Interlocking
      */
     get_howells() {
         return this.interlocking_howells;
     }
+    // ---- END get_howells() ----
 
     /**
+     * get_hall()
+     * @summary Gets reference to the CP Hall Interlocking
      * 
+     * @returns Reference to the CP Hall Interlocking
      */
     get_hall() {
         return this.interlocking_hall;
     }
+    // ---- END get_hall() ----
 
     /**
+     * get_hudson()
+     * @summary Gets reference to the CP Hudson Junction Interlocking
      * 
+     * @returns Reference to the CP Hudson Junction Interlocking
      */
     get_hudson() {
         return this.interlocking_hudson;
     }
+    // ---- END get_hudson() ----
 
     /**
+     * get_valley()
+     * @summary Gets reference to the CP Central Valley Interlocking
      * 
+     * @returns Reference to the CP Central Valley Interlocking
      */
     get_valley() {
         return this.interlocking_valley;
     }
+    // ---- END get_valley() ----
 
     /**
-     *
+     * get_harriman()
+     * @summary Gets reference to the CP Harriman Interlocking
+     * 
+     * @returns Reference to the CP Harriman Interlocking
      */
     get_harriman() {
         return this.interlocking_harriman;
     }
+    // ---- END get_harriman() ----
 
     /**
+     * get_sterling()
+     * @summary Gets reference to the CP Sterling Interlocking
      * 
+     * @returns Reference to the CP Sterling Interlocking
      */
     get_sterling() {
         return this.interlocking_sterling;
     }
+    // ---- END get_sterling() ----
 
     /**
+     * get_hilburn()
+     * @summary Gets reference to the Hilburn Interlocking
      * 
+     * @returns Reference to the Hilburn Interlocking
      */
     get_hilburn() {
         return this.interlocking_hilburn;
     }
+    // ---- END get_hilburn() ----
 
     /**
+     * get_sf()
+     * @summary Gets reference to the SF Interlocking
      * 
+     * @returns Reference to the SF Interlocking
      */
     get_sf() {
         return this.interlocking_sf;
     }
+    // ---- END get_sf() ----
 
     /**
+     * get_wc()
+     * @summary Gets reference to the WC Interlocking
      * 
+     * @returns Reference to the WC Interlocking
      */
     get_wc() {
         return this.interlocking_wc;
     }
+    // ---- END get_wc() ----
 
     /**
+     * get_ridgewood()
+     * @summary Gets reference to the Ridgewood Junction Interlocking
      * 
+     * @returns Reference to the Ridgewood Junction Interlocking
      */
     get_ridgewood() {
         return this.interlocking_ridgewood;
     }
+    // ---- END get_ridgewood() ----
 
     /**
+     * get_suscon()
+     * @summary Gets reference to the Suscon Interlocking
      * 
+     * @returns Reference to the Suscon Interlocking
      */
     get_suscon() {
         return this.interlocking_suscon;
     }
+    // ---- END get_suscon() ----
 
     /**
+     * get_mill()
+     * @summary Gets reference to the Mill Interlocking
      * 
+     * @returns Reference to the Mill Interlocking
      */
     get_mill() {
         return this.interlocking_mill;
     }
+    // ---- END get_mill() ----
 
     /**
+     * get_westSecaucus()
+     * @summary Gets reference to the West Secaucus Interlocking
      * 
+     * @returns Reference to the West Secaucus Interlocking
      */
     get_westSecaucus() {
         return this.interlocking_westSecaucus;
     }
+    // ---- END get_westSecaucus() ----
 
     /**
+     * get_laurel()
+     * @summary Gets reference to the Laurel Interlocking
      * 
+     * @returns Reference to the Laurel Interlocking
      */
     get_laurel() {
         return this.interlocking_laurel;
     }
+    // ---- END get_laurel() ----
 
     /**
+     * get_bt()
+     * @summary Gets reference to the BT Interlocking
      * 
+     * @returns Reference to the BT Interlocking
      */
     get_bt() {
         return this.interlocking_bt;
     }
+    // ---- END get_bt() ----
 
     /**
+     * get_pascack()
+     * @summary Gets reference to the Pascack Interlocking
      * 
+     * @returns Reference to the Pascack Interlocking
      */
     get_pascack() {
         return this.interlocking_pascack;
     }
+    // ---- END get_pascack() ----
 
     /**
+     * get_hx()
+     * @summary Gets reference to the HX Interlocking
      * 
+     * @returns Reference to the HX Interlocking
      */
     get_hx() {
         return this.interlocking_hx;
     }
-
+    // ---- END get_hx() ----
 
     /**
-     * 
+     * add_train()
+     * @summary Takes in a new train and adds it to the train_list array
      */
     add_train(new_train) {
         this.train_list.push(new_train);
     }
+    // ---- END add_train() ----
 
 
     /**
-     * 
+     * occupy_blocks()
+     * @summary goes through all the trains and finds their current location and occupys the correct block
      */
-    test_block() {
+    occupy_blocks() {
         for (let i = 0; i < this.train_list.length; i++) {
             let block = this.get_block_by_name(this.train_list[i].get_location());
 
             if (block === false) {
-                //this.get_interlocking_by_name(this.train_list[i].get_location()).set_trk_1_occupied();
+
             }
             else {
                 block.set_block_status("Occupied");
@@ -474,9 +620,11 @@ class MainLine_CTC {
             }
         }
     }
+    // ---- END occupy_blocks() ----
 
     /**
-     * 
+     * reset_route_mainLine_blocks()
+     * @summary Resets all the blocks that are routed
      */
     reset_route_mainLine_blocks() {
         this.blocks_mainLine.block_westEnd_laurel_1.reset_block();
@@ -566,9 +714,13 @@ class MainLine_CTC {
 
         this.blocks_mainLine.block_bingo_sparrow.reset_block();
     }
+    // ---- END reset_route_mainLine_blocks() ----
 
     /**
+     * get_mainLine_blocks_status()
+     * @summary Gets the status of all the bloccks on the Southern Tier Section
      * 
+     * @returns An object with the status of each block
      */
     get_mainLine_blocks_status() {
         var status = {
@@ -609,7 +761,14 @@ class MainLine_CTC {
 
         return status;
     }
+    // ---- END get_mainLine_blocks_status() ----
 
+    /**
+     * get_bergen_blocks_status()
+     * @summary Gets the status of all the blocks on the Southern Tier Section
+     * 
+     * @returns An object with the status of each block
+     */
     get_bergen_blocks_status() {
         let status = {
             block_hx_laurel_1: this.blocks_mainLine.block_hx_laurel_1.get_block_status(),
@@ -631,7 +790,14 @@ class MainLine_CTC {
 
         return status;
     }
+    // ---- END get_bergen_block_status() ----
 
+    /**
+     * get_tier_block_status()
+     * @breif Gets the status of all the blocks on the Southern Tier Section
+     * 
+     * @returns An object with the status of each block
+     */
     get_tier_block_status() {
         let status = {
             // Block Status
@@ -673,7 +839,14 @@ class MainLine_CTC {
 
         return status;
     }
+    // ---- END get_tier_block_status() ----
 
+    /**
+     * get_bergen_symbols()
+     * @summary Gets all the symbols for the blocks on the Bergen County Line Section
+     * 
+     * @returns An obnject with all the block symbols on the Bergen Line
+     */
     get_bergen_symbols() {
         let symbols = {
             symbol_ridgewood_bt_1: this.blocks_mainLine.block_ridgewood_bt_1.get_symbol(),
@@ -691,7 +864,14 @@ class MainLine_CTC {
 
         return symbols;
     }
+    // ---- END get_bergen_symbols() ----
 
+    /**
+     * get_mainLine_symbol()
+     * @summary Gets all the symbols for the blocks on the Main Line Section
+     * 
+     * @returns An object with all the block symbols on the Main Line Section
+     */
     get_mainLine_symbols() {
         let symbols = {
             // First Row
@@ -723,7 +903,14 @@ class MainLine_CTC {
 
         return symbols;
     }
+    // ---- END get_mainLine_symbols() ----
 
+    /**
+     * get_tier_symbols()
+     * @summary Gets all the symbols for the blocks on the Southern Tier Section
+     * 
+     * @returns An object with all the block symbols on the Southern Tier Section
+     */
     get_tier_symbols() {
         let symbols = {
             // First Row
@@ -753,10 +940,14 @@ class MainLine_CTC {
 
         return symbols;
     }
+    // ---- END get_tier_symbols() ----
 
     /**
+     * get_interlocking_route()
+     * @summary Takes where a train currently is and gets it's next route
      * 
-     * @param {*} name 
+     * @param key, Is ueed to find the trains curent interlocking
+     * @param direction, which way the train is traveling
      */
     get_interlocking_route(key, direction) {
         let first_index = key.indexOf("_");
@@ -772,8 +963,6 @@ class MainLine_CTC {
             track = key.substr(0, first_index);
             interlocking = key.substr(second_index + 1, key.size);
         }
-        console.log(key);
-        console.log(track, interlocking);
 
         // Southern Tier Line
         if (interlocking === "sparrow") {
@@ -847,12 +1036,16 @@ class MainLine_CTC {
             return this.get_hx().get_train_route(direction, track);
         }
     }
+    // ---- END get_interlocking_route() ----
 
     /**
+     * set_occupy_interlocking
+     * @summary Takes in what interlocking and the track number, and set that the specific interlocking is occupied on the last track
      * 
-     * @param {*} name 
+     * @param track, the track number in the interlocking to occupy, for some interlocking with only one route doesn't need the track
+     * @param name, the name of the interlocking to occupy 
      */
-    set_occupy_interlocking(occupy, track, name) {
+    set_occupy_interlocking(track, name) {
         if (name === "hx") {
             if (track === "2") {
                 this.get_hx().set_trk_2_occupied(true);
@@ -985,15 +1178,19 @@ class MainLine_CTC {
             this.get_sparrow().set_occupied(true);
         }
     }
+    // ---- END set_occupy_interlocking() ----
 
     /**
+     * get_block_by_name()
+     * @summary takes in the name of a block, and returns the reference to that specific block
      * 
-     * @param {*} name 
+     * @param name, the name of the block to find
+     * 
+     * @return reference to the block 
      */
     get_block_by_name(name) {
         var block = name.substring(2, name.size);
         var track = name.substring(0, 1);
-        //console.log(block, track)
 
         if (block === "harriman_sterling") {
             return this.blocks_mainLine.block_harriman_sterling_1;
@@ -1199,6 +1396,7 @@ class MainLine_CTC {
             return false;
         }
     }
+    // ---- END get_block_by_name() ----
 }
 
 export default MainLine_CTC;
