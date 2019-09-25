@@ -1,0 +1,467 @@
+March 21, 2019:
+    - Finished drawing out the layout of the pannel on paper
+    (1.5 Hours)
+
+    - Worked on creating the pannel in HTML & CSS
+    (2 Hours)
+
+August 20, 2019:
+    - Started work to convert to a ReactJS app, started with tutorials and research.
+    (2 Hours)
+
+    - Tried to create first component, which would be a crossover button, which took
+    4 hours to get an image in appear in ReactJS
+    (4.5 Hours)
+
+August 21, 2019:
+    - Changed the componet which was going to be just a crossover button to the entire
+    Suscon interlocking. Deciding that each interlocking will be it's own component.
+    (3 Hours)
+
+August 23, 2019:
+    - Tried to figure out how to change an image in ReactJS, which ended up being a
+    real big pain, having to import each image file similar to importing a scrip file.
+    This solution seems weird but it's the only way I've been getting this to work so far.
+    (4 Hours)
+
+August 24, 2019:
+    - Started to get all the crossover buttons working, and changing the image based on clicks,
+    did this for both Suscon and Mill
+    (1 Hour)
+
+    - Converted what I did for the crossover buttons to use the 'state' object which is part of 
+    a ReactJS Component to more closely follow the conventions of ReactJS
+    (2 Hours)
+
+    -
+
+August 25, 2019:
+    - Set up the click function for the signals in Suscon
+    (0.5 Hours)
+
+    - Changed the setup so all the components that make up the Main Line section are wrapped in one
+    component, this will make it eaiser for passing information from the components to the CTC controller
+    both ways. 
+    (0.5 Hours)
+
+    - Changed all the track block colors to be based off the state in their component class.
+    (0.25 Hours)
+
+    - Setup the beginnings of the CTC Controller class which will act as the backend to controll all the 
+    train movements, also created a ctc_block class which is be a instance for each track block on the railroad
+    (0.75 Hours)
+
+    - Tested out have the informmation in the CTC Controller class change the state of the MainLine component
+    by using the props property that is built into react to pass the status of 2 blocks into the component itself.
+    Luckily it works, and I now have the ability CTC Controller change the pannel.
+    (0.5 Hours)
+
+August 26, 2019:
+    - Changed how to pass an object as props in the ReactJS component, instead of a variable for each piece of
+    information that needs to be passed
+    (0.5 Hours)
+
+    - Created a script for the Suscon interlocking to controll the train movements, and started to make this class
+    change the state of the UI and have the changes reflected in either the ReactJS component or the JS script
+    (1.5 Hours)
+
+    - Got the ReactJS component to send it's changes up to the script class for the interlocking, and having the 
+    changes in the the script be reflecting in the Component, at this point the data is being sent both ways for 
+    the curent status of the crossovers in the interlocking
+    (1 Hour)
+
+August 27, 2019:
+    - Started converting Ridgewood Junction from HTML and CSS to a new ReactJS component, also made some changes from
+    my original design, and learned you do draw a diagonal line in CSS
+    (0.75 Hours)
+
+    - Converted Laurel to a new ReactJS component and cleaned up some of my previous designs
+    (0.5 Hours)
+
+    - Did some work on my drawing for the switch buttons on the pannel
+    (0.25 Hours)
+
+    - Converted the West Secaucus from into a ReactJS component
+    (0.5 Hours)
+
+August 28, 2019:
+    - Drawing the Bergen County Line, finished about 95% of the line, creating all the components.
+    (5 Hours)
+
+August 29, 2019:
+    - Finished Drawing all the tracks on the Bergen County side of the pannel
+    (1 Hours)
+
+    - Finished drawing of Laurel
+    (0.25 Hours)
+
+    - Finished drawing of ridgewood Junction
+    (0.25 Hours)
+
+August 30, 2019:
+    - Reconfigured pascack Junction
+    (0.25 Hours)
+
+    - Finished the drawing in HX
+    (0.5 Hours)
+
+    - Finished drawings in Pascack Junction
+    (0.25 Hours)
+
+    - Finished drawings in BT and add tags for tracks that lead to other lines
+    (0.25 Hours)
+
+    - Orgainized the files structure a bit, and dealt with all the changing of
+    import statments 
+    (0.25 Hours)
+
+    - Created a component for Harriman, starting the next line of tracks for the pannel
+    (0.5 Hours)
+
+    - Created a comonent for Sterling, and the tracks between the interlockings, also works on 
+    parts of hilburn, and sf for the leads to the yard between the hilburn and sf
+    (1 Hour)
+
+August 31, 2019:
+    - Finished drawing the the Main Line
+    (2 Hours)
+
+    - Continuted work on the Southern Tier line, finished about 85%
+    (4.5 Hours)
+
+September 1, 2019:
+    - Finished All drawings on the pannel
+    (2 Hours)
+
+September 2, 2019:
+    - Started connecting all the track blocks on the Main Line to the ctc scripts, now having
+    the ctc class controlling the front end of the pannel.
+    (2.5 Hours)
+
+September 3, 2019:
+    - Fixed the bugs I was having trying to connect the ctc class to show the correct informating
+    when the frontend refreshes the screen.
+    (0.75 Hours)
+
+    - Created a new class for a game clock, so start trying to get the trains to move accross the 
+    screen to
+    (0.5 Hours)
+
+    - Debugged a problem in the clock class, and now I have a hardcoded train moving accross some of
+    the blocks
+    (0.25 Hours)
+
+    - Configured the ctc_suscon class to create a route through the interlocking based on the status 
+    of the switches and what signal you click
+    (0.5 Hours)
+
+    - Got the Suscon component to draw the routing in the UI givien the route status of the ctc_suscon
+    class
+    (4 Hours)
+
+    - Now the route draw turns to occupied if you set the interlocking to that state and created a 
+    function to deal with that and will also clear the drawing when the hard coded train passes the
+    location
+    (2 Hours)
+
+September 4, 2019:
+    - Finally found a good way to store and display routes, using something that I 
+    already had in place.
+    (1 Hour)
+
+    - Created a class for the the trains, and now have a actual train moving around the pannel
+    (2.5 Hours)
+
+    - Figures out how to have the routes passes to the train, and now the train can move based off of
+    how the player has created routes on the pannel
+    (3 Hours)
+
+    - Spent a while trying to get the interlocking to become occupied when a train is present, have yet
+    to find a good way to do this and will have to revist it.
+    (1.5 Hours)
+
+September 5, 2019:
+    - Again tried to figure out how to occupie the interlocking in a good way, and still have yet to 
+    come up with a ellagent solution
+    (2 Hours)
+
+    - West Secaucus is now fully operational
+    (3 Hours)
+
+    - Routing for Ridgewood Junction is now complete, all thats left is getting the drawings up and
+    running, which might by interesting
+    (2 Hours)
+
+    - Testing 2 trains at once, and it seems to be working finished
+    (0.5 Hours)
+
+September 6, 2019:
+    - Reworked how routes are given to trains to make it much easier to have trains to be going in both
+    directions
+    (1.5 Hours)
+
+    - Fixed issue with the routings for all the current interlockings
+    (2 Hours)
+
+September 7, 2019:
+    - Finished all the drawing for routes in Ridgewood, and have decided to finish the routing first, and
+    then go back to the drawings, because the take the most time
+    (6 Hours)
+
+September 9, 2019:
+    - Finsihed the routings for Laurel
+    (2.5 Hours)
+
+    - Finished the routings at the WC interlocking, will still have to go back and add the drawins when
+    a route is lined
+    (1.5 Hours)
+
+    - Finished the routings in the SF interlocking
+    (1 Hours)
+
+    - Finished the routings in the Hilburn interlocking
+    (0.5 Hours)
+
+    - Did some debugging to fix an minor issue with train movements through hilburn interlocking, at this
+    point now a train can run from Laurel to Sterling
+    (0.25 Hours)
+
+September 10, 2019:
+    - Got the switch in sterling to throw
+    (0.25 Hours)
+
+    - Connected all the blocks on the pannel to actual block classes in the ctc class
+    (1 Hour)
+
+    - Fixed a bug in the suscon interlocking routing
+    (0.25 Hours)
+
+September 11, 2019:
+    - Hooked up the blocks on the southern tier section to the ctc mainline class
+    (0.5 Hours)
+
+    - Finished the switches and routing for Sterling, Harriman, and Central Valley interlockings
+    (2 Hours)
+
+September 12, 2019:
+    - Finished Switches and routing for Hudson Junction
+    (0.5 Hours)
+
+    - Finished switches and routing for Howells
+    (0.5 Hours)
+
+    - Finished switches and routing for CP OV and for CP BC
+    (1 Hours)
+
+September 15, 2019:
+    - Finished Switches and routins for CP Port, CP PA and CP Sparrow. Trains can now run the entire
+    length of the pannel
+    (2 Hours)
+
+    - Finished route drawings for CP BC
+    (0.5 Hours)
+
+    - Finished route drawings for CP OV
+    (0.25 Hours)
+
+    - Finished route drawings for CP Howells
+    (0.25 Hours)
+
+September 16, 2019:
+    - Finished route drawings for CP Port
+    (0.25 Hours)
+
+    - Finished route drawigns fro CP Hall
+    (0.5 Hours)
+
+    - Finished route drawings for CP Sparrow
+    (0.25 Hours)
+
+    - Finished route drawings for CP Hudson Junction
+    (0.25 Hours)
+
+    - Finished route drawings for CP Central Valley 
+    (0.25 Hours)
+
+    - Finally figured out how to occupy and interlocking, right now it just working for interlocking that have only one route,
+    but this is the majority of the interlockings, so I'll be able to get most of the interlockings working 100% in short order.
+    (0.5 Hours)
+
+    - Added occuping interlocking for CP Hudson Junction
+    (0.5 Hours)
+
+    - Commenting
+    (0.5 Hours)
+
+    - Can now occupy CP Hall, this is an interlocking that can have multiple routes, which was gonna be
+    more difficult than one route interlockings to get it to work.
+    (0.5 Hours)
+
+    - Can now occupied CP Howells
+    (0.25 Hours)
+
+    - Can now occupy CP BC and CP OV and CP Port
+    (0.5 Hours)
+
+September 17, 2019:
+    - Drawings and occuping for CP PA
+    (1.5 Hours)
+
+    - Can now occupy CP Sparrow
+    (0.25 Hours)
+
+    - Drawing and occupy at Hilburn
+    (0.5 Hours)
+
+    - Drawings and Occupy at CP Sterling
+    (0.5 Hours)
+
+    - Drawing and Occupy finsihed at CP Harriman
+    (0.5 Hours)
+
+    - General Bug Fixes
+    (0.5 Hours)
+
+    - Drawigns and Occupy finished at SF
+    (0.75 Hours)
+
+    - Occupy finished at West Secaucus
+    (0.25 Hours)
+
+    - Route drawings and Occupy finished at Suscon
+    (0.75 Hours)
+
+September 18, 2019:
+    - Route drawings and Occupy finished at Mill
+    (0.25 Hours)
+
+    - Bug Fixes at CP Port
+    (0.25 Hours)
+
+    - Trains now delete if they reach the ends of the railraod, either when they reach a 
+    yard, or the end of pannels west of CP Sparrow or east of Laurel
+    (0.5 Hours)
+
+    - Fixed all east facing yard leads so trains to leave from them, had to change the way 
+    those blocks were named
+    (0.25 Hours)
+
+    - Route drawings and Occupy finished at Ridgewood Junction
+    (3 Hours)
+
+    - Route drawings and Occupy finished at WC
+    (1.5 Hours)
+
+    - Fixing the Blocks on the Bergen County Line
+    (0.75 Hours)
+
+    - Setting up the switches to working at BT
+    (0.5 Hours)
+
+    - Setting up the switches at both Pascack and HX, now all the interlockings have working
+    switches
+    (0.75 Hours)
+
+    - Routing working for the BT interlocking
+    (0.5 Hours)
+
+September 19, 2019:
+    - Routing working at Pascack interlocking
+    (0.5 Hours)
+
+    - Routing working at HX interlocking
+    (0.5 Hours)
+
+    - Bug fixes with routing around the laurel area
+    (0.75 Hours)
+
+    - Route drawings and occupy working at BT interlocking
+    (1 Hour)
+
+    - Route drawings and occupy working at Pascack interlocking
+    (0.75 Hours)
+
+    - Route drawings and occupy working at HX interlocking
+    (1 Hours)
+
+September 20, 2019:
+    - Working on Drawings for Laurel Interlocking, finished about a third of them
+    (2 Hours)
+
+    - Debugging for the Laurel Interlocking
+    (0.75 Hours)
+
+    - Continued Drawings for Laurel Interlocking, finsihed about 2/3 of the them at this point
+    (2 Hours)
+    
+September 21, 2019:
+    - Finished drawings for the laurel interlocking and debugging some of the drawings that change
+    when another track has a different status.
+    (2 Hours)
+
+    - Finished the routing and occupy for Laurel Interlocking
+    (0.5 Hours)
+
+    - Rewrote the drawings for the WC interlocking using the new system I created and used at Laurel,
+    this fixed the bugs that had arrised in that interlocking
+    (3 Hours)
+
+    - Started adding symbol tags to the pannel for the blocks, finished all the symbols on the 
+    southern tier section of the pannel
+    (1.5 Hours)
+
+    - Documenting Laurel.jsx
+    (0.75 Hours)
+
+    - Bug fixes at West Secaucus
+    (0.25 Hours)
+
+September 22, 2019:
+    - Finished locations on all the symbols for the main line, still have to get the workings.
+    (0.75 Hours)
+
+    - CSS fixes for the text symbos on the pannel to keep it from moving around if the windo is resized
+    (0.25 Hours)
+
+    - Got the symbols of the Main Line working correctly
+    (1 Hour)
+
+    - Got the trains to get the size of the current block so it's more realistically timed as a train 
+    moves accross the railroad.
+    (1 Hour)
+
+    - Finished the symbols on the bergen line
+    (0.75 Hours)
+
+    - Finished commenting for all of Laurel Interlocking
+    (0.5 Hours)
+
+    - Finished commenting for all of Mill Interlocking
+    (0.5 Hours)
+
+    - Finsihed commenting on all of the JSX components for the Main Line section
+    (2.5 Hours)
+
+    - Finsihed commenting on all of the JSX components for the Bergen County Line section
+    (1 Hour)
+
+September 23, 2019:
+    - Commenting on JSX components
+    (3 Hours)
+
+    - Commenting finished on all CSS Files
+    (1 Hour)
+
+    - Commenting on all controller JS classes for the Bergen Line & Southern Tier Line
+    (4 Hours)
+
+    - Finish commenting on all the controller JS classes which was for the Main Line and others
+    (3 Hours)
+
+September 24, 2019:
+    - Finished the manual and what ever was left of the documentation
+    (6 Hours)
+
+TOTAL: 156.25 Hours
+TOTAL LINES: 31,332 Lines of Code
+
