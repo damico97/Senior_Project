@@ -56,7 +56,7 @@ var clock = new Clock();
 var ctc = new MaineLine_CTC(clock);
 
 // Initialize the clock
-clock.startClock;
+clock.startClock();
 
 
 setTimeout(function(){ 

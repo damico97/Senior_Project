@@ -16,20 +16,20 @@ import '../../../css/Main_Line/hilburn.css';
 
 // Import Images
 // Switch Images
-import SW_D_E from '../../../../public/images/SW_D_E.png';
-import SW_D_E_Lined from '../../../../public/images/SW_D_E_Lined.png';
-import SW_D_E_Occupied from '../../../../public/images/SW_D_E_Occupied.png'
-import SW_D_E_R from '../../../../public/images/SW_D_E_R.png';
-import SW_D_E_R_Lined from '../../../../public/images/SW_D_E_R_Lined.png';
-import SW_D_E_R_Occupied from '../../../../public/images/SW_D_E_R_Occupied.png';
+import SW_D_E from '../../../images/SW_D_E.png';
+import SW_D_E_Lined from '../../../images/SW_D_E_Lined.png';
+import SW_D_E_Occupied from '../../../images/SW_D_E_Occupied.png'
+import SW_D_E_R from '../../../images/SW_D_E_R.png';
+import SW_D_E_R_Lined from '../../../images/SW_D_E_R_Lined.png';
+import SW_D_E_R_Occupied from '../../../images/SW_D_E_R_Occupied.png';
 
 // Signal Images
-import SIG_W from '../../../../public/images/SIG_W.png';
-import SIG_W_Clear from '../../../../public/images/SIG_W_Clear.png';
-import SIG_W_Stop from '../../../../public/images/SIG_W_Stop.png';
-import SIG_E from '../../../../public/images/SIG_E.png';
-import SIG_E_Clear from '../../../../public/images/SIG_E_Clear.png';
-import SIG_E_Stop from '../../../../public/images/SIG_E_Stop.png';
+import SIG_W from '../../../images/SIG_W.png';
+import SIG_W_Clear from '../../../images/SIG_W_Clear.png';
+import SIG_W_Stop from '../../../images/SIG_W_Stop.png';
+import SIG_E from '../../../images/SIG_E.png';
+import SIG_E_Clear from '../../../images/SIG_E_Clear.png';
+import SIG_E_Stop from '../../../images/SIG_E_Stop.png';
 
 // Color Constants For Drawing Routes
 const Empty = '#999999';

@@ -16,46 +16,46 @@ import '../../../css/Main_Line/ridgewood_jct.css';
 
 // Import Images
 // Switch Images
-import CX_135 from '../../../../public/images/CX_135.png';
-import CX_135_Lined_Top from '../../../../public/images/CX_135_Lined_Top.png';
-import CX_135_Lined_Bottom from '../../../../public/images/CX_135_Lined_Bottom.png';
-import CX_135_Lined_Both from '../../../../public/images/CX_135_Lined_Both.png';
-import CX_135_R from '../../../../public/images/CX_135_R.png';
-import CX_135_R_Lined from '../../../../public/images/CX_135_R_Lined.png';
-import CX_135_Lined_Top_Occupied_Bottom from '../../../../public/images/CX_135_Lined_Top_Occupied_Bottom.png';
-import CX_135_Occupied_Top_Lined_Bottom from '../../../../public/images/CX_135_Occupied_Top_Lined_Bottom.png';
-import CX_135_Occupied_Top from '../../../../public/images/CX_135_Occupied_Top.png';
-import CX_135_Occupied_Bottom from '../../../../public/images/CX_135_Occupied_Bottom.png';
-import CX_135_Occupied_Both from '../../../../public/images/CX_135_Occupied_Both.png';
-import CX_135_R_Occupied from '../../../../public/images/CX_135_R_Occupied.png';
+import CX_135 from '../../../images/CX_135.png';
+import CX_135_Lined_Top from '../../../images/CX_135_Lined_Top.png';
+import CX_135_Lined_Bottom from '../../../images/CX_135_Lined_Bottom.png';
+import CX_135_Lined_Both from '../../../images/CX_135_Lined_Both.png';
+import CX_135_R from '../../../images/CX_135_R.png';
+import CX_135_R_Lined from '../../../images/CX_135_R_Lined.png';
+import CX_135_Lined_Top_Occupied_Bottom from '../../../images/CX_135_Lined_Top_Occupied_Bottom.png';
+import CX_135_Occupied_Top_Lined_Bottom from '../../../images/CX_135_Occupied_Top_Lined_Bottom.png';
+import CX_135_Occupied_Top from '../../../images/CX_135_Occupied_Top.png';
+import CX_135_Occupied_Bottom from '../../../images/CX_135_Occupied_Bottom.png';
+import CX_135_Occupied_Both from '../../../images/CX_135_Occupied_Both.png';
+import CX_135_R_Occupied from '../../../images/CX_135_R_Occupied.png';
 
-import CX_225 from '../../../../public/images/CX_225.png';
-import CX_225_Lined_Top from '../../../../public/images/CX_225_Lined_Top.png';
-import CX_225_Lined_Bottom from '../../../../public/images/CX_225_Lined_Bottom.png';
-import CX_225_Lined_Both from '../../../../public/images/CX_225_Lined_Both.png';
-import CX_225_R from '../../../../public/images/CX_225_R.png';
-import CX_225_R_Lined from '../../../../public/images/CX_225_R_Lined.png';
-import CX_225_Lined_Top_Occupied_Bottom from '../../../../public/images/CX_225_Lined_Top_Occupied_Bottom.png';
-import CX_225_Occupied_Top_Lined_Bottom from '../../../../public/images/CX_225_Occupied_Top_Lined_Bottom.png';
-import CX_225_Occupied_Top from '../../../../public/images/CX_225_Occupied_Top.png';
-import CX_225_Occupied_Bottom from '../../../../public/images/CX_225_Occupied_Bottom.png';
-import CX_225_Occupied_Both from '../../../../public/images/CX_225_Occupied_Both.png';
-import CX_225_R_Occupied from '../../../../public/images/CX_225_R_Occupied.png';
+import CX_225 from '../../../images/CX_225.png';
+import CX_225_Lined_Top from '../../../images/CX_225_Lined_Top.png';
+import CX_225_Lined_Bottom from '../../../images/CX_225_Lined_Bottom.png';
+import CX_225_Lined_Both from '../../../images/CX_225_Lined_Both.png';
+import CX_225_R from '../../../images/CX_225_R.png';
+import CX_225_R_Lined from '../../../images/CX_225_R_Lined.png';
+import CX_225_Lined_Top_Occupied_Bottom from '../../../images/CX_225_Lined_Top_Occupied_Bottom.png';
+import CX_225_Occupied_Top_Lined_Bottom from '../../../images/CX_225_Occupied_Top_Lined_Bottom.png';
+import CX_225_Occupied_Top from '../../../images/CX_225_Occupied_Top.png';
+import CX_225_Occupied_Bottom from '../../../images/CX_225_Occupied_Bottom.png';
+import CX_225_Occupied_Both from '../../../images/CX_225_Occupied_Both.png';
+import CX_225_R_Occupied from '../../../images/CX_225_R_Occupied.png';
 
-import SW_U_E from '../../../../public/images/SW_U_E.png';
-import SW_U_E_Lined from '../../../../public/images/SW_U_E_Lined.png';
-import SW_U_E_Occupied from '../../../../public/images/SW_U_E_Occupied.png';
-import SW_U_E_R from '../../../../public/images/SW_U_E_R.png';
-import SW_U_E_R_Lined from '../../../../public/images/SW_U_E_R_Lined.png';
-import SW_U_E_R_Occupied from '../../../../public/images/SW_U_E_R_Occupied.png';
+import SW_U_E from '../../../images/SW_U_E.png';
+import SW_U_E_Lined from '../../../images/SW_U_E_Lined.png';
+import SW_U_E_Occupied from '../../../images/SW_U_E_Occupied.png';
+import SW_U_E_R from '../../../images/SW_U_E_R.png';
+import SW_U_E_R_Lined from '../../../images/SW_U_E_R_Lined.png';
+import SW_U_E_R_Occupied from '../../../images/SW_U_E_R_Occupied.png';
 
 // Signal Images
-import SIG_W from '../../../../public/images/SIG_W.png';
-import SIG_W_Clear from '../../../../public/images/SIG_W_Clear.png';
-import SIG_W_Stop from '../../../../public/images/SIG_W_Stop.png';
-import SIG_E from '../../../../public/images/SIG_E.png';
-import SIG_E_Clear from '../../../../public/images/SIG_E_Clear.png';
-import SIG_E_Stop from '../../../../public/images/SIG_E_Stop.png';
+import SIG_W from '../../../images/SIG_W.png';
+import SIG_W_Clear from '../../../images/SIG_W_Clear.png';
+import SIG_W_Stop from '../../../images/SIG_W_Stop.png';
+import SIG_E from '../../../images/SIG_E.png';
+import SIG_E_Clear from '../../../images/SIG_E_Clear.png';
+import SIG_E_Stop from '../../../images/SIG_E_Stop.png';
 
 // Color Constants For Drawing Routes
 const Empty = '#999999';

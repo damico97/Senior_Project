@@ -24,7 +24,7 @@ class Clock {
      * @details This will initialize all the member variables when the program is started
      */
     constructor() {
-        this.start_time;
+        this.start_time = null;
     }
     // ---- END constructor() ----
 
