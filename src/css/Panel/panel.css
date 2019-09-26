@@ -1,0 +1,44 @@
+/**
+ * @file panel.css
+ * @author Joey Damico
+ * @date September 25, 2019
+ * @brief CSS Stylesheet for the Hilburn Interlocking
+ *
+ * Styles the divs tracks and other tags for the Hilburn Interlocking
+ */
+
+ @charset "UTF-8";
+ /* Texts */
+ .panel_title {
+     position: absolute;
+     overflow: hidden;
+     white-space: nowrap;
+     top: 10px;
+     left: 550px;
+     font-size: 70px;
+     font-weight: 600;
+     color: white;
+ }
+
+ .panel_west {
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    top: 90px;
+    left: 550px;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+}
+
+.panel_east {
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    top: 90px;
+    left: 1090px;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+}
+ /* END Text */

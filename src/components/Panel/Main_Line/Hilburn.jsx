@@ -107,14 +107,14 @@ class Hilburn extends Component {
                 {/* West Side Tail Tracks */}
                 <div className="hilburn_west" style={{background: this.state.tail_w}}></div>
                 {/* Switches */}
-                <div className="hilburn_SW_1" onClick={this.props.throw_sw_1}><img src={this.state.sw_1_src}/></div>
+                <div className="hilburn_SW_1" onClick={this.props.throw_sw_1}><img alt="" src={this.state.sw_1_src}/></div>
                 {/* East Side Tail Tracks */}
                 <div className="hilburn_east" style={{background: this.state.tail_e}}></div>
                 <div className="hilburn_yard" style={{background: this.state.tail_yard}}></div>
                 {/* Signals */}
-                <div className="hilburn_sig_2w-1" onClick={this.props.click_sig_2w_1}><img src={this.state.sig_2w1_src}/></div>
-                <div className="hilburn_sig_2w-2" onClick={this.props.click_sig_2w_2}><img src={this.state.sig_2w2_src}/></div>
-                <div className="hilburn_sig_2e" onClick={this.props.click_sig_2e}><img src={this.state.sig_2e_src}/></div>
+                <div className="hilburn_sig_2w-1" onClick={this.props.click_sig_2w_1}><img alt="" src={this.state.sig_2w1_src}/></div>
+                <div className="hilburn_sig_2w-2" onClick={this.props.click_sig_2w_2}><img alt="" src={this.state.sig_2w2_src}/></div>
+                <div className="hilburn_sig_2e" onClick={this.props.click_sig_2e}><img alt="" src={this.state.sig_2e_src}/></div>
             </div>
         );
     }

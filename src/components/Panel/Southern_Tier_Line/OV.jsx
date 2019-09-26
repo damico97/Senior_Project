@@ -110,14 +110,14 @@ class OV extends Component {
                 {/* West Side Tail Tracks */}
                 <div className="ov_west" style={{background: this.state.tail_w}}></div>
                 {/* Switches */}
-                <div className="ov_SW_1" onClick={this.props.throw_sw_1}><img src={this.state.sw_1_src}/></div>
+                <div className="ov_SW_1" onClick={this.props.throw_sw_1}><img alt="" src={this.state.sw_1_src}/></div>
                 {/* East Side Tail Tracks */}
                 <div className="ov_1_east" style={{background: this.state.tail_1_e}}></div>
                 <div className="ov_2_east" style={{background: this.state.tail_2_e}}></div>
                 {/* Signals */}
-                <div className="ov_sig_2w" onClick={this.props.click_sig_2w}><img src={this.state.sig_2w_src}/></div>
-                <div className="ov_sig_2ws" onClick={this.props.click_sig_2ws}><img src={this.state.sig_2ws_src}/></div>
-                <div className="ov_sig_2e" onClick={this.props.click_sig_2e}><img src={this.state.sig_2e_src}/></div>
+                <div className="ov_sig_2w" onClick={this.props.click_sig_2w}><img alt=""  src={this.state.sig_2w_src}/></div>
+                <div className="ov_sig_2ws" onClick={this.props.click_sig_2ws}><img alt=""  src={this.state.sig_2ws_src}/></div>
+                <div className="ov_sig_2e" onClick={this.props.click_sig_2e}><img alt=""  src={this.state.sig_2e_src}/></div>
             </div>
         );
     }

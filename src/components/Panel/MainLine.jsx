@@ -9,6 +9,9 @@
  * change the back end class for each enterlocking
  */
 
+// Import CSS style sheet
+import '../../css/Panel/panel.css';
+
 // Import React Component
 import React, { Component } from 'react';
 // Import My Own Clock Class which takes care of trains running
@@ -61,14 +64,22 @@ clock.startClock();
 
 setTimeout(function(){ 
     ctc.add_train(new Train("[E] 49", "3_yardEast_port", "EAST", 10));
-    ctc.add_train(new Train("3", "3_laurel_westEnd", "WEST", 10));
-    ctc.add_train(new Train("1", "1_laurel_westEnd", "WEST", 10));
-    ctc.add_train(new Train("2", "2_laurel_westEnd", "WEST", 10));
-    ctc.add_train(new Train("4", "4_laurel_westEnd", "WEST", 10));
-    ctc.add_train(new Train("50", "3_yardHilburn_sf", "EAST", 10));
+    ctc.add_train(new Train("[E] H70", "2_yard_hall", "EAST", 10));
+    ctc.add_train(new Train("[W] 50", "3_laurel_westEnd", "WEST", 10));
+    ctc.add_train(new Train("[W] 2434", "1_laurel_westEnd", "WEST", 10));
+    ctc.add_train(new Train("[W] 2468", "2_laurel_westEnd", "WEST", 10));
+    ctc.add_train(new Train("[W] 1254", "4_laurel_westEnd", "WEST", 10));
+    ctc.add_train(new Train("[E] 1253", "3_yardHilburn_sf", "EAST", 10));
     ctc.add_train(new Train("[E] SU100", "1_bingo_sparrow", "EAST", 10));
     ctc.occupy_blocks(); 
 }, 1500);  
+
+setTimeout(function(){ 
+    ctc.add_train(new Train("[E] 53", "3_yardEast_port", "EAST", 10));
+    ctc.add_train(new Train("[W] 1288", "3_laurel_westEnd", "WEST", 10));
+    ctc.add_train(new Train("[W] 2422", "1_laurel_westEnd", "WEST", 10));
+    ctc.occupy_blocks(); 
+}, 300000);  
 
 
 /**
@@ -264,6 +275,10 @@ class MainLine extends Component {
         // Returns the HTML to draw the interlocking and it's current state to the screen
         return (  
             <div>
+                {/* Titles */}
+                <div className="panel_title">NJ Transit Main Line</div>
+                <div className="panel_west">⬅︎ WEST</div>
+                <div className="panel_east">EAST ➡︎</div>
                 {/* SOUTHERN TIER SECTION */}
                 {/* Tracks */}
                 <SouthernTierTracks 
@@ -2108,8 +2123,8 @@ class MainLine extends Component {
         ctc.get_ridgewood().click_sig_4e(
             this.state.status_mainLine.block_ridgewood_suscon_1,
             this.state.status_mainLine.block_ridgewood_suscon_2,
-            this.state.status_mainLine.block_ridgewood_suscon_3,
-            this.state.status_mainLine.block_ridgewood_suscon_4
+            this.state.status_mainLine.block_ridgewood_bt_3,
+            this.state.status_mainLine.block_ridgewood_bt_4
         );
         // Set the state of the Interlocking
         this.setState({status_ridgewood: ctc.get_ridgewood().get_interlocking_status()});
