@@ -111,13 +111,13 @@ class BC extends Component {
                 <div className="bc_1_west" style={{background: this.state.tail_1_w}}></div>
                 <div className="bc_2_west" style={{background: this.state.tail_2_w}}></div>
                 {/* Switches */}
-                <div className="bc_SW_1" onClick={this.props.throw_sw_1}><img src={this.state.sw_1_src}/></div>
+                <div className="bc_SW_1" onClick={this.props.throw_sw_1}><img src={this.state.sw_1_src} alt="Switch #1"/></div>
                 {/* East Side Tail Tracks */}
                 <div className="bc_east" style={{background: this.state.tail_e}}></div>
                 {/* Signals */}
-                <div className="bc_sig_2e" onClick={this.props.click_sig_2e}><img src={this.state.sig_2e_src}/></div>
-                <div className="bc_sig_4e" onClick={this.props.click_sig_4e}><img src={this.state.sig_4e_src}/></div>
-                <div className="bc_sig_2w" onClick={this.props.click_sig_2w}><img src={this.state.sig_2w_src}/></div>
+                <div className="bc_sig_2e" onClick={this.props.click_sig_2e}><img src={this.state.sig_2e_src} alt="Signal 2e"/></div>
+                <div className="bc_sig_4e" onClick={this.props.click_sig_4e}><img src={this.state.sig_4e_src} alt="Signal 4e"/></div>
+                <div className="bc_sig_2w" onClick={this.props.click_sig_2w}><img src={this.state.sig_2w_src} alt="Signal 2w"/></div>
             </div>
         );
     }
@@ -141,73 +141,72 @@ class BC extends Component {
 
         // Loop through all the routes
         for (let i = 0; i < this.state.routes.length; i++) {
-            if (this.state.routes[i] === "W_1_1__|__1_port_bc" || this.state.routes[i] === 
-            "E_1_1__|__1_bc_ov") {
+            if (this.state.routes[i] === "W_1_1__|__1_port_bc" || this.state.routes[i] === "E_1_1__|__1_bc_ov") {
                 // Tail Tracks
-                this.state.tail_e = color;
-                this.state.tail_1_w = color;
+                this.setState({tail_e: color});
+                this.setState({tail_1_w: color});
 
                 // The Route Is Occupied
                 if (this.state.occupied) {
                     // Switches
-                    this.state.sw_1_src = SW_U_W_Occupied;
+                    this.setState({sw_1_src: SW_U_W_Occupied});
 
                     // Signals
-                    this.state.sig_2w_src = SIG_W_Stop;
-                    this.state.sig_2e_src = SIG_E_Stop;
+                    this.setState({sig_2w_src: SIG_W_Stop});
+                    this.setState({sig_2e_src: SIG_E_Stop});
                 }
                 // The Route Is NOT Occupied
                 else {
                     // Switches
-                    this.state.sw_1_src = SW_U_W_Lined;
+                    this.setState({sw_1_src: SW_U_W_Lined});
 
                     // Signals
                     // West Bound Signals
                     if (this.state.routes[i] === "W_1_1__|__1_port_bc") {
-                        this.state.sig_2w_src = SIG_W_Clear;
-                        this.state.sig_2e_src = SIG_E_Stop;
-                        this.state.sig_4e_src = SIG_E_Stop;
+                        this.setState({sig_2w_src: SIG_W_Clear});
+                        this.setState({sig_2e_src: SIG_E_Stop});
+                        this.setState({sig_4e_src: SIG_E_Stop});
                     }
                     // East Bound Signals
                     else {
-                        this.state.sig_2w_src = SIG_W_Stop;
-                        this.state.sig_2e_src = SIG_E_Clear;
-                        this.state.sig_4e_src = SIG_E_Stop;
+                        this.setState({sig_2w_src: SIG_W_Stop});
+                        this.setState({sig_2e_src: SIG_E_Clear});
+                        this.setState({sig_4e_src: SIG_E_Stop});
                     }
                 }
             }
             else if (this.state.routes[i] === "W_1_2__|__2_pa_bc" || this.state.routes[i] === "E_2_1__|__1_bc_ov") {
                 // Tail Tracks
-                this.state.tail_e = color;
-                this.state.tail_2_w = color;
+                this.setState({tail_e: color});
+                this.setState({tail_2_w: color});
 
                 // The Route Is Occupied
                 if (this.state.occupied) {
                     // Switches
-                    this.state.sw_1_src = SW_U_W_R_Occupied;
+                    this.setState({sw_1_src: SW_U_W_R_Occupied});
 
                     // Signals
-                    this.state.sig_2w_src = SIG_W_Stop;
-                    this.state.sig_2e_src = SIG_E_Stop;
-                    this.state.sig_4e_src = SIG_E_Stop;
+                    this.setState({sig_2w_src: SIG_W_Stop});
+                    this.setState({sig_2e_src: SIG_E_Stop});
+                    this.setState({sig_4e_src: SIG_E_Stop});
                 }
                 // The Route Is NOT Occupied
                 else {
                     // Switches
-                    this.state.sw_1_src = SW_U_W_R_Lined;
+                    this.setState({sw_1_src: SW_U_W_R_Lined});
 
                     // Signals
                     // West Bound Signals
                     if (this.state.routes[i] === "W_1_2__|__2_pa_bc") {
-                        this.state.sig_2w_src = SIG_W_Clear;
-                        this.state.sig_2e_src = SIG_E_Stop;
-                        this.state.sig_4e_src = SIG_E_Stop;
+                        this.setState({sig_2w_src: SIG_W_Clear});
+                        this.setState({sig_2e_src: SIG_E_Stop});
+                        this.setState({sig_4e_src: SIG_E_Stop});
                     }
                     // East Bound Signals
                     else {
-                        this.state.sig_2w_src = SIG_W_Stop;
-                        this.state.sig_2e_src = SIG_E_Stop;
-                        this.state.sig_4e_src = SIG_E_Clear;
+                        this.setState({sig_2w_src: SIG_W_Stop});
+                        this.setState({sig_2e_src: SIG_E_Stop});
+                        this.setState({sig_4e_src: SIG_E_Clear});
                     }
                 }
             }
@@ -227,11 +226,11 @@ class BC extends Component {
         // Set SW #1
         // SW #1 Reversed
         if (this.state.sw_1) {
-            this.state.sw_1_src = SW_U_W_R;
+            this.setState({sw_1_src: SW_U_W_R});
         }
         // SW #1 Normal
         else {
-            this.state.sw_1_src = SW_U_W;
+            this.setState({sw_1_src: SW_U_W});
         }
     }
     // ---- END set_switch_img() ----
@@ -244,13 +243,13 @@ class BC extends Component {
      * the is displaying on the screen, even if it's gone in the backend
      */
     reset_drawings() {
-        this.state.tail_1_w = Empty;
-        this.state.tail_2_w = Empty;
-        this.state.tail_e = Empty;
+        this.setState({tail_1_w: Empty});
+        this.setState({tail_2_w: Empty});
+        this.setState({tail_e: Empty});
 
-        this.state.sig_2e_src = SIG_E;
-        this.state.sig_4e_src = SIG_E;
-        this.state.sig_2w_src = SIG_W;
+        this.setState({sig_2e_src: SIG_E});
+        this.setState({sig_4e_src: SIG_E});
+        this.setState({sig_2w_src: SIG_W});
     }
     //---- END reset_drawings() ----
 }
